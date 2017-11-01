@@ -34,14 +34,7 @@
     <link rel="stylesheet" href="../assets/css/amazeui.min.css">
     <link rel="stylesheet" href="../assets/css/jd.css">
     <!--@media-->
-    <style>
-        @media only screen and(max-width: 1000px){
-            .tools .t_type .t_item .t_lk .t_img{
-                width: 100px;
-                height: 100px;
-            }
-        }
-    </style>
+
     <style>
         *{
             margin:0;
@@ -98,7 +91,7 @@
         /*content end*/
         /*start slider*/
         #slider{
-            height: 720px;
+            /*height: 720px;*/
             overflow: hidden;
             position: relative;
         }
@@ -111,6 +104,19 @@
         }
         #slider .fast_aisle .f_item{
             float: left;
+            margin-right: 30px;
+        }
+        #slider .fast_aisle .f_item .f_lk{
+            display: block;
+            text-align: center;
+            color: #d81e06;
+        }
+        #slider .fast_aisle .f_item .f_lk .f_img{
+            width: 24px;;
+            height: 24px;;
+        }
+        #slider .fast_aisle .f_item .f_lk .f_txt{
+            margin-top: 5px;
         }
         /*end fast_aisle*/
         /*start tools*/
@@ -193,7 +199,7 @@
             width:33.3%;
             padding:0 5px;
         }
-        .activity .a_item .a_top .a_img{
+        .activity .a_item .a_top .a_lk .a_img{
             width: 100%;
         }
         .activity .a_item .a_bottom .a_txt{
@@ -252,9 +258,18 @@
         }
         /*end footer*/
     </style>
-
-
-
+    <style>
+        @media screen and (max-width: 1000px) {
+            .tools .t_type .t_item .t_lk .t_img{
+                width: 130px;
+                height: 130px;
+            }
+            .tools .t_type .t_item{
+                width:100%;
+                clear: both;
+            }
+        }
+    </style>
 </head>
 <body>
 <!--start nav-->
@@ -365,8 +380,26 @@
         <div class="fast_aisle">
             <div class="f_item">
                 <a href="" class="f_lk">
-                    <img src="" alt="" class="f_img">
+                    <img src="../assets/i/car/home/home-fast-aisle/test-driver.png" alt="" class="f_img">
                     <div class="f_txt">预约试驾</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="" class="f_lk">
+                    <img src="../assets/i/car/home/home-fast-aisle/dealer.png" alt="" class="f_img">
+                    <div class="f_txt">经销商查询</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="" class="f_lk">
+                    <img src="../assets/i/car/home/home-fast-aisle/service.png" alt="" class="f_img">
+                    <div class="f_txt">在线客服</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="" class="f_lk">
+                    <img src="../assets/i/car/home/home-fast-aisle/search.png" alt="" class="f_img">
+                    <div class="f_txt">搜索</div>
                 </a>
             </div>
         </div>
@@ -429,7 +462,9 @@
         <div class="a_center clearFix">
             <div class="a_item">
                 <div class="a_top">
-                    <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
+                    <a href="" class="a_lk">
+                        <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
+                    </a>
                 </div>
                 <div class="a_bottom">
                     <div class="a_txt">新闻动态</div>
@@ -437,7 +472,9 @@
             </div>
             <div class="a_item">
                 <div class="a_top">
-                    <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
+                    <a href="" class="a_lk">
+                        <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
+                    </a>
                 </div>
                 <div class="a_bottom">
                     <div class="a_txt">品牌活动</div>
@@ -445,7 +482,9 @@
             </div>
             <div class="a_item">
                 <div class="a_top">
-                    <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
+                    <a href="" class="a_lk">
+                        <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
+                    </a>
                 </div>
                 <div class="a_bottom">
                     <div class="a_txt">经销商招募</div>
@@ -467,7 +506,9 @@
         <div class="a_center clearFix">
             <div class="a_item">
                 <div class="a_top">
-                    <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
+                    <a href="" class="a_lk">
+                        <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
+                    </a>
                 </div>
                 <div class="a_bottom">
                     <div class="a_txt">二手车展厅</div>
@@ -475,7 +516,9 @@
             </div>
             <div class="a_item">
                 <div class="a_top">
-                    <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
+                    <a href="" class="a_lk">
+                        <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
+                    </a>
                 </div>
                 <div class="a_bottom">
                     <div class="a_txt">金融服务</div>
@@ -483,7 +526,9 @@
             </div>
             <div class="a_item">
                 <div class="a_top">
-                    <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
+                    <a href="" class="a_lk">
+                        <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
+                    </a>
                 </div>
                 <div class="a_bottom">
                     <div class="a_txt">促销活动</div>
