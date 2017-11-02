@@ -45,6 +45,7 @@
             color: #ccc;
             font-family:"VWHeadWeb-Bold",sans-serif;
         }
+        /*start nav*/
         .nav{
             height:100%;
             width: 100px;
@@ -56,7 +57,6 @@
             background: #fff;
             /*border:1px solid red;*/
         }
-        /*start nav*/
         .nav .n_ul{
             list-style:none;
             padding:0;
@@ -240,15 +240,42 @@
             background: #0068AA;
         }
         /*end brand*/
+        /*start aisle*/
+        .aisle{
+            padding: 20px 50px 0;
+            background: #27303F;
+        }
+        .aisle .a_center .a_float{
+            float: left;
+            width:33.3%;
+        }
+        .aisle .a_center .a_ul{
+            list-style: none;
+            text-align: center;
+            letter-spacing: 2px;
+            margin:0;
+            padding:0;
+        }
+        .aisle .a_center .a_ul .a_item{
+            margin:5px 0;
+        }
+        .aisle .a_center .a_ul .a_item .a_lk{
+            color: #fff;
+            font-size: 16px;
+
+        }
+        /*end aisle*/
         /*start footer*/
         .footer{
             text-align: center;
             height: 50px;
             font-size: 14px;
-            margin: 50px 0;
+            /*padding: 50px 0;*/
+            background: #27303F;
         }
         .footer .f_lk{
-            color: #808890;
+            /*color: #808890;*/
+            color: #fff;
             line-height: 50px;
         }
         .footer .f_img{
@@ -276,7 +303,7 @@
 <div class="nav">
     <ul class="n_ul">
         <li class="n_item">
-            <a href="" class="n_lk">
+            <a href="home.html" class="n_lk">
                 <img src="../assets/i/car/home/home-nav/pc_logo.png" alt="" class="n_logo">
             </a>
         </li>
@@ -291,7 +318,7 @@
             </a>
         </li>
         <li class="n_item">
-            <a href="" class="n_lk">
+            <a href="left-nav/find.html" class="n_lk">
                 <div class="n_top">
                     <img src="../assets/i/car/home/home-nav/get.png" alt="" class="n_img">
                 </div>
@@ -360,7 +387,7 @@
         <div data-am-widget="slider" class="am-slider am-slider-b1 s_layer" data-am-slider='{"controlNav":false}' >
             <ul class="am-slides">
                 <li>
-                    <img src="../assets/i/car/home/home-head/1.jpg">
+                    <img src="../assets/i/car/find/advertise/1.jpg">
                 </li>
                 <li>
                     <img src="../assets/i/car/home/home-head/2.jpg">
@@ -379,26 +406,26 @@
         <!--start fast_aisle-->
         <div class="fast_aisle">
             <div class="f_item">
-                <a href="" class="f_lk">
-                    <img src="../assets/i/car/home/home-fast-aisle/test-driver.png" alt="" class="f_img">
+                <a href="fast-aisle/test-drive.html" class="f_lk">
+                    <img src="../assets/i/car/fast-aisle/test-driver.png" alt="" class="f_img">
                     <div class="f_txt">预约试驾</div>
                 </a>
             </div>
             <div class="f_item">
                 <a href="" class="f_lk">
-                    <img src="../assets/i/car/home/home-fast-aisle/dealer.png" alt="" class="f_img">
+                    <img src="../assets/i/car/fast-aisle/dealer.png" alt="" class="f_img">
                     <div class="f_txt">经销商查询</div>
                 </a>
             </div>
             <div class="f_item">
                 <a href="" class="f_lk">
-                    <img src="../assets/i/car/home/home-fast-aisle/service.png" alt="" class="f_img">
+                    <img src="../assets/i/car/fast-aisle/service.png" alt="" class="f_img">
                     <div class="f_txt">在线客服</div>
                 </a>
             </div>
             <div class="f_item">
-                <a href="" class="f_lk">
-                    <img src="../assets/i/car/home/home-fast-aisle/search.png" alt="" class="f_img">
+                <a href="fast-aisle/search.html" class="f_lk">
+                    <img src="../assets/i/car/fast-aisle/search.png" alt="" class="f_img">
                     <div class="f_txt">搜索</div>
                 </a>
             </div>
@@ -412,36 +439,36 @@
         <div class="t_type clearFix">
             <div class="t_item">
                 <a href="" class="t_lk">
-                    <img src="../assets/i/car/home/home-tools/test-driver.png" alt="" class="t_img">
+                    <img src="../assets/i/car/car-tools/test-driver.png" alt="" class="t_img">
                 </a>
                 <div class="t_name">预约试驾</div>
                 <a href="" class="t_lk">
                     <div class="t_test">
-                        <img src="../assets/i/car/home/home-tools/arrows.png" alt="" class="t_arrows">
+                        <img src="../assets/i/car/car-tools/arrows.png" alt="" class="t_arrows">
                         <span class="t_immediately">立即预约</span>
                     </div>
                 </a>
             </div>
             <div class="t_item">
                 <a href="" class="t_lk">
-                    <img src="../assets/i/car/home/home-tools/compare.png" alt="" class="t_img">
+                    <img src="../assets/i/car/car-tools/compare.png" alt="" class="t_img">
                 </a>
                 <div class="t_name">车型对比</div>
                 <a href="" class="t_lk">
                     <div class="t_test">
-                        <img src="../assets/i/car/home/home-tools/arrows.png" alt="" class="t_arrows">
+                        <img src="../assets/i/car/car-tools/arrows.png" alt="" class="t_arrows">
                         <span class="t_immediately">立即预约</span>
                     </div>
                 </a>
             </div>
             <div class="t_item">
                 <a href="" class="t_lk">
-                    <img src="../assets/i/car/home/home-tools/calculator.png" alt="" class="t_img">
+                    <img src="../assets/i/car/car-tools/calculator.png" alt="" class="t_img">
                 </a>
                 <div class="t_name">金融计算器</div>
                 <a href="" class="t_lk">
                     <div class="t_test">
-                        <img src="../assets/i/car/home/home-tools/arrows.png" alt="" class="t_arrows">
+                        <img src="../assets/i/car/car-tools/arrows.png" alt="" class="t_arrows">
                         <span class="t_immediately">立即预约</span>
                     </div>
                 </a>
@@ -537,6 +564,39 @@
         </div>
     </div>
     <!--end activity-->
+    <style>
+
+    </style>
+    <!--start aisle-->
+    <div class="aisle">
+        <div class="a_center clearFix">
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end aisle-->
     <!--start footer-->
     <div class="footer">
         <a href="" class="f_lk">法律声明</a><img src="../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">&copy;猎豹汽车有限公司</a><img src="../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">吉ICP备09000793号</a>
