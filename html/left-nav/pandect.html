@@ -93,34 +93,117 @@
             background: #BDC3C6;
             padding:0 50px;
             color: #000;
+            line-height: 70px;
+            position: fixed;
         }
         .head .h_left{
             float: left;
             font-size: 20px;
-            line-height: 70px;
+        }
+        .head .h_left .h_item{
+            float: left;
+            margin-right: 20px;
+        }
+        .head .h_left .h_item .h_lk{
+            color: #000;
+            font-size: 16px;
+            padding: 5px;
+        }
+        .head .h_left .h_item .h_lk:hover{
+            color: #A33007;
         }
         .head .h_right{
             float: right;
+            background: #fff;
+            border-radius: 22px;
+            padding: 5px;
+            margin-top: 13px;
         }
         .head .h_right .h_item{
             float: left;
-            margin-left: 15px;
-            margin-top:15px;
+            padding: 5px 10px;
+            background: #0099DA;
+            margin: 0 5px;
+            border-radius: 17px;
         }
-        .head .h_right .h_item .h_lk{
-            display:block;
-            text-align:center;
-            color: #d81e06;
+        .head .h_right .h_item.h_inactive{
+            background: #BDC3C6;
         }
-        .head .h_right .h_item .h_lk .h_img{
-            height: 24px;
+        .head .h_right .h_item img{
+            display: block;
             width: 24px;
-        }
-        .head .h_right .h_item .h_lk .h_txt{
-            /*margin-top: 5px;*/
-            line-height: 16px;
+            height: 24px;
         }
         /*end head*/
+        /*start car_list*/
+        .car_list .c_background{
+            background: #F3F5F6;
+        }
+        .car_list .c_item{
+            width:50%;
+            margin:0 auto;
+            padding-bottom: 20px;
+        }
+        .car_list .c_item.c_float{
+            margin: 0;
+            float: left;
+            padding: 20px;
+        }
+        .car_list .c_item .c_lk{
+            width:100%;
+            display: block;
+            text-align: center;
+        }
+        .car_list .c_item .c_lk .c_top{
+            /*height:100%;*/
+            /*position: relative;*/
+            /*float: left;*/
+            /*width:100%;*/
+            /*font-size:0;*/
+        }
+        .car_list .c_item .c_lk .c_top .c_img{
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*left:0;*/
+            width:100%;
+        }
+        .car_list .c_item .c_lk .c_name{
+            font-size: 18px;
+            color: #000;
+            margin:10px 0;
+        }
+        .car_list .c_item .c_lk .c_price{
+            color: #cccccc;
+            font-size: 14px;
+        }
+        .car_list .c_item .c_lk .c_price .c_icon .c_img{
+            width: 12px;
+            height: 12px;
+            vertical-align: baseline;
+        }
+        /*end car_list*/
+        /*start small*/
+        .small{
+            display: none;
+        }
+        .small .s_item{
+            width:20%;
+            padding: 10px 10px;
+            float: left;
+        }
+        .small .s_item .s_lk{
+            display: block;
+            color: #000;
+            font-size: 20px;
+            text-align: center;
+        }
+        .small .s_item .s_lk .s_top .s_img{
+            width: 100%;
+        }
+        .small .s_item .s_lk .s_name{
+            margin-top: 20px;
+        }
+        /*end small*/
         /*start aisle*/
         .aisle{
             padding: 20px 50px 0;
@@ -253,35 +336,283 @@
 <div id="content">
     <!--start head-->
     <div class="head clearFix">
-        <div class="h_left">众里寻车</div>
+        <div class="h_left clearFix">
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹CS9</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹CS10</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹Q6</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">皮卡</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹飞腾</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹黑金刚</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹CS6</a>
+            </div>
+        </div>
         <div class="h_right clearFix">
             <div class="h_item">
-                <a href="../fast-aisle/test-drive.html" class="h_lk">
-                    <img src="../../assets/i/car/public/fast-aisle/test-driver.png" alt="" class="h_img">
-                    <div class="h_txt">预约试驾</div>
-                </a>
+                <img src="../../assets/i/car/car-pandect/big.png" alt="" class="h_big">
             </div>
-            <div class="h_item">
-                <a href="" class="h_lk">
-                    <img src="../../assets/i/car/public/fast-aisle/dealer.png" alt="" class="h_img">
-                    <div class="h_txt">经销商查询</div>
-                </a>
-            </div>
-            <div class="h_item">
-                <a href="" class="h_lk">
-                    <img src="../../assets/i/car/public/fast-aisle/service.png" alt="" class="h_img">
-                    <div class="h_txt">在线客服</div>
-                </a>
-            </div>
-            <div class="h_item">
-                <a href="../fast-aisle/search.html" class="h_lk">
-                    <img src="../../assets/i/car/public/fast-aisle/search.png" alt="" class="h_img">
-                    <div class="h_txt">搜索</div>
-                </a>
+            <div class="h_item h_inactive">
+                <img src="../../assets/i/car/car-pandect/small.png" alt="" class="h_small">
             </div>
         </div>
     </div>
     <!--end head-->
+    <!--start car_list-->
+    <div class="car_list">
+        <div class="c_item">
+            <a href="car-detail.html" class="c_lk">
+                <div class="c_top">
+                    <img src="../../assets/i/car/car-pandect/CS9.jpeg" alt="" class="c_img">
+                </div>
+                <div class="c_name">猎豹CS9</div>
+                <div class="c_price">
+                <span class="c_icon">
+                    <img src="../../assets/i/car/car-pandect/money.png" alt="" class="c_img">
+                </span>
+                    <span class="c_num">76,800</span>
+                    <span class="c_txt">起</span>
+                </div>
+            </a>
+        </div>
+        <div class="c_background">
+            <div class="c_item">
+                <a href="car-detail.html" class="c_lk">
+                    <div class="c_top">
+                        <img src="../../assets/i/car/car-pandect/CS10.jpg" alt="" class="c_img">
+                    </div>
+                    <div class="c_name">猎豹CS10</div>
+                    <div class="c_price">
+                    <span class="c_icon">
+                        <img src="../../assets/i/car/car-pandect/money.png" alt="" class="c_img">
+                    </span>
+                        <span class="c_num">89,800</span>
+                        <span class="c_txt">起</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="c_item">
+            <a href="" class="c_lk">
+                <div class="c_top">
+                    <img src="../../assets/i/car/car-pandect/Q6.jpg" alt="" class="c_img">
+                </div>
+                <div class="c_name">猎豹Q6</div>
+                <div class="c_price">
+                    <span class="c_icon">
+                        <img src="../../assets/i/car/car-pandect/money.png" alt="" class="c_img">
+                    </span>
+                    <span class="c_num">146,800</span>
+                    <span class="c_txt">起</span>
+                </div>
+            </a>
+        </div>
+        <div class="c_background clearFix">
+            <div class="c_item c_float">
+                <a href="" class="c_lk">
+                    <div class="c_top">
+                        <img src="../../assets/i/car/car-pandect/CT7.jpg" alt="" class="c_img">
+                    </div>
+                    <div class="c_name">猎豹CT7</div>
+                    <div class="c_price">
+                    <span class="c_icon">
+                        <img src="../../assets/i/car/car-pandect/money.png" alt="" class="c_img">
+                    </span>
+                        <span class="c_num">79,800</span>
+                        <span class="c_txt">起</span>
+                    </div>
+                </a>
+            </div>
+            <div class="c_item c_float">
+                <a href="" class="c_lk">
+                    <div class="c_top">
+                        <img src="../../assets/i/car/car-pandect/CT5.jpg" alt="" class="c_img">
+                    </div>
+                    <div class="c_name">猎豹CT5</div>
+                    <div class="c_price">
+                    <span class="c_icon">
+                        <img src="../../assets/i/car/car-pandect/money.png" alt="" class="c_img">
+                    </span>
+                        <span class="c_num">119,800</span>
+                        <span class="c_txt">起</span>
+                    </div>
+                </a>
+            </div>
+            <div class="c_item">
+                <a href="" class="c_lk">
+                    <div class="c_top">
+                        <img src="../../assets/i/car/car-pandect/fly.jpg" alt="" class="c_img">
+                    </div>
+                    <div class="c_name">飞扬</div>
+                    <div class="c_price">
+                    <span class="c_icon">
+                        <img src="../../assets/i/car/car-pandect/money.png" alt="" class="c_img">
+                    </span>
+                        <span class="c_num">66,800</span>
+                        <span class="c_txt">起</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="c_item">
+            <a href="" class="c_lk">
+                <div class="c_top">
+                    <img src="../../assets/i/car/car-pandect/soar.jpg" alt="" class="c_img">
+                </div>
+                <div class="c_name">猎豹飞腾</div>
+                <div class="c_price">
+                    <span class="c_icon">
+                        <img src="../../assets/i/car/car-pandect/money.png" alt="" class="c_img">
+                    </span>
+                    <span class="c_num">92,900</span>
+                    <span class="c_txt">起</span>
+                </div>
+            </a>
+        </div>
+        <div class="c_background">
+            <div class="c_item">
+                <a href="" class="c_lk">
+                    <div class="c_top">
+                        <img src="../../assets/i/car/car-pandect/KINGBOX.jpg" alt="" class="c_img">
+                    </div>
+                    <div class="c_name">猎豹黑金刚</div>
+                    <div class="c_price">
+                    <span class="c_icon">
+                        <img src="../../assets/i/car/car-pandect/money.png" alt="" class="c_img">
+                    </span>
+                        <span class="c_num">109,800</span>
+                        <span class="c_txt">起</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="c_item">
+            <a href="" class="c_lk">
+                <div class="c_top">
+                    <img src="../../assets/i/car/car-pandect/CS6.jpg" alt="" class="c_img">
+                </div>
+                <div class="c_name">猎豹CS6</div>
+                <div class="c_price">
+                    <span class="c_icon">
+                        <img src="../../assets/i/car/car-pandect/money.png" alt="" class="c_img">
+                    </span>
+                    <span class="c_num">146,800</span>
+                    <span class="c_txt">起</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!--end car_list-->
+    <!--start small_car-->
+    <div class="small">
+        <div class="clearFix">
+            <div class="s_item">
+                <a href="" class="s_lk">
+                    <div class="s_top">
+                        <img src="../../assets/i/car/car-pandect/CS9.jpeg" alt="" class="s_img">
+                    </div>
+                    <div class="s_name">
+                        猎豹CS9
+                    </div>
+                </a>
+            </div>
+            <div class="s_item">
+                <a href="" class="s_lk">
+                    <div class="s_top">
+                        <img src="../../assets/i/car/car-pandect/CS10.jpg" alt="" class="s_img">
+                    </div>
+                    <div class="s_name">
+                        猎豹CS10
+                    </div>
+                </a>
+            </div>
+            <div class="s_item">
+                <a href="" class="s_lk">
+                    <div class="s_top">
+                        <img src="../../assets/i/car/car-pandect/Q6.jpg" alt="" class="s_img">
+                    </div>
+                    <div class="s_name">
+                        猎豹Q6
+                    </div>
+                </a>
+            </div>
+            <div class="s_item">
+                <a href="" class="s_lk">
+                    <div class="s_top">
+                        <img src="../../assets/i/car/car-pandect/CT7.jpg" alt="" class="s_img">
+                    </div>
+                    <div class="s_name">
+                        猎豹CT7
+                    </div>
+                </a>
+            </div>
+            <div class="s_item">
+                <a href="" class="s_lk">
+                    <div class="s_top">
+                        <img src="../../assets/i/car/car-pandect/CT5.jpg" alt="" class="s_img">
+                    </div>
+                    <div class="s_name">
+                        猎豹CT5
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="clearFix">
+            <div class="s_item">
+                <a href="" class="s_lk">
+                    <div class="s_top">
+                        <img src="../../assets/i/car/car-pandect/fly.jpg" alt="" class="s_img">
+                    </div>
+                    <div class="s_name">
+                        飞扬
+                    </div>
+                </a>
+            </div>
+            <div class="s_item">
+                <a href="" class="s_lk">
+                    <div class="s_top">
+                        <img src="../../assets/i/car/car-pandect/soar.jpg" alt="" class="s_img">
+                    </div>
+                    <div class="s_name">
+                        猎豹飞腾
+                    </div>
+                </a>
+            </div>
+            <div class="s_item">
+                <a href="" class="s_lk">
+                    <div class="s_top">
+                        <img src="../../assets/i/car/car-pandect/KINGBOX.jpg" alt="" class="s_img">
+                    </div>
+                    <div class="s_name">
+                        猎豹黑金刚
+                    </div>
+                </a>
+            </div>
+            <div class="s_item">
+                <a href="" class="s_lk">
+                    <div class="s_top">
+                        <img src="../../assets/i/car/car-pandect/CS6.jpg" alt="" class="s_img">
+                    </div>
+                    <div class="s_name">
+                        猎豹CS6
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <!--end small_car-->
     <!--start aisle-->
     <div class="aisle">
         <div class="a_center clearFix">
@@ -323,4 +654,70 @@
 </body>
 <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
+<script>
+    $(function () {
+       $('.head').outerWidth($('#content').outerWidth());
+       $('.car_list').css({
+           'padding-top':$('.head').outerHeight(),
+       });
+        $('.small').css({
+            'padding-top':$('.head').outerHeight(),
+        })
+    });
+
+    $('.head .h_right .h_item').click(function () {
+        var self = $(this)[0];
+        $('.head .h_right .h_item').each(function (i) {
+            if(self == $(this)[0]){
+                if($(this).hasClass('h_inactive')){
+                    $(this).removeClass('h_inactive');
+                }
+                if(i == 0){
+                    $('.head .h_left,.car_list').css({
+                        'display':'block'
+                    });
+                    $('.small').css({
+                        'display':'none'
+                    })
+                }else if(i == 1){
+                    $('.head .h_left,.car_list').css({
+                        'display':'none'
+                    });
+                    $('.small').css({
+                        'display':'block'
+                    })
+                }
+                window.scrollTo(0,0);
+            }else{
+                $(this).addClass('h_inactive');
+            }
+        })
+    })
+
+    $('.head .h_left .h_item').click(function () {
+        var self = $(this)[0];
+        var index = 0;
+        $('.head .h_left .h_item').each(function (i) {
+            if(self == $(this)[0]){
+                index = i;
+                $(this).find('a').css({
+                    'color':'#A33007',
+                })
+            }else{
+                $(this).find('a').css({
+                    'color':'#000',
+                })
+            }
+        });
+        var top = 0;
+        $('.car_list').children('div').each(function (j) {
+            if(index == j){
+                top = $(this).offset().top
+                return false;
+            }
+        });
+        var float_height = $('.head').outerHeight();
+        window.scrollTo(0,top - float_height);
+    });
+</script>
 </html>

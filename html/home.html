@@ -157,10 +157,11 @@
         /*end tools*/
         /*start compare*/
         .compare{
-            height:500px;
-            background: url("../assets/i/car/home/home-compare/1.png") no-repeat center;
             margin:100px 0;
             position: relative;
+        }
+        .compare .c_all .c_img{
+            width: 100%;
         }
         .compare .c_abs{
             position: absolute;
@@ -211,23 +212,26 @@
         /*end activity*/
         /*start brand*/
         .brand{
-            height:800px;
-            background: url("../assets/i/car/home/home-compare/1.png") no-repeat center;
+            /*height:800px;*/
+            /*background: url("../assets/i/car/home/home-compare/1.jpg") no-repeat center;*/
             /*margin:100px 0;*/
             position: relative;
         }
-        .brand .c_abs{
+        .brand .b_img{
+            width:100%;
+        }
+        .brand .b_abs{
             position: absolute;
             left: 80px;
             top:50%;
         }
-        .brand .c_type{
+        .brand .b_type{
             color: #ffffff;
             font-size: 38px;
             margin-bottom: 30px;
             line-height: 38px;
         }
-        .brand .c_btn{
+        .brand .b_btn{
             background: #0099DA;
             color: #ffffff;
             padding: 15px 80px;
@@ -236,7 +240,7 @@
             display: block;
             text-align: center;
         }
-        .brand .c_btn:hover{
+        .brand .b_btn:hover{
             background: #0068AA;
         }
         /*end brand*/
@@ -304,7 +308,7 @@
     <ul class="n_ul">
         <li class="n_item">
             <a href="home.html" class="n_lk">
-                <img src="../assets/i/car/home/home-nav/pc_logo.png" alt="" class="n_logo">
+                <img src="../assets/i/car/home/home-nav/logo.gif" alt="" class="n_logo">
             </a>
         </li>
         <li class="n_item">
@@ -387,7 +391,7 @@
         <div data-am-widget="slider" class="am-slider am-slider-b1 s_layer" data-am-slider='{"controlNav":false}' >
             <ul class="am-slides">
                 <li>
-                    <img src="../assets/i/car/find/advertise/1.jpg">
+                    <img src="../assets/i/car/home/home-head/1.jpg">
                 </li>
                 <li>
                     <img src="../assets/i/car/home/home-head/2.jpg">
@@ -400,6 +404,9 @@
                 </li>
                 <li>
                     <img src="../assets/i/car/home/home-head/5.jpg">
+                </li>
+                <li>
+                    <img src="../assets/i/car/home/home-head/6.jpg">
                 </li>
             </ul>
         </div>
@@ -478,6 +485,9 @@
     <!--end tools-->
     <!--start compare-->
     <div class="compare">
+        <div class="c_all">
+            <img src="../assets/i/car/home/home-compare/1.jpg" alt="" class="c_img">
+        </div>
         <div class="c_abs">
             <p class="c_type">车型对比</p>
             <a href="" class="c_btn">立即查看</a>
@@ -522,10 +532,14 @@
     <!--end activity-->
     <!--start brand-->
     <div class="brand">
-        <div class="c_abs">
-            <p class="c_type">品牌概述</p>
-            <a href="" class="c_btn">立即查看</a>
+        <div>
+            <img src="../assets/i/car/home/home-brand/1.jpg" alt="" class="b_img">
         </div>
+        <div class="b_abs">
+            <p class="b_type">品牌概述</p>
+            <a href="" class="b_btn">立即查看</a>
+        </div>
+
     </div>
     <!--end brand-->
     <!--start activity-->
@@ -613,21 +627,27 @@
 <script type="text/javascript" src="../assets/js/amazeui.min.js"></script>
 <script>
 //    $(function () {
-        var s_h = $('#slider').outerHeight();
-
-        var layer_h= $('#slider .am-slider').outerHeight();
-        console.log("S:"+s_h+",layer_h:"+layer_h);
-        var m_top = -(layer_h -  s_h) / 2;
-        $('#slider .am-slider').css({
-            'margin-top': m_top,
-        })
+//        var s_h = $('#slider').outerHeight();
+//
+//        var layer_h= $('#slider .am-slider').outerHeight();
+//        console.log("S:"+s_h+",layer_h:"+layer_h);
+//        var m_top = -(layer_h -  s_h) / 2;
+//        $('#slider .am-slider').css({
+//            'margin-top': m_top,
+//        });
 //    })
     $(function () {
+        resizeCenter();
+    });
+    function resizeCenter() {
         var c_h = $('.compare').outerHeight();
         var ab_h = $('.compare .c_abs').outerHeight();
         $('.compare .c_abs').css({
             'top': (c_h - ab_h) / 2
         })
+    }
+    $(window).resize(function () {
+        resizeCenter();
     })
 </script>
 </html>

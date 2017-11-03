@@ -1,0 +1,475 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>汽车详情</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <!-- Amaze UI CSS -->
+    <link rel="stylesheet" href="../../assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../assets/css/jd.css">
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            color: #666;
+            font-family:"VWHeadWeb-Bold",sans-serif;
+        }
+        /*start nav*/
+        .nav{
+            height:100%;
+            width: 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            border-right:1px solid #DEE1E3;
+            background: #fff;
+            /*border:1px solid red;*/
+        }
+        .nav .n_ul{
+            list-style:none;
+            padding:0;
+        }
+        .nav .n_ul .n_item .n_lk{
+            display: block;
+            text-align: center;
+            border-bottom: 1px solid #DEE1E3;
+            padding:15px 0;
+            /*height: 80px;*/
+        }
+        .nav .n_ul .n_item .n_lk .n_logo{
+            width:67px;
+            height: 52px;
+            margin-top: 10px;
+        }
+        .nav .n_ul .n_item .n_lk .n_top .n_img{
+            width: 35px;
+            height: 35px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom{
+            margin-top: 8px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom .n_txt{
+            color: #808890;
+        }
+        /*nav end*/
+        /*start content*/
+        #content{
+            margin-left: 100px;
+        }
+        /*content end*/
+        .fixed{
+            position: fixed;
+            top: 0;
+            /*left:;*/
+            z-index:1;
+            /*width:100%;*/
+        }
+
+        /*start head*/
+        .head{
+            height: 70px;
+            background: #BDC3C6;
+            padding:0 50px;
+            color: #000;
+        }
+        .head .h_left{
+            float: left;
+            font-size: 20px;
+            line-height: 70px;
+        }
+        .head .h_right{
+            float: right;
+        }
+        .head .h_right .h_item{
+            float: left;
+            margin-left: 15px;
+            margin-top:15px;
+        }
+        .head .h_right .h_item .h_lk{
+            display:block;
+            text-align:center;
+            color: #d81e06;
+        }
+        .head .h_right .h_item .h_lk .h_img{
+            height: 24px;
+            width: 24px;
+        }
+        .head .h_right .h_item .h_lk .h_txt{
+            /*margin-top: 5px;*/
+            line-height: 16px;
+        }
+        /*end head*/
+        /*start method*/
+        .method{
+            background: #808890;
+            padding-left: 30px;
+        }
+        .method .m_item{
+            float: left;
+            margin:0 10px;
+        }
+        .method .m_item .m_lk{
+            display: block;
+            padding:0 10px ;
+            font-size: 16px;
+            color: #2F3538;
+            text-align: center;
+            height: 45px;
+            line-height: 45px;
+        }
+        .method .m_item .m_lk:hover{
+            color: #c85e0b;
+            font-weight:bold;
+        }
+        /*end method*/
+        /*start advertise*/
+        .advertise .a_img{
+            width: 100%;
+        }
+        /*end advertise*/
+        /*start slogan*/
+        .slogan{
+            text-align: center;
+            margin:40px 0;
+        }
+        .slogan .s_top{
+            font-size: 40px;
+            color: #000;
+            /*font-weight:bold;*/
+        }
+        .slogan .s_bottom{
+            font-size: 20px;
+        }
+        /*end slogan*/
+        /*start appearance*/
+        .appearance{
+            background: #F3F5F6;
+            padding: 50px;
+        }
+        .appearance .a_title{
+            text-align: center;
+            font-size: 34px;
+            padding-bottom: 50px;
+            color: #000;
+        }
+        .appearance .a_info .a_item .a_left{
+            float: left;
+            width: 50%;
+        }
+        .appearance .a_info .a_item .a_left .a_img{
+            width: 100%;
+        }
+        .appearance .a_info .a_item .a_right{
+            float: right;
+            width:50%;
+            font-size: 16px;
+            padding-left:70px;
+            height:100%;
+            line-height:100%;
+        }
+        .appearance .a_info .a_item .a_right .a_part{
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        /*end appearance*/
+        /*start aisle*/
+        .aisle{
+            padding: 20px 50px 0;
+            background: #fff;
+        }
+        .aisle .a_center .a_float{
+            float: left;
+            width:33.3%;
+        }
+        .aisle .a_center .a_ul{
+            list-style: none;
+            text-align: center;
+            letter-spacing: 2px;
+            margin:0;
+            padding:0;
+        }
+        .aisle .a_center .a_ul .a_item{
+            margin:5px 0;
+        }
+        .aisle .a_center .a_ul .a_item .a_lk{
+            color: #000;
+            font-size: 16px;
+
+        }
+        /*end aisle*/
+        /*start footer*/
+        .footer{
+            text-align: center;
+            height: 50px;
+            font-size: 14px;
+            margin: 50px 0;
+            background: #fff;
+        }
+        .footer .f_lk{
+            /*color: #808890;*/
+            color: #000;
+            line-height: 50px;
+        }
+        .footer .f_img{
+            width: 14px;
+            height: 14px;
+            margin: 0 2px;
+        }
+        /*end footer*/
+    </style>
+</head>
+<body>
+<!--start nav-->
+<div class="nav">
+    <ul class="n_ul">
+        <li class="n_item">
+            <a href="../home.html" class="n_lk">
+                <img src="../../assets/i/car/home/home-nav/pc_logo.png" alt="" class="n_logo">
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="pandect.html" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">车型总览</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="find.html" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/get.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">众里寻车</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">二手车</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">品牌汽车</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/search.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">天猫旗舰店</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">易车旗舰店</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">腾讯商城旗舰店</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--end nav-->
+<!--start content-->
+<div id="content">
+    <div class="fixed">
+        <!--start head-->
+        <div class="head clearFix">
+            <div class="h_left">猎豹CS9</div>
+            <div class="h_right clearFix">
+                <div class="h_item">
+                    <a href="../fast-aisle/test-drive.html" class="h_lk">
+                        <img src="../../assets/i/car/public/fast-aisle/test-driver.png" alt="" class="h_img">
+                        <div class="h_txt">预约试驾</div>
+                    </a>
+                </div>
+                <div class="h_item">
+                    <a href="" class="h_lk">
+                        <img src="../../assets/i/car/public/fast-aisle/dealer.png" alt="" class="h_img">
+                        <div class="h_txt">经销商查询</div>
+                    </a>
+                </div>
+                <div class="h_item">
+                    <a href="" class="h_lk">
+                        <img src="../../assets/i/car/public/fast-aisle/service.png" alt="" class="h_img">
+                        <div class="h_txt">在线客服</div>
+                    </a>
+                </div>
+                <div class="h_item">
+                    <a href="../fast-aisle/search.html" class="h_lk">
+                        <img src="../../assets/i/car/public/fast-aisle/search.png" alt="" class="h_img">
+                        <div class="h_txt">搜索</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--end head-->
+        <!--start method-->
+        <div class="method clearFix">
+            <div class="m_item">
+                <a href="javascript:;" class="m_lk">外观</a>
+            </div>
+            <div class="m_item">
+                <a href="javascript:;" class="m_lk">内饰</a>
+            </div>
+            <div class="m_item">
+                <a href="javascript:;" class="m_lk">科技</a>
+            </div>
+        </div>
+        <!--end method-->
+    </div>
+    <!--start advertise-->
+    <div class="advertise">
+        <img src="../../assets/i/car/car-detail/1.jpg" alt="" class="a_img">
+    </div>
+    <!--end advertise-->
+    <!--start slogan-->
+    <div class="slogan">
+        <div class="s_top">心风雅 行光华</div>
+        <div class="s_bottom">风雅，是随心所欲的潇洒，漫溢的是恣意之人生。</div>
+    </div>
+    <!--end slogan-->
+    <!--start appearance-->
+    <div class="appearance">
+        <div class="a_title">外观</div>
+        <div class="a_info">
+            <div class="a_item clearFix">
+                <div class="a_left">
+                    <img src="../../assets/i/car/car-detail/appearance/1.jpg" alt="" class="a_img">
+                </div>
+                <div class="a_right">
+                    <div class="a_part"><span></span>全新前脸造型<br/> <span>全新格栅采用镀铬装饰，简约硬朗的线条闪耀俊朗魅力，棱角鲜明的发动机舱盖，彰显不凡气度。</span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end appearance-->
+    <!--start aisle-->
+    <div class="aisle">
+        <div class="a_center clearFix">
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end aisle-->
+    <!--start footer-->
+    <div class="footer">
+        <a href="" class="f_lk">法律声明</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">&copy;猎豹汽车有限公司</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">吉ICP备09000793号</a>
+        <img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">吉公安备 22010602000029号</a>
+    </div>
+    <!--end footer-->
+</div>
+<!--end content-->
+</body>
+<script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
+<script>
+    $(function () {
+        $('.fixed').width($('#content').outerWidth());
+        $('.advertise').css({
+            'padding-top': $('.fixed').outerHeight()
+        })
+    });
+    $('.method .m_lk').click(function () {
+        var self = $(this)[0];
+        var f_h = $('.fixed').outerHeight();
+        var offset_top = 0
+        $('.method .m_lk').each(function (i) {
+            if(self == $(this)[0]){
+                if(i == 0){
+                    offset_top = $('.activity').offset().top;
+                }else if(i == 1){
+                    offset_top = $('.compare:eq(0)').offset().top;
+                }else if(i == 2){
+                    offset_top = $('.tools:eq(0)').offset().top;
+                }else if(i == 3){
+                    offset_top = $('.compare:eq(1)').offset().top;
+                }
+            }
+        });
+        window.scrollTo(0,offset_top - f_h)
+    })
+</script>
+</html>
