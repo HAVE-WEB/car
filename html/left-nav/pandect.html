@@ -67,9 +67,8 @@
             /*height: 80px;*/
         }
         .nav .n_ul .n_item .n_lk .n_logo{
-            width:67px;
-            height: 52px;
-            margin-top: 10px;
+            width:100%;
+            padding: 7px 0;
         }
         .nav .n_ul .n_item .n_lk .n_top .n_img{
             width: 35px;
@@ -712,7 +711,7 @@
         var top = 0;
         $('.car_list').children('div').each(function (j) {
             if(index == j){
-                top = $(this).offset().top
+                top = $(this).offset().top;
                 return false;
             }
         });

@@ -69,9 +69,8 @@
             /*height: 80px;*/
         }
         .nav .n_ul .n_item .n_lk .n_logo{
-            width:67px;
-            height: 52px;
-            margin-top: 10px;
+            width:100%;
+            padding: 7px 0;
         }
         .nav .n_ul .n_item .n_lk .n_top .n_img{
             width: 35px;
@@ -143,6 +142,9 @@
             text-align: center;
             margin:0 auto;
             width: 50%;
+        }
+        .tools .t_type .t_item .t_lk .t_img{
+            width:100%;
         }
         .tools .t_type .t_item .t_lk .t_test .t_arrows{
             width: 13px;
@@ -289,18 +291,18 @@
         }
         /*end footer*/
     </style>
-    <style>
-        @media screen and (max-width: 1000px) {
-            .tools .t_type .t_item .t_lk .t_img{
-                width: 130px;
-                height: 130px;
-            }
-            .tools .t_type .t_item{
-                width:100%;
-                clear: both;
-            }
-        }
-    </style>
+    <!--<style>-->
+        <!--@media screen and (max-width: 1000px) {-->
+            <!--.tools .t_type .t_item .t_lk .t_img{-->
+                <!--width: 130px;-->
+                <!--height: 130px;-->
+            <!--}-->
+            <!--.tools .t_type .t_item{-->
+                <!--width:100%;-->
+                <!--clear: both;-->
+            <!--}-->
+        <!--}-->
+    <!--</style>-->
 </head>
 <body>
 <!--start nav-->
@@ -308,7 +310,7 @@
     <ul class="n_ul">
         <li class="n_item">
             <a href="home.html" class="n_lk">
-                <img src="../assets/i/car/home/home-nav/logo.gif" alt="" class="n_logo">
+                <img src="../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
             </a>
         </li>
         <li class="n_item">
@@ -636,18 +638,20 @@
 //            'margin-top': m_top,
 //        });
 //    })
-    $(function () {
-        resizeCenter();
-    });
-    function resizeCenter() {
-        var c_h = $('.compare').outerHeight();
-        var ab_h = $('.compare .c_abs').outerHeight();
-        $('.compare .c_abs').css({
-            'top': (c_h - ab_h) / 2
-        })
-    }
-    $(window).resize(function () {
-        resizeCenter();
-    })
+//    $(function () {
+//        resizeCenter();
+//    });
+//    function resizeCenter() {
+//        console.log("1111");
+//        var c_h = $('.compare').outerHeight();
+//        var ab_h = $('.compare .c_abs').outerHeight();
+//        $('.compare .c_abs').css({
+//            'margin-top':  (c_h - ab_h) / 2
+//        })
+//        console.log('2222');
+//    }
+//    $(window).resize(function () {
+//        resizeCenter();
+//    })
 </script>
 </html>

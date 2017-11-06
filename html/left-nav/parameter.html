@@ -1,0 +1,440 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>参数详情</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <!-- Amaze UI CSS -->
+    <link rel="stylesheet" href="../../assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../assets/css/jd.css">
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            color: #ccc;
+            font-family:"VWHeadWeb-Bold",sans-serif;
+        }
+        /*start nav*/
+        .nav{
+            height:100%;
+            width: 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            border-right:1px solid #DEE1E3;
+            background: #fff;
+            /*border:1px solid red;*/
+        }
+        .nav .n_ul{
+            list-style:none;
+            padding:0;
+        }
+        .nav .n_ul .n_item .n_lk{
+            display: block;
+            text-align: center;
+            border-bottom: 1px solid #DEE1E3;
+            padding:15px 0;
+            /*height: 80px;*/
+        }
+        .nav .n_ul .n_item .n_lk .n_logo{
+            width:100%;
+            padding: 7px 0;
+        }
+        .nav .n_ul .n_item .n_lk .n_top .n_img{
+            width: 35px;
+            height: 35px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom{
+            margin-top: 8px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom .n_txt{
+            color: #808890;
+        }
+        /*nav end*/
+        /*start content*/
+        #content{
+            margin-left: 100px;
+        }
+        /*content end*/
+        /*start head*/
+        .head{
+            background: #F1F5F7;
+            position: fixed;
+            top: 0;
+        }
+        .head .h_init{
+            display: block;
+        }
+        .head .h_init .h_back{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .head .h_init .h_back .h_btn .h_img{
+            width: 35px;
+            height: 35px;
+        }
+        .head .h_init .h_center{
+            /*width:25%;*/
+            margin:0 auto;
+            text-align: center;
+        }
+        .head .h_init .h_center .h_title , .head .h_init .h_center .h_type , .head .h_none .h_left{
+            font-size: 28px;
+            font-weight:bold;
+            color: #000;
+            padding: 13px 0;
+        }
+        .head .h_init .h_center .h_pic .h_img{
+            height: 110px;
+        }
+        .head .h_init .h_compare{
+            width: 50%;
+            margin:0 auto;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        .head .h_init .h_compare .h_btn , .head .h_none .h_right .h_btn{
+            display: block;
+            width:270px;
+            color: #ffffff;
+            background: #0498DA;
+            font-size: 16px;
+            line-height: 40px;
+            height: 40px;
+            margin:0 auto;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        .head .h_none{
+            display: none;
+            text-align: center;
+            padding:30px 70px;
+            background: #F1F5F7;
+        }
+        .head .h_none .h_left{
+            float: left;
+            margin: 0;
+        }
+        .head .h_none .h_right{
+            float: right;
+        }
+        /*end head*/
+        /*start aisle*/
+        .aisle{
+            padding: 20px 50px 0;
+            background: #fff;
+        }
+        .aisle .a_center .a_float{
+            float: left;
+            width:33.3%;
+        }
+        .aisle .a_center .a_ul{
+            list-style: none;
+            text-align: center;
+            letter-spacing: 2px;
+            margin:0;
+            padding:0;
+        }
+        .aisle .a_center .a_ul .a_item{
+            margin:5px 0;
+        }
+        .aisle .a_center .a_ul .a_item .a_lk{
+            color: #000;
+            font-size: 16px;
+
+        }
+        /*end aisle*/
+        /*start footer*/
+        .footer{
+            text-align: center;
+            height: 50px;
+            font-size: 14px;
+            margin: 50px 0;
+            background: #fff;
+        }
+        .footer .f_lk{
+            /*color: #808890;*/
+            color: #000;
+            line-height: 50px;
+        }
+        .footer .f_img{
+            width: 14px;
+            height: 14px;
+            margin: 0 2px;
+        }
+        /*end footer*/
+        /*start detail*/
+        .detail{
+            /*padding: 100px 0 100px 0px;*/
+        }
+        .head .h_type{
+            background: #BDC3C6;
+            padding-left: 70px;
+        }
+        .head .h_type .h_item{
+            float: left;
+        }
+        .head .h_type .h_item .h_lk{
+            display: block;
+            font-size: 20px;
+            height: 50px;
+            line-height: 50px;
+            margin-right: 80px;
+            color: #000;
+            font-weight:bold;
+        }
+        /*end detail*/
+    </style>
+</head>
+<body>
+<!--start nav-->
+<div class="nav">
+    <ul class="n_ul">
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">车型总览</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/get.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">众里寻车</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">二手车</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">品牌汽车</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/search.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">天猫旗舰店</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">易车旗舰店</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">腾讯商城旗舰店</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--end nav-->
+<!--start content-->
+<div id="content">
+    <!--start head-->
+    <div class="head">
+        <div class="h_init">
+            <div class="h_back">
+                <a href="" class="h_btn">
+                    <img src="../../assets/i/car/public/close.png" alt="" class="h_img">
+                </a>
+            </div>
+            <div class="h_center">
+                <p class="h_title">参数配置</p>
+                <div class="h_pic">
+                    <img src="../../assets/i/car/car-detail/parameter/1.jpeg" alt="" class="h_img">
+                </div>
+                <div class="h_type">猎豹CS9 1.8TSI豪华型</div>
+                <div class="h_compare">
+                    <a href="" class="h_btn">加入对比</a>
+                </div>
+            </div>
+        </div>
+        <div class="h_none clearFix">
+            <div class="h_left">猎豹CS9 1.8TSI豪华型</div>
+            <div class="h_right">
+                <a href="" class="h_btn">加入对比</a>
+            </div>
+        </div>
+        <div class="h_type clearFix">
+            <div class="h_item">
+                <a href="" class="h_lk">配置参数</a>
+            </div>
+            <div class="h_item">
+                <a href="" class="h_lk">外观配置</a>
+            </div>
+            <div class="h_item">
+                <a href="" class="h_lk">内饰配置</a>
+            </div>
+            <div class="h_item">
+                <a href="" class="h_lk">舒适便利</a>
+            </div>
+            <div class="h_item">
+                <a href="" class="h_lk">安全科技</a>
+            </div>
+        </div>
+    </div>
+    <!--end head-->
+    <!--start detail-->
+    <!--<div class="detail">-->
+        <!--<div class="d_head clearFix">-->
+            <!--<div class="d_item">-->
+                <!--<a href="" class="d_lk">配置参数</a>-->
+            <!--</div>-->
+            <!--<div class="d_item">-->
+                <!--<a href="" class="d_lk">外观配置</a>-->
+            <!--</div>-->
+            <!--<div class="d_item">-->
+                <!--<a href="" class="d_lk">内饰配置</a>-->
+            <!--</div>-->
+            <!--<div class="d_item">-->
+                <!--<a href="" class="d_lk">舒适便利</a>-->
+            <!--</div>-->
+            <!--<div class="d_item">-->
+                <!--<a href="" class="d_lk">安全科技</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--end detail-->
+    <!--start aisle-->
+    <div class="aisle">
+        <div class="a_center clearFix">
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end aisle-->
+    <!--start footer-->
+    <div class="footer">
+        <a href="" class="f_lk">法律声明</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">&copy;猎豹汽车有限公司</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">吉ICP备09000793号</a>
+        <img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">吉公安备 22010602000029号</a>
+    </div>
+    <!--end footer-->
+</div>
+<!--end content-->
+</body>
+<script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
+<script type="text/javascript" src="../../assets/js/jd.js"></script>
+<script>
+    $(function () {
+        $.fixedCommon($('.head .h_none'));
+    })
+    $(window).scroll(function () {
+        var  pageYOffset= window.pageYOffset;
+        console.log('P:'+pageYOffset);
+        if(pageYOffset > 100){
+            $('.head .h_init').css({
+                'display':'none'
+            });
+            $('.detail').css({
+                'padding-top':$('.head .h_init').outerHeight()
+            });
+//            window.scrollTo(0,100);
+            $('.head .h_none').css({
+                'display':'block'
+            })
+        }else{
+//            $('.head .h_init').css({
+//                'display':'block'
+//            });
+//            $('.head .h_none').css({
+//                'display':'none'
+//            })
+        }
+    })
+</script>
+</html>
