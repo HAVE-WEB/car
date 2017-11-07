@@ -128,7 +128,43 @@
         font-size:24px;
         background: #1597d9;
     }
+    .compare_car_box{
+        position: relative;
+        background: #1597d5;
+    }
+    .compare_car_box.two_car{
+        background: url("../../assets/i/car/comparsion/icon1.png") center no-repeat #1597d5;
+    }
+    .compare_car_box .row{
+        padding:0 4%;
+    }
+    .row::before{
+        display: table;
+        content: ' ';
+    }
+    .row::after{
+        clear: both;
+        display: table;
+        content: ' ';
+    }
+    .compare_car_box .car_img{
+        height: 108px;
+        margin:20px 0;
+        display: inline-block;
+    }
+    .compare_car_box .car_img.default{
+        background: url("../../assets/i/car/comparsion/car-bg.png") center no-repeat;
+    }
+    .compare_car_box .car_img .reset_car{
+        display: none;
+        position: absolute;
+        top:0;
+        right:0;
+        z-index:2;
+    }
+
     /*end compare_top*/
+
     #mobile_nav{
         display: none;
         background-color: #fff;
@@ -191,6 +227,17 @@
         <div class="compare_top">
             <a href="javascript:;" class="btn_close"></a>
             <div class="compare_title">对比你的心仪车型</div>
+            <div class="compare_car_box two_car">
+                <div class="row">
+                    <div class="car_img car01_img default am-u-lg-6">
+                        <div class="pic_box">
+                            <a href="javascript:;" class="reset_car"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="compare_car_btn"></div>
+            <div class="nav_box"></div>
         </div>
         <!-----------------------------------顶部及二级导航结束----------------------------------->
         <!--自定义内容结束-->
