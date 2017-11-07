@@ -83,7 +83,7 @@
         /*nav end*/
         /*start content*/
         #content{
-            margin-left: 100px;
+            /*padding-left: 100px;*/
         }
         /*content end*/
         /*start head*/
@@ -91,6 +91,8 @@
             background: #F1F5F7;
             position: fixed;
             top: 0;
+            width:100%;
+            padding-left: 100px;
         }
         .head .h_init{
             display: block;
@@ -119,9 +121,9 @@
             height: 110px;
         }
         .head .h_init .h_compare{
-            width: 50%;
-            margin:0 auto;
-            text-align: center;
+            /*width: 50%;*/
+            /*margin:0 auto;*/
+            /*text-align: center;*/
             padding-bottom: 30px;
         }
         .head .h_init .h_compare .h_btn , .head .h_none .h_right .h_btn{
@@ -149,6 +151,25 @@
         }
         .head .h_none .h_right{
             float: right;
+        }
+        .head .h_kind{
+            background: #BDC3C6;
+            padding-left: 4%;
+        }
+        .head .h_kind .h_item{
+            float: left;
+            margin-right:4%;
+        }
+        .head .h_kind .h_item .h_lk{
+            display: block;
+            font-size: 20px;
+            height: 50px;
+            line-height: 50px;
+            color: #000;
+            font-weight:bold;
+        }
+        .head .h_kind .h_item .h_lk.h_active{
+            color: #fff;
         }
         /*end head*/
         /*start aisle*/
@@ -195,27 +216,9 @@
             margin: 0 2px;
         }
         /*end footer*/
-        /*start detail*/
-        .detail{
-            /*padding: 100px 0 100px 0px;*/
-        }
-        .head .h_type{
-            background: #BDC3C6;
-            padding-left: 70px;
-        }
-        .head .h_type .h_item{
-            float: left;
-        }
-        .head .h_type .h_item .h_lk{
-            display: block;
-            font-size: 20px;
-            height: 50px;
-            line-height: 50px;
-            margin-right: 80px;
-            color: #000;
-            font-weight:bold;
-        }
-        /*end detail*/
+
+
+
     </style>
 </head>
 <body>
@@ -223,7 +226,7 @@
 <div class="nav">
     <ul class="n_ul">
         <li class="n_item">
-            <a href="" class="n_lk">
+            <a href="../home.html" class="n_lk">
                 <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
             </a>
         </li>
@@ -304,68 +307,411 @@
 <div id="content">
     <!--start head-->
     <div class="head">
-        <div class="h_init">
-            <div class="h_back">
-                <a href="" class="h_btn">
-                    <img src="../../assets/i/car/public/close.png" alt="" class="h_img">
-                </a>
-            </div>
-            <div class="h_center">
-                <p class="h_title">参数配置</p>
-                <div class="h_pic">
-                    <img src="../../assets/i/car/car-detail/parameter/1.jpeg" alt="" class="h_img">
+        <!--<div class="h_default">-->
+            <div class="h_init">
+                <div class="h_back">
+                    <a href="" class="h_btn">
+                        <img src="../../assets/i/car/public/close.png" alt="" class="h_img">
+                    </a>
                 </div>
-                <div class="h_type">猎豹CS9 1.8TSI豪华型</div>
-                <div class="h_compare">
+                <div class="h_center">
+                    <p class="h_title">参数配置</p>
+                    <div class="h_pic">
+                        <img src="../../assets/i/car/car-detail/parameter/1.jpeg" alt="" class="h_img">
+                    </div>
+                    <div class="h_type">猎豹CS9 1.8TSI豪华型</div>
+                    <div class="h_compare">
+                        <a href="" class="h_btn">加入对比</a>
+                    </div>
+                </div>
+            </div>
+            <div class="h_none clearFix">
+                <div class="h_left">猎豹CS9 1.8TSI豪华型</div>
+                <div class="h_right">
                     <a href="" class="h_btn">加入对比</a>
                 </div>
             </div>
-        </div>
-        <div class="h_none clearFix">
-            <div class="h_left">猎豹CS9 1.8TSI豪华型</div>
-            <div class="h_right">
-                <a href="" class="h_btn">加入对比</a>
+            <div class="h_kind clearFix">
+                <div class="h_item">
+                    <a href="javascript:;" class="h_lk h_active">配置参数</a>
+                </div>
+                <div class="h_item">
+                    <a href="javascript:;" class="h_lk">外观配置</a>
+                </div>
+                <div class="h_item">
+                    <a href="javascript:;" class="h_lk">内饰配置</a>
+                </div>
+                <div class="h_item">
+                    <a href="javascript:;" class="h_lk">舒适便利</a>
+                </div>
+                <div class="h_item">
+                    <a href="javascript:;" class="h_lk">安全科技</a>
+                </div>
             </div>
-        </div>
-        <div class="h_type clearFix">
-            <div class="h_item">
-                <a href="" class="h_lk">配置参数</a>
-            </div>
-            <div class="h_item">
-                <a href="" class="h_lk">外观配置</a>
-            </div>
-            <div class="h_item">
-                <a href="" class="h_lk">内饰配置</a>
-            </div>
-            <div class="h_item">
-                <a href="" class="h_lk">舒适便利</a>
-            </div>
-            <div class="h_item">
-                <a href="" class="h_lk">安全科技</a>
-            </div>
-        </div>
+        <!--</div>-->
     </div>
     <!--end head-->
+    <style>
+        .detail{
+            padding-left: 100px;
+        }
+        .detail .d_table{
+            width: 100%;
+            color: #000;
+        }
+        .detail .d_table .d_title{
+            font-size: 18px;
+        }
+        .detail .d_table .d_even{
+           background: rgb(243, 245, 246);;
+        }
+        .detail .d_table tr td:first-child{
+            padding-left: 4%;
+            width: 50%;/*父元素*/
+            font-weight: bold;
+        }
+        .detail .d_table tr td{
+            padding: 20px 0;
+            font-size: 14px;
+        }
+        .detail .d_table tr td p{
+            margin:0;
+        }
+        .detail .d_text{
+            padding:32px 4%;
+            margin:0;
+        }
+    </style>
     <!--start detail-->
-    <!--<div class="detail">-->
-        <!--<div class="d_head clearFix">-->
-            <!--<div class="d_item">-->
-                <!--<a href="" class="d_lk">配置参数</a>-->
-            <!--</div>-->
-            <!--<div class="d_item">-->
-                <!--<a href="" class="d_lk">外观配置</a>-->
-            <!--</div>-->
-            <!--<div class="d_item">-->
-                <!--<a href="" class="d_lk">内饰配置</a>-->
-            <!--</div>-->
-            <!--<div class="d_item">-->
-                <!--<a href="" class="d_lk">舒适便利</a>-->
-            <!--</div>-->
-            <!--<div class="d_item">-->
-                <!--<a href="" class="d_lk">安全科技</a>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+    <div class="detail">
+        <table class="d_table" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+            <tr>
+                <td class="d_title" colspan="2">配置参数</td>
+            </tr>
+            <tr class="d_even">
+                <td>官方指导价</td>
+                <td>¥268,800</td>
+            </tr>
+            <tr>
+                <td>长×宽×高(mm) </td>
+                <td>4812 x 1855 x 1417</td>
+            </tr>
+            <tr class="d_even">
+                <td>轴距(mm) </td>
+                <td>2712</td>
+            </tr>
+            <tr>
+                <td>厢数 </td>
+                <td>三厢</td>
+            </tr>
+            <tr class="d_even">
+                <td>行李箱容积(L) </td>
+                <td>532</td>
+            </tr>
+            <tr>
+                <td>发动机排量(L) </td>
+                <td>1.798</td>
+            </tr>
+            <tr class="d_even">
+                <td>发动机 </td>
+                <td>水冷直列四缸/涡轮增压/16气门电控燃油缸内直接喷射</td>
+            </tr>
+            <tr>
+                <td>最大输出扭矩(Nm/rpm) </td>
+                <td>250/1500-4500</td>
+            </tr>
+            <tr class="d_even">
+                <td>变速箱 </td>
+                <td>带运动模式的7挡手/自动一体DSG®双离合自动变速器</td>
+            </tr>
+            <tr>
+                <td>制动系统 </td>
+                <td>前通风盘式/后盘式</td>
+            </tr>
+            <tr class="d_even">
+                <td>悬架系统 </td>
+                <td>前优化的麦弗逊独立悬架/后优化的四连杆独立悬架</td>
+            </tr>
+            <tr>
+                <td>转向系统 </td>
+                <td>EPS电动随速助力转向系统</td>
+            </tr>
+            <tr class="d_even">
+                <td>整备质量(kg) </td>
+                <td>1540</td>
+            </tr>
+            <tr>
+                <td>最高车速(km/h) </td>
+                <td>215</td>
+            </tr>
+            <tr class="d_even">
+                <td>0-100km/h加速时间(s) </td>
+                <td>8.8</td>
+            </tr>
+            <tr>
+                <td>90km/h等速油耗(L/100km) </td>
+                <td>5.5</td>
+            </tr>
+            <tr class="d_even">
+                <td>综合工况油耗(L/100km) </td>
+                <td>7.8</td>
+            </tr>
+            <tr>
+                <td>油箱容积(L) </td>
+                <td>70</td>
+            </tr>
+            <tr class="d_even">
+                <td>额定功率(kW/rpm) </td>
+                <td>118/5000-6200</td>
+            </tr>
+            <tr>
+                <td>排放标准 </td>
+                <td>国5排放标准</td>
+            </tr>
+            <tr class="d_even">
+                <td class="d_title" colspan="2"><a id="外观配置" name="外观配置"></a>外观配置</td>
+            </tr>
+            <tr>
+                <td>天窗 </td>
+                <td>Panaroma电动全景天窗带遮阳帘</td>
+            </tr>
+            <tr class="d_even">
+                <td>车窗 </td>
+                <td>四门一键式防夹电动车窗</td>
+            </tr>
+            <tr>
+                <td>前/后雨刷 </td>
+                <td>智能无骨雨刷带雨量传感器</td>
+            </tr>
+            <tr class="d_even">
+                <td>防紫外线/隔热玻璃 </td>
+                <td>深色防紫外线隐私玻璃</td>
+            </tr>
+            <tr>
+                <td>天线 </td>
+                <td>鲨鱼鳍天线</td>
+            </tr>
+            <tr class="d_even">
+                <td>大灯 </td>
+                <td><p>双氙气前大灯带高度自动调节和大灯清洗装置</p><p>AFS前大灯智能随动转向</p><p>光感式前大灯自动开闭系统</p><p>前大灯“离，回家”照明功能</p></td>
+            </tr>
+            <tr>
+                <td>尾灯 </td>
+                <td>“CC造型”LED尾灯</td>
+            </tr>
+            <tr class="d_even">
+                <td>辅助灯 </td>
+                <td><p>低速转向辅助照明角灯</p><p>LED日间行车灯</p><p>车身同色外后视镜集成LED转向灯</p><p>高亮黑外后视镜集成LED转向灯（可选）</p></td>
+            </tr>
+            <tr>
+                <td>轮毂 </td>
+                <td><p> 17英寸铝合金轮毂“Lakeville”</p><p>高亮黑17英寸铝合金轮毂（可选）</p></td>
+            </tr>
+            <tr class="d_even">
+                <td>应急备胎 </td>
+                <td>全尺寸铝合金备胎</td>
+            </tr>
+            <tr>
+                <td>格栅 </td>
+                <td>前镀铬散热格栅，带大众徽标镀铬亮条</td>
+            </tr>
+
+            <tr class="d_even">
+                <td>尾管 </td>
+                <td>带镀铬装饰的双排气尾管</td>
+            </tr>
+            <tr>
+                <td>装饰条 </td>
+                <td>侧窗及车身侧面镀铬亮条</td>
+            </tr>
+            <tr class="d_even">
+                <td>B柱面板 </td>
+                <td>B柱及后风窗高光饰板</td>
+            </tr>
+            <tr>
+                <td class="d_title" colspan="2"><a id="内饰配置" name="内饰配置"></a>内饰配置</td>
+            </tr>
+            <tr class="d_even">
+                <td>方向盘调节 </td>
+                <td>方向盘高度角度可调</td>
+            </tr>
+            <tr>
+                <td>方向盘换挡 </td>
+                <td>集控式三幅真皮多功能方向盘带换挡拨片</td>
+            </tr>
+            <tr class="d_even">
+                <td>前/后中央扶手 </td>
+                <td>后排中央扶手（有通过式载物功能）</td>
+            </tr>
+            <tr>
+                <td>座椅材质 </td>
+                <td>Vienna高级打孔真皮运动座椅</td>
+            </tr>
+            <tr class="d_even">
+                <td>前/后排座椅加热 </td>
+                <td>前排座椅可分级加热</td>
+            </tr>
+            <tr>
+                <td>前/后排座椅通风功能 </td>
+                <td>前排通风座椅</td>
+            </tr>
+            <tr class="d_even">
+                <td>前/后排座椅调节 </td>
+                <td><p>驾驶席座椅12放心电动调节（8向座椅+4向腰靠）</p><p>副驾驶席座椅12放心电动调节（8向座椅+4向腰靠）</p></td>
+            </tr>
+            <tr>
+                <td>前/后排头枕 </td>
+                <td>前排带内部锁止功能的KIE安全头枕</td>
+            </tr>
+            <tr class="d_even">
+                <td>座椅记忆 </td>
+                <td>驾驶席座椅/后视镜记忆功能</td>
+            </tr>
+            <tr>
+                <td>后排座椅折叠 </td>
+                <td>后排座椅靠背4:6分体可折叠</td>
+            </tr>
+            <tr class="d_even">
+                <td>车内氛围灯 </td>
+                <td>内饰氛围灯</td>
+            </tr>
+            <tr>
+                <td>内饰照明灯 </td>
+                <td>前后门照地灯</td>
+            </tr>
+            <tr class="d_even">
+                <td>中控台装饰面板 </td>
+                <td><p>中控台及仪表板拉丝铝合金饰板</p><p>仪表板高级网格铝合金饰板（可选）</p></td>
+            </tr>
+            <tr>
+                <td>仪表台/车门 </td>
+                <td>跑车式豪华无框车门</td>
+            </tr>
+            <tr class="d_even">
+                <td>内饰颜色 </td>
+                <td><p>棕色内饰</p><p>深棕色内饰（可选）</p><p>红黑内饰（可选）</p></td>
+            </tr>
+            <tr>
+                <td>迎宾踏板 </td>
+                <td>车门金属迎宾踏板带“CC”标识（带LED灯）</td>
+            </tr>
+            <tr class="d_even">
+                <td>操控踏板 </td>
+                <td>金属装饰加速/制动/歇脚踏板</td>
+            </tr>
+            <tr>
+                <td>前/后排出风口 </td>
+                <td>后排中央通道空调出风口</td>
+            </tr>
+            <tr class="d_even">
+                <td class="d_title" colspan="2"><a id="舒适便利" name="舒适便利"></a>舒适便利</td>
+            </tr>
+            <tr>
+                <td>车门/箱开启方式 </td>
+                <td><p>中控锁带遥控车门解锁功能</p><p>行李箱遥控开启功能</p><p>Keyless智能钥匙，一键启动系统</p><p>Easy Open尾箱盖感应开启</p></td></tr>
+            <tr class="d_even">
+                <td>空调类型 </td>
+                <td>双区独立控制自动空调 带粉尘过滤器</td>
+            </tr>
+            <tr>
+                <td>空气过滤系统 </td>
+                <td>空气质量传感器（内外循环自动切换）</td>
+            </tr>
+            <tr class="d_even">
+                <td>扬声器数量 </td>
+                <td><p>8喇叭高保真立体声扬声器</p><p>10喇叭剧院级高保真立体声扬声器（可选）</p><p>丹拿（Dynaudio）音响系统（可选）</p></td>
+            </tr>
+            <tr>
+                <td>多媒体系统 </td>
+                <td><p>前置CD</p><p>彩色触摸屏音响系统</p><p>MP3/WMA播放功能</p></td>
+            </tr>
+            <tr class="d_even">
+                <td>导航系统 </td>
+                <td>MIB导航系统</td>
+            </tr>
+            <tr>
+                <td>数据接口 </td>
+                <td><p>SD卡数据接口</p><p>AUX-IN音频接口</p><p>USB接口（支持iPod接入）</p></td>
+            </tr>
+            <tr class="d_even">
+                <td>蓝牙系统 </td>
+                <td>蓝牙电话系统带无线音乐传输功能</td>
+            </tr>
+            <tr>
+                <td>外后视镜 </td>
+                <td><p>电动调节外后视镜带加热功能</p><p>电动折叠外后视镜</p><p>停车自动折叠外后视镜</p></td>
+            </tr>
+            <tr class="d_even">
+                <td>内后视镜 </td>
+                <td>自动防炫目内后视镜</td>
+            </tr>
+            <tr>
+                <td>行车电脑 </td>
+                <td>彩屏多功能中文显示行车电脑</td>
+            </tr>
+            <tr class="d_even">
+                <td>实时同步计时钟 </td>
+                <td>实时同步中央计时器</td>
+            </tr>
+            <tr>
+                <td>遮阳板带化妆镜 </td>
+                <td>前排遮阳板带化妆镜和照明灯</td>
+            </tr>
+            <tr class="d_even">
+                <td>点烟器/烟灰盒 </td>
+                <td>点烟器及点烟盒</td>
+            </tr>
+            <tr>
+                <td>电源 </td>
+                <td>前后排12V电源</td>
+            </tr>
+            <tr class="d_even">
+                <td>储物盒/多功能箱 </td>
+                <td><p>手套箱带照明和冷却功能</p><p>司机侧便利储物盒</p></td>
+            </tr>
+            <tr>
+                <td class="d_title" colspan="2"><a id="安全科技" name="安全科技"></a>安全科技</td>
+            </tr>
+            <tr class="d_even">
+                <td>气囊/气帘 </td>
+                <td><p>驾驶席及前排成员正面SRS气囊</p><p>驾驶席及前排成员侧面SRS气囊</p><p>前后贯穿式头部气帘</p></td>
+            </tr>
+            <tr>
+                <td>雷达/摄像 </td>
+                <td><p>后视影像系统(Rear Assist)</p><p>全方位泊车监测雷达</p></td>
+            </tr>
+            <tr class="d_even">
+                <td>辅助泊车系统 </td>
+                <td><p>第二代智能泊车辅助系统(Park Assist 2.0)</p><p> EPB电子驻车制动系统</p><p>GRA定速巡航功能</p><p>AUTO HOLD自动驻车功能</p></td>
+            </tr>
+            <tr>
+                <td>电子辅助行车系统 </td>
+                <td><p>第二代自适应巡航系统(ACC 2.0)（可选）</p><p>车道保持系统(Lane Assist)（可选）</p><p>变道辅助系统(Side Assist)（可选）</p><p>动态前灯辅助系统(Dynamic Light Assist)（可选）</p><p>模拟可视泊车影像(OPS)</p><p>ESP电子稳定程序带ASR驱动防滑控制系统</p><p>DCC动态底盘控制系统(Dynamic Chassis Control)（可选）</p><p>GRA定速巡航功能</p></td>
+            </tr>
+            <tr class="d_even">
+                <td>行车安全系统 </td>
+                <td><p>预碰撞安全系统(Front Assist)（可选）</p><p>XDS电子差速锁</p><p>RKA轮胎压力监测系统</p><p>前排乘员感知系统</p></td>
+            </tr>
+            <tr>
+                <td>安全带类型 </td>
+                <td><p>后排中央座椅带三点式安全带</p><p>前排带限力器的预紧式三点安全带</p></td>
+            </tr>
+            <tr class="d_even">
+                <td>儿童安全装备 </td>
+                <td>ISOFIX儿童座椅固定装置</td>
+            </tr>
+            <tr>
+                <td>安全提醒功能 </td>
+                <td>疲劳提醒系统（MKE）</td>
+            </tr>
+            <tr class="d_even">
+                <td>防盗 </td>
+                <td>第四代电子防盗系统</td>
+            </tr>
+            </tbody></table>
+        <p class="d_text">以上价格不包括可选配备价格。<br>鉴于一汽-大众汽车有限公司将不断对猎豹改型和改进,因此后续车型的装备和参数将会有相应变化。请勿 以样本的内容与您所购汽车的装备和参数进行比较并以两者的差别为依据提出补偿装备的需求。</p>
+    </div>
     <!--end detail-->
     <!--start aisle-->
     <div class="aisle">
@@ -411,30 +757,67 @@
 <script type="text/javascript" src="../../assets/js/jd.js"></script>
 <script>
     $(function () {
-        $.fixedCommon($('.head .h_none'));
-    })
+        $('.detail').css({
+            'padding-top':$('.head').outerHeight()
+        })
+
+    });
+
     $(window).scroll(function () {
         var  pageYOffset= window.pageYOffset;
-        console.log('P:'+pageYOffset);
-        if(pageYOffset > 100){
+        console.log("p:"+pageYOffset);
+        if(pageYOffset > 0){
             $('.head .h_init').css({
                 'display':'none'
             });
-            $('.detail').css({
-                'padding-top':$('.head .h_init').outerHeight()
-            });
-//            window.scrollTo(0,100);
             $('.head .h_none').css({
                 'display':'block'
-            })
+            });
+            $('.detail').css({
+                'padding-top':($('.head').outerHeight())
+            });
+//            window.scrollTo(0,0);
         }else{
-//            $('.head .h_init').css({
-//                'display':'block'
-//            });
-//            $('.head .h_none').css({
-//                'display':'none'
-//            })
+            $('.head .h_init').css({
+                'display':'block'
+            });
+            $('.head .h_none').css({
+                'display':'none'
+            })
+            $('.detail').css({
+                'padding-top':$('.head').outerHeight()
+            });
         }
-    })
+        var t0 = 0;
+        $('.detail .d_table tr td.d_title').each(function (i) {
+            if(i == 0){
+                t0 = $(this).offset().top;
+            }
+
+
+
+        })
+
+    });
+    $('.head .h_kind .h_lk').click(function () {
+        var self = $(this)[0];
+        var index = 0;
+        var offSetTop = 0;
+        $('.head .h_kind .h_lk').each(function (i) {
+            if(self == $(this)[0]){
+                index = i;
+                $(this).addClass('h_active');
+            }else{
+                $(this).removeClass('h_active');
+            }
+        });
+        $('.detail .d_table tr td.d_title').each(function (j) {
+            if(index == j){
+                offSetTop = $(this).offset().top;
+            }
+        })
+        var headHeight = $('.head').outerHeight();
+        window.scrollTo(0,offSetTop - headHeight);
+    });
 </script>
 </html>

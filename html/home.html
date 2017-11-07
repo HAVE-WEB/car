@@ -388,12 +388,19 @@
 <!--end nav-->
 <!--start content-->
 <div id="content">
+    <style>
+    </style>
     <!--start slider-->
     <div id="slider">
         <div data-am-widget="slider" class="am-slider am-slider-b1 s_layer" data-am-slider='{"controlNav":false}' >
             <ul class="am-slides">
                 <li>
-                    <img src="../assets/i/car/home/home-head/1.jpg">
+                    <div class="s_container">
+                        <a href="" class="s_lk">
+                            <img src="../assets/i/car/home/home-head/1.jpg" class="s_img">
+                        </a>
+                    </div>
+
                 </li>
                 <li>
                     <img src="../assets/i/car/home/home-head/2.jpg">
@@ -653,5 +660,15 @@
 //    $(window).resize(function () {
 //        resizeCenter();
 //    })
+    $(function () {
+        resizeHeight();
+    });
+    function resizeHeight() {
+        var w_h = window.innerHeight;
+        $('#slider').children('div.am-slider').height(w_h * 0.8);
+    }
+    $(window).resize(function () {
+        resizeHeight()
+    })
 </script>
 </html>

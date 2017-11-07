@@ -82,18 +82,20 @@
         }
         /*nav end*/
         /*start content*/
-        #content{
-            margin-left: 100px;
-        }
+        /*#content{*/
+            /*margin-left: 100px;*/
+        /*}*/
         /*content end*/
         /*start head*/
         .head{
             height: 70px;
             background: #BDC3C6;
-            padding:0 50px;
+            /*padding:0 50px;*/
             color: #000;
             line-height: 70px;
             position: fixed;
+            width:100%;
+            padding-left: 100px;
         }
         .head .h_left{
             float: left;
@@ -101,7 +103,7 @@
         }
         .head .h_left .h_item{
             float: left;
-            margin-right: 20px;
+            padding-left: 20px;
         }
         .head .h_left .h_item .h_lk{
             color: #000;
@@ -135,6 +137,9 @@
         }
         /*end head*/
         /*start car_list*/
+        .car_list{
+            padding-left: 100px;
+        }
         .car_list .c_background{
             background: #F3F5F6;
         }
@@ -184,6 +189,7 @@
         /*start small*/
         .small{
             display: none;
+            padding-left: 100px;
         }
         .small .s_item{
             width:20%;
@@ -255,7 +261,7 @@
     <ul class="n_ul">
         <li class="n_item">
             <a href="../home.html" class="n_lk">
-                <img src="../../assets/i/car/home/home-nav/pc_logo.png" alt="" class="n_logo">
+                <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
             </a>
         </li>
         <li class="n_item">
@@ -655,7 +661,7 @@
 <script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
 <script>
     $(function () {
-       $('.head').outerWidth($('#content').outerWidth());
+//       $('.head').outerWidth($('#content').outerWidth());
        $('.car_list').css({
            'padding-top':$('.head').outerHeight(),
        });

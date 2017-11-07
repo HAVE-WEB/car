@@ -1,0 +1,203 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>车型对比</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="../../assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../assets/css/jd.css">
+
+</head>
+<body>
+<style>
+    body, html{
+        height:100%;
+        width: 100%;
+    }
+    #container{
+        width: 100%;
+        min-height: 100%;
+        position: relative;
+    }
+    /*start main_nav*/
+    #main_nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 96px;
+        height: 100%;
+        background-color: #fff;
+        z-index: 16;
+        border-right:1px solid #dee1e3;
+        -webkit-box-shadow:   5px 4px 20px rgba(0,0,0,.1);
+        -moz-box-shadow:  5px 4px 20px rgba(0,0,0,.1);
+        box-shadow: 5px 4px 20px rgba(0,0,0,.1);
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    #main_nav ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    #main_nav  li{
+        border-bottom:1px solid #DEE1E3;
+        text-align: center;
+        padding-bottom: 12px;
+    }
+    #main_nav li.m_logo{
+        width: 96px;
+        height: 96px;
+        padding-top: 23px;
+    }
+    #main_nav li.m_logo a{
+        padding:0 1px;
+    }
+    #main_nav li.m_logo img{
+        width:100%;
+    }
+    #main_nav li a{
+        display: block;
+        color: #808588;
+    }
+    #main_nav li .m_box img{
+        width:50%;
+        margin-top: 13px;
+    }
+    #main_nav li span{
+        display: block;
+        margin-top: 3px;
+        font-size: 12px;
+    }
+    /*end main_nav*/
+    /*start mainbody*/
+    .mainbody{
+        margin-left: 96px;
+        position: relative;
+        z-index: 15;
+
+    }
+    /*end mainboyd*/
+    /*start compare_top*/
+    .compare_top{
+        position: fixed;
+        z-index: 1;
+        width:calc(100% - 96px);
+    }
+    .compare_top .btn_close{
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        top: 20px;
+        right: 20px;
+        background: url("../../assets/i/car/public/dealer-popup-close.png");
+    }
+    .compare_top .compare_title{
+        padding:30px 0 0 0 ;
+        text-align: center;
+        color: #fff;
+        font-size:24px;
+        background: #1597d9;
+    }
+    /*end compare_top*/
+    #mobile_nav{
+        display: none;
+        background-color: #fff;
+    }
+
+</style>
+<div id="container">
+    <!--主导航栏-->
+    <di id="main_nav">
+        <ul>
+            <li class="m_logo">
+                <a href="../home.html">
+                    <img src="../../assets/i/car/public/logo.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="m_box">
+                        <img src="../../assets/i/car/home/home-nav/preview.png" alt="">
+                    </div>
+                    <span>车型总览</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="m_box">
+                        <img src="../../assets/i/car/home/home-nav/get.png" alt="">
+                    </div>
+                    <span>众里寻车</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="m_box">
+                        <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="">
+                    </div>
+                    <span>二手车</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="m_box">
+                        <img src="../../assets/i/car/home/home-nav/brand.png" alt="">
+                    </div>
+                    <span>品牌</span>
+                </a>
+            </li>
+        </ul>
+    </di>
+    <!--手机顶部logo及导航三线按钮-->
+    <div id="mobile_nav">
+
+    </div>
+    <!--主导航 更多内容 移动端主导航内容-->
+    <div id="main_nav_more"></div>
+    <!--主体内容-->
+    <div class="mainbody">
+        <!--自定义内容开始-->
+        <!-----------------------------------顶部及二级导航----------------------------------->
+        <div class="compare_top">
+            <a href="javascript:;" class="btn_close"></a>
+            <div class="compare_title">对比你的心仪车型</div>
+        </div>
+        <!-----------------------------------顶部及二级导航结束----------------------------------->
+        <!--自定义内容结束-->
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
+</html>
