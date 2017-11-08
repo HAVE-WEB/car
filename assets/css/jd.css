@@ -17,9 +17,9 @@
 .nav:after, .navbar:after, .navbar-header:after, .navbar-collapse:after, .pager:after, .panel-body:after, .modal-footer:after {
     clear: both;
 }
-.hidden {
-    display: none !important;
-}
+/*.hidden {*/
+    /*display: none !important;*/
+/*}*/
 svg:not(:root) {
     overflow: hidden;
 }
