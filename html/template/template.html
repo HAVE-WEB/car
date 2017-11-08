@@ -81,15 +81,27 @@
             color: #808890;
         }
         /*nav end*/
-        /*start content*/
-        #content{
-            margin-left: 100px;
+        /*start back_top*/
+        .back_top{
+            background: #DEE1E3;
         }
-        /*content end*/
+        .back_top .b_lk{
+            display: block;
+            text-align: right;
+            height: 36px;
+            line-height: 36px;
+            color: #2f3538;
+            padding:0 4%;
+            font-size: 16px;
+        }
+        .back_top .b_lk .b_img{
+            width: 20px;
+            height: 20px;
+        }
+        /*end back_top*/
         /*start aisle*/
         .aisle{
             padding: 20px 50px 0;
-            background: #fff;
         }
         .aisle .a_center .a_float{
             float: left;
@@ -106,7 +118,7 @@
             margin:5px 0;
         }
         .aisle .a_center .a_ul .a_item .a_lk{
-            color: #000;
+            color: #2f3538;
             font-size: 16px;
 
         }
@@ -116,12 +128,11 @@
             text-align: center;
             height: 50px;
             font-size: 14px;
-            margin: 50px 0;
-            background: #fff;
+            margin: 50px;
         }
         .footer .f_lk{
             /*color: #808890;*/
-            color: #000;
+            color: #2f3538;
             line-height: 50px;
         }
         .footer .f_img{
@@ -137,14 +148,14 @@
 <div class="nav">
     <ul class="n_ul">
         <li class="n_item">
-            <a href="" class="n_lk">
-                <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
+            <a href="home.html" class="n_lk">
+                <img src="../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
             </a>
         </li>
         <li class="n_item">
-            <a href="" class="n_lk">
+            <a href="left-nav/pandect.html" class="n_lk">
                 <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
+                    <img src="../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
                 </div>
                 <div class="n_bottom">
                     <span class="n_txt">车型总览</span>
@@ -154,60 +165,10 @@
         <li class="n_item">
             <a href="" class="n_lk">
                 <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/get.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">众里寻车</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">二手车</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
+                    <img src="../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
                 </div>
                 <div class="n_bottom">
                     <span class="n_txt">品牌汽车</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/search.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">天猫旗舰店</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">易车旗舰店</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">腾讯商城旗舰店</span>
                 </div>
             </a>
         </li>
@@ -216,31 +177,39 @@
 <!--end nav-->
 <!--start content-->
 <div id="content">
+    <!--start back_top-->
+    <div class="back_top">
+        <a href="javascript:;" class="b_lk">
+            <span>返回顶部</span>
+            <img src="../assets/i/car/public/back-top.png" alt="" class="b_img">
+        </a>
+    </div>
+    <!--end back_top-->
     <!--start aisle-->
     <div class="aisle">
         <div class="a_center clearFix">
             <div class="a_float">
                 <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">关于我们</a></li>
+                    <li class="a_item"><a href="" class="a_lk">品牌汽车</a></li>
                     <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
-                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
-                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
-                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">金融计算器</a></li>
                 </ul>
             </div>
             <div class="a_float">
                 <ul class="a_ul">
-                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
-                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
-                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
-                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">预约试驾</a></li>
+                    <li class="a_item"><a href="" class="a_lk">保养维修</a></li>
+                    <li class="a_item"><a href="" class="a_lk">在线客服</a></li>
+                    <li class="a_item"><a href="" class="a_lk">搜索</a></li>
                 </ul>
             </div>
             <div class="a_float">
                 <ul class="a_ul">
-                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
-                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
-                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
-                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">新闻动态</a></li>
+                    <li class="a_item"><a href="" class="a_lk">品牌活动</a></li>
+                    <li class="a_item"><a href="" class="a_lk">金融服务</a></li>
+                    <li class="a_item"><a href="" class="a_lk">促销活动</a></li>
                 </ul>
             </div>
         </div>
@@ -248,12 +217,12 @@
     <!--end aisle-->
     <!--start footer-->
     <div class="footer">
-        <a href="" class="f_lk">法律声明</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">&copy;猎豹汽车有限公司</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">吉ICP备09000793号</a>
-        <img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">吉公安备 22010602000029号</a>
+        <a href="" class="f_lk">法律声明</a><img src="../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">Copyright 2013 Leopaard All Rights Reserved</a><img src="../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk"> 湘ICP备13007785号</a>
     </div>
     <!--end footer-->
 </div>
 <!--end content-->
+
 </body>
 <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>

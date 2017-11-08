@@ -1,0 +1,705 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>关于我们</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <!-- Amaze UI CSS -->
+    <link rel="stylesheet" href="../../assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../assets/css/jd.css">
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            color: #2f3538;
+            font-family:"VWHeadWeb-Bold",sans-serif;
+        }
+        /*start nav*/
+        .nav{
+            height:100%;
+            width: 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            border-right:1px solid #DEE1E3;
+            background: #fff;
+            /*border:1px solid red;*/
+        }
+        .nav .n_ul{
+            list-style:none;
+            padding:0;
+        }
+        .nav .n_ul .n_item .n_lk{
+            display: block;
+            text-align: center;
+            border-bottom: 1px solid #DEE1E3;
+            padding:15px 0;
+            /*height: 80px;*/
+        }
+        .nav .n_ul .n_item .n_lk .n_logo{
+            width:100%;
+            padding: 7px 0;
+        }
+        .nav .n_ul .n_item .n_lk .n_top .n_img{
+            width: 35px;
+            height: 35px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom{
+            margin-top: 8px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom .n_txt{
+            color: #808890;
+        }
+        /*nav end*/
+        /*start content*/
+        #content{
+            min-height: 100%;
+            width: calc(100% - 100px);
+            /* padding-left: 100px; */
+            margin-left: 100px;
+        }
+        /*end content*/
+        /*start advertise*/
+        .advertise{
+            /*padding-left:100px;*/
+            overflow: hidden;
+            position: relative;
+        }
+        .advertise .a_img{
+            width: 100%;
+        }
+        /*end advertise*/
+        /*start fast_aisle*/
+        .advertise .fast_aisle{
+            position: absolute;
+            top: 50px;
+            right: 30px;
+        }
+        .advertise .fast_aisle .f_item{
+            float: left;
+            margin-right: 30px;
+        }
+        .advertise .fast_aisle .f_item .f_lk{
+            display: block;
+            text-align: center;
+            color: #d81e06;
+        }
+        .advertise .fast_aisle .f_item .f_lk .f_img{
+            width: 24px;;
+            height: 24px;;
+        }
+        .advertise .fast_aisle .f_item .f_lk .f_txt{
+            margin-top: 5px;
+        }
+        /*end fast_aisle*/
+        /*start back_top*/
+        .back_top{
+            background: #DEE1E3;
+        }
+        .back_top .b_lk{
+            display: block;
+            text-align: right;
+            height: 36px;
+            line-height: 36px;
+            color: #2f3538;
+            padding:0 4%;
+            font-size: 16px;
+        }
+        .back_top .b_lk .b_img{
+            width: 20px;
+            height: 20px;
+        }
+        /*end back_top*/
+        /*start aisle*/
+        .aisle{
+            padding: 20px 50px 0;
+        }
+        .aisle .a_center .a_float{
+            float: left;
+            width:33.3%;
+        }
+        .aisle .a_center .a_ul{
+            list-style: none;
+            text-align: center;
+            letter-spacing: 2px;
+            margin:0;
+            padding:0;
+        }
+        .aisle .a_center .a_ul .a_item{
+            margin:5px 0;
+        }
+        .aisle .a_center .a_ul .a_item .a_lk{
+            color: #2f3538;
+            font-size: 16px;
+
+        }
+        /*end aisle*/
+        /*start footer*/
+        .footer{
+            text-align: center;
+            height: 50px;
+            font-size: 14px;
+            margin: 50px;
+        }
+        .footer .f_lk{
+            /*color: #808890;*/
+            color: #2f3538;
+            line-height: 50px;
+        }
+        .footer .f_img{
+            width: 14px;
+            height: 14px;
+            margin: 0 2px;
+        }
+        /*end footer*/
+    </style>
+</head>
+<body>
+<!--start nav-->
+<div class="nav">
+    <ul class="n_ul">
+        <li class="n_item">
+            <a href="home.html" class="n_lk">
+                <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="left-nav/pandect.html" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">车型总览</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">品牌汽车</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--end nav-->
+<!--start content-->
+<div id="content">
+
+    <!--start advertise-->
+    <div class="advertise">
+        <div>
+            <img src="../../assets/i/car/car-detail/1.jpg" alt="" class="a_img">
+        </div>
+        <!--start fast_aisle-->
+        <div class="fast_aisle">
+            <div class="f_item">
+                <a href="fast-aisle/test-drive.html" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/test-driver.png" alt="" class="f_img">
+                    <div class="f_txt">预约试驾</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/dealer.png" alt="" class="f_img">
+                    <div class="f_txt">保养维修</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/service.png" alt="" class="f_img">
+                    <div class="f_txt">在线客服</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="fast-aisle/search.html" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/search.png" alt="" class="f_img">
+                    <div class="f_txt">搜索</div>
+                </a>
+            </div>
+        </div>
+        <!--end fast_aisle-->
+    </div>
+    <!--end advertise-->
+    <style>
+        .head{
+            background: #BDC3C6;
+            padding-left: 5%;
+        }
+        .head .h_item{
+            float: left;
+            margin-right: 3%;
+        }
+        .head .h_item .h_lk{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            color: #2f3538;
+        }
+        .head .h_item .h_lk:hover{
+            color: #ffffff;
+        }
+        .head .h_item .h_lk.h_active{
+            color: #ffffff;
+        }
+
+
+        .head_sub{
+            background: #808890;
+            padding-left: 5%;
+            width:100%;
+        }
+        .head_sub.h_fixed{
+            position: fixed;
+            top: 0;
+            left:0 ;
+            margin-left: 100px;
+        }
+        .head_sub .h_item{
+            float: left;
+            margin-right: 3%;
+        }
+        .head_sub .h_item .h_lk{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            color: #2f3538;
+        }
+        .head_sub .h_item .h_lk:hover{
+            color: #ffffff;
+        }
+        .head_sub .h_item .h_lk.h_active{
+            color: #ffffff;
+        }
+    </style>
+    <!--start head-->
+    <div class="head clearFix">
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk h_active">关于品牌</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk">新闻中心</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk">品牌活动</a>
+        </div>
+    </div>
+    <!--end head-->
+    <!--start head_sub-->
+    <div class="head_sub clearFix">
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk h_active">公司概况</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk">领导关怀</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk">企业文化</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk">公司荣誉</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk">发展历程</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk">研发实力</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk">社会责任</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk">大事记</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk">公司愿景</a>
+        </div>
+    </div>
+    <!--end head_sub-->
+    <style>
+        .content_box{
+            padding: 20px 5%;
+            font-size: 16px;
+        }
+        .content_box .c_item{
+            display: none;
+        }
+        .content_box .c_active{
+            display: block;
+        }
+        .content_box .c_item .c_row{
+            margin-top: 20px;
+        }
+        .content_box .c_item .c_row .c_left{
+            float: left;;
+            width:50%;
+        }
+        .content_box .c_item .c_row .c_right{
+            float: right;
+            width:50%;
+            padding-left:5%;
+        }
+        .content_box .c_item .c_row  img{
+            width:100%;
+        }
+        .content_box .c_item span{
+
+        }
+    </style>
+    <!--start content_box-->
+    <div class="content_box">
+        <div class="c_item ">
+            <p>长丰集团有限责任公司前身为中国人民解放军第7319工厂，始建于1950年6月。1996年10月，经总后勤部批准由工厂制整体改制成为国有独资有限责任公司．2001年9月由军队整体移交湖南省人民政府，现隶属于湖南省国资委管理。
+                <br><br>公司注册资本16.69亿，总资产超过120亿元，现有员工5700余人，公司董事长李建新先后当选第十届、第十一届、第十二届全国人大代表。
+            </p>
+            <p><br>公司主要经营范围：猎豹系列越野车、皮卡等汽车整车及相关零部件的研发、制造与销售。公司下辖湖南猎豹汽车有限公司和安徽猎豹汽车有限公司2家整车制造企业；公司在北京、长沙分别设立了两家猎豹汽车研究院：公司在湖南长沙市、永州市、衡阳市，安徽省滁州市，广东惠州市等设有18家控股子公司。
+                <br><br>公司先后荣获“全国五一劳动奖状”、“全国模范职工之家”、“全国企业文化优秀奖”、“全国文明单位”、“全国优秀基层党组织”等70多项省级以上荣誉称号。并于2001年至2004年连续4年进入“中国企业500强”；2001年l2009年连续9年进入“中国机械企业500强”：2002年至2009年连续8年进入“中国企业集团纳税500强”。2003年12月22日，长丰猎豹飞腾汽车获“中国suv年度车型”大奖。2010年2月，猎豹汽车被国家工商行政总局评定为驰名商标。
+                <br><br>公司先后历经四次创业。其中：第一次创业时间为1950年-1965年，是为军队服务的一家小型军械修理所（厂）。第二次创业时间为1965年-1984年，工厂主要从事军队的火炮、枪械、光学器材及汽车修理，是当时广州军区最大的综合性修理企业。第三次创业时间为1984年-2010年，工厂实现了“以民养军，保军转民”的战略意图，建成了全国最大的轻型越野汽车生产基地，打造出全国知名品牌一一猎豹汽车，实现由工厂制向公司制转变，“长丰汽车”【代码：600991】在上交所成功上市，公司总部由永州市搬迁至长沙市。第四次创业时间为2010年至今，公司通过与广汽集团战略重组后，重新回归猎豹整车主业，再创猎豹事业新篇章。
+                <br><br>公司坚持重点发展猎豹suv和皮卡整车业务，带动新能源汽车、汽车电子、关键零部件等战略性新兴产业项目，把“猎豹”汽车打造成知名品牌，实现猎豹汽车复兴的宏伟目标。
+                <br>
+            </p>
+        </div>
+        <div class="c_item c_active">
+            <div class="c_title">
+                创业的征途布满荆刺，前行的道路艰辛曲折。在公司漫长的创业征途中，党和国家领导人、国家机关部委、军队首长及省委、省政府各级领导给予了猎豹汽车无尽的支持与关爱。是他们的关心和爱护，激励了一代又一代长丰人秉承猎豹的执着和坚定，以夸父逐日的豪情和勇气，坚定信念，奋勇前行。
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/1.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2013年5月4日，湖南省委副书记、代省长杜家毫视察公司。</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/2.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2013年4月9日，中共中央总书记、国家主席、中央军委主席习近平乘坐猎豹检阅车，检阅南海舰队官兵</span>
+                </div>
+
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/3.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2012年7月31日，国家工信部副部长刘利华视察公司</span>
+                </div>
+
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/4.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2012年6月29日，中共中央总书记、国家主席、中央军委主席胡锦涛在香港石岗军营检阅驻港部队</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/5.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2012年3月30日，公司李建新董事长陪同国务委员、公安部部长孟建柱、湖南省委书记周强等视察公司</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/6.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2010年10月16日,中央政治局委员,国务院副总理张德江视察公司</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/7.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2010年6月27日，湖南省委副书记、代省长徐守盛视察公司永州基地</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/8.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2010年3月6日,中央政治局常委、纪委书记贺国强在北京亲切接见李建新董事长</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/9.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2008年5月28日，湖南省委副书记、省长周强视察公司州生产基地</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/10.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2008年4月22日，中共中央总书记、国家主席、中央军委主席胡锦涛乘坐猎豹阅兵车检阅南海舰队官兵</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/11.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2007年3月6日，中共中央总书记、国家主席、中央军委主席胡锦涛在北京人民大会堂亲切接见李董事长</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/12.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2006年3月26日，全国人大副委员长李铁映视察公司</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/13.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2006年3月10日，原广州军区副司令员欧阳金谷中将视察公司</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/14.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2006年1月4日，湖南省委书记张春贤视察公司</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/14.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2006年1月4日，湖南省委书记张春贤视察公司</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/15.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2005年5月28日，国家发改委主任马凯、在湖南省省长周伯华陪同下视察公司</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/16.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2005年3月9日，中央政治局常委、纪委书记吴官正在北京亲切接见李建新董事长</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/17.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2004年11月15日，全国最高检察院检察长贾春旺来公司视察</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/18.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2004年10月28日,中央政治局常委、政法委书记罗干视察公司时与公司领导合影</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/19.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2004年8月28日，湖南省委副书记、省长周伯华在公司视察时与李建新董事长亲切交谈</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/20.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2004年5月16日，广州军区副司令员宋文汉中将视察公司</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/21.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2003年10月20日，中共中央总书记、国家主席、中央军委主席江泽民乘坐猎豹阅兵车检阅国防科学技术大学官兵</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/22.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2003年3月7日，中央政治局常委、国家副主席曾庆红在北京亲切接见李建新董事长</span>
+                </div>
+            </div>
+            <div class="c_row clearFix">
+                <div class="c_left">
+                    <img src="../../assets/i/car/about/leader-care/23.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">2003年3月6日，中央政治局常委、国务院总理朱镕基在北京亲切接见李建新董事长</span>
+                </div>
+            </div>
+            <!--<div class="c_row clearFix">-->
+                <!--<div class="c_left">-->
+                    <!--<img src="../../assets/i/car/about/leader-care/23.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="c_right">-->
+                    <!--<span class="c_txt">2003年3月6日，中央政治局常委、国务院总理朱镕基在北京亲切接见李建新董事长</span>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+
+    </div>
+    <!--end content_box-->
+    <!--start back_top-->
+    <div class="back_top">
+        <a href="javascript:;" class="b_lk">
+            <span>返回顶部</span>
+            <img src="../../assets/i/car/public/back-top.png" alt="" class="b_img">
+        </a>
+    </div>
+    <!--end back_top-->
+    <!--start aisle-->
+    <div class="aisle">
+        <div class="a_center clearFix">
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">关于我们</a></li>
+                    <li class="a_item"><a href="" class="a_lk">品牌汽车</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">金融计算器</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">预约试驾</a></li>
+                    <li class="a_item"><a href="" class="a_lk">保养维修</a></li>
+                    <li class="a_item"><a href="" class="a_lk">在线客服</a></li>
+                    <li class="a_item"><a href="" class="a_lk">搜索</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">新闻动态</a></li>
+                    <li class="a_item"><a href="" class="a_lk">品牌活动</a></li>
+                    <li class="a_item"><a href="" class="a_lk">金融服务</a></li>
+                    <li class="a_item"><a href="" class="a_lk">促销活动</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end aisle-->
+    <!--start footer-->
+    <div class="footer">
+        <a href="" class="f_lk">法律声明</a><img src="../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">Copyright 2013 Leopaard All Rights Reserved</a><img src="../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk"> 湘ICP备13007785号</a>
+    </div>
+    <!--end footer-->
+</div>
+<!--end content-->
+
+</body>
+<script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
+<script>
+    $(function () {
+//        resizeHeight();
+        verticalAlign()
+    });
+    function resizeHeight() {
+        var w_h = window.innerHeight;
+        $('.advertise').height(w_h * 0.6);
+    }
+    $(window).resize(function () {
+//        resizeHeight();
+        verticalAlign();
+        fixedTop = $('.head_sub').offset().top;
+        autoFixed();
+    });
+    function verticalAlign() {
+        var l_h = $('.content_box .c_item .c_row .c_left').outerHeight();
+        var r_h = $('.content_box .c_item .c_row .c_right').height();
+        if(r_h < l_h /2){
+            $('.content_box .c_item .c_row .c_right').css({
+                'padding-top': (l_h - r_h) / 2
+            })
+        }else{
+            $('.content_box .c_item .c_row .c_right').css({
+                'padding-top': 0
+            })
+        }
+    }
+    $('.back_top .b_lk').click(function () {
+        $(window).scrollTop(0);
+    });
+    var fixedTop = $('.head_sub').offset().top;
+    $(window).scroll(function () {
+        autoFixed();
+    });
+    function autoFixed() {
+        var t = window.pageYOffset;
+        console.log("top:"+t);
+        console.log("top:"+fixedTop);
+        if(t  >= fixedTop){
+            $('.head_sub').addClass('h_fixed');
+//            $('.head_sub').css({
+//                'padding-left':$('#content').outerWidth() * 0.04,
+//            })
+        }else{
+            $('.head_sub').removeClass('h_fixed');
+        }
+    }
+</script>
+</html>

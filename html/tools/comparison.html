@@ -36,6 +36,24 @@
 </head>
 <body>
 <style>
+    @keyframes car {
+        0% {
+            -webkit-transform: scale3d(0.5, 0.5, 0.5);
+            -moz-transform: scale3d(0.5, 0.5, 0.5);
+            -ms-transform: scale3d(0.5, 0.5, 0.5);
+            -o-transform: scale3d(0.5, 0.5, 0.5);
+            transform: scale3d(0.5, 0.5, 0.5);
+        }
+        100%{
+            -webkit-transform: scale3d(1, 1, 1);
+            -moz-transform: scale3d(1, 1, 1);
+            -ms-transform: scale3d(1, 1, 1);
+            -o-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+        }
+    }
+</style>
+<style>
     body, html{
         height:100%;
         width: 100%;
@@ -101,10 +119,23 @@
     /*end main_nav*/
     /*start mainbody*/
     .mainbody{
+        padding:0;
         margin-left: 96px;
         position: relative;
         z-index: 15;
-
+        min-height: 100%;
+    }
+    .mainbody .mask{
+        width: 100%;
+        height: 150px;
+        background: #000;
+        opacity:0.6;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index:20;
+        display: none;
+        margin-left: 96px;
     }
     /*end mainboyd*/
     /*start compare_top*/
@@ -138,15 +169,7 @@
     .compare_car_box .row{
         padding:0 4%;
     }
-    .row::before{
-        display: table;
-        content: ' ';
-    }
-    .row::after{
-        clear: both;
-        display: table;
-        content: ' ';
-    }
+
     .compare_car_box .car_img{
         height: 108px;
         margin:20px 0;
@@ -155,12 +178,87 @@
     .compare_car_box .car_img.default{
         background: url("../../assets/i/car/comparsion/car-bg.png") center no-repeat;
     }
+    .compare_car_box .car_img.selected{
+        text-align: center;
+        animation: car .5s linear;
+    }
+    .compare_car_box .car_img.selected .pic_box{
+        position: relative;
+        display: inline-block;
+    }
+    .compare_car_btn .car_img.selected .pic{
+        padding-top: 20px;
+        width: 208px;
+    }
+    .compare_car_btn .car_img.selected .model_name{
+        color: #fff;
+        margin:6px 0;
+    }
     .compare_car_box .car_img .reset_car{
         display: none;
         position: absolute;
         top:0;
         right:0;
         z-index:2;
+    }
+    .compare_car_box .row .add_col{
+        width: 32px;
+        height: 33px;
+        position: absolute;
+        right: 4%;
+        top: 40%;
+        z-index: 10;
+        display: none;
+        background: url("../../assets/i/car/comparsion/add.png") no-repeat center;
+    }
+    .compare_car_btn {
+        background: #1597d5;
+        height: 64px;
+        padding:0 4%;
+    }
+    .compare_car_btn .car_btn{
+        display: none;
+        text-align: center;
+        -webkit-animation: car .5s linear;
+        -o-animation: car .5s linear;
+        animation: car .5s linear;
+    }
+    .compare_car_btn a{
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        width: 118px;
+        height: 32px;
+        line-height: 32px;
+        margin:20px 6px;
+        margin-top: 0;
+        font-size: 14px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+    .compare_car_btn a.check_btn{
+        background: #66c2e9;
+        color: #fff;
+    }
+    .compare_car_btn a.order_btn{
+        background: #fff;
+        color: #1395db;
+    }
+    .nav_box{
+        display: none;
+        text-align: center;
+    }
+    .nav{
+        height: 50px;
+        background-color: #bdc3c6;
+        padding:0 4%;
+    }
+    .hidden{
+        display: none;
+    }
+    .row{
+        margin:0;
     }
 
     /*end compare_top*/
@@ -221,7 +319,8 @@
     <!--主导航 更多内容 移动端主导航内容-->
     <div id="main_nav_more"></div>
     <!--主体内容-->
-    <div class="mainbody">
+    <div class="container-fluid mainbody">
+        <div class="mask"></div>
         <!--自定义内容开始-->
         <!-----------------------------------顶部及二级导航----------------------------------->
         <div class="compare_top">
@@ -229,15 +328,67 @@
             <div class="compare_title">对比你的心仪车型</div>
             <div class="compare_car_box two_car">
                 <div class="row">
-                    <div class="car_img car01_img default am-u-lg-6">
+                    <div class="car_img car01_img default col-xs-6">
                         <div class="pic_box">
-                            <a href="javascript:;" class="reset_car"></a>
+                            <a href="javascript:;" class="reset_car">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="图层_1" x="0px" y="0px" width="20px" height="20px"
+                                     viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                                     <rect x="4.259" y="8.531" fill="#FFFFFF" width="11.482" height="2.938"></rect>
+                                    <rect x="8.531" y="4.259" display="block" fill="#FFFFFF" width="2.938" height="11.482"></rect>
+                                </svg>
+                            </a>
                         </div>
+                    </div>
+                    <div class="car_img car01_img default col-xs-6">
+                        <div class="pic_box">
+                            <a href="javascript:;" class="reset_car">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="图层_1" x="0px" y="0px" width="20px" height="20px"
+                                     viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                                     <rect x="4.259" y="8.531" fill="#FFFFFF" width="11.482" height="2.938"></rect>
+                                    <rect x="8.531" y="4.259" display="block" fill="#FFFFFF" width="2.938" height="11.482"></rect>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="car_img car01_img default col-xs-4 hidden">
+                        <div class="pic_box">
+                            <a href="javascript:;" class="reset_car">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="图层_1" x="0px" y="0px" width="20px" height="20px"
+                                     viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                                     <rect x="4.259" y="8.531" fill="#FFFFFF" width="11.482" height="2.938"></rect>
+                                    <rect x="8.531" y="4.259" display="block" fill="#FFFFFF" width="2.938" height="11.482"></rect>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="add_col"></a>
+                </div>
+            </div>
+            <div class="compare_car_btn row">
+                <div class="car_btn car01_btn col-xs-6">
+                    <div>
+                        <a href="javascript:;" class="check_btn">查看详情</a>
+                        <a href="javascript:;" class="order_btn">预约试驾</a>
+                    </div>
+                </div>
+                <div class="car_btn car01_btn col-xs-6">
+                    <div>
+                        <a href="javascript:;" class="check_btn">查看详情</a>
+                        <a href="javascript:;" class="order_btn">预约试驾</a>
+                    </div>
+                </div>
+                <div class="car_btn car01_btn col-xs-4">
+                    <div>
+                        <a href="javascript:;" class="check_btn">查看详情</a>
+                        <a href="javascript:;" class="order_btn">预约试驾</a>
                     </div>
                 </div>
             </div>
-            <div class="compare_car_btn"></div>
-            <div class="nav_box"></div>
+            <div class="nav_box">
+                <div class="nav">
+                    <a href="#配置参数" class="active anchorlink" onclick=""></a>
+                </div>
+            </div>
         </div>
         <!-----------------------------------顶部及二级导航结束----------------------------------->
         <!--自定义内容结束-->
