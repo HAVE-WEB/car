@@ -181,19 +181,35 @@
         .content_box .c_item .c_row .c_right{
             float: right;
             width:50%;
-            /*padding-left:5%;*/
+            padding-left:5%;
+            text-align: left;
         }
         .content_box .c_item .c_row .c_right .c_txt{
             display: block;
         }
+        .content_box .c_item .c_row .c_right .c_txt .c_top{
+            font-weight:bold;
+
+        }
+        .content_box .c_item .c_row .c_right .c_txt .c_center{
+            margin: 1% 0;
+        }
+        .content_box .c_item .c_row .c_right .c_txt .c_bottom .c_btn{
+            display: block;
+            background: #0097DC;
+            color: #fff;
+            padding:1% 2%;
+            width:20%;
+            text-align: center;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;;
+        }
         .content_box .c_item .c_row  img{
-            width:50%;
+            width:100%;
         }
         .show{
             display: block;
-        }
-        hidden{
-            display: none;
         }
         /*end content_box*/
         /*start advertise*/
@@ -454,27 +470,103 @@
                 </div>
                 <div class="c_row clearFix">
                     <div class="c_left">
-                        <img src="../../assets/i/car/about/company-culture/1.jpg" alt="">
+                        <img src="../../assets/i/car/home/home-activity/1.jpg" alt="">
                     </div>
                     <div class="c_right">
-                    <span class="c_txt">
-
-                    </span>
+                        <span class="c_txt">
+                            <div class="c_top">多种优惠购车方案，助您捷足先登</div>
+                            <div class="c_center">
+                                猎豹CS9全面的购车方案邀您尽享价值与实力双重进级。即日起订购猎豹CS9可尊享多种优惠购车方案。低首付0利率购车、0月供半价提车、超低日供灵活还款、信用卡分期购车等方案助您轻松入主猎豹CS9座驾，尽享更多财务自由。捷足先登，达成所愿！
+                            </div>
+                            <div class="c_bottom">
+                                <a href="javascript:;" class="c_btn">查看详情</a>
+                            </div>
+                        </span>
                     </div>
                 </div>
                 <div class="c_row clearFix">
                     <div class="c_left">
-                        <img src="../../assets/i/car/about/company-culture/2.jpg" alt="">
+                        <img src="../../assets/i/car/home/home-activity/1.jpg" alt="">
                     </div>
                     <div class="c_right">
-                    <span class="c_txt">
-                        企业理念：创新发展、企业之魂。<br/>
-                        企业核心价值观：创新发展、追求卓越。<br/>
-                        企业精神：开拓、创新、求实、奉献。<br/>
-                        企业责任：产业报国，以振兴民族工业为己任；打造品牌，以回馈社会为目的。<br/>
-                    </span>
+                        <span class="c_txt">
+                            <div class="c_top">多种优惠购车方案，助您捷足先登</div>
+                            <div class="c_center">
+                                猎豹CS9全面的购车方案邀您尽享价值与实力双重进级。即日起订购猎豹CS9可尊享多种优惠购车方案。低首付0利率购车、0月供半价提车、超低日供灵活还款、信用卡分期购车等方案助您轻松入主猎豹CS9座驾，尽享更多财务自由。捷足先登，达成所愿！
+                            </div>
+                            <div class="c_bottom">
+                                <a href="javascript:;" class="c_btn">查看详情</a>
+                            </div>
+                        </span>
                     </div>
-
+                </div>
+            </div>
+            <style>
+                .black_mask{
+                    position: fixed;/*以浏览器定位，该元素的父元素就是浏览器*/
+                    top:0;
+                    left:0;
+                    z-index: 20;
+                    width:100%;
+                    height: 150%;
+                    display: none;
+                    background: #262b2e;
+                }
+                .popup{
+                    position: absolute;/*条件1：父元素。条件2：父元素不是static（父元素可能是relative相对定位元素，可能是fixed绝对定位元素，可能是absolute相对定位元素）*/
+                    top:0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 2000;
+                    display: none;
+                }
+                .fin_popup{
+                    position: fixed;
+                    background: #fff;
+                    top: 15%;
+                    width: 50%;
+                    margin: 0 auto;
+                    padding: 30px 4%;/*padding,margin的百分比是（条件1：父元素）的（条件2：父元素的宽度）*/
+                    height: 530px;;
+                }
+                .fin_popup .title{
+                    font-weight: bold;
+                    font-size: 18px;
+                    margin-bottom: 30px;
+                    text-align: center;
+                }
+                .fin_popup .content{
+                    height: 400px;
+                }
+                .fin_popup p{
+                    line-height: 28px;;
+                }
+                a.close_popup{
+                    width: 17px;
+                    height: 17px;
+                    position: absolute;
+                    top: -30px;
+                    left: -45px;
+                    background: url("../../assets/i/car/about/finance-service/close.png");
+                }
+            </style>
+            <div class="black_mask"></div>
+            <div class="popup fin_popup">
+                <div class="title">
+                    猎豹CS9多种优惠购车方案，助您捷足先登
+                </div>
+                <div class="content">
+                    <p>1.低首付0利率购车：首付20%起，享12-36期0利率或低利率，48-60期低利率，等额月供，购车轻松；</p>
+                    <p>2.0月供半价提车：首付50%，一年后结清50%尾款，欣享0月供、0利息；更有一次性付清、展期、置换新车三种灵活尾款处理方式选择；</p>
+                    <p>3.低日供灵活还款：首付50%起，期限36个月，尾款不高于30%，享超低日供；更有一次性付清、展期、置换新车三种灵活尾款处理方式选择；</p>
+                    <p>4.信用卡分期购车：首付20%起，享12-24期0利息0费率，36-60期0利息低费率，手续简单、方便快捷；</p>
+                    <p>5.2万元免息增值贷款：最高2万元、最长24期0利率增值贷款，可用于购买新车保险，精品附件、保养维修等费用（注：须与新车贷款同时申请）；</p>
+                    <p>以上金融产品优惠仅限选其一。</p>
+                    <p>更多详情，敬请垂询一汽-大众当地特许经销商。</p>
+                    <a href="javascript:;" class="close_popup"></a>
                 </div>
             </div>
             <!--流程与常见问题-->
@@ -680,6 +772,24 @@
         })
         verticalAlign();
     })
-
+    $('.content_box .c_box .c_item .c_row .c_right .c_txt .c_bottom .c_btn').click(function () {
+        var self = $(this)[0];
+        var index = 0;
+        $('.content_box .c_box .c_item .c_row .c_right .c_txt .c_bottom .c_btn').each(function (i) {
+            if(self = $(this)[0]){
+                index = i
+            }
+        });
+        $('.black_mask').show();
+        console.log("index:"+index);
+        $('.fin_popup').each(function (k) {
+            console.log("k:"+k);
+            if(index == k){
+                $(this).show();
+            }else{
+                $(this).hide();
+            }
+        })
+    })
 </script>
 </html>
