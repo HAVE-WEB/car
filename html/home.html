@@ -123,7 +123,7 @@
             padding-bottom: 30px;
         }
         .tools .t_title{
-            font-size: 36px;
+            font-size: 40px;
             color: #000;
             margin: 50px auto;
             text-align: center;
@@ -375,7 +375,7 @@
             </a>
         </li>
         <li class="n_item">
-            <a href="" class="n_lk">
+            <a href="about/overview.html" class="n_lk">
                 <div class="n_top">
                     <img src="../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
                 </div>
@@ -422,7 +422,7 @@
                 </a>
             </div>
             <div class="f_item">
-                <a href="" class="f_lk">
+                <a href="about/maintain-service.html" class="f_lk">
                     <img src="../assets/i/car/public/fast-aisle/dealer.png" alt="" class="f_img">
                     <div class="f_txt">保养维修</div>
                 </a>
@@ -460,11 +460,11 @@
                 </a>
             </div>
             <div class="t_item">
-                <a href="" class="t_lk">
+                <a href="about/maintain-service.html" class="t_lk">
                     <img src="../assets/i/car/public/car-tools/compare.png" alt="" class="t_img">
                 </a>
                 <div class="t_name">保养维修</div>
-                <a href="" class="t_lk">
+                <a href="about/maintain-service.html" class="t_lk">
                     <div class="t_test">
                         <img src="../assets/i/car/public/car-tools/arrows.png" alt="" class="t_arrows">
                         <span class="t_immediately">立即预约</span>
@@ -617,7 +617,7 @@
         <div class="a_center clearFix">
             <div class="a_item">
                 <div class="a_top">
-                    <a href="" class="a_lk">
+                    <a href="about/news.html" class="a_lk">
                         <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
                     </a>
                 </div>
@@ -627,7 +627,7 @@
             </div>
             <div class="a_item">
                 <div class="a_top">
-                    <a href="" class="a_lk">
+                    <a href="about/brand-activity.html" class="a_lk">
                         <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
                     </a>
                 </div>
@@ -655,7 +655,7 @@
         </div>
         <div class="b_abs">
             <p class="b_type">关于我们</p>
-            <a href="" class="b_btn">立即查看</a>
+            <a href="about/overview.html" class="b_btn">立即查看</a>
         </div>
 
     </div>
@@ -665,7 +665,7 @@
         <div class="a_center clearFix">
             <div class="a_item">
                 <div class="a_top">
-                    <a href="" class="a_lk">
+                    <a href="about/promotion-activity.html" class="a_lk">
                         <img src="../assets/i/car/home/home-activity/1.jpg" alt="" class="a_img">
                     </a>
                 </div>
@@ -758,7 +758,10 @@
     });
     function resizeHeight() {
         var w_h = window.innerHeight;
-        $('#slider').children('div.am-slider').height(w_h * 0.8);
+//        $('#slider').children('div.am-slider').height(w_h * 0.8);
+        $('#slider').children('div.am-slider').find('img').css({
+            'max-height':w_h * 0.85,
+        })
     }
     $(window).resize(function () {
         resizeHeight()

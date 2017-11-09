@@ -222,95 +222,47 @@
     </style>
 </head>
 <body>
-<!--start nav-->
-<div class="nav">
-    <ul class="n_ul">
-        <li class="n_item">
-            <a href="../home.html" class="n_lk">
-                <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">车型总览</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/get.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">众里寻车</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">二手车</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">品牌汽车</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/search.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">天猫旗舰店</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">易车旗舰店</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">腾讯商城旗舰店</span>
-                </div>
-            </a>
-        </li>
-    </ul>
-</div>
-<!--end nav-->
+
 <!--start content-->
 <div id="content">
+    <!--start nav-->
+    <div class="nav">
+        <ul class="n_ul">
+            <li class="n_item">
+                <a href="../home.html" class="n_lk">
+                    <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="" class="n_lk">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">车型总览</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="n_item">
+                <a href="" class="n_lk">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">品牌汽车</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--end nav-->
     <!--start head-->
     <div class="head">
         <!--<div class="h_default">-->
             <div class="h_init">
                 <div class="h_back">
-                    <a href="" class="h_btn">
+                    <a href="javascript:;" class="h_btn">
                         <img src="../../assets/i/car/public/close.png" alt="" class="h_img">
                     </a>
                 </div>
@@ -321,14 +273,14 @@
                     </div>
                     <div class="h_type">猎豹CS9 1.8TSI豪华型</div>
                     <div class="h_compare">
-                        <a href="" class="h_btn">加入对比</a>
+                        <!--<a href="" class="h_btn">加入对比</a>-->
                     </div>
                 </div>
             </div>
             <div class="h_none clearFix">
                 <div class="h_left">猎豹CS9 1.8TSI豪华型</div>
                 <div class="h_right">
-                    <a href="" class="h_btn">加入对比</a>
+                    <!--<a href="" class="h_btn">加入对比</a>-->
                 </div>
             </div>
             <div class="h_kind clearFix">
@@ -760,9 +712,10 @@
         $('.detail').css({
             'padding-top':$('.head').outerHeight()
         })
-
     });
-
+    $('.head .h_init .h_back .h_btn').click(function () {
+       history.back();
+    });
     $(window).scroll(function () {
         var  pageYOffset= window.pageYOffset;
         console.log("p:"+pageYOffset);

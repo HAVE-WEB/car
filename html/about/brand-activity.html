@@ -1,0 +1,318 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>品牌活动</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <!-- Amaze UI CSS -->
+    <link rel="stylesheet" href="../../assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../assets/css/jd.css">
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            color: #ccc;
+            font-family:"VWHeadWeb-Bold",sans-serif;
+        }
+        /*start nav*/
+        .nav{
+            height:100%;
+            width: 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            border-right:1px solid #DEE1E3;
+            background: #fff;
+            /*border:1px solid red;*/
+        }
+        .nav .n_ul{
+            list-style:none;
+            padding:0;
+        }
+        .nav .n_ul .n_item .n_lk{
+            display: block;
+            text-align: center;
+            border-bottom: 1px solid #DEE1E3;
+            padding:15px 0;
+            /*height: 80px;*/
+        }
+        .nav .n_ul .n_item .n_lk .n_logo{
+            width:100%;
+            padding: 7px 0;
+        }
+        .nav .n_ul .n_item .n_lk .n_top .n_img{
+            width: 35px;
+            height: 35px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom{
+            margin-top: 8px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom .n_txt{
+            color: #808890;
+        }
+        /*nav end*/
+        /*start back_top*/
+        .back_top{
+            background: #DEE1E3;
+        }
+        .back_top .b_lk{
+            display: block;
+            text-align: right;
+            height: 36px;
+            line-height: 36px;
+            color: #2f3538;
+            padding:0 4%;
+            font-size: 16px;
+        }
+        .back_top .b_lk .b_img{
+            width: 20px;
+            height: 20px;
+        }
+        /*end back_top*/
+        /*start aisle*/
+        .aisle{
+            padding: 20px 50px 0;
+        }
+        .aisle .a_center .a_float{
+            float: left;
+            width:33.3%;
+        }
+        .aisle .a_center .a_ul{
+            list-style: none;
+            text-align: center;
+            letter-spacing: 2px;
+            margin:0;
+            padding:0;
+        }
+        .aisle .a_center .a_ul .a_item{
+            margin:5px 0;
+        }
+        .aisle .a_center .a_ul .a_item .a_lk{
+            color: #2f3538;
+            font-size: 16px;
+
+        }
+        /*end aisle*/
+        /*start footer*/
+        .footer{
+            text-align: center;
+            height: 50px;
+            font-size: 14px;
+            margin: 50px;
+        }
+        .footer .f_lk{
+            /*color: #808890;*/
+            color: #2f3538;
+            line-height: 50px;
+        }
+        .footer .f_img{
+            width: 14px;
+            height: 14px;
+            margin: 0 2px;
+        }
+        /*end footer*/
+    </style>
+</head>
+<body>
+<!--start nav-->
+<div class="nav">
+    <ul class="n_ul">
+        <li class="n_item">
+            <a href="../home.html" class="n_lk">
+                <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="../left-nav/pandect.html" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">车型总览</span>
+                </div>
+            </a>
+        </li>
+        <li class="n_item">
+            <a href="overview.html" class="n_lk">
+                <div class="n_top">
+                    <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
+                </div>
+                <div class="n_bottom">
+                    <span class="n_txt">品牌汽车</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--end nav-->
+<!--start content-->
+<div id="content">
+    <style>
+        .activity{
+            margin-left: 100px;
+        }
+        .activity .a_title{
+            text-align: center;
+            font-size: 40px;
+            color: #000;
+            padding:1% 0;
+            font-weight:bold;
+        }
+        .activity .a_item{
+            float: left;
+            width:33.3%;
+            overflow: hidden;
+            position: relative;
+        }
+        .activity .a_item .a_img {
+            width: 100%
+        }
+        .activity .a_item .a_lk{
+            display: none;
+            font-size: 16px;
+            color: #ffffff;
+            /*padding:1% 2%;*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width:25%;
+            height: 40px;
+            line-height: 40px;
+            background: #0099DA;
+            text-align: center;
+            margin-left:-12.5%;
+            margin-top: -20px;
+            z-index:2;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        @media screen and (max-width: 1024px) {
+            .activity .a_item .a_lk{
+                font-size: 14px;
+                width:30%;
+            }
+        }
+        .activity .a_item .a_opacity_layer{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.5);
+        }
+
+    </style>
+    <!--start activity-->
+    <div class="activity clearFix">
+        <div class="a_title">品牌活动</div>
+        <div class="a_item">
+            <img src="../../assets/i/car/brand-activity/1.jpg" alt="" class="a_img a_1">
+            <a href="javascript:;" class="a_lk">敬请期待</a>
+            <div class="a_opacity_layer"></div>
+        </div>
+        <div class="a_item">
+            <img src="../../assets/i/car/brand-activity/1.jpg" alt="" class="a_img a_1">
+            <a href="javascript:;" class="a_lk">敬请期待</a>
+            <div class="a_opacity_layer"></div>
+        </div>
+        <div class="a_item">
+            <img src="../../assets/i/car/brand-activity/1.jpg" alt="" class="a_img a_1">
+            <a href="javascript:;" class="a_lk">敬请期待</a>
+            <div class="a_opacity_layer"></div>
+        </div>
+    </div>
+    <!--end activity-->
+    <!--start back_top-->
+    <div class="back_top">
+        <a href="javascript:;" class="b_lk">
+            <span>返回顶部</span>
+            <img src="../assets/i/car/public/back-top.png" alt="" class="b_img">
+        </a>
+    </div>
+    <!--end back_top-->
+    <!--start aisle-->
+    <div class="aisle">
+        <div class="a_center clearFix">
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">关于我们</a></li>
+                    <li class="a_item"><a href="" class="a_lk">品牌汽车</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">金融计算器</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">预约试驾</a></li>
+                    <li class="a_item"><a href="" class="a_lk">保养维修</a></li>
+                    <li class="a_item"><a href="" class="a_lk">在线客服</a></li>
+                    <li class="a_item"><a href="" class="a_lk">搜索</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">新闻动态</a></li>
+                    <li class="a_item"><a href="" class="a_lk">品牌活动</a></li>
+                    <li class="a_item"><a href="" class="a_lk">金融服务</a></li>
+                    <li class="a_item"><a href="" class="a_lk">促销活动</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end aisle-->
+    <!--start footer-->
+    <div class="footer">
+        <a href="" class="f_lk">法律声明</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">Copyright 2013 Leopaard All Rights Reserved</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk"> 湘ICP备13007785号</a>
+    </div>
+    <!--end footer-->
+</div>
+<!--end content-->
+
+</body>
+<script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
+<script>
+    $('.activity .a_item').hover(
+        function () {
+            $(this).find('a.a_lk').show();
+            $(this).find('div.a_opacity_layer').hide();
+        },
+        function () {
+            $(this).find('a.a_lk').hide();
+            $(this).find('div.a_opacity_layer').show();
+        }
+    )
+</script>
+</html>

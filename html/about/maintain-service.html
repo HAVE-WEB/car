@@ -1,0 +1,509 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>预约试驾</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <!-- Amaze UI CSS -->
+    <link rel="stylesheet" href="../../assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../assets/css/jd.css">
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            font-size: 12px;
+            color: #ccc;
+            font-family:"VWHeadWeb-Bold",sans-serif;
+            height: 100%;
+        }
+        /*start nav*/
+        .nav{
+            height:100%;
+            width: 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            border-right:1px solid #DEE1E3;
+            background: #fff;
+            /*border:1px solid red;*/
+        }
+        .nav .n_ul{
+            list-style:none;
+            padding:0;
+        }
+        .nav .n_ul .n_item .n_lk{
+            display: block;
+            text-align: center;
+            border-bottom: 1px solid #DEE1E3;
+            padding:15px 0;
+            /*height: 80px;*/
+        }
+        .nav .n_ul .n_item .n_lk .n_logo{
+            width: 100%;
+            margin-top: 10px;
+        }
+        .nav .n_ul .n_item .n_lk .n_top .n_img{
+            width: 35px;
+            height: 35px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom{
+            margin-top: 8px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom .n_txt{
+            color: #808890;
+        }
+        /*nav end*/
+        /*start content*/
+        #content{
+            margin-left: 100px;
+            height:100%;
+        }
+        /*content end*/
+        /*start aisle*/
+        .aisle{
+            padding: 20px 50px 0;
+            background: #fff;
+        }
+        .aisle .a_center .a_float{
+            float: left;
+            width:33.3%;
+        }
+        .aisle .a_center .a_ul{
+            list-style: none;
+            text-align: center;
+            letter-spacing: 2px;
+            margin:0;
+            padding:0;
+        }
+        .aisle .a_center .a_ul .a_item{
+            margin:5px 0;
+        }
+        .aisle .a_center .a_ul .a_item .a_lk{
+            color: #000;
+            font-size: 16px;
+
+        }
+        /*end aisle*/
+        /*start footer*/
+        .footer{
+            text-align: center;
+            height: 50px;
+            font-size: 14px;
+            margin: 50px 0;
+            background: #fff;
+        }
+        .footer .f_lk{
+            /*color: #808890;*/
+            color: #000;
+            line-height: 50px;
+        }
+        .footer .f_img{
+            width: 14px;
+            height: 14px;
+            margin: 0 2px;
+        }
+        /*end footer*/
+        /*start head*/
+        .head{
+            height: 70px;
+            background: #808890;
+            padding:0 50px;
+        }
+        .head .h_left{
+            float: left;
+            font-size: 20px;
+            line-height: 70px;
+        }
+        .head .h_right{
+            float: right;
+        }
+        .head .h_right .h_item{
+            float: left;
+            margin-left: 15px;
+            margin-top:15px;
+        }
+        .head .h_right .h_item .h_lk{
+            display:block;
+            text-align:center;
+            color: #d81e06;
+        }
+        .head .h_right .h_item .h_lk .h_img{
+            height: 24px;
+            width: 24px;
+        }
+        .head .h_right .h_item .h_lk .h_txt{
+            /*margin-top: 5px;*/
+            line-height: 16px;
+        }
+        /*end head*/
+        /*start bottom*/
+        .bottom .b_map{
+            float: left;
+            width:70%;
+        }
+        .bottom .b_info{
+            /*float: right;*/
+            width: 40%;
+            /*height:100%;*/
+            background: #fff;
+            margin:0 auto;
+            /*border:1px solid #1597D9;*/
+        }
+        .bottom .b_info .b_title{
+            text-align: center;
+            font-size: 16px;
+            color: #ffffff;
+            height: 70px;
+            line-height: 70px;
+            background: #1597D9;
+        }
+        .bottom .b_info .b_form{
+            overflow: auto;
+            padding:20px 30px 0px;
+            color: #414742;
+            font-size:16px;
+            border:1px solid #E6E6E6;
+        }
+        .bottom .b_info .b_form .b_item .b_name{
+            height: 20px;
+            line-height: 20px;
+        }
+        .bottom .b_info .b_form .b_item .b_name .b_asterisk , .bottom .b_info .b_form .b_must_write .b_asterisk{
+            color: red;
+        }
+        .bottom .b_info .b_form .b_item .b_name .b_txt{
+
+        }
+        .bottom .b_info .b_form .b_item .b_content .am-selected{
+            margin:10px 0 25px 0;
+            width:100%;
+        }
+        .bottom .b_info .b_form .b_item .b_content .b_1 .am-selected{
+            margin:10px 0 0 0;
+        }
+        .bottom .b_info .b_form .b_item .b_content .b_2 .am-selected{
+            margin:5px 0;
+        }
+        .bottom .b_info .b_form .b_item .b_content .b_3 .am-selected{
+            margin:0 0 20px 0;
+        }
+        .bottom .b_info .b_form .b_item .b_content .am-btn{
+            line-height:1.8;
+            border-radius: 5px;
+        }
+        .bottom .b_info .b_form .b_item .b_content .b_input{
+            line-height:1.8;
+            width:100%;
+            padding: .5em 1em;
+            border:1px solid #E6E6E6;
+            margin:10px 0 20px 0;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        .bottom .b_info .b_form .b_item .b_content .b_textarea{
+            width: 100%;
+            height: 100px;
+        }
+        .bottom .b_info .b_form .b_agree{
+            margin:20px 0;
+        }
+        .bottom .b_info .b_form .b_agree .b_select{
+            float: left;
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            background: #0098DA;
+            text-align: center;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        .bottom .b_info .b_form .b_agree .b_select .b_img{
+            display: block;
+            width: 26px;
+            height: 26px;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+        .bottom .b_info .b_form .b_agree .b_lk{
+            float: left;
+            margin-left: 25px;
+            font-size: 14px;
+            line-height: 35px;
+        }
+        .bottom .b_info .b_form .b_submit{
+            margin: 30px;
+        }
+        .bottom .b_info .b_form .b_submit .b_btn{
+            display: block;
+            height: 40px;
+            width: 120px;
+            margin:0 auto;
+            color: #ffffff;
+            text-align: center;
+            font-size: 16px;
+            line-height: 40px;
+            background: #0098DA;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        /*end bottom*/
+    </style>
+</head>
+<body>
+
+<!--start content-->
+<div id="content">
+    <!--start nav-->
+    <div class="nav">
+        <ul class="n_ul">
+            <li class="n_item">
+                <a href="../home.html" class="n_lk">
+                    <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="../left-nav/pandect.html" class="n_lk">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">车型总览</span>
+                    </div>
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="overview.html" class="n_lk">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">品牌汽车</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--end nav-->
+    <!--start head-->
+    <div class="head clearFix">
+        <div class="h_left">维修保养</div>
+        <div class="h_right clearFix">
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/test-driver.png" alt="" class="h_img">
+                    <div class="h_txt">预约试驾</div>
+                </a>
+            </div>
+            <div class="h_item">
+                <a href="" class="h_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/dealer.png" alt="" class="h_img">
+                    <div class="h_txt">经销商查询</div>
+                </a>
+            </div>
+            <div class="h_item">
+                <a href="" class="h_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/service.png" alt="" class="h_img">
+                    <div class="h_txt">在线客服</div>
+                </a>
+            </div>
+            <div class="h_item">
+                <a href="../fast-aisle/search.html" class="h_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/search.png" alt="" class="h_img">
+                    <div class="h_txt">搜索</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--end head-->
+    <!--start bottom-->
+    <div class="bottom">
+        <div class="b_info">
+            <div class="b_title">请准确填写以下信息,完成保养维修</div>
+            <div class="b_form">
+                <form action="action" method="post" id="maintain">
+                    <div class="b_item">
+                        <div class="b_name">
+                            <span class="b_asterisk">*</span><span class="b_txt">选择车型</span>
+                        </div>
+                        <div class="b_content">
+                            <select data-am-selected>
+                                <option value="a">CS6</option>
+                                <option value="b" selected>CT5</option>
+                                <option value="o">猎豹CT7</option>
+                                <option value="m">猎豹CS10</option>
+                                <option value="d">飞腾</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="b_item">
+                        <div class="b_name">
+                            <span class="b_asterisk">*</span><span class="b_txt">姓名</span>
+                        </div>
+                        <div class="b_content">
+                            <input type="text" class="b_input"  placeholder="请输入姓名" name="userName" required>
+                        </div>
+                    </div>
+                    <div class="b_item">
+                        <div class="b_name">
+                            <span class="b_asterisk">*</span><span class="b_txt">手机号码</span>
+                        </div>
+                        <div class="b_content">
+                            <input type="number" class="b_input" placeholder="手机号码" name="iphone" required pattern="^1[3|4|5|7|8][0-9]{9}$">
+                        </div>
+                    </div>
+                    <div class="b_item">
+                        <div class="b_name">
+                            <span class="b_txt">维修保养内容</span>
+                        </div>
+                        <div class="b_content">
+                            <textarea class="b_textarea" name="detailContent" placeholder="请输入保养维修内容"></textarea>
+                        </div>
+                    </div>
+                    <div class="b_must_write">
+                        标记<span class="b_asterisk">*</span>为必填
+                    </div>
+                    <!--<div class="b_agree clearFix">-->
+                        <!--<div class="b_select"><img src="../../assets/i/car/search/right5.png" alt="" class="b_img" data-index="1"></div>-->
+                        <!--<a href="" class="b_lk">同意隐私条款</a>-->
+                    <!--</div>-->
+                    <div class="b_submit">
+                        <button type="submit" href="" class="b_btn">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--end bottom-->
+</div>
+<!--end content-->
+</body>
+<script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/amazeui.js"></script>
+<script>
+    var rem = new Rem();
+    $(function () {
+       resetHeight();
+        var msg='';
+        $('#maintain').validator({
+            patterns: {
+                key1:/^\d{6}$/,
+                key2:/^1[3|4|5|7|8][0-9]{9}$/,
+            },
+            onValid: function(validity) {
+            },
+            onInValid: function(validity) {
+                var $field = $(validity.field);
+                // 使用自定义的提示信息 或 插件内置的提示信息
+
+                console.log(validity);
+                if(validity.valueMissing){
+                    msg = $field.prop('placeholder');
+                }
+                if(validity.typeMismatch){
+                    msg='你输入的不是数字';
+                }
+                if(validity.patternMismatch){
+                    var n = $field.attr('name');
+                   if(n === 'iphone'){
+                        msg='手机号码不正确';
+                    }
+                }
+                if(validity.rangeUnderflow || validity.rangeOverflow){
+                    msg = this.getValidationMessage(validity);
+                }
+                if(msg === ''){
+                    msg = this.getValidationMessage(validity);
+                }
+
+            },
+            submit: function (e) {
+                var formValidity = this.isFormValid();
+                if(typeof formValidity === 'boolean'){
+                    if(formValidity){
+                        e.preventDefault();
+//                        sessionStorage.setItem('bottomNavIndex',0);
+//                        $("#my-confirm").modal({
+//                            onConfirm: function () {
+////                                var arr = ['activityType','isUseGovMoney','activityBranch','meetingRecord'];
+////                                for(var i =0;i < arr.length; i++){
+////                                    sessionStorage.removeItem(arr[i]);
+////                                }
+                                history.back();
+//                            },
+//                            onCancel: function () {
+//                                return false;
+//                            }
+//                        });
+                    }else{
+                        rem.alertInfo(msg);
+                        return false;
+                    }
+                }else{
+                }
+            }
+        });
+    });
+    function resetHeight() {
+        
+        var hh = $('#content .head').outerHeight();
+        var ch = $('#content').outerHeight();
+        $('#content .bottom').outerHeight(ch - hh);
+
+
+        var ih = $('#content .bottom .b_info').outerHeight();
+        var th = $('#content .bottom .b_info .b_title').outerHeight();
+        $('#content .bottom .b_info .b_form').outerHeight(ih - th);
+    }
+    $(window).resize(function () {
+        resetHeight();
+    })
+    $('.bottom .b_info .b_form .b_agree .b_select').bind('click', function () {
+        var $img = $(this).find('img');
+        var i = $img.data('index');
+        if(i == '1'){
+            $img.data('index','2');
+            $img.css('display','none');
+
+        }else{
+            $img.css('display','block');
+            $img.data('index','1');
+        }
+    })
+</script>
+</html>

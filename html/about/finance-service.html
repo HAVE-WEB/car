@@ -1,0 +1,685 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>金融服务</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <!-- Amaze UI CSS -->
+    <link rel="stylesheet" href="../../assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../assets/css/jd.css">
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            color: #2f3538;
+            font-family:"VWHeadWeb-Bold",sans-serif;
+        }
+        /*start nav*/
+        .nav{
+            height:100%;
+            width: 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            border-right:1px solid #DEE1E3;
+            background: #fff;
+            /*border:1px solid red;*/
+        }
+        .nav .n_ul{
+            list-style:none;
+            padding:0;
+        }
+        .nav .n_ul .n_item .n_lk{
+            display: block;
+            text-align: center;
+            border-bottom: 1px solid #DEE1E3;
+            padding:15px 0;
+            /*height: 80px;*/
+        }
+        .nav .n_ul .n_item .n_lk .n_logo{
+            width:100%;
+            padding: 7px 0;
+        }
+        .nav .n_ul .n_item .n_lk .n_top .n_img{
+            width: 35px;
+            height: 35px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom{
+            margin-top: 8px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom .n_txt{
+            color: #808890;
+        }
+        /*nav end*/
+        /*start content*/
+        #content{
+            min-height: 100%;
+            width: calc(100% - 100px);
+            /* padding-left: 100px; */
+            margin-left: 100px;
+        }
+        /*end content*/
+        /*start head*/
+        .head{
+            background: #BDC3C6;
+            padding-left: 5%;
+            width: 100%;
+        }
+        .head.h_fixed{
+            position: fixed;
+            top:0;
+            left:0;
+        }
+        .head .h_item{
+            float: left;
+            margin-right: 3%;
+        }
+        .head .h_item .h_lk{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            color: #2f3538;
+        }
+        .head .h_item .h_lk:hover{
+            color: #ffffff;
+        }
+        .head .h_item .h_lk.h_active{
+            color: #ffffff;
+        }
+        /*end head*/
+        /*start head_sub*/
+        .head_sub{
+            background: #808890;
+            padding-left: 5%;
+            width:100%;
+        }
+        .head_sub.h_fixed{
+            position: fixed;
+            left:0 ;
+        }
+        .head_sub .h_box{
+            display: none;
+        }
+        .head_sub .h_box.show{
+            display: block;
+        }
+        .head_sub .h_item{
+            float: left;
+            margin-right: 3%;
+        }
+        .head_sub .h_item .h_lk{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            font-size: 14px;
+            color: #2f3538;
+        }
+        .head_sub .h_item .h_lk:hover{
+            color: #ffffff;
+        }
+        .head_sub .h_item .h_lk.h_active{
+            color: #ffffff;
+        }
+        /*end head_sub*/
+        /*start content_box*/
+        .content_box{
+            padding: 20px 5%;
+            font-size: 16px;
+        }
+        .content_box .c_box.show , .content_box .c_box .c_item.show{
+            display: block;
+        }
+        .content_box .c_item{
+            display: none;
+            text-align: center;
+        }
+        .content_box .c_item .c_title{
+            font-size: 36px;
+        }
+        .content_box .c_item .c_row{
+            margin-top: 20px;
+        }
+        .content_box .c_item .c_row.c_gray{
+            background: #F3F5F6;
+        }
+        .content_box .c_item .c_row .c_left{
+            float: left;;
+            width:50%;
+            text-align: center;
+        }
+        .content_box .c_item .c_row .c_right{
+            float: right;
+            width:50%;
+            /*padding-left:5%;*/
+        }
+        .content_box .c_item .c_row .c_right .c_txt{
+            display: block;
+        }
+        .content_box .c_item .c_row  img{
+            width:50%;
+        }
+        .show{
+            display: block;
+        }
+        hidden{
+            display: none;
+        }
+        /*end content_box*/
+        /*start advertise*/
+        .advertise{
+            /*padding-left:100px;*/
+            overflow: hidden;
+            position: relative;
+        }
+        .advertise .a_img{
+            width: 100%;
+        }
+        /*end advertise*/
+        /*start fast_aisle*/
+        .advertise .fast_aisle{
+            position: absolute;
+            top: 50px;
+            right: 30px;
+        }
+        .advertise .fast_aisle .f_item{
+            float: left;
+            margin-right: 30px;
+        }
+        .advertise .fast_aisle .f_item .f_lk{
+            display: block;
+            text-align: center;
+            color: #d81e06;
+        }
+        .advertise .fast_aisle .f_item .f_lk .f_img{
+            width: 24px;;
+            height: 24px;;
+        }
+        .advertise .fast_aisle .f_item .f_lk .f_txt{
+            margin-top: 5px;
+        }
+        /*end fast_aisle*/
+        /*start back_top*/
+        .back_top{
+            background: #DEE1E3;
+        }
+        .back_top .b_lk{
+            display: block;
+            text-align: right;
+            height: 36px;
+            line-height: 36px;
+            color: #2f3538;
+            padding:0 4%;
+            font-size: 16px;
+        }
+        .back_top .b_lk .b_img{
+            width: 20px;
+            height: 20px;
+        }
+        /*end back_top*/
+        /*start aisle*/
+        .aisle{
+            padding: 20px 50px 0;
+        }
+        .aisle .a_center .a_float{
+            float: left;
+            width:33.3%;
+        }
+        .aisle .a_center .a_ul{
+            list-style: none;
+            text-align: center;
+            letter-spacing: 2px;
+            margin:0;
+            padding:0;
+        }
+        .aisle .a_center .a_ul .a_item{
+            margin:5px 0;
+        }
+        .aisle .a_center .a_ul .a_item .a_lk{
+            color: #2f3538;
+            font-size: 16px;
+
+        }
+        /*end aisle*/
+        /*start footer*/
+        .footer{
+            text-align: center;
+            height: 50px;
+            font-size: 14px;
+            margin: 50px;
+        }
+        .footer .f_lk{
+            /*color: #808890;*/
+            color: #2f3538;
+            line-height: 50px;
+        }
+        .footer .f_img{
+            width: 14px;
+            height: 14px;
+            margin: 0 2px;
+        }
+        /*end footer*/
+    </style>
+</head>
+<body>
+
+<!--start content-->
+<div id="content">
+    <!--start nav-->
+    <div class="nav">
+        <ul class="n_ul">
+            <li class="n_item">
+                <a href="../home.html" class="n_lk">
+                    <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="../left-nav/pandect.html" class="n_lk">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">车型总览</span>
+                    </div>
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="overview.html" class="n_lk">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">品牌汽车</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--end nav-->
+    <!--start advertise-->
+    <div class="advertise">
+        <div>
+            <img src="../../assets/i/car/car-detail/1.jpg" alt="" class="a_img">
+        </div>
+        <!--start fast_aisle-->
+        <div class="fast_aisle">
+            <div class="f_item">
+                <a href="fast-aisle/test-drive.html" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/test-driver.png" alt="" class="f_img">
+                    <div class="f_txt">预约试驾</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/dealer.png" alt="" class="f_img">
+                    <div class="f_txt">保养维修</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/service.png" alt="" class="f_img">
+                    <div class="f_txt">在线客服</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="fast-aisle/search.html" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/search.png" alt="" class="f_img">
+                    <div class="f_txt">搜索</div>
+                </a>
+            </div>
+        </div>
+        <!--end fast_aisle-->
+    </div>
+    <!--end advertise-->
+    <!--start head-->
+    <div class="head clearFix">
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk h_active">金融引擎</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk">爱车金融方案</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk">保险服务</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk">延保服务</a>
+        </div>
+    </div>
+    <!--end head-->
+    <!--start head_sub-->
+    <div class="head_sub clearFix ">
+        <div class="h_box show">
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk h_active">金融引擎优势</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">流程常见问题</a>
+            </div>
+        </div>
+        <div class="h_box">
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk h_active">猎豹CS9</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹CS10</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹CS10</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹Q6</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹飞腾</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹黑金刚</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹CS6</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹CT7</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹CT5</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">飞扬</a>
+            </div>
+        </div>
+        <div class="h_box">
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk h_active">保险服务介绍</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">车险套餐</a>
+            </div>
+        </div>
+        <div class="h_box">
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk h_active">延保服务介绍</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">延保产品</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">流程常见问题</a>
+            </div>
+        </div>
+    </div>
+    <!--end head_sub-->
+    <!--start content_box-->
+    <div class="content_box">
+        <!--金融引擎-->
+        <div class="c_box show">
+            <!--金融引擎优势-->
+            <div class="c_item show">
+                <div class="c_title">
+                    金融引擎优势
+                </div>
+                <div class="c_title_sub">
+                    "金融引擎"是为满足精于理财的消费者的购车需求,为其精心打造的专业汽车金融平台。其中业务涵盖汽车贷款、汽 车保险、汽车租赁等,为消费者实现购车梦想提供精挑细选、量身定做、值得信赖的一站式服务。凭借高素质、专业化的优秀 团队和遍布全国的服务网点,"金融引擎"联手实力雄厚的金融合作伙伴,为消费者提供个性化的汽车金融购车方案, 助您轻松实现梦想,加速迈向成功!
+                </div>
+                <div class="c_row clearFix">
+                    <div class="c_left">
+                        <img src="../../assets/i/car/about/company-culture/1.jpg" alt="">
+                    </div>
+                    <div class="c_right">
+                    <span class="c_txt">
+
+                    </span>
+                    </div>
+                </div>
+                <div class="c_row clearFix">
+                    <div class="c_left">
+                        <img src="../../assets/i/car/about/company-culture/2.jpg" alt="">
+                    </div>
+                    <div class="c_right">
+                    <span class="c_txt">
+                        企业理念：创新发展、企业之魂。<br/>
+                        企业核心价值观：创新发展、追求卓越。<br/>
+                        企业精神：开拓、创新、求实、奉献。<br/>
+                        企业责任：产业报国，以振兴民族工业为己任；打造品牌，以回馈社会为目的。<br/>
+                    </span>
+                    </div>
+
+                </div>
+            </div>
+            <!--流程与常见问题-->
+            <div class="c_item">
+                <div class="c_title">
+                    流程与常见问题
+                </div>
+                <div class="c_title_sub">
+                    一汽-大众"金融引擎"是为满足精于理财的消费者的购车需求,为其精心打造的专业汽车金融平台。其中业务涵盖汽车贷 款、汽车保险、汽车租赁等,为消费者实现购车梦想提供精挑细选、量身定做、值得信赖的一站式服务。凭借高素质、专业化 的优秀团队和遍布全国的服务网点,一汽-大众"金融引擎"联手实力雄厚的金融合作伙伴,为消费者提供个性化的汽车金融购车 方案,助您轻松实现梦想,加速迈向成功!
+                </div>
+                <div class="c_row clearFix">
+                    <div class="c_left">
+                        <img src="../../assets/i/car/about/company-culture/1.jpg" alt="">
+                    </div>
+                    <div class="c_right">
+                    <span class="c_txt">
+                        创新发展、追求卓越的经营理念<br/>
+                        艰苦奋斗、自力更生的创业激情<br/>
+                        令行禁止、雷厉风行的工作作风<br/>
+                        五湖四海、团结协作的集体主义精神<br/>
+                        英勇顽强、敢打硬仗的英雄主义气概<br/>
+                        诚信经营、产业报国的社会责任<br/>
+                    </span>
+                    </div>
+                </div>
+                <div class="c_row clearFix">
+                    <div class="c_left">
+                        <img src="../../assets/i/car/about/company-culture/2.jpg" alt="">
+                    </div>
+                    <div class="c_right">
+                    <span class="c_txt">
+                        企业理念：创新发展、企业之魂。<br/>
+                        企业核心价值观：创新发展、追求卓越。<br/>
+                        企业精神：开拓、创新、求实、奉献。<br/>
+                        企业责任：产业报国，以振兴民族工业为己任；打造品牌，以回馈社会为目的。<br/>
+                    </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end content_box-->
+    <!--start back_top-->
+    <div class="back_top">
+        <a href="javascript:;" class="b_lk">
+            <span>返回顶部</span>
+            <img src="../../assets/i/car/public/back-top.png" alt="" class="b_img">
+        </a>
+    </div>
+    <!--end back_top-->
+    <!--start aisle-->
+    <div class="aisle">
+        <div class="a_center clearFix">
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">关于我们</a></li>
+                    <li class="a_item"><a href="" class="a_lk">品牌汽车</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">金融计算器</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">预约试驾</a></li>
+                    <li class="a_item"><a href="" class="a_lk">保养维修</a></li>
+                    <li class="a_item"><a href="" class="a_lk">在线客服</a></li>
+                    <li class="a_item"><a href="" class="a_lk">搜索</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">新闻动态</a></li>
+                    <li class="a_item"><a href="" class="a_lk">品牌活动</a></li>
+                    <li class="a_item"><a href="" class="a_lk">金融服务</a></li>
+                    <li class="a_item"><a href="" class="a_lk">促销活动</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end aisle-->
+    <!--start footer-->
+    <div class="footer">
+        <a href="" class="f_lk">法律声明</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">Copyright 2013 Leopaard All Rights Reserved</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk"> 湘ICP备13007785号</a>
+    </div>
+    <!--end footer-->
+</div>
+<!--end content-->
+
+</body>
+<script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
+<script>
+    $(function () {
+//        resizeHeight();
+        verticalAlign();
+        $('.advertise').after('<div class="space" style="display: none;height: '+($('.head_sub').outerHeight()+$('.head').outerHeight())+'px;"></div>')
+    });
+    function resizeHeight() {
+        var w_h = window.innerHeight;
+        $('.advertise').height(w_h * 0.6);
+    }
+    $(window).resize(function () {
+//        resizeHeight();
+        verticalAlign();
+        autoFixed();
+    });
+    function verticalAlign() {
+        $('.content_box .c_item .c_row .c_left').each(function (i) {
+            var $left = $(this)
+            $('.content_box .c_item .c_row .c_right').each(function (j) {
+                if(i == j){
+                    var l_h = $left.outerHeight();
+                    var r_h = $(this).find('.c_txt').height();
+                    if(r_h < l_h){
+                        $(this).css({
+                            'padding-top': (l_h - r_h) / 2
+                        })
+                    }else{
+                        $(this).css({
+                            'padding-top': 0
+                        })
+                    }
+                    return false
+                }
+            })
+        });
+    }
+    $('.back_top .b_lk').click(function () {
+        $(window).scrollTop(0);
+    });
+
+    $(window).scroll(function () {
+        autoFixed();
+    });
+    var fixedTop = $('.head').eq(0).offset().top;
+    var h = $('.head').outerHeight();
+    var pl = $('.head').css('padding-left');
+    var pl_float = parseFloat(pl.substr(0,pl.length-2));
+    function autoFixed() {
+        var t = window.pageYOffset;
+        console.log("t:"+t+",fixedTOp:"+fixedTop+",pl:"+pl_float)
+        if(t  >= fixedTop){
+            $('.space').show();
+            $('.head').addClass('h_fixed');
+            $('.head_sub').addClass('h_fixed');
+            $('.head').css({
+                'padding-left':pl_float+100,
+            });
+            $('.head_sub').css({
+                'padding-left':pl_float+100,
+                'top':h
+            });
+        }else{
+            $('.space').hide();
+            $('.head_sub').removeClass('h_fixed');
+            $('.head').removeClass('h_fixed');
+            $('.head_sub').css({
+                'padding-left':pl_float
+            });
+            $('.head').css({
+                'padding-left':pl_float
+            });
+
+        }
+    }
+    $('.head .h_item').click(function () {
+       var self = $(this)[0];
+       var index = 0;
+       $('.head .h_item').each(function (i) {
+           if(self == $(this)[0]){
+               index = i;
+               $(this).find('a').addClass('h_active');
+           }else{
+               $(this).find('a').removeClass('h_active');
+           }
+       })
+        $('.head_sub .h_box').each(function (j) {
+            if(index == j){
+                $(this).show();
+            }else{
+                $(this).hide()
+            }
+        })
+    });
+    $('.head_sub .h_item').click(function () {
+        var self = $(this)[0];
+        var index = 0;
+        $('.head_sub .h_item').each(function (i) {
+            if(self == $(this)[0]){
+                index =i;
+                $(this).find('a.h_lk').css('color','#fff')
+            }else{
+                $(this).find('a.h_lk').css('color','#2f3538');
+            }
+        });
+        $('.content_box .c_item').each(function (j) {
+            if(index == j){
+                $(this).show();
+            }else{
+                $(this).hide()
+            }
+        })
+        verticalAlign();
+    })
+
+</script>
+</html>

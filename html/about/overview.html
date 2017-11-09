@@ -89,6 +89,92 @@
             margin-left: 100px;
         }
         /*end content*/
+        /*start head*/
+        .head{
+            background: #BDC3C6;
+            padding-left: 5%;
+        }
+        .head .h_item{
+            float: left;
+            margin-right: 3%;
+        }
+        .head .h_item .h_lk{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            color: #2f3538;
+        }
+        .head .h_item .h_lk:hover{
+            color: #ffffff;
+        }
+        .head .h_item .h_lk.h_active{
+            color: #ffffff;
+        }
+        /*end head*/
+        /*start head_sub*/
+        .head_sub{
+            background: #808890;
+            padding-left: 5%;
+            width:100%;
+        }
+        .head_sub.h_fixed{
+            position: fixed;
+            top: 0;
+            left:0 ;
+        }
+        .head_sub .h_item{
+            float: left;
+            margin-right: 3%;
+        }
+        .head_sub .h_item .h_lk{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            color: #2f3538;
+        }
+        .head_sub .h_item .h_lk:hover{
+            color: #ffffff;
+        }
+        .head_sub .h_item .h_lk.h_active{
+            color: #ffffff;
+        }
+        /*end head_sub*/
+        /*start content_box*/
+        .content_box{
+            padding: 20px 5%;
+            font-size: 16px;
+        }
+        .content_box .c_item{
+            display: none;
+        }
+        .content_box .c_active{
+            display: block;
+        }
+        .content_box .c_item .c_row{
+            margin-top: 20px;
+        }
+        .content_box .c_item .c_row.c_gray{
+            background: #F3F5F6;
+        }
+        .content_box .c_item .c_row .c_left{
+            float: left;;
+            width:50%;
+            text-align: center;
+        }
+        .content_box .c_item .c_row .c_right{
+            float: right;
+            width:50%;
+            /*padding-left:5%;*/
+        }
+        .content_box .c_item .c_row .c_right .c_txt{
+            display: block;
+        }
+        .content_box .c_item .c_row  img{
+            width:50%;
+        }
+        /*end content_box*/
         /*start advertise*/
         .advertise{
             /*padding-left:100px;*/
@@ -192,12 +278,12 @@
     <div class="nav">
         <ul class="n_ul">
             <li class="n_item">
-                <a href="home.html" class="n_lk">
+                <a href="../home.html" class="n_lk">
                     <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
                 </a>
             </li>
             <li class="n_item">
-                <a href="left-nav/pandect.html" class="n_lk">
+                <a href="../left-nav/pandect.html" class="n_lk">
                     <div class="n_top">
                         <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
                     </div>
@@ -207,7 +293,7 @@
                 </a>
             </li>
             <li class="n_item">
-                <a href="" class="n_lk">
+                <a href="overview.html" class="n_lk">
                     <div class="n_top">
                         <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
                     </div>
@@ -254,104 +340,21 @@
         <!--end fast_aisle-->
     </div>
     <!--end advertise-->
-    <style>
-        .head{
-            background: #BDC3C6;
-            padding-left: 5%;
-        }
-        .head .h_item{
-            float: left;
-            margin-right: 3%;
-        }
-        .head .h_item .h_lk{
-            display: inline-block;
-            height: 50px;
-            line-height: 50px;
-            font-size: 16px;
-            color: #2f3538;
-        }
-        .head .h_item .h_lk:hover{
-            color: #ffffff;
-        }
-        .head .h_item .h_lk.h_active{
-            color: #ffffff;
-        }
-        .hidden{
-            display: none;
-        }
-
-        .head_sub{
-            background: #808890;
-            padding-left: 5%;
-            width:100%;
-        }
-        .head_sub.h_2{
-            position: fixed;
-            top: 0;
-            left:0 ;
-        }
-        .head_sub .h_item{
-            float: left;
-            margin-right: 3%;
-        }
-        .head_sub .h_item .h_lk{
-            display: inline-block;
-            height: 50px;
-            line-height: 50px;
-            font-size: 16px;
-            color: #2f3538;
-        }
-        .head_sub .h_item .h_lk:hover{
-            color: #ffffff;
-        }
-        .head_sub .h_item .h_lk.h_active{
-            color: #ffffff;
-        }
-    </style>
     <!--start head-->
     <div class="head clearFix">
         <div class="h_item">
             <a href="javascript:;" class="h_lk h_active">关于品牌</a>
         </div>
         <div class="h_item">
-            <a href="javascript:;" class="h_lk">新闻中心</a>
+            <a href="news.html" class="h_lk">新闻中心</a>
         </div>
         <div class="h_item">
-            <a href="javascript:;" class="h_lk">品牌活动</a>
+            <a href="brand-activity.html" class="h_lk">品牌活动</a>
         </div>
     </div>
     <!--end head-->
     <!--start head_sub-->
-    <div class="head_sub h_1 clearFix">
-        <div class="h_item">
-            <a href="javascript:;" class="h_lk h_active">公司概况</a>
-        </div>
-        <div class="h_item">
-            <a href="javascript:;" class="h_lk">领导关怀</a>
-        </div>
-        <div class="h_item">
-            <a href="javascript:;" class="h_lk">企业文化</a>
-        </div>
-        <div class="h_item">
-            <a href="javascript:;" class="h_lk">公司荣誉</a>
-        </div>
-        <div class="h_item">
-            <a href="javascript:;" class="h_lk">发展历程</a>
-        </div>
-        <div class="h_item">
-            <a href="javascript:;" class="h_lk">研发实力</a>
-        </div>
-        <div class="h_item">
-            <a href="javascript:;" class="h_lk">社会责任</a>
-        </div>
-        <div class="h_item">
-            <a href="javascript:;" class="h_lk">大事记</a>
-        </div>
-        <div class="h_item">
-            <a href="javascript:;" class="h_lk">公司愿景</a>
-        </div>
-    </div>
-    <div class="head_sub h_2 clearFix hidden">
+    <div class="head_sub clearFix ">
         <div class="h_item">
             <a href="javascript:;" class="h_lk h_active">公司概况</a>
         </div>
@@ -381,37 +384,6 @@
         </div>
     </div>
     <!--end head_sub-->
-    <style>
-        .content_box{
-            padding: 20px 5%;
-            font-size: 16px;
-        }
-        .content_box .c_item{
-            display: none;
-        }
-        .content_box .c_active{
-            display: block;
-        }
-        .content_box .c_item .c_row{
-            margin-top: 20px;
-        }
-        .content_box .c_item .c_row .c_left{
-            float: left;;
-            width:50%;
-            text-align: center;
-        }
-        .content_box .c_item .c_row .c_right{
-            float: right;
-            width:50%;
-            /*padding-left:5%;*/
-        }
-        .content_box .c_item .c_row  img{
-            width:50%;
-        }
-        .content_box .c_item span{
-
-        }
-    </style>
     <!--start content_box-->
     <div class="content_box">
         <!--公司概况-->
@@ -439,7 +411,7 @@
                     <span class="c_txt">2013年5月4日，湖南省委副书记、代省长杜家毫视察公司。</span>
                 </div>
             </div>
-            <div class="c_row clearFix">
+            <div class="c_row clearFix c_gray">
                 <div class="c_left">
                     <img src="../../assets/i/car/about/leader-care/2.jpg" alt="">
                 </div>
@@ -457,7 +429,7 @@
                 </div>
 
             </div>
-            <div class="c_row clearFix">
+            <div class="c_row clearFix c_gray">
                 <div class="c_left">
                     <img src="../../assets/i/car/about/leader-care/4.jpg" alt="">
                 </div>
@@ -473,7 +445,7 @@
                     <span class="c_txt">2012年3月30日，公司李建新董事长陪同国务委员、公安部部长孟建柱、湖南省委书记周强等视察公司</span>
                 </div>
             </div>
-            <div class="c_row clearFix">
+            <div class="c_row clearFix c_gray">
                 <div class="c_left">
                     <img src="../../assets/i/car/about/leader-care/6.jpg" alt="">
                 </div>
@@ -489,7 +461,7 @@
                     <span class="c_txt">2010年6月27日，湖南省委副书记、代省长徐守盛视察公司永州基地</span>
                 </div>
             </div>
-            <div class="c_row clearFix">
+            <div class="c_row clearFix c_gray">
                 <div class="c_left">
                     <img src="../../assets/i/car/about/leader-care/8.jpg" alt="">
                 </div>
@@ -760,22 +732,252 @@
             <div class="c_title">
 
             </div>
-            <div class="c_row clearFix">
-                <div class="c_left">
-                    <img src="../../assets/i/car/about/company-news/1.jpg" alt="">
-                </div>
-                <div class="c_right">
-                    <span class="c_txt">2007年10月16日，公司李建新董事长与中国建设银行股份有限公司湖南省分行龚蜀雄行长共同签署了银企《全面合作协议》。</span>
-                </div>
-            </div>
-            <div class="c_row clearFix">
-                <div class="c_left">
-                    <img src="../../assets/i/car/about/company-news/1.jpg" alt="">
-                </div>
-                <div class="c_right">
-                    <span class="c_txt">2007年10月16日，公司李建新董事长与中国建设银行股份有限公司湖南省分行龚蜀雄行长共同签署了银企《全面合作协议》。</span>
-                </div>
-            </div>
+            <section data-am-widget="accordion" class="am-accordion am-accordion-default" data-am-accordion='{  }'>
+                <dl class="am-accordion-item">
+                    <dt class="am-accordion-title">
+                        2010-2015
+                    </dt>
+                    <dd class="am-accordion-bd am-collapse">
+                        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                        <div class="am-accordion-content">
+                            <div class="c_row clearFix">
+                                <div class="c_left">
+                                    <img src="../../assets/i/car/about/company-news/1.jpg" alt="">
+                                </div>
+                                <div class="c_right">
+                                    <span class="c_txt">
+                                        2013年3月，李建新董事长当选为十二届全国人大代表。<br/>
+                                        2013年1月7日，集团总部办公地点正式从芙蓉中路二段111号搬迁到长沙经济技术开发区漓湘东路9号。<br/>
+                                        2012年3月30日，国务委员、公安部长孟建柱在湖南省省委书记周强和李建新董事长的陪同下，视察了长丰集团永州分公司。<br/>
+                                        2012年2月28日，集团公司领导干部任职大会在长沙举行。标志着公司回归整车主业，拉开第四次创业序幕。<br/>
+                                        2011年2月26日，公司被评为“全国机械行业文明单位”荣誉称号。<br/>
+                                        2010年10月16日，长丰集团在湖南田汉大剧院隆重举行“建企六十周年庆典”仪式。同日，丰源迪美汽车电子产业园奠基仪式，湖南丰源业翔晶科新能源有限公司挂牌仪式分别在长沙国家经济技术开发区举行。<br/>
+                                        2010年9月29日，长丰集团公司及子公司湖南风顺车桥有限责任公司与Focana公司在长沙签约，共同出资成立湖南中德汽车自动变速器股份有限。<br/>
+                                        2010年6月27日，湖南省委副书记、代省长徐守盛一行视察公司永州分公司。<br/>
+                                        2010年2月3日，猎豹汽车被国家工商行政管理总局评为驰名商标。<br/>
+                                        2010年1月，刘康林任公司总经理。<br/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="am-accordion-item">
+                    <dt class="am-accordion-title">
+                        2005-2009
+                    </dt>
+                    <dd class="am-accordion-bd am-collapse ">
+                        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                        <div class="am-accordion-content">
+                            <div class="c_row clearFix">
+                                <div class="c_left">
+                                    <img src="../../assets/i/car/about/company-news/1.jpg" alt="">
+                                </div>
+                                <div class="c_right">
+                                    <span class="c_txt">
+                                        2009年11月4日，长丰猎豹CS7车型在"2009年消费车型”评选中，一举斩获年度SLN自主品牌大奖。<br/>
+                                        2009年10月16日，中共中央政治局委员、国务院副总理张德江在省委书记张春贤、省长周强等陪同下，来公司长沙工厂视察。<br/>
+                                        2009年4月5日，长丰汽车CS7在公司长沙工厂下线。<br/>
+                                        2008年10月18日，长丰汽车自动变速器项目在衡阳风顺举行奠基仪式。<br/>
+                                        2008年3月，李建新董事长当选十一届全国人大代表。<br/>
+                                        2007年10月16日，公司李建新董事长与中国建设银行股份有限公司湖南省分行龚蜀雄行长共同签署了银企《全面合作协议》。<br/>
+                                        2007年10月16日，长丰汽车猎豹CS6和骐菱多功能轿车在永州分公司举行下线仪式。<br/>
+                                        2007年7月26日，长丰集团15万台汽油发动机项目在长沙经济技术开发区园内举行奠基仪式。<br/>
+                                        2007年3月，在全国四驱越野拉力系列分站赛漠河站长丰汽车华南虎车队首次出征冰雪拉力赛并包揽了全部赛级冠军。<br/>
+                                        2007年1月8日，公司应邀携带猎豹CS7、CS6、飞豹CT5、长丰UU-CT3和菱形概念车五款车型赴美国底特律市参加第100届北美国际车展。<br/>
+                                        2006年12月22日，公司第三次党员代表大会召开。<br/>
+                                        2006年10月16日，公司在湖南大剧院隆重举行“公司改制十周年”盛大庆典。<br/>
+                                        2006年6月6日，公司被中共中央组织部授予“全国先进基层党组织”光荣称号。<br/>
+                                        2006年3月26日，全国人大副委员长李铁映来长沙基地视察并为公司题词“伟大在于创造”。<br/>
+                                        2005年10月26日，公司荣获“全国文明单位”光荣称号<br/>
+                                        2005年7月28日，公司博士后研究工作站在长丰汽车研发中心正式挂牌成立。<br/>
+                                        2005年6月28日，长丰扬子汽车制造有限责任公司揭牌暨技改奠基仪式在安徽滁州隆重举行。<br/>
+                                        2005年4月12日，公司并购组建的长丰扬子公司举行首台皮卡车下线仪式。2005年3月28日，公司与新华联公司、中银扬子公司三方合资成立安徽长丰扬子汽车制造股份有限公司签字仪式。<br/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="am-accordion-item">
+                    <dt class="am-accordion-title">
+                        2000-2004
+                    </dt>
+                    <dd class="am-accordion-bd am-collapse ">
+                        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                        <div class="am-accordion-content">
+                            <div class="c_row clearFix">
+                                <div class="c_left">
+                                    <img src="../../assets/i/car/about/company-news/1.jpg" alt="">
+                                </div>
+                                <div class="c_right">
+                                    <span class="c_txt">
+                                        2004年10月26日，中共中央政治局常委、中央政法委书记罗干同志在中央和省、市领导的陪同下视察长丰汽车长沙工厂。<br/>
+                                        2004年10月30日，长丰集团荣获“全国企业文化优秀奖”。<br/>
+                                        2004年8月28日，长丰汽车长沙工厂举行隆重的竣工仪式。<br/>
+                                        2004年7月15日，公司实施战略搬迁，集团总部机关由永州市搬迁至省会长沙市芙蓉中路二段华菱大厦。<br/>
+                                        2004年6月14日，湖南长丰汽车制造股份有限公司A股(股票代码：600991)正式在上海股票交易所挂牌上市交易。<br/>
+                                        2003年12月22日，长丰猎豹飞腾汽车荣获“中国SLN年度车型”大奖。<br/>
+                                        2003年10月20日，公司将猎豹阅兵车捐赠给国防科学技术大学。<br/>
+                                        2003年9月12日，长丰集团与湖南大学联合创办的“长丰汽车工程学院”揭牌仪式在湖南大学举行。<br/>
+                                        2003年2月10日，公司投资兴建的衡阳风顺车桥有限公司举行工程竣工投产仪式。<br/>
+                                        2003年1月9日，李建新薏事长当选为“第十届全国人大代表”。<br/>
+                                        2002年11月8日，公司正式取得中国质协质量保证中心颁发的OAC、IS014000环境管理体系认证书，标志着公司获得了进入国际市场的绿色通行证。<br/>
+                                        2002年4月1日，由长沙长丰公司生产的首辆猎豹V6-3000顺利下线。<br/>
+                                        2002年2月26日，湖南长丰汽车制造股份有限公司研发中心在长沙挂牌成立。<br/>
+                                        2001年12月27日，在湖南省著名商标新闻发布会上，“猎豹汽车”商标获得湖南省著名商标。<br/>
+                                        2001年9月21日，广州军区驻湘军队保障性企业交接仪式在长沙举行，长丰集团由广州军区整体移交湖南省政府管理。<br/>
+                                        2001年7月19日，公司召开第二次党员代表大会。<br/>
+                                        2001年6月7日，七四三二工厂作为长丰集团二级机构并入长丰集团。<br/>
+                                        2001年4月11日，来湘考察工作的中共中央政治局常委、国务院总理朱镕基在省委大院内视察猎豹汽车连声称赞“猎豹汽车真不错”。<br/>
+                                        2001年1月7日，李建新董事长被评选为“2000年度湖南省十大经济新闻人物”。<br/>
+                                        2000年10月16日，长丰（集团）有限责任公司召开建厂50周年庆祝大会。2000年10月16日，长丰猎豹汽车3万台技改工程竣工达产庆典大会。<br/>
+                                        2000年7月28日，公司向中国人民革命军事博物馆捐赠“澳门回归‘猎豹’阅兵指挥车”仪式。<br/>
+                                        2000年6月14日，长丰与日本三菱公司举行了PAJEROV6-3000技术转让合同签字仪式。<br/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="am-accordion-item">
+                    <dt class="am-accordion-title">
+                        1995-1999
+                    </dt>
+                    <dd class="am-accordion-bd am-collapse ">
+                        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                        <div class="am-accordion-content">
+                            <div class="c_row clearFix">
+                                <div class="c_left">
+                                    <img src="../../assets/i/car/about/company-news/1.jpg" alt="">
+                                </div>
+                                <div class="c_right">
+                                    <span class="c_txt">
+                                        1999年12月20日，公司生产的猎豹阅兵检阅车作为进驻澳门“三军”护旗车，率先驶入澳门。<br/>
+                                        1998年10月24日，公司被授予“全国模范职工之家”称号。<br/>
+                                        1997年4月29日，长丰集团获“全国五一劳动奖状”称号。<br/>
+                                        1997年1月18日，公司召开了第一次党员代表大会。<br/>
+                                        1996年10月16日，长丰（集团）有限责任公司、湖南长丰汽车制造股份有限公司宣告成立，正式挂牌。李建新任董事长、党委书记，潘惠强任总经理。<br/>
+                                        1996年10月7日，据湘体改字(1996) 53号文件批复，湖南省经济体制改革委员会同意工厂设立湖南省长丰汽车制造股份有限公司。<br/>
+                                        1996年5月14日，湖南省省委书记王茂林视察工厂。<br/>
+                                        1996年4月19日，中国人民解放军总后勤部以(1996)后生字第165号文件批复，同意工厂依据《公司法>改制为国有独资（集团）有限责任公司，公司名称为“长丰（集团）有限公司，”并保留“中国人民解放军第七三一九工厂”代号。<br/>
+                                        1995年2月，经总后勤部批准工厂被列为全军22家建立现代企业制度的试点单位之一。<br/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="am-accordion-item">
+                    <dt class="am-accordion-title">
+                        1990-1994
+                    </dt>
+                    <dd class="am-accordion-bd am-collapse ">
+                        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                        <div class="am-accordion-content">
+                            <div class="c_row clearFix">
+                                <div class="c_left">
+                                    <img src="../../assets/i/car/about/company-news/1.jpg" alt="">
+                                </div>
+                                <div class="c_right">
+                                    <span class="c_txt">
+                                        1994年4月3日，经广州军区后勤部工厂管理局、湖南省汽车工业总公司鉴定，一致同意CJY6421A轻型越野汽车通过鉴定，可以批量生产。<br/>
+                                        1993年，工厂被国家统计局列入“中国500家最大机械工业企业”行列。<br/>
+                                        1993年5月5日，广州军区后勤部工厂管理局批复，同意工厂组建第七三一九工厂惠州分厂，并于9月27日举行奠基典礼。<br/>
+                                        1992年11月18日下午3时，中共中央政治局常委、全国人大委员长乔石在湖南省委副书记杨正午等陪同下视察工厂。<br/>
+                                        1992年3月25日，工厂隆重举行“猎豹”汽车批量出口庆典，四台“猎豹”汽车出口远销秘鲁、冈比亚国家，实现了我国硬顶轻型越野车出口零的突破。<br/>
+                                        1991年8月，在全国武警轻型汽车“金盾杯”越野选拔赛中，猎豹牌CJY6420汽车荣获综合大奖金奖、速度奖金奖、最佳性能奖金奖、质量优秀奖金奖，囊括了同类车型的全部金奖。<br/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="am-accordion-item">
+                    <dt class="am-accordion-title">
+                        1985-1989
+                    </dt>
+                    <dd class="am-accordion-bd am-collapse ">
+                        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                        <div class="am-accordion-content">
+                            <div class="c_row clearFix">
+                                <div class="c_left">
+                                    <img src="../../assets/i/car/about/company-news/1.jpg" alt="">
+                                </div>
+                                <div class="c_right">
+                                    <span class="c_txt">
+                                       1989年2月，中国汽车工业联合会颁发标字第050号《企业名称代号证书》，规定我七三一九工厂的企业名称代号：CFA。<br/>
+                                        1988年11月7日，总后勤部部长赵南起上将在广州军区政委张仲先中将、后勤部部长迟云秀少将、政委刘智民中将等领导的陪同下视察工厂。<br/>
+                                        1988年8月30日，广州军区政委张仲先中将视察工厂。<br/>
+                                        1988年6月7日，工厂开发的“猎豹”牌CA0051A轻型越野汽车在湖南冷水滩市通过国家军车定型委员会委托总后车船部主持的技术鉴定，鉴定结果：“该车在目前国产的轻型车中处于领先地位。”<br/>
+                                        1988年，湖南省省委书记熊清泉，视察工厂。<br/>
+                                        1988年1月1日，工厂试制的四台“猎豹”CC0209第二轮改进型样车在北京接受军委和总部首长审查。<br/>
+                                        1987年，工厂以市场为导向，以经济建设为中心，加大技术改造力度，使猎豹生产线初具规模，自此工厂拥有了拳头产品“猎豹汽车”。<br/>
+                                        1987年3月21日，总后车船部确定由七四二七、七三一九工厂和总后车船研究所联合试制CC0209型越野汽车，用于部队作师团以下指挥车。6月28日成功研制出两台样车。<br/>
+                                        1986年1月，工厂改装的长丰CF-630旅行车，通过湖南省级技术鉴定。<br/>
+                                        1985年．在“军品优先、军民结合”生产方针指导下，工厂总产值首次超过千万元，达1100万元，销售收入首次突破千万元，达1150万元。<br/>
+                                        1985年7月，工厂改装的三联牌SL-130B型双排座客货两用车和组装的湘陵牌XL212型越野汽车通过湖南升级鉴定。<br/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="am-accordion-item">
+                    <dt class="am-accordion-title">
+                        1980-1984
+                    </dt>
+                    <dd class="am-accordion-bd am-collapse ">
+                        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                        <div class="am-accordion-content">
+                            <div class="c_row clearFix">
+                                <div class="c_left">
+                                    <img src="../../assets/i/car/about/company-news/1.jpg" alt="">
+                                </div>
+                                <div class="c_right">
+                                    <span class="c_txt">
+                                        1984年10月，李建新同志任厂长：’白哥章同志任副厂长，阮伟经同志升任党委副书记。<br/>
+                                        1983年8月，根据上级要求调整了工厂领导班子，曹全保同志任党委书记，原厂长周南湘退居二线，彭荣耀、李文印同志退居二线，刘维浩、黄照祥同志任副厂长。<br/>
+                                        1982年2月18日，广后十九分部、广后工厂局联合行文(1982)分司字第12号通知，七三一九从1982年2月18日起由广后十九分部划归广后工厂管理局领导。<br/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="am-accordion-item">
+                    <dt class="am-accordion-title">
+                        1950-1979
+                    </dt>
+                    <dd class="am-accordion-bd am-collapse ">
+                        <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                        <div class="am-accordion-content">
+                            <div class="c_row clearFix">
+                                <div class="c_left">
+                                    <img src="../../assets/i/car/about/company-news/1.jpg" alt="">
+                                </div>
+                                <div class="c_right">
+                                    <span class="c_txt">
+                                       1979年3月16日，广州军区后勤部(1979)勤宇第51号命令任命：刘钰堂为七三一九工厂厂长，王金忠为工厂政治委员。从此废除革委会领导体制，恢复了厂部领导体制。<br/>
+                                        1978年5月，中央政治局委员、广州军区司令员许世友，在军区后勤部靳兆西部长陪同下，乘火车专列视察工厂。<br/>
+                                        1969年，七四三一工厂由衡阳市搬迁到零陵县冷水滩。12月14日，广州军区后勤部(68)勤字第182号通知：“自1969年1月1日起，将七三一九工厂、七四三一工厂两厂合并为综合性的修理工厂。合并后厂名为：中国人民解放军第七三一九工厂。”<br/>
+                                        1967年，七四三一工厂由衡阳市搬迁到零陵县冷水滩。12月14日，广州军区后勤部（68）勤字第182号通知：“自1969年1月1日起，将七三一九工厂、七四三一厂两厂合并为综合性的修理工厂。合并后厂名为：中国人民解放军第七三一九工厂。”<br/>
+                                        1965年7月，广州军区江零五六工厂改称为中国人民解放军第七四三一工厂。<br/>
+                                        1965年7月，广州军区二O二工厂由广州市沙河搬迁到湖南零陵县冷水滩，迁建后职工人数由696人增加到850人。厂长马进、政委王学勇、副厂长肖云山、黄三坟。广州军区二O二工厂改称为中国人民解放军第七三一九工厂。<br/>
+                                        1964年总后勤部副部长张令彬中将亲自带人到湖南勘测厂址，确定工厂搬到零陵县冷水滩镇。<br/>
+                                        1961年年初，衡阳汽车轮胎修理厂改名为广州军区江零五六工厂。<br/>
+                                        1958年4月，广州军区后勤部将地处衡阳市江东汽车码头的江零五三厂移交给湖南省交通厅，但地处五马归槽的轮胎车间仍归部队所有，改名为衡阳轮胎修理厂。<br/>
+                                        1957年8月底，广州军区军械部中型修械厂改名为广州军区第二O二厂。<br/>
+                                        1953年，华南军区军械处修械所扩建为中南军区军械部中型修械厂。<br/>
+                                        1952年春，修理所改称华南军区军械处修械所，隶属华南军区军械处建制。所长贺国安，副政治指导员孟余生。<br/>
+                                        1950年6月，广东军区将华南机械厂一个机器车间（即接收的国民党八O兵工厂三所）编为后勤部军械处修理所，抽调职员10名，生产工人60名，拨来27台旧设备，任命所长贺国安，政治指导员师玉山。七三一九工厂的前身由此诞生。<br/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </section>
         </div>
         <!--公司愿景-->
         <div class="c_item">
@@ -860,7 +1062,8 @@
 <script>
     $(function () {
 //        resizeHeight();
-        verticalAlign()
+        verticalAlign();
+        $('.head').after('<div class="space" style="display: none;height: '+$('.head_sub').outerHeight()+'px;"></div>')
     });
     function resizeHeight() {
         var w_h = window.innerHeight;
@@ -882,7 +1085,12 @@
                         $(this).css({
                             'padding-top': (l_h - r_h) / 2
                         })
+                    }else{
+                        $(this).css({
+                            'padding-top': 0
+                        })
                     }
+                    return false
                 }
             })
         });
@@ -900,30 +1108,28 @@
         var pl = $('.head').css('padding-left');
         var pl_float = parseFloat(pl.substr(0,pl.length-2));
         var h = $('.head_sub').outerHeight();
-//        console.log('t:'+t+",fix:"+fixedTop)
+        console.log("t:"+t+",fixedTOp:"+fixedTop)
         if(t  >= fixedTop){
-            $('.head_sub').eq(1).css({
+            $('.space').show();
+            var h = $('.head_sub').outerHeight();
+            $('.head_sub').addClass('h_fixed');
+            $('.head_sub').css({
                 'padding-left':pl_float+100
             });
-            $('.head_sub').eq(1).show();
         }else{
-            $('.head_sub').eq(1).hide();
+            $('.head_sub').removeClass('h_fixed');
+            $('.head_sub').css({
+                'padding-left':pl_float
+            });
+            $('.space').hide();
         }
     }
-    $('.head_sub:eq(0) .h_item').click(function () {
-        console.log("visible");
+    $('.head_sub .h_item').click(function () {
         var self = $(this)[0];
         var index = 0;
-        $('.head_sub:eq(0) .h_item').each(function (i) {
+        $('.head_sub .h_item').each(function (i) {
             if(self == $(this)[0]){
                 index =i;
-                $(this).find('a.h_lk').css('color','#fff')
-            }else{
-                $(this).find('a.h_lk').css('color','#2f3538');
-            }
-        });
-        $('.head_sub:eq(1) .h_item').each(function (k) {
-            if(index == k){
                 $(this).find('a.h_lk').css('color','#fff')
             }else{
                 $(this).find('a.h_lk').css('color','#2f3538');
@@ -936,33 +1142,8 @@
                 $(this).removeClass('c_active');
             }
         })
+        verticalAlign();
     })
-    $('.head_sub:eq(1) .h_item').click(function () {
-        console.log("visible");
-        var self = $(this)[0];
-        var index = 0;
-        $('.head_sub:eq(1) .h_item').each(function (i) {
-            if(self == $(this)[0]){
-                index =i;
-                $(this).find('a.h_lk').css('color','#fff')
-            }else{
-                $(this).find('a.h_lk').css('color','#2f3538');
-            }
-        });
-        $('.head_sub:eq(0) .h_item').each(function (k) {
-            if(index == k){
-                $(this).find('a.h_lk').css('color','#fff')
-            }else{
-                $(this).find('a.h_lk').css('color','#2f3538');
-            }
-        });
-        $('.content_box .c_item').each(function (j) {
-            if(index == j){
-                $(this).addClass('c_active');
-            }else{
-                $(this).removeClass('c_active');
-            }
-        })
-    })
+
 </script>
 </html>
