@@ -1,0 +1,821 @@
+.top_link{
+    background:none;
+}
+.top_link .toolslink div{
+    background-color: rgba(255,255,255,.3);
+}
+.row{
+    margin:0;
+}
+.bold_font{
+    font-weight:bold;
+}
+.blue_font{
+    color:#0599da;
+}
+.red_font{
+    color:red;
+}
+.black_mask{
+    width: 100%;
+    height: 150%;
+    background: #262b2e;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    display: none;
+}
+.pc_banner{
+    display:block;
+}
+.m_banner{
+    display:none;
+}
+
+
+.sub_nav.scroll{
+    position:fixed;
+    top:0;
+    z-index:10;
+}
+.sec_nav{
+    background:#bcc2c5;
+    height:55px;
+    line-height:55px;
+    padding-left:4%;
+}
+.sec_nav a{
+    color:#000;
+    font-size:18px;
+}
+.sec_nav a.active{
+    color:#fff;
+}
+.third_nav{
+    background:#788087;
+    height:40px;
+    line-height:40px;
+    font-size:14px;
+    padding-left:4%;
+}
+.third_nav a{
+    color:#000;
+}
+.third_nav a.active{
+    color:#fff;
+}
+.sub_nav a{
+    display: inline-block;
+    padding: 0 15px;
+}
+.sub_nav a:hover,.sub_nav a:focus {
+    text-decoration: none;
+    color:#fff;
+}
+.sub_nav a.active:hover,.sub_nav a.active:focus {
+    text-decoration: none;
+    background-color:inherit;
+}
+
+
+.main_title{
+    font-weight:bold;
+    font-size:26px;
+    text-align:center;
+    margin-top:40px;
+    padding:0 4%;
+}
+.main_text{
+    text-align:center;
+    margin:30px 0 50px 0;
+    padding:0 4%;
+    line-height:25px;
+}
+.media{
+    padding:3% 4%;
+}
+.media img{
+    width:88%;
+}
+.media .title{
+    font-weight:bold;
+    font-size:18px;
+    margin-bottom:10px;
+}
+.media .link_box a{
+    display: block;
+    width: 248px;
+    height: 40px;
+    color: #fff;
+    line-height: 40px;
+    background: url(../images/vw_finance/btn_bg.png) no-repeat;
+}
+.media .text{
+    line-height:25px;
+}
+.fin_popup{
+    position:fixed;
+    background:#fff;
+    top:15%;
+    width:50%;
+    margin:0 auto;
+    padding:30px 4%;
+    height:530px;
+}
+.fin_popup .content{
+    height:400px;
+}
+.fin_popup .title{
+    font-weight:bold;
+    font-size:18px;
+    margin-bottom:30px;
+    text-align:center;
+}
+.fin_popup p{
+    line-height:28px;
+}
+
+.icon_list{
+    padding:0 4%;
+    text-align:center;
+    margin-bottom:70px;
+}
+.icon_list>div{
+    padding:0 4%;
+}
+.icon_list .icon svg{
+    width:50%;
+}
+.icon_list .title{
+    font-weight:bold;
+    font-size:18px;
+    margin:20px 0;
+}
+
+
+.qa_con .qa_title{
+    font-size:20px;
+    font-weight:bold;
+    padding-left:4%;
+    margin-bottom:30px;
+}
+.qa_con .qa_list{
+    border-top: 2px solid #d2d2d2;
+}
+.qa_con .qa_list li{
+    border-bottom: 2px solid #d2d2d2;
+    cursor:pointer;
+}
+.qa_con .qa_list li .question{
+    height:64px;
+    line-height:64px;
+    font-size:15px;
+    background:url(../images/icon-arrow2.png) 4% center no-repeat;
+    padding-left:7%;
+}
+.qa_con .qa_list li.active .question{
+    background:url(../images/icon-arrow2-d.png) 4% center no-repeat;
+}
+.qa_con .qa_list li .answer{
+    display:none;
+    padding:50px 7% 50px 7%;
+    border-top: 2px solid #d2d2d2;
+    color:#777;
+}
+
+
+/*鐖辫溅閲戣瀺鏂规*/
+.plan_con{
+    background:#f3f5f6;
+    padding:50px 4% 60px 4%;
+}
+.plan_con .plan{
+    padding:0 3% 50px 3%;
+}
+.plan .title{
+    font-weight:bold;
+    font-size:18px;
+    margin-bottom:18px;
+}
+.plan .title .open_popup{
+    display:inline-block;
+    width:24px;
+    height:24px;
+    background:url(../images/vw_finance/tanhao.png) no-repeat;
+    vertical-align:middle;
+    margin-left:15px;
+}
+.plan .title .choose{
+    float:right;
+    display:inline-block;
+    width:26px;
+    height:26px;
+    background:url(../images/vw_finance/choose.png) no-repeat;
+    cursor:pointer;
+    vertical-align:middle;
+}
+.plan .title .choose.active{
+    background:url(../images/vw_finance/choose_active.png) center center no-repeat;
+}
+.plan .text{
+    line-height:26px;
+}
+.plan_con .link{
+    text-align:center;
+}
+.plan_con .link a{
+    display:block;
+    width:248px;
+    height:40px;
+    color:#fff;
+    line-height:40px;
+    background:url(../images/vw_finance/btn_bg.png) no-repeat;
+    margin:10px auto 0 auto;
+}
+
+.main_bottom{
+    padding:60px 0;
+    font-size:16px;
+    line-height:35px;
+}
+.bottom_text{
+    width:650px;
+    margin:0 auto;
+}
+.bottom_text .text_con{
+    margin-left:30px;
+}
+
+.popup01{
+    position:fixed;
+    width: 90%;
+    margin: 0 auto;
+    top: 10%;
+    background: #fff;
+    height:600px;
+    padding:50px 0;
+}
+.popup01 .title{
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:24px;
+    padding:0 4%;
+}
+.popup01 .popup_tab{
+    margin-bottom:20px;
+    padding:0 4%;
+}
+.popup01 .popup_tab a{
+    color:#000;
+    margin-right:24px;
+    font-size:16px;
+}
+.popup01 .popup_tab a.active{
+    font-weight:bold;
+}
+.popup01 .content_list{
+    line-height:25px;
+    height:406px;
+    overflow-y:scroll;
+    -webkit-overflow-scrolling: touch;
+    display:none;
+}
+.popup01 .content_list.active{
+    display:block;
+}
+.popup01 .content{
+    padding:30px 6% 30px 6%;
+}
+.popup01 .content .left_con{
+    margin-right:30px;
+}
+.popup01 .content .con_title{
+    font-size:16px;
+}
+.popup01 .content .right_con{
+    width:100%;
+}
+a.close_popup {
+    width: 17px;
+    height: 17px;
+    background: url(../images/vw_finance/close.png);
+    position: absolute;
+    top: -30px;
+    right: -45px;
+}
+.m_hide{
+    display:block;
+}
+
+
+/*淇濋櫓鏈嶅姟*/
+.media .link a{
+    display: block;
+    width: 248px;
+    height: 40px;
+    color: #fff;
+    line-height: 40px;
+    background: url(../images/vw_finance/btn_bg.png) no-repeat;
+    margin: 40px 0 0 0;
+    text-align:center;
+}
+.more_con{
+    display:none;
+    padding:50px 4%;
+    font-size:15px;
+    position:relative;
+}
+.more_con .title{
+    font-weight:bold;
+    font-size:20px;
+}
+.more_con .intro_con{
+    padding:0;
+}
+.more_con .sec_title{
+    font-weight:bold;
+    font-size:18px;
+    background: url(../../assets/i/car/about/finance-service/insurance/title_bg.png) left center no-repeat;
+    padding-left:15px;
+    text-align:left;
+    margin:30px 0 10px 0;
+}
+.more_con p{
+    margin:10px 0;
+    padding-right:10%;
+}
+.more_con .close_more{
+    position:absolute;
+    top:35px;
+    right:4%;
+}
+.sec_title{
+    text-align:center;
+    font-weight:bold;
+    font-size:20px;
+    margin:70px 0 30px 0;
+}
+.step_row{
+    padding:0 1%;
+}
+.step_con{
+    padding:0;
+    margin:30px 0;
+    padding:0 3%;
+}
+.step_con .title{
+    color:#069bd8;
+    font-weight:bold;
+    font-size:18px;
+    padding-left:30px;
+}
+.step_con:nth-child(1) .title{
+    background:url(../images/vw_finance/num_icon_01.png) left center no-repeat;
+}
+.step_con:nth-child(2) .title{
+    background:url(../images/vw_finance/num_icon_02.png) left center no-repeat;
+}
+.step_con:nth-child(3) .title{
+    background:url(../images/vw_finance/num_icon_03.png) left center no-repeat;
+}
+.step_con:nth-child(4) .title{
+    background:url(../images/vw_finance/num_icon_04.png) left center no-repeat;
+}
+.step_con:nth-child(5) .title{
+    background:url(../images/vw_finance/num_icon_05.png) left center no-repeat;
+}
+.step_con:nth-child(6) .title{
+    background:url(../images/vw_finance/num_icon_06.png) left center no-repeat;
+}
+.step_con p{
+    padding:10px 0 10px 0;
+    line-height:25px;
+    border-bottom:3px solid #ddd;
+    min-height:73px;
+}
+.sm_title{
+    font-weight:bold;
+    font-size:20px;
+    padding-left:4%;
+    margin:40px 0;
+}
+.style_row{
+    padding:0 4%;
+}
+.style_con .img{
+    text-align:center;
+}
+.style_con .img svg{
+    width:50%;
+}
+.style_con .title{
+    text-align:center;
+    font-weight:bold;
+    font-size:16px;
+    margin:10px 20px 30px 20px;
+}
+.style_con table{
+    width:100%;
+}
+.style_con table tr td{
+    padding:8px 6%;
+}
+.style_con table tr.bg{
+    background:#f1f5f6;
+}
+.more_box{
+    margin:40px 0 60px 0;
+    text-align:center;
+}
+.more_box .more_btn{
+    display: block;
+    width: 248px;
+    height: 40px;
+    color: #fff;
+    line-height: 40px;
+    background: url(../../assets/i/car/about/finance-service/insurance/btn_bg.png) no-repeat;
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+.free_type .title{
+    padding:0 4%;
+    height:62px;
+    line-height:62px;
+    background:#d6dada;
+    font-size:16px;
+    font-weight:bold;
+}
+.free_type .second{
+    padding:0 4%;
+    height:48px;
+    line-height:48px;
+    font-size:16px;
+    background:#eef0ee;
+}
+.free_type .check_row{
+
+}
+.free_type .check_row .check_box{
+    padding:0;
+}
+
+.free_type .check_row .check{
+    height:55px;
+    line-height:55px;
+    padding-left:12%;
+    font-size:13px;
+    position:relative;
+}
+.free_type .check_row .check .check_icon{
+    width:26px;
+    height:26px;
+    position:absolute;
+    top:14px;
+    right:50px;
+    background:url(../images/vw_finance/choose.png) no-repeat;
+}
+.free_type .check_row .check .check_icon.active{
+    background:url(../images/vw_finance/choose_active.png) no-repeat;
+}
+.free_type .check_row .check.bg{
+    background-color:#eef0ee;
+}
+.free_type .check_row .check span{
+    display:inline-block;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:#d6dada;
+    color:#fff;
+    vertical-align: middle;
+    line-height: 22px;
+    text-align: center;
+    margin-right:10px;
+}
+
+/*寤朵繚鏈嶅姟*/
+.yb_con .media .link_box a{
+    display: block;
+    width: 248px;
+    height: 40px;
+    color: #fff;
+    line-height: 40px;
+    background: url(../images/vw_finance/btn_bg.png) no-repeat;
+    margin: 40px 0 0 0;
+    text-align: center;
+}
+.yb_con .media-body{
+    padding-left:0;
+}
+.content_box{
+    background:#f1f5f6;
+    padding:40px 4%;
+}
+.content_box .title{
+    font-size:18px;
+    font-weight:bold;
+}
+.yb_icon{
+    text-align:center;
+    margin-top:25px;
+}
+.yb_icon .icon_img img{
+    width:30%;
+}
+.yb_icon .title{
+    font-weight:bold;
+    margin:15px 0;
+}
+.product_con{
+    display:none;
+    padding:0 4%;
+}
+.product_con .title{
+    font-weight:bold;
+    margin:40px 0 30px 0;
+    font-size:18px;
+}
+.product_con .info{
+    margin:18px 0;
+}
+.product_con .info span{
+    margin-right:18px;
+}
+.product_con .table_bg01{
+    background:#d6dada;
+}
+.product_con .table_bg02{
+    background:#eef0ee;
+}
+.product_con .table01 tr td{
+    border:1px solid #f0f0f0;
+}
+.product_con table tr td{
+    text-align:center;
+    padding:10px 5px;
+}
+.product_con .table02_box{
+    padding-left:0;
+    margin-bottom:30px;
+}
+.product_con .table03_box{
+    padding-right:0;
+    margin-bottom:30px;
+}
+
+/*娴佺▼涓庡父瑙侀棶棰�*/
+.lc_con{
+    display:none;
+}
+.lc_con .title{
+    font-weight: bold;
+    margin: 40px 0 30px 0;
+    font-size: 18px;
+    padding:0 4%;
+}
+.lc_row{
+    padding:0 4%;
+}
+.lc_content{
+    padding-bottom:20px;
+}
+.lc_content .title{
+    margin:15px 0 0 0;
+    font-size:16px;
+}
+.lc_content .icon{
+    width:15%;
+    text-align:center;
+}
+.lc_content .icon svg{
+    width:100%;
+}
+.lc_content .text{
+    width:70%;
+    padding:60px 0 0 20px;
+}
+.lc_step{
+    width:85%;
+    border-top:1px solid #eee;
+    padding-top:20px;
+}
+.lc_step span{
+    margin-right:15px;
+}
+
+@media screen and (max-width:1900px) {
+    .step_con p{
+        min-height:98px;
+    }
+}
+@media screen and (max-width:1660px) {
+    .style_con table tr td{
+        padding:8px 2%;
+    }
+    .yb_icon .icon_img img{
+        width:35%;
+    }
+}
+@media screen and (max-width:1300px) {
+    .step_con p{
+        min-height:123px;
+    }
+    .yb_icon .icon_img img{
+        width:42%;
+    }
+
+    .lc_content .text{
+        padding:30px 0 0 20px;
+    }
+}
+@media screen and (max-width:1090px) {
+    .fin_popup .content{
+        overflow-y:scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+@media screen and (max-width:1060px) {
+    .plan .title .open_popup{
+        margin:0;
+    }
+}
+@media screen and (max-width:992px) {
+    .product_con .table02_box{
+        padding:0;
+    }
+    .product_con .table03_box{
+        padding:0;
+    }
+}
+@media screen and (max-width:640px) {
+    .m_hide{
+        display:none;
+    }
+    .pc_banner{
+        display:none;
+    }
+    .m_banner{
+        display:block;
+    }
+
+    .sec_nav a{
+        font-size:15px;
+        margin-right:6px;
+    }
+    .third_nav a{
+        font-size:13px;
+        margin-right:15px;
+    }
+    .sub_nav a{
+        display: inline-block;
+        padding: 0;
+    }
+
+    .media{
+        text-align:center;
+    }
+    .media .title{
+        margin-top:10px;
+    }
+    .media .link_box a{
+        margin:0 auto;
+    }
+    .fin_popup{
+        top:10%;
+        width:100%;
+    }
+    .icon_list{
+        margin-bottom: 20px;
+    }
+    .icon_list>div{
+        margin-bottom:40px;
+    }
+    .icon_list .icon{
+        float:left;
+        width:30%;
+    }
+    .icon_list .icon svg{
+        width:65%;
+    }
+    .icon_list .title{
+        float:left;
+        margin:0;
+        text-align:left;
+        width:70%;
+        font-size:15px;
+        margin-top:25px;
+    }
+    .icon_list .text{
+        float:left;
+        text-align:left;
+        width:70%;
+    }
+
+    .qa_con .qa_list li .question{
+        padding:25px 7% 25px 11%;
+        font-size:14px;
+        line-height:16px;
+    }
+    .qa_con .qa_list li .answer{
+        padding:20px 7% 20px 11%;
+    }
+
+
+    .bottom_text{
+        width:100%;
+        padding:0 4%;
+    }
+    .bottom_text .img_con{
+        width:20%;
+    }
+    .bottom_text .img_con svg{
+        width:100%;
+    }
+    .bottom_text .text_con{
+        width:68%;
+    }
+
+    .popup01 .popup_tab a{
+        font-size:14px;
+        margin-right:10px;
+    }
+    .popup01 .content .left_con{
+        width:100%;
+    }
+    .popup01 .content .right_con{
+        width:100%;
+    }
+    a.close_popup{
+        right:5px;
+    }
+
+
+    .media .link a{
+        margin: 40px auto 0 auto;
+    }
+    .step_con{
+        margin:12px 0;
+    }
+    .step_con p {
+        min-height: 58px;
+    }
+
+    .sm_title{
+        text-align:center;
+        margin-bottom:0;
+        padding:0;
+    }
+    .style_con {
+        margin:20px 0;
+    }
+    .more_box {
+        margin: 10px 0 30px 0;
+    }
+    .free_type .title{
+        text-align:center;
+    }
+    .free_type .second{
+        text-align:center;
+    }
+    .free_type .check_row .check{
+        padding:0 6%;
+    }
+    .free_type .check_row .check.bg{
+        background:none;
+    }
+    .free_type .check_row .check.mbg{
+        background:#eef0ee;
+    }
+    .free_type .check_row .check .check_icon{
+        right:25px;
+    }
+
+    .yb_con .media .link_box a{
+        margin: 20px auto 0 auto;
+    }
+    .content_box .title{
+        text-align:center;
+    }
+    .yb_icon .icon_img img{
+        width:32%;
+    }
+
+    .lc_row>div{
+        margin-bottom:30px;
+    }
+    .lc_content .icon{
+        width:25%;
+    }
+    .lc_content .icon img{
+        width:100%;
+    }
+    .lc_content .text{
+        width:75%;
+        padding:10px 0 0 20px;
+    }
+    .lc_step{
+        width:100%;
+    }
+}
+

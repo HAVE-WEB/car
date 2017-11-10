@@ -1,0 +1,1103 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>延保服务</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <!-- Amaze UI CSS -->
+    <link rel="stylesheet" href="../../assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../assets/css/jd.css">
+    <link rel="stylesheet" href="../../assets/css/vw_finance.css">
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            color: #2f3538;
+            font-family:"VWHeadWeb-Bold",sans-serif;
+        }
+        /*start nav*/
+        .nav{
+            height:100%;
+            width: 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            border-right:1px solid #DEE1E3;
+            background: #fff;
+            /*border:1px solid red;*/
+        }
+        .nav .n_ul{
+            list-style:none;
+            padding:0;
+        }
+        .nav .n_ul .n_item .n_lk{
+            display: block;
+            text-align: center;
+            border-bottom: 1px solid #DEE1E3;
+            padding:15px 0;
+            /*height: 80px;*/
+        }
+        .nav .n_ul .n_item .n_lk .n_logo{
+            width:100%;
+            padding: 7px 0;
+        }
+        .nav .n_ul .n_item .n_lk .n_top .n_img{
+            width: 35px;
+            height: 35px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom{
+            margin-top: 8px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom .n_txt{
+            color: #808890;
+        }
+        /*nav end*/
+        /*start content*/
+        #content{
+            min-height: 100%;
+            width: calc(100% - 100px);
+            /* padding-left: 100px; */
+            margin-left: 100px;
+        }
+        /*end content*/
+        /*start head*/
+        .head{
+            background: #BDC3C6;
+            padding-left: 5%;
+            width: 100%;
+        }
+        .head.h_fixed{
+            position: fixed;
+            top:0;
+            left:0;
+            z-index: 9;
+        }
+        .head .h_item{
+            float: left;
+            margin-right: 3%;
+        }
+        .head .h_item .h_lk{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            color: #2f3538;
+        }
+        .head .h_item .h_lk:hover{
+            color: #ffffff;
+        }
+        .head .h_item .h_lk.h_active{
+            color: #ffffff;
+        }
+        /*end head*/
+        /*start head_sub*/
+        .head_sub{
+            background: #808890;
+            padding-left: 5%;
+            width:100%;
+        }
+        .head_sub.h_fixed{
+            position: fixed;
+            left:0 ;
+            z-index:9;
+        }
+        .head_sub .h_item{
+            float: left;
+            margin-right: 3%;
+        }
+        .head_sub .h_item .h_lk{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            font-size: 14px;
+            color: #2f3538;
+        }
+        .head_sub .h_item .h_lk:hover{
+            color: #ffffff;
+        }
+        .head_sub .h_item .h_lk.h_active{
+            color: #ffffff;
+        }
+        /*end head_sub*/
+        /*start content_box*/
+        .content_box{
+            padding: 0;
+            font-size: 16px;
+        }
+        .content_box .c_box.show , .content_box .c_box .c_item.show{
+            display: block;
+        }
+        .content_box .c_item{
+            display: none;
+            /*text-align: center;*/
+        }
+        .content_box .c_item.active{
+            display: block;
+        }
+        .content_box .c_item .c_title{
+            font-size: 36px;
+            margin: 20px 0;
+        }
+        .content_box .c_item .c_title_sub{
+            margin-bottom: 40px;
+        }
+        .content_box .c_item .c_row{
+            margin-top: 20px;
+        }
+        .content_box .c_item .c_common-question{
+            text-align: left;
+        }
+        .content_box .c_item .c_row.c_gray{
+            background: #F3F5F6;
+        }
+        .content_box .c_item .c_row .c_left{
+            float: left;;
+            width:50%;
+            text-align: left;
+        }
+        .content_box .c_item .c_row .c_left.c_quarter{
+            width:25%;
+            padding: 3%;
+        }
+        .content_box .c_item .c_row .c_quarter .c_top{
+            width: 50%;
+        }
+        .content_box .c_item .c_row .c_quarter .c_center{
+            color: #000;
+            font-size: 18px;
+            font-weight:bold;
+            margin:20px 0;
+        }
+        .content_box .c_item .c_row .c_right{
+            float: right;
+            width:50%;
+            padding-left:5%;
+            text-align: left;
+        }
+        .content_box .c_item .c_row .c_right .c_txt{
+            display: block;
+        }
+        .content_box .c_item .c_row .c_right .c_txt .c_top{
+            font-weight:bold;
+
+        }
+        .content_box .c_item .c_row .c_right .c_txt .c_center{
+            margin: 2% 0;
+        }
+        .content_box .c_item .c_row .c_right .c_txt .c_bottom .c_btn{
+            display: block;
+            background: #0097DC;
+            color: #fff;
+            padding:1% 2%;
+            width:20%;
+            text-align: center;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;;
+        }
+        .content_box .c_item .c_row  img{
+            width:100%;
+        }
+        .show{
+            display: block;
+        }
+        /*end content_box*/
+        /*start advertise*/
+        .advertise{
+            /*padding-left:100px;*/
+            overflow: hidden;
+            position: relative;
+        }
+        .advertise .a_img{
+            width: 100%;
+        }
+        /*end advertise*/
+        /*start fast_aisle*/
+        .advertise .fast_aisle{
+            position: absolute;
+            top: 50px;
+            right: 30px;
+        }
+        .advertise .fast_aisle .f_item{
+            float: left;
+            margin-right: 30px;
+        }
+        .advertise .fast_aisle .f_item .f_lk{
+            display: block;
+            text-align: center;
+            color: #d81e06;
+        }
+        .advertise .fast_aisle .f_item .f_lk .f_img{
+            width: 24px;;
+            height: 24px;;
+        }
+        .advertise .fast_aisle .f_item .f_lk .f_txt{
+            margin-top: 5px;
+        }
+        /*end fast_aisle*/
+        /*start back_top*/
+        .back_top{
+            background: #DEE1E3;
+        }
+        .back_top .b_lk{
+            display: block;
+            text-align: right;
+            height: 36px;
+            line-height: 36px;
+            color: #2f3538;
+            padding:0 4%;
+            font-size: 16px;
+        }
+        .back_top .b_lk .b_img{
+            width: 20px;
+            height: 20px;
+        }
+        /*end back_top*/
+        /*start aisle*/
+        .aisle{
+            padding: 20px 50px 0;
+        }
+        .aisle .a_center .a_float{
+            float: left;
+            width:33.3%;
+        }
+        .aisle .a_center .a_ul{
+            list-style: none;
+            text-align: center;
+            letter-spacing: 2px;
+            margin:0;
+            padding:0;
+        }
+        .aisle .a_center .a_ul .a_item{
+            margin:5px 0;
+        }
+        .aisle .a_center .a_ul .a_item .a_lk{
+            color: #2f3538;
+            font-size: 16px;
+
+        }
+        /*end aisle*/
+        /*start footer*/
+        .footer{
+            text-align: center;
+            height: 50px;
+            font-size: 14px;
+            margin: 50px;
+        }
+        .footer .f_lk{
+            /*color: #808890;*/
+            color: #2f3538;
+            line-height: 50px;
+        }
+        .footer .f_img{
+            width: 14px;
+            height: 14px;
+            margin: 0 2px;
+        }
+        /*end footer*/
+    </style>
+</head>
+<body>
+
+<!--start content-->
+<div id="content">
+    <!--start nav-->
+    <div class="nav">
+        <ul class="n_ul">
+            <li class="n_item">
+                <a href="../home.html" class="n_lk">
+                    <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="../left-nav/pandect.html" class="n_lk">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">车型总览</span>
+                    </div>
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="overview.html" class="n_lk">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">品牌汽车</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--end nav-->
+    <!--start advertise-->
+    <div class="advertise">
+        <div>
+            <img src="../../assets/i/car/car-detail/1.jpg" alt="" class="a_img">
+        </div>
+        <!--start fast_aisle-->
+        <div class="fast_aisle">
+            <div class="f_item">
+                <a href="fast-aisle/test-drive.html" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/test-driver.png" alt="" class="f_img">
+                    <div class="f_txt">预约试驾</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/dealer.png" alt="" class="f_img">
+                    <div class="f_txt">保养维修</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/service.png" alt="" class="f_img">
+                    <div class="f_txt">在线客服</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="fast-aisle/search.html" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/search.png" alt="" class="f_img">
+                    <div class="f_txt">搜索</div>
+                </a>
+            </div>
+        </div>
+        <!--end fast_aisle-->
+    </div>
+    <!--end advertise-->
+    <!--start head-->
+    <div class="head clearFix">
+        <div class="h_item">
+            <a href="finance-engine.html" class="h_lk">金融引擎</a>
+        </div>
+        <div class="h_item">
+            <a href="finance-scheme.html" class="h_lk">爱车金融方案</a>
+        </div>
+        <div class="h_item">
+            <a href="insurance-service.html" class="h_lk">保险服务</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk h_active">延保服务</a>
+        </div>
+    </div>
+    <!--end head-->
+    <!--start head_sub-->
+    <div class="head_sub clearFix ">
+        <div class="h_box">
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk h_active">延保服务介绍</a>
+            </div>
+            <div class="h_item">
+                 <a href="javascript:;" class="h_lk">延保产品</a>
+            </div>
+            <div class="h_item">
+                 <a href="javascript:;" class="h_lk">流程常见问题</a>
+            </div>
+        </div>
+    </div>
+    <!--end head_sub-->
+    <!--start content_box-->
+    <div class="content_box" style="background: #fff;">
+        <div class="c_item active">
+            <div class="c_row clearFix" style="margin: 3% 4%;">
+                <div class="c_left">
+                    <img src="../../assets/i/car/home/home-activity/1.jpg" alt="">
+                </div>
+                <div class="c_right">
+                    <span class="c_txt">
+                        <div class="c_top">什么是延长保修服务?</div>
+                        <div class="c_center">
+                            延保服务是对车辆原厂质量担保服务的延伸，为您解决车辆原厂质量担保期后的维修问题。在延保期内，当车辆出现延保服务范围内故障时，将享受与原厂相同的保修服务，车辆免费获得维修，为您的爱车提供全方位专业保障。
+                        </div>
+                        <!--<div class="c_bottom">-->
+                        <!--<a href="javascript:;" class="c_btn" data-index="0">查看详情</a>-->
+                        <!--</div>-->
+                    </span>
+                </div>
+            </div>
+            <div class="content_box" style="padding: 40px 4%;">
+                <div class="title">为什么购买延长保修服务?</div>
+                <div class="row">
+                    <div class="yb_icon col-md-3 col-xs-12">
+                        <div class="icon_img"><img src="../../assets/i/car/about/finance-service/extend-warranty/icon_08.png"></div>
+                        <div class="title">更省钱</div>
+                        <p>延保服务将承担车辆超出原厂质量担保期后的维修风险,避免汽车故障产生的不可预计费用;</p>
+                    </div>
+                    <div class="yb_icon col-md-3 col-xs-12">
+                        <div class="icon_img"><img src="../../assets/i/car/about/finance-service/extend-warranty/icon_09.png"></div>
+                        <div class="title">更灵活</div>
+                        <p>提供基础保障、精选保 障、安心保障、全面保障4种保障方案随心选择;</p>
+                    </div>
+                    <div class="yb_icon col-md-3 col-xs-12">
+                        <div class="icon_img"><img src="../../assets/i/car/about/finance-service/extend-warranty/icon_10.png"></div>
+                        <div class="title">更省心</div>
+                        <p>当车辆发生故障时,延保服务将为您提供100%原厂品质服务于专业维修;</p>
+                    </div>
+                    <div class="yb_icon col-md-3 col-xs-12">
+                        <div class="icon_img"><img src="../../assets/i/car/about/finance-service/extend-warranty/icon_11.png"></div>
+                        <div class="title">更保值</div>
+                        <p>车辆在二手车交易时更具 评估优势。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c_item">
+            <div class="main_container product_con row" style="display: block;">
+                <div class="title">猎豹汽车延长保修服务方案</div>
+                <div class="info">
+                    <span class="bold_font">延长保修服务覆盖车型:</span>
+                    <span> 猎豹汽车全系车型</span>
+                </div>
+                <div class="info">
+                    <span class="bold_font">延长保修服务对象:</span>
+                    <span>行驶里程不超过9.5万公里且车龄在33个月以内的车辆。</span>
+                </div>
+                <div class="info">
+                    <span class="bold_font">延长保修服务范围:</span>
+                </div>
+                <table class="table01" width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody><tr class="table_bg01 bold_font">
+                        <td rowspan="2">产品类型:</td>
+                        <td colspan="4">保障范围</td>
+                        <td rowspan="2">保障年限/里程（以先到为准）</td>
+                    </tr>
+                    <tr class="table_bg01 bold_font">
+                        <td>发动机</td>
+                        <td>变速箱</td>
+                        <td>传动系统</td>
+                        <td>原厂质保范围</td>
+                    </tr>
+                    <tr>
+                        <td class="table_bg01">全面保障</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                        <td rowspan="4">1年/3万公里    <br>  2年/6万公里    <br>   3年/9万公里</td>
+                    </tr>
+                    <tr>
+                        <td class="table_bg01">安心保障</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="table_bg01">精选保障</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="table_bg01">基础保障</td>
+                        <td>✔</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody></table>
+
+                <div class="more_box">
+                    <p><span class="red_font">*</span>更多信息,请咨询当地授权经销商。</p>
+                    <a href="javascript:ga('send','event','pc/投保咨询_主视觉','浏览','投保咨询_201702220028');" class="more_btn">投保咨询</a>
+                </div>
+            </div>
+        </div>
+        <div class="c_item">
+            <div class="main_container lc_con" style="display: block;">
+                <div class="title">关于流程</div>
+                <div class="lc_row row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="lc_content">
+                            <div class="icon lt">
+                                <div class="icon_img">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="图层_1" x="0px" y="0px" width="100px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+								<g>
+									<path style="fill:#0099DA;" d="M71.687,5.705L33.774,24.168c-2.794,1.361-3.924,4.74-2.563,7.535l3.265,6.707l-6.353,3.094   l-1.378,24.471l-5.622,4.284l11.738,17.274l4.048-3.171c0,0,13.095-2.596,15.968-10.04l13.104-26.785c0,0,1.076-4-3.521-5.992   c-4.599-1.993-7.029,3.877-9.561,7.68c-1.845,2.77-3.313,5.835-3.899,7.262c-1.479,0.548-3.306-0.037-4.011-1.484l-6.953-14.277   L81.907,19.36l6.953,14.277c0.749,1.54-0.007,3.403-1.548,4.153l-5.805,2.828l-3.036,1.479l-4.916,2.394l-6.688,13.412   c5.941,1.08,5.457-3.802,5.63-4.302c0.173-0.503,0.47-0.535,0.47-0.535c5.989,0.733,5.553-4.899,5.553-4.899   c3.229-0.818,3.738-1.635,3.738-1.635c0.72-1.198,0.64-2.541,0.509-3.287l5.821-2.834c2.794-1.362,3.597-4.935,2.236-7.73   L79.012,8.424C77.649,5.629,74.481,4.344,71.687,5.705z M34.528,33.523l-1.353-2.776c-0.75-1.54,0.016-3.863,1.555-4.614   L72.643,7.67c1.541-0.75,3.654,0.171,4.404,1.71l1.354,2.777L34.528,33.523z"></path>
+									<polygon style="fill:#0099DA;" points="12.294,73.233 26.897,94.838 31.124,91.724 16.52,70.117  "></polygon>
+								</g>
+								</svg>
+                                </div>
+                                <div class="title">客户购买流程</div>
+                            </div>
+                            <div class="text lt">
+                                <p>延保和车险都是花较少的钱,避免支出大额的维修费用。</p>
+                                <p>但它们的保证范围区别很 大:车险是针对意外事故或自然灾害等导致车辆受损提供的保障;而延保是量问题提供的保障。</p>
+                            </div>
+                            <div class="clr"></div>
+                        </div>
+                        <div class="lc_step bold_font">
+                            <span>1. 客户购买延长保修</span>
+                            <span>2. 经销商与客户签署服务</span>
+                            <span>3. 合同生效、发票交付客户</span>
+                            <span>4. 随时等待为客户服务</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="lc_content">
+                            <div class="icon lt">
+                                <div class="icon_img">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="图层_1" x="0px" y="0px" width="100px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+								<path style="fill:#079CDB;" d="M78.825,11H35v68.304v4.386v5.694c0,0.54-0.103,1.067-0.514,1.452C34.122,91.178,33.565,91,33.433,91  c-0.021,0-0.032,0-0.03,0l-0.141,0.191c-0.593,0-1.012-0.035-1.247-0.3c-0.383-0.434-0.381-1.329-0.352-1.569L31.672,86H32V8h-9.368  C18.088,8,14,12.682,14,17.225v60.723C14,82.492,18.088,86,22.632,86H29v3.207c0,0.517-0.26,2.33,0.925,3.694  c0.554,0.638,1.532,1.398,3.345,1.413c0.054,0.003,0.098,0.006,0.188,0.006c0.598,0,1.95-0.125,3.033-1.107  C37.467,92.327,38,91.039,38,89.384V83h40.825C83.063,83,86,80.253,86,76.015v-56.65C86,15.126,83.063,11,78.825,11z M53,73.412  C53,74.842,51.842,76,50.412,76h-4.824C44.159,76,43,74.842,43,73.412v-4.824C43,67.158,44.159,66,45.588,66h4.824  C51.842,66,53,67.158,53,68.588V73.412z M53,60.412C53,61.842,51.842,63,50.412,63h-4.824C44.159,63,43,61.842,43,60.412v-4.824  C43,54.158,44.159,53,45.588,53h4.824C51.842,53,53,54.158,53,55.588V60.412z M53,47.413C53,48.842,51.842,50,50.412,50h-4.824  C44.159,50,43,48.842,43,47.413v-4.825C43,41.158,44.159,40,45.588,40h4.824C51.842,40,53,41.158,53,42.587V47.413z M66,73.412  C66,74.842,64.842,76,63.412,76h-4.824C57.158,76,56,74.842,56,73.412v-4.824C56,67.158,57.158,66,58.588,66h4.824  C64.842,66,66,67.158,66,68.588V73.412z M66,60.412C66,61.842,64.842,63,63.412,63h-4.824C57.158,63,56,61.842,56,60.412v-4.824  C56,54.158,57.158,53,58.588,53h4.824C64.842,53,66,54.158,66,55.588V60.412z M66,47.413C66,48.842,64.842,50,63.412,50h-4.824  C57.158,50,56,48.842,56,47.413v-4.825C56,41.158,57.158,40,58.588,40h4.824C64.842,40,66,41.158,66,42.587V47.413z M79,73.412  C79,74.842,77.842,76,76.412,76h-4.824C70.158,76,69,74.842,69,73.412v-4.824C69,67.158,70.158,66,71.588,66h4.824  C77.842,66,79,67.158,79,68.588V73.412z M79,60.412C79,61.842,77.842,63,76.412,63h-4.824C70.158,63,69,61.842,69,60.412v-4.824  C69,54.158,70.158,53,71.588,53h4.824C77.842,53,79,54.158,79,55.588V60.412z M79,47.413C79,48.842,77.842,50,76.412,50h-4.824  C70.158,50,69,48.842,69,47.413v-4.825C69,41.158,70.158,40,71.588,40h4.824C77.842,40,79,41.158,79,42.587V47.413z M80,30.345  C80,32.364,78.363,34,76.345,34H46.655C44.637,34,43,32.364,43,30.345v-6.69C43,21.636,44.637,20,46.655,20h29.689  C78.363,20,80,21.636,80,23.655V30.345z"></path>
+								</svg>
+                                </div>
+                                <div class="title">客户索赔流程</div>
+                            </div>
+                            <div class="text lt">
+                                <p>延保和车险都是花较少的钱,避免支出大额的维修费用。</p>
+                                <p>但它们的保证范围区别很 大:车险是针对意外事故或自然灾害等导致车辆受损提供的保障;而延保是量问题提供的保障。</p>
+                            </div>
+                            <div class="clr"></div>
+                        </div>
+                        <div class="lc_step bold_font">
+                            <span>1. 故障发生</span>
+                            <span>2. 客户到店</span>
+                            <span>3. 故障评定</span>
+                            <span>4. 车辆维修</span>
+                            <span>5. 客户确认维修结果</span>
+                            <span>6. 服务完成</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="title">常见问答解答</div>
+                <section style="padding: 0 4%;margin: 0;" data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{  }'>
+                    <dl class="am-accordion-item am-active">
+                        <dt class="am-accordion-title">
+                            Q1：我的车已经投保车险了，购买延保还有意义吗？
+                        </dt>
+                        <dd class="am-accordion-bd am-collapse">
+                            <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                            <div class="am-accordion-content">
+                                A：延保和车险都是花较少的钱，避免支出大额的维修费用。但它们的保证范围区别很大：车险是针对意外事故或自然灾害等导致车辆受损提供的保障；而延保是对车辆再正常使用情况下，可能出现的零部件质量问题提供的保障。
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="am-accordion-item">
+                        <dt class="am-accordion-title">
+                            Q2：已经有厂家3年/10万公里的原厂保修了，还有必要购买延保吗？
+                        </dt>
+                        <dd class="am-accordion-bd am-collapse ">
+                            <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                            <div class="am-accordion-content">
+                                A：延保服务将承担车辆超出原厂质量担保期后的维修风险，提前锁定车辆维修成本。在您进行二手车交易时，延保服务也将提升车辆价值。
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="am-accordion-item">
+                        <dt class="am-accordion-title">
+                            Q3：这车质量很好，为什么还要购买延保服务？
+                        </dt>
+                        <dd class="am-accordion-bd am-collapse ">
+                            <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                            <div class="am-accordion-content">
+                                A：任何物品都有使用寿命，汽车是机械和电子集合体，再好的质量也不能保证不发生任何故障，延保服务是对您爱车的一个保障，我们现在做的就是预防工作。猎豹汽车推出的延长保修服务正是为广大车主提供了降低未来使用成本与风险的一项保障。
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="am-accordion-item">
+                        <dt class="am-accordion-title">
+                            Q4：购买延长保修服务有什么好处？
+                        </dt>
+                        <dd class="am-accordion-bd am-collapse ">
+                            <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                            <div class="am-accordion-content">
+                                A：随着车辆使用年限和公里数的增加，车辆使用过程中的正常磨损，以及道路、空气的质量都可能让车辆零部件损坏。购买了猎豹汽车延长保修服务，您只需要进行正常的车辆保养，在延长保修服务期间，猎豹汽车将为您的爱车提供等同原厂品质的车辆维修服务。
+                            </div>
+                        </dd>
+                    </dl>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!--end content_box-->
+    <style>
+        .black_mask{
+            position: fixed;/*以浏览器定位，该元素的父元素就是浏览器*/
+            top:0;
+            left:0;
+            z-index: 20;
+            width:100%;
+            height: 150%;
+            display: none;
+            background: #262b2e;
+        }
+        .popup{
+            position: absolute;/*条件1：父元素。条件2：父元素不是static（父元素可能是relative相对定位元素，可能是fixed绝对定位元素，可能是absolute相对定位元素）*/
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2000;
+            display: none;
+        }
+        .popup01 {
+            position: fixed;
+            width: 90%;
+            margin: 0 auto;
+            top: 10%;
+            background: #fff;
+            height: 600px;
+            padding: 50px 0;
+        }
+
+
+
+        a.close_popup{
+            width: 17px;
+            height: 17px;
+            position: absolute;
+            top: -30px;
+            right: -45px;
+            background: url("../../assets/i/car/about/finance-service/close.png");
+        }
+
+    </style>
+    <div class="black_mask"></div>
+    <div class="popup popup01">
+        <div class="title">爱车金融产品</div>
+        <div class="popup_tab">
+            <a href="javascript:;" class="">标准信贷</a>
+            <a href="javascript:;" class="active">弹性信贷</a>
+            <a href="javascript:;" class="">阶梯信贷</a>
+            <a href="javascript:;" class="">缓冲信贷</a>
+            <a href="javascript:;" class="">信用卡</a>
+        </div>
+        <!--标准信贷-->
+        <div class="content_list">
+            <div class="content" style="background: rgb(241, 245, 246);">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">等额本金：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>每月所还本金相同</div>
+                    <div><span class="bold_font">产品卖点：</span>支付总利息相对等额本息低</div>
+                    <div><span class="bold_font">适用客户：</span>每月还款额（包含本金和利息）呈现先高后低的变化趋势，适合前期月供支付能力高客户</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="content">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">等额本息：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>在贷款利率不变的前提下，月还款额（本金与利息之和）不变</div>
+                    <div><span class="bold_font">产品卖点：</span>每月月还款额相同，便于记忆 ，操作相对简单</div>
+                    <div><span class="bold_font">适用客户：</span>适用范围广，是最为常见的还款方式</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+
+        <!--弹性信贷-->
+        <div class="content_list active">
+            <div class="content" style="background: rgb(241, 245, 246);">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">5-1-5：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>50%首付，1年期，车价的50%作为尾款，在第12个月还清尾款</div>
+                    <div><span class="bold_font">产品卖点：</span>超低月供，12个月短期贷款，灵活的尾款处理方式</div>
+                    <div><span class="bold_font">适用客户：</span>不希望承担太大还款压力；对未来收入有较好预期</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="content">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">4-2-4：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>40%首付，固定两年期，车价的40%作为预留尾款</div>
+                    <div><span class="bold_font">产品卖点：</span>月供低，减轻生活压力；还款方式灵活</div>
+                    <div><span class="bold_font">适用客户：</span>不希望承担太大还款压力；对未来收入有较好预期</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="content" style="background: rgb(241, 245, 246);">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">3-3-3：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>30%首付，三年期， 车价的30%作为预留尾款</div>
+                    <div><span class="bold_font">产品卖点：</span>月供低，减轻生活压力；还款方式灵活</div>
+                    <div><span class="bold_font">适用客户：</span>不希望承担太大还款压力；对未来收入有较好预期；年轻一代，希望3-4年总能换一辆新车开的客户</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="content">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">3-3：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>首付30%，3年期，预留车价的35%作为尾款</div>
+                    <div><span class="bold_font">产品卖点：</span>较低的月供，较低的首付，36个月合理期限的贷款，灵活的尾款处理方式</div>
+                    <div><span class="bold_font">适用客户：</span>不希望承担太大还款压力；对未来收入有较好预期；年轻一代，希望3-4年总能换一辆新车开的客户</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+
+        <!--阶梯信贷-->
+        <div class="content_list">
+            <div class="content" style="background: rgb(241, 245, 246);">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">阶梯递增信贷：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>还款期分为若干个等长阶段（每阶段期限可为3个月、6个月或12个月），按月还本付息，每阶段内各月还款额（本金与利息之和）相等，相邻阶段的月还款额等差递增</div>
+                    <div><span class="bold_font">产品卖点：</span>月还款额分阶段逐渐递增</div>
+                    <div><span class="bold_font">适用客户：</span>适用于当前资金较为紧张，预期未来资金较为宽裕的客户</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="content">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">阶梯递减信贷：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>还款期分为若干个等长阶段（每阶段期限可为3个月、6个月或12个月），按月还本付息，每阶段内各月还款额（本金与利息之和）相等，相邻阶段的月还款额等差递减。</div>
+                    <div><span class="bold_font">产品卖点：</span>月还款额分阶段逐渐递减</div>
+                    <div><span class="bold_font">适用客户：</span>适用于当前资金较为宽裕，预期未来资金较为紧张或有提前还款意愿的客户</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+
+        <!--缓冲信贷-->
+        <div class="content_list">
+            <div class="content" style="background: rgb(241, 245, 246);">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">缓冲信贷：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>缓冲信贷产品，缓冲期为4个月，缓冲期内仅还利息无需还本，最大限度缓解客户购车初期的资金紧张情况，首付不低于20%；期限可为12期、24期、36期；缓冲期为贷款期限的前4期</div>
+                    <div><span class="bold_font">产品卖点：</span>此种还款方式有利于缓解购置轿车后短期的资金紧张状况</div>
+                    <div><span class="bold_font">适用客户：</span>购车后短期资金紧张</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+
+        <!--信用卡-->
+        <div class="content_list">
+            <div class="content" style="background:#f1f5f6;">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">信用卡：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>申请购车分期付款并经审批通过的信用卡持卡人，按照分期期数和分期金额向银行支付相应比例的费用</div>
+                    <div><span class="bold_font">产品卖点：</span>此种还款方式有利于缓解购置轿车后短期的资金紧张状况</div>
+                    <div><span class="bold_font">适用客户：</span>购车后短期资金紧张</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+        <a href="javascript:;" class="close_popup"></a>
+    </div>
+    <!--start back_top-->
+    <div class="back_top">
+        <a href="javascript:;" class="b_lk">
+            <span>返回顶部</span>
+            <img src="../../assets/i/car/public/back-top.png" alt="" class="b_img">
+        </a>
+    </div>
+    <!--end back_top-->
+    <!--start aisle-->
+    <div class="aisle">
+        <div class="a_center clearFix">
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">关于我们</a></li>
+                    <li class="a_item"><a href="" class="a_lk">品牌汽车</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">金融计算器</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">预约试驾</a></li>
+                    <li class="a_item"><a href="" class="a_lk">保养维修</a></li>
+                    <li class="a_item"><a href="" class="a_lk">在线客服</a></li>
+                    <li class="a_item"><a href="" class="a_lk">搜索</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">新闻动态</a></li>
+                    <li class="a_item"><a href="" class="a_lk">品牌活动</a></li>
+                    <li class="a_item"><a href="" class="a_lk">金融服务</a></li>
+                    <li class="a_item"><a href="" class="a_lk">促销活动</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end aisle-->
+    <!--start footer-->
+    <div class="footer">
+        <a href="" class="f_lk">法律声明</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">Copyright 2013 Leopaard All Rights Reserved</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk"> 湘ICP备13007785号</a>
+    </div>
+    <!--end footer-->
+</div>
+<!--end content-->
+
+</body>
+<script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
+<script>
+    $(function () {
+//        resizeHeight();
+        verticalAlign();
+        $('.advertise').after('<div class="space" style="display: none;height: '+($('.head_sub').outerHeight()+$('.head').outerHeight())+'px;"></div>')
+    });
+    function resizeHeight() {
+        var w_h = window.innerHeight;
+        $('.advertise').height(w_h * 0.6);
+    }
+    $(window).resize(function () {
+//        resizeHeight();
+        verticalAlign();
+        autoFixed();
+    });
+    function verticalAlign() {
+        $('.content_box .c_item .c_row .c_left').each(function (i) {
+            var $left = $(this)
+            $('.content_box .c_item .c_row .c_right').each(function (j) {
+                if(i == j){
+                    var l_h = $left.outerHeight();
+                    var r_h = $(this).find('.c_txt').height();
+                    if(r_h < l_h){
+                        $(this).css({
+                            'padding-top': (l_h - r_h) / 2
+                        })
+                    }else{
+                        $(this).css({
+                            'padding-top': 0
+                        })
+                    }
+                    return false
+                }
+            })
+        });
+    }
+    $('.back_top .b_lk').click(function () {
+        $(window).scrollTop(0);
+    });
+
+    $(window).scroll(function () {
+        autoFixed();
+        verticalAlign();
+    });
+    var h = $('.head').outerHeight();
+    var pl = $('.head').css('padding-left');
+    var fixedTop = $('.head').offset().top;
+    var pl_float = parseFloat(pl.substr(0,pl.length-2));
+    function autoFixed() {
+        var t = window.pageYOffset;
+        console.log("t:"+t+",fixedTOp:"+fixedTop+",pl:"+pl_float)
+        if(t  >= fixedTop){
+            $('.space').show();
+            $('.head').addClass('h_fixed');
+            $('.head_sub').addClass('h_fixed');
+            $('.head').css({
+                'padding-left':pl_float+100,
+            });
+            $('.head_sub').css({
+                'padding-left':pl_float+100,
+                'top':h
+            });
+        }else{
+            $('.space').hide();
+            $('.head_sub').removeClass('h_fixed');
+            $('.head').removeClass('h_fixed');
+            $('.head_sub').css({
+                'padding-left':pl_float
+            });
+            $('.head').css({
+                'padding-left':pl_float
+            });
+
+        }
+    }
+    $('.head .h_item').click(function () {
+       var self = $(this)[0];
+       var index = 0;
+       $('.head .h_item').each(function (i) {
+           if(self == $(this)[0]){
+               index = i;
+               $(this).find('a').addClass('h_active');
+           }else{
+               $(this).find('a').removeClass('h_active');
+           }
+       })
+        $('.head_sub .h_box').each(function (j) {
+            if(index == j){
+                $(this).show();
+            }else{
+                $(this).hide()
+            }
+        })
+    });
+    $('.head_sub .h_item').click(function () {
+        var self = $(this)[0];
+        var index = 0;
+        $('.head_sub .h_item').each(function (i) {
+            if(self == $(this)[0]){
+                index =i;
+                $(this).find('a.h_lk').css('color','#fff')
+            }else{
+                $(this).find('a.h_lk').css('color','#2f3538');
+            }
+        });
+        $('.content_box .c_item').each(function (j) {
+            if(index == j){
+                $(this).show();
+            }else{
+                $(this).hide();
+            }
+        });
+        verticalAlign();
+    });
+    $('.content_box .c_row .c_right .c_bottom .c_btn').click(function () {
+        var self = $(this)[0];
+        console.log("i:"+$(this).data('index'));
+        $('.more_con').show();
+
+    });
+    $('.more_con a.close_more').click(function () {
+        $('.more_con').hide();
+    });
+    $('a.close_popup').click(function () {
+        $(this).parents('div.fin_popup').hide();
+        $('.black_mask').hide();
+    })
+    $('.title .choose').click(function () {
+        var self = $(this)[0];
+        $('.title .choose').each(function () {
+            if(self == $(this)[0]){
+                $(this).addClass('active');
+            }else{
+                $(this).removeClass('active')
+            }
+        })
+    })
+    $('.title .open_popup').click(function () {
+        var self = $(this)[0];
+        var index = 0;
+        $('.title .open_popup').each(function (i) {
+            if(self == $(this)[0]){
+                index = i
+            }
+        })
+        $('.black_mask').show();
+        $('.popup.popup01').show();
+        $('.popup01 .popup_tab a').each(function (j) {
+            if(index == 0 && j == index){
+                $(this).addClass('active')
+            }else if(index == 1 && j == index){
+                $(this).addClass('active')
+            }else if(index == 2 && j == 4){
+                $(this).addClass('active')
+            }else{
+                $(this).removeClass('active')
+            }
+        });
+        var active_id = 0
+        $('.popup01 .popup_tab a').each(function (k) {
+            if($(this).hasClass('active')){
+                active_id = k;
+            }
+        });
+        $('.popup01 .content_list').each(function (l) {
+            if(active_id == l){
+                $(this).addClass('active');
+            }else{
+                $(this).removeClass('active');
+            }
+        })
+    });
+    $('.popup01 .popup_tab a').click(function () {
+       var self = $(this)[0];
+       var index = 0;
+        $('.popup01 .popup_tab a').each(function (k) {
+            if(self == $(this)[0]){
+                index = k;
+                $(this).addClass('active')
+            }else{
+                $(this).removeClass('active')
+            }
+        })
+        $('.popup01 .content_list').each(function (l) {
+            if(index == l){
+                $(this).addClass('active');
+            }else{
+                $(this).removeClass('active');
+            }
+        })
+
+    });
+    $('.popup01 a.close_popup').click(function () {
+        $('.black_mask').hide();
+        console.log("111");
+        $('.popup.popup01').hide();
+        console.log("222")
+    })
+    $('')
+</script>
+</html>

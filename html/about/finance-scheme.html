@@ -1,0 +1,1040 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>爱车金融方案</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <!-- Amaze UI CSS -->
+    <link rel="stylesheet" href="../../assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../assets/css/jd.css">
+    <link rel="stylesheet" href="../../assets/css/vw_finance.css">
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            color: #2f3538;
+            font-family:"VWHeadWeb-Bold",sans-serif;
+        }
+        /*start nav*/
+        .nav{
+            height:100%;
+            width: 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            border-right:1px solid #DEE1E3;
+            background: #fff;
+            /*border:1px solid red;*/
+        }
+        .nav .n_ul{
+            list-style:none;
+            padding:0;
+        }
+        .nav .n_ul .n_item .n_lk{
+            display: block;
+            text-align: center;
+            border-bottom: 1px solid #DEE1E3;
+            padding:15px 0;
+            /*height: 80px;*/
+        }
+        .nav .n_ul .n_item .n_lk .n_logo{
+            width:100%;
+            padding: 7px 0;
+        }
+        .nav .n_ul .n_item .n_lk .n_top .n_img{
+            width: 35px;
+            height: 35px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom{
+            margin-top: 8px;
+        }
+        .nav .n_ul .n_item .n_lk .n_bottom .n_txt{
+            color: #808890;
+        }
+        /*nav end*/
+        /*start content*/
+        #content{
+            min-height: 100%;
+            width: calc(100% - 100px);
+            /* padding-left: 100px; */
+            margin-left: 100px;
+        }
+        /*end content*/
+        /*start head*/
+        .head{
+            background: #BDC3C6;
+            padding-left: 5%;
+            width: 100%;
+        }
+        .head.h_fixed{
+            position: fixed;
+            top:0;
+            left:0;
+            z-index: 9;
+        }
+        .head .h_item{
+            float: left;
+            margin-right: 3%;
+        }
+        .head .h_item .h_lk{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            color: #2f3538;
+        }
+        .head .h_item .h_lk:hover{
+            color: #ffffff;
+        }
+        .head .h_item .h_lk.h_active{
+            color: #ffffff;
+        }
+        /*end head*/
+        /*start head_sub*/
+        .head_sub{
+            background: #808890;
+            padding-left: 5%;
+            width:100%;
+        }
+        .head_sub.h_fixed{
+            position: fixed;
+            left:0 ;
+            z-index:9;
+        }
+        .head_sub .h_item{
+            float: left;
+            margin-right: 3%;
+        }
+        .head_sub .h_item .h_lk{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            font-size: 14px;
+            color: #2f3538;
+        }
+        .head_sub .h_item .h_lk:hover{
+            color: #ffffff;
+        }
+        .head_sub .h_item .h_lk.h_active{
+            color: #ffffff;
+        }
+        /*end head_sub*/
+        /*start content_box*/
+        .content_box{
+            padding: 20px 5%;
+            font-size: 16px;
+        }
+        .content_box .c_box.show , .content_box .c_box .c_item.show{
+            display: block;
+        }
+        .content_box .c_item{
+            /*display: none;*/
+            text-align: center;
+        }
+        .content_box .c_item .c_title{
+            font-size: 36px;
+            margin: 20px 0;
+        }
+        .content_box .c_item .c_title_sub{
+            margin-bottom: 40px;
+        }
+        .content_box .c_item .c_row{
+            margin-top: 20px;
+        }
+        .content_box .c_item .c_common-question{
+            text-align: left;
+        }
+        .content_box .c_item .c_row.c_gray{
+            background: #F3F5F6;
+        }
+        .content_box .c_item .c_row .c_left{
+            float: left;;
+            width:50%;
+            text-align: left;
+        }
+        .content_box .c_item .c_row .c_left.c_quarter{
+            width:25%;
+            padding: 3%;
+        }
+        .content_box .c_item .c_row .c_quarter .c_top{
+            width: 50%;
+        }
+        .content_box .c_item .c_row .c_quarter .c_center{
+            color: #000;
+            font-size: 18px;
+            font-weight:bold;
+            margin:20px 0;
+        }
+        .content_box .c_item .c_row .c_right{
+            float: right;
+            width:50%;
+            padding-left:5%;
+            text-align: left;
+        }
+        .content_box .c_item .c_row .c_right .c_txt{
+            display: block;
+        }
+        .content_box .c_item .c_row .c_right .c_txt .c_top{
+            font-weight:bold;
+
+        }
+        .content_box .c_item .c_row .c_right .c_txt .c_center{
+            margin: 1% 0;
+        }
+        .content_box .c_item .c_row .c_right .c_txt .c_bottom .c_btn{
+            display: block;
+            background: #0097DC;
+            color: #fff;
+            padding:1% 2%;
+            width:20%;
+            text-align: center;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;;
+        }
+        .content_box .c_item .c_row  img{
+            width:100%;
+        }
+        .show{
+            display: block;
+        }
+        /*end content_box*/
+        /*start advertise*/
+        .advertise{
+            /*padding-left:100px;*/
+            overflow: hidden;
+            position: relative;
+        }
+        .advertise .a_img{
+            width: 100%;
+        }
+        /*end advertise*/
+        /*start fast_aisle*/
+        .advertise .fast_aisle{
+            position: absolute;
+            top: 50px;
+            right: 30px;
+        }
+        .advertise .fast_aisle .f_item{
+            float: left;
+            margin-right: 30px;
+        }
+        .advertise .fast_aisle .f_item .f_lk{
+            display: block;
+            text-align: center;
+            color: #d81e06;
+        }
+        .advertise .fast_aisle .f_item .f_lk .f_img{
+            width: 24px;;
+            height: 24px;;
+        }
+        .advertise .fast_aisle .f_item .f_lk .f_txt{
+            margin-top: 5px;
+        }
+        /*end fast_aisle*/
+        /*start back_top*/
+        .back_top{
+            background: #DEE1E3;
+        }
+        .back_top .b_lk{
+            display: block;
+            text-align: right;
+            height: 36px;
+            line-height: 36px;
+            color: #2f3538;
+            padding:0 4%;
+            font-size: 16px;
+        }
+        .back_top .b_lk .b_img{
+            width: 20px;
+            height: 20px;
+        }
+        /*end back_top*/
+        /*start aisle*/
+        .aisle{
+            padding: 20px 50px 0;
+        }
+        .aisle .a_center .a_float{
+            float: left;
+            width:33.3%;
+        }
+        .aisle .a_center .a_ul{
+            list-style: none;
+            text-align: center;
+            letter-spacing: 2px;
+            margin:0;
+            padding:0;
+        }
+        .aisle .a_center .a_ul .a_item{
+            margin:5px 0;
+        }
+        .aisle .a_center .a_ul .a_item .a_lk{
+            color: #2f3538;
+            font-size: 16px;
+
+        }
+        /*end aisle*/
+        /*start footer*/
+        .footer{
+            text-align: center;
+            height: 50px;
+            font-size: 14px;
+            margin: 50px;
+        }
+        .footer .f_lk{
+            /*color: #808890;*/
+            color: #2f3538;
+            line-height: 50px;
+        }
+        .footer .f_img{
+            width: 14px;
+            height: 14px;
+            margin: 0 2px;
+        }
+        /*end footer*/
+    </style>
+</head>
+<body>
+
+<!--start content-->
+<div id="content">
+    <!--start nav-->
+    <div class="nav">
+        <ul class="n_ul">
+            <li class="n_item">
+                <a href="../home.html" class="n_lk">
+                    <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="../left-nav/pandect.html" class="n_lk">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">车型总览</span>
+                    </div>
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="overview.html" class="n_lk">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">品牌汽车</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--end nav-->
+    <!--start advertise-->
+    <div class="advertise">
+        <div>
+            <img src="../../assets/i/car/car-detail/1.jpg" alt="" class="a_img">
+        </div>
+        <!--start fast_aisle-->
+        <div class="fast_aisle">
+            <div class="f_item">
+                <a href="fast-aisle/test-drive.html" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/test-driver.png" alt="" class="f_img">
+                    <div class="f_txt">预约试驾</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/dealer.png" alt="" class="f_img">
+                    <div class="f_txt">保养维修</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/service.png" alt="" class="f_img">
+                    <div class="f_txt">在线客服</div>
+                </a>
+            </div>
+            <div class="f_item">
+                <a href="fast-aisle/search.html" class="f_lk">
+                    <img src="../../assets/i/car/public/fast-aisle/search.png" alt="" class="f_img">
+                    <div class="f_txt">搜索</div>
+                </a>
+            </div>
+        </div>
+        <!--end fast_aisle-->
+    </div>
+    <!--end advertise-->
+    <!--start head-->
+    <div class="head clearFix">
+        <div class="h_item">
+            <a href="finance-engine.html" class="h_lk">金融引擎</a>
+        </div>
+        <div class="h_item">
+            <a href="javascript:;" class="h_lk h_active">爱车金融方案</a>
+        </div>
+        <div class="h_item">
+            <a href="insurance-service.html" class="h_lk">保险服务</a>
+        </div>
+        <div class="h_item">
+            <a href="extend-warranty.html" class="h_lk">延保服务</a>
+        </div>
+    </div>
+    <!--end head-->
+    <!--start head_sub-->
+    <div class="head_sub clearFix ">
+        <div class="h_box">
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk h_active">猎豹CS9</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹CS10</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹CS10</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹Q6</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹飞腾</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹黑金刚</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹CS6</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹CT7</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">猎豹CT5</a>
+            </div>
+            <div class="h_item">
+                <a href="javascript:;" class="h_lk">飞扬</a>
+            </div>
+        </div>
+    </div>
+    <!--end head_sub-->
+    <!--start content_box-->
+    <div class="content_box">
+        <div class="c_box show">
+            <div class="c_item">
+                <div class="c_title">
+                    爱车金融方案
+                </div>
+                <div class="c_title_sub">
+                    "金融引擎"是为满足精于理财的消费者的购车需求,为其精心打造的专业汽车金融平台。其中业务涵盖汽车贷 款、汽车保险、汽车租赁等,为消费者实现购车梦想提供精挑细选、量身定做、值得信赖的一站式服务。凭借高素质、专业化 的优秀团队和遍布全国的服务网点,"金融引擎"联手实力雄厚的金融合作伙伴,为消费者提供个性化的汽车金融购车 方案,助您轻松实现梦想,加速迈向成功!
+                </div>
+                <style>
+                    .title{
+                        font-weight:bold;
+                        font-size: 18px;
+                    }
+                    .title .open_popup{
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        vertical-align: middle;
+                        background: url("../../assets/i/car/about/finance-service/finance-scheme/tanhao.png") no-repeat;
+                        margin-left: 15px;
+                    }
+                    .title .choose{
+                        /*border:1px solid red;*/
+                        width: 26px;
+                        height:26px;
+                        display: inline-block;
+                        float: right;
+                        vertical-align: middle;
+                        cursor: pointer;
+                        background: url("../../assets/i/car/about/finance-service/finance-scheme/choose.png") no-repeat;
+                    }
+                    .title .choose.active{
+                        background: url("../../assets/i/car/about/finance-service/finance-scheme/choose_active.png") no-repeat;
+                    }
+                    .link{
+                        text-align: center;
+                    }
+                    .link a{
+                        width: 20%;
+                        height: 40px;
+                        line-height: 40px;
+                        display: block;
+                        color: #fff;
+                        margin:0 auto 40px;
+                        background: #0097DC;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        border-radius: 5px;
+
+                    }
+                </style>
+                <div class="c_row clearFix" style="background: #F3F5F6;">
+                    <div class="c_left c_quarter">
+                        <div class="c_center title">
+                            标准信贷
+                            <a href="javascript:;" class="open_popup"></a>
+                            <span class="choose" ></span>
+                        </div>
+                        <div class="c_bottom">首付20%起,享12-36期0利率/超低利率; 48-60期低利率;等额月供,购车更轻松;</div>
+                    </div>
+                    <div class="c_left c_quarter">
+                        <div class="c_center title">
+                            弹性信贷
+                            <a href="javascript:;" class="open_popup"></a>
+                            <span class="choose" ></span>
+                        </div>
+                        <div class="c_bottom">首付40%起,期限36个月,尾款不高于30%, 享60元起低日供;更有一次性付清、展期、置换新车三种灵活尾 款处理方式选择;</div>
+                    </div>
+                    <div class="c_left c_quarter">
+                        <div class="c_center title">
+                            信用卡分期
+                            <a href="javascript:;" class="open_popup"></a>
+                            <span class="choose" ></span>
+                        </div>
+                        <div class="c_bottom">12期0利息、0费率,18-48期0利息、低费率; 超低首付、手续简单、方便快捷;</div>
+                    </div>
+                    <div class="c_left c_quarter">
+                        <div class="c_center title">
+                            半台车计划
+                            <a href="javascript:;" class="open_popup"></a>
+                            <span class="choose" ></span>
+                        </div>
+                        <div class="c_bottom">首付50%,一年后结清50%尾款,欣享0月 供、0利息; 更有一次性付清、展期、置换新车三种灵活尾款处理方式选择。</div>
+                    </div>
+                    <div class="link col-xs-12">
+                        <p>您可通过贷款计算器定制您的购车方案</p>
+                        <a href="javascript:;" id="CC_submit">使用贷款计算器</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--<style>-->
+            <!--.main_bottom {-->
+                <!--padding: 60px 0;-->
+                <!--font-size: 16px;-->
+                <!--line-height: 35px;-->
+            <!--}-->
+            <!--.bottom_text {-->
+                <!--width: 650px;-->
+                <!--margin: 0 auto;-->
+            <!--}-->
+            <!--.bottom_text .text_con {-->
+                <!--margin-left: 30px;-->
+            <!--}-->
+            <!--.lt {-->
+                <!--float: left;-->
+            <!--}-->
+            <!--.bold_font {-->
+                <!--font-weight: bold;-->
+            <!--}-->
+            <!--.blue_font {-->
+                <!--color: #0599da;-->
+            <!--}-->
+        <!--</style>-->
+        <div class="main_bottom">
+            <div class="bottom_text">
+                <div class="lt img_con">
+                    <img src="../../assets/i/car/about/finance-service/finance-scheme/phone.png">
+                </div>
+                <div class="lt text_con">
+                    <div><span class="bold_font">金融咨询服务：</span>若有任何金融方面的问题,您可随时拨打热线向 我们咨询,</div>
+                    <div>敬请随时拨打：<span class="bold_font blue_font" style="font-size:18px;">400-001-8000</span></div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+    </div>
+    <!--end content_box-->
+
+    <style>
+        .black_mask{
+            position: fixed;/*以浏览器定位，该元素的父元素就是浏览器*/
+            top:0;
+            left:0;
+            z-index: 20;
+            width:100%;
+            height: 150%;
+            display: none;
+            background: #262b2e;
+        }
+        .popup{
+            position: absolute;/*条件1：父元素。条件2：父元素不是static（父元素可能是relative相对定位元素，可能是fixed绝对定位元素，可能是absolute相对定位元素）*/
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2000;
+            display: none;
+        }
+        .popup01 {
+            position: fixed;
+            width: 90%;
+            margin: 0 auto;
+            top: 10%;
+            background: #fff;
+            height: 600px;
+            padding: 50px 0;
+        }
+
+
+
+        a.close_popup{
+            width: 17px;
+            height: 17px;
+            position: absolute;
+            top: -30px;
+            right: -45px;
+            background: url("../../assets/i/car/about/finance-service/close.png");
+        }
+
+    </style>
+    <div class="black_mask"></div>
+    <div class="popup popup01">
+        <div class="title">爱车金融产品</div>
+        <div class="popup_tab">
+            <a href="javascript:;" class="">标准信贷</a>
+            <a href="javascript:;" class="active">弹性信贷</a>
+            <a href="javascript:;" class="">阶梯信贷</a>
+            <a href="javascript:;" class="">缓冲信贷</a>
+            <a href="javascript:;" class="">信用卡</a>
+        </div>
+
+
+        <!--标准信贷-->
+        <div class="content_list">
+            <div class="content" style="background: rgb(241, 245, 246);">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">等额本金：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>每月所还本金相同</div>
+                    <div><span class="bold_font">产品卖点：</span>支付总利息相对等额本息低</div>
+                    <div><span class="bold_font">适用客户：</span>每月还款额（包含本金和利息）呈现先高后低的变化趋势，适合前期月供支付能力高客户</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="content">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">等额本息：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>在贷款利率不变的前提下，月还款额（本金与利息之和）不变</div>
+                    <div><span class="bold_font">产品卖点：</span>每月月还款额相同，便于记忆 ，操作相对简单</div>
+                    <div><span class="bold_font">适用客户：</span>适用范围广，是最为常见的还款方式</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+
+        <!--弹性信贷-->
+        <div class="content_list active">
+            <div class="content" style="background: rgb(241, 245, 246);">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">5-1-5：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>50%首付，1年期，车价的50%作为尾款，在第12个月还清尾款</div>
+                    <div><span class="bold_font">产品卖点：</span>超低月供，12个月短期贷款，灵活的尾款处理方式</div>
+                    <div><span class="bold_font">适用客户：</span>不希望承担太大还款压力；对未来收入有较好预期</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="content">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">4-2-4：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>40%首付，固定两年期，车价的40%作为预留尾款</div>
+                    <div><span class="bold_font">产品卖点：</span>月供低，减轻生活压力；还款方式灵活</div>
+                    <div><span class="bold_font">适用客户：</span>不希望承担太大还款压力；对未来收入有较好预期</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="content" style="background: rgb(241, 245, 246);">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">3-3-3：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>30%首付，三年期， 车价的30%作为预留尾款</div>
+                    <div><span class="bold_font">产品卖点：</span>月供低，减轻生活压力；还款方式灵活</div>
+                    <div><span class="bold_font">适用客户：</span>不希望承担太大还款压力；对未来收入有较好预期；年轻一代，希望3-4年总能换一辆新车开的客户</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="content">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">3-3：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>首付30%，3年期，预留车价的35%作为尾款</div>
+                    <div><span class="bold_font">产品卖点：</span>较低的月供，较低的首付，36个月合理期限的贷款，灵活的尾款处理方式</div>
+                    <div><span class="bold_font">适用客户：</span>不希望承担太大还款压力；对未来收入有较好预期；年轻一代，希望3-4年总能换一辆新车开的客户</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+
+        <!--阶梯信贷-->
+        <div class="content_list">
+            <div class="content" style="background: rgb(241, 245, 246);">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">阶梯递增信贷：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>还款期分为若干个等长阶段（每阶段期限可为3个月、6个月或12个月），按月还本付息，每阶段内各月还款额（本金与利息之和）相等，相邻阶段的月还款额等差递增</div>
+                    <div><span class="bold_font">产品卖点：</span>月还款额分阶段逐渐递增</div>
+                    <div><span class="bold_font">适用客户：</span>适用于当前资金较为紧张，预期未来资金较为宽裕的客户</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="content">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">阶梯递减信贷：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>还款期分为若干个等长阶段（每阶段期限可为3个月、6个月或12个月），按月还本付息，每阶段内各月还款额（本金与利息之和）相等，相邻阶段的月还款额等差递减。</div>
+                    <div><span class="bold_font">产品卖点：</span>月还款额分阶段逐渐递减</div>
+                    <div><span class="bold_font">适用客户：</span>适用于当前资金较为宽裕，预期未来资金较为紧张或有提前还款意愿的客户</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+
+        <!--缓冲信贷-->
+        <div class="content_list">
+            <div class="content" style="background: rgb(241, 245, 246);">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">缓冲信贷：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>缓冲信贷产品，缓冲期为4个月，缓冲期内仅还利息无需还本，最大限度缓解客户购车初期的资金紧张情况，首付不低于20%；期限可为12期、24期、36期；缓冲期为贷款期限的前4期</div>
+                    <div><span class="bold_font">产品卖点：</span>此种还款方式有利于缓解购置轿车后短期的资金紧张状况</div>
+                    <div><span class="bold_font">适用客户：</span>购车后短期资金紧张</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+
+        <!--信用卡-->
+        <div class="content_list">
+            <div class="content" style="background:#f1f5f6;">
+                <div class="lt left_con">
+                    <div class="bold_font con_title">信用卡：</div>
+                    <!--<div class="bold_font">首付-最低<span class="blue_font">20%</span></div>
+                    <div class="bold_font">期限-<span class="blue_font">1-2年</span></div>-->
+                </div>
+                <div class="lt right_con">
+                    <div><span class="bold_font">产品描述：</span>申请购车分期付款并经审批通过的信用卡持卡人，按照分期期数和分期金额向银行支付相应比例的费用</div>
+                    <div><span class="bold_font">产品卖点：</span>此种还款方式有利于缓解购置轿车后短期的资金紧张状况</div>
+                    <div><span class="bold_font">适用客户：</span>购车后短期资金紧张</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+        <a href="javascript:;" class="close_popup"></a>
+    </div>
+    <!--start back_top-->
+    <div class="back_top">
+        <a href="javascript:;" class="b_lk">
+            <span>返回顶部</span>
+            <img src="../../assets/i/car/public/back-top.png" alt="" class="b_img">
+        </a>
+    </div>
+    <!--end back_top-->
+    <!--start aisle-->
+    <div class="aisle">
+        <div class="a_center clearFix">
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">关于我们</a></li>
+                    <li class="a_item"><a href="" class="a_lk">品牌汽车</a></li>
+                    <li class="a_item"><a href="" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="" class="a_lk">金融计算器</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">预约试驾</a></li>
+                    <li class="a_item"><a href="" class="a_lk">保养维修</a></li>
+                    <li class="a_item"><a href="" class="a_lk">在线客服</a></li>
+                    <li class="a_item"><a href="" class="a_lk">搜索</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="" class="a_lk">新闻动态</a></li>
+                    <li class="a_item"><a href="" class="a_lk">品牌活动</a></li>
+                    <li class="a_item"><a href="" class="a_lk">金融服务</a></li>
+                    <li class="a_item"><a href="" class="a_lk">促销活动</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end aisle-->
+    <!--start footer-->
+    <div class="footer">
+        <a href="" class="f_lk">法律声明</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">Copyright 2013 Leopaard All Rights Reserved</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk"> 湘ICP备13007785号</a>
+    </div>
+    <!--end footer-->
+</div>
+<!--end content-->
+
+</body>
+<script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
+<script>
+    $(function () {
+//        resizeHeight();
+        verticalAlign();
+        $('.advertise').after('<div class="space" style="display: none;height: '+($('.head_sub').outerHeight()+$('.head').outerHeight())+'px;"></div>')
+    });
+    function resizeHeight() {
+        var w_h = window.innerHeight;
+        $('.advertise').height(w_h * 0.6);
+    }
+    $(window).resize(function () {
+//        resizeHeight();
+        verticalAlign();
+        autoFixed();
+    });
+    function verticalAlign() {
+        $('.content_box .c_item .c_row .c_left').each(function (i) {
+            var $left = $(this)
+            $('.content_box .c_item .c_row .c_right').each(function (j) {
+                if(i == j){
+                    var l_h = $left.outerHeight();
+                    var r_h = $(this).find('.c_txt').height();
+                    if(r_h < l_h){
+                        $(this).css({
+                            'padding-top': (l_h - r_h) / 2
+                        })
+                    }else{
+                        $(this).css({
+                            'padding-top': 0
+                        })
+                    }
+                    return false
+                }
+            })
+        });
+    }
+    $('.back_top .b_lk').click(function () {
+        $(window).scrollTop(0);
+    });
+
+    $(window).scroll(function () {
+        autoFixed();
+    });
+    var h = $('.head').outerHeight();
+    var pl = $('.head').css('padding-left');
+    var fixedTop = $('.head').offset().top;
+    var pl_float = parseFloat(pl.substr(0,pl.length-2));
+    function autoFixed() {
+        var t = window.pageYOffset;
+        console.log("t:"+t+",fixedTOp:"+fixedTop+",pl:"+pl_float)
+        if(t  >= fixedTop){
+            $('.space').show();
+            $('.head').addClass('h_fixed');
+            $('.head_sub').addClass('h_fixed');
+            $('.head').css({
+                'padding-left':pl_float+100,
+            });
+            $('.head_sub').css({
+                'padding-left':pl_float+100,
+                'top':h
+            });
+        }else{
+            $('.space').hide();
+            $('.head_sub').removeClass('h_fixed');
+            $('.head').removeClass('h_fixed');
+            $('.head_sub').css({
+                'padding-left':pl_float
+            });
+            $('.head').css({
+                'padding-left':pl_float
+            });
+
+        }
+    }
+    $('.head .h_item').click(function () {
+       var self = $(this)[0];
+       var index = 0;
+       $('.head .h_item').each(function (i) {
+           if(self == $(this)[0]){
+               index = i;
+               $(this).find('a').addClass('h_active');
+           }else{
+               $(this).find('a').removeClass('h_active');
+           }
+       })
+        $('.head_sub .h_box').each(function (j) {
+            if(index == j){
+                $(this).show();
+            }else{
+                $(this).hide()
+            }
+        })
+    });
+    $('.head_sub .h_item').click(function () {
+        var self = $(this)[0];
+        var index = 0;
+        $('.head_sub .h_item').each(function (i) {
+            if(self == $(this)[0]){
+                index =i;
+                $(this).find('a.h_lk').css('color','#fff')
+            }else{
+                $(this).find('a.h_lk').css('color','#2f3538');
+            }
+        });
+        verticalAlign();
+    });
+    $('.content_box .c_row .c_right .c_bottom .c_btn').click(function () {
+        var self = $(this)[0];
+        console.log("i:"+$(this).data('index'));
+        var index = 0;
+        $('.content_box .c_box .c_item .c_row .c_right .c_txt .c_bottom .c_btn').each(function (i) {
+            if(self == $(this)[0]){
+                index = i
+            }
+        });
+        $('.black_mask').show();
+        console.log("index:"+index);
+        $('.fin_popup').each(function (k) {
+            console.log("k:"+k);
+            if(index == k){
+                $(this).show();
+            }else{
+                $(this).hide();
+            }
+        })
+    })
+    $('a.close_popup').click(function () {
+        $(this).parents('div.fin_popup').hide();
+        $('.black_mask').hide();
+    })
+    $('.title .choose').click(function () {
+        var self = $(this)[0];
+        $('.title .choose').each(function () {
+            if(self == $(this)[0]){
+                $(this).addClass('active');
+            }else{
+                $(this).removeClass('active')
+            }
+        })
+    })
+    $('.title .open_popup').click(function () {
+        var self = $(this)[0];
+        var index = 0;
+        $('.title .open_popup').each(function (i) {
+            if(self == $(this)[0]){
+                index = i
+            }
+        })
+        $('.black_mask').show();
+        $('.popup.popup01').show();
+        $('.popup01 .popup_tab a').each(function (j) {
+            if(index == 0 && j == index){
+                $(this).addClass('active')
+            }else if(index == 1 && j == index){
+                $(this).addClass('active')
+            }else if(index == 2 && j == 4){
+                $(this).addClass('active')
+            }else{
+                $(this).removeClass('active')
+            }
+        });
+        var active_id = 0
+        $('.popup01 .popup_tab a').each(function (k) {
+            if($(this).hasClass('active')){
+                active_id = k;
+            }
+        });
+        $('.popup01 .content_list').each(function (l) {
+            if(active_id == l){
+                $(this).addClass('active');
+            }else{
+                $(this).removeClass('active');
+            }
+        })
+    });
+    $('.popup01 .popup_tab a').click(function () {
+       var self = $(this)[0];
+       var index = 0;
+        $('.popup01 .popup_tab a').each(function (k) {
+            if(self == $(this)[0]){
+                index = k;
+                $(this).addClass('active')
+            }else{
+                $(this).removeClass('active')
+            }
+        })
+        $('.popup01 .content_list').each(function (l) {
+            if(index == l){
+                $(this).addClass('active');
+            }else{
+                $(this).removeClass('active');
+            }
+        })
+
+    });
+    $('.popup01 a.close_popup').click(function () {
+        $('.black_mask').hide();
+        console.log("111");
+        $('.popup.popup01').hide();
+        console.log("222")
+    })
+</script>
+</html>

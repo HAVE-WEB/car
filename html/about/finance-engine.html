@@ -50,7 +50,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 1;
+            z-index: 10;
             border-right:1px solid #DEE1E3;
             background: #fff;
             /*border:1px solid red;*/
@@ -99,6 +99,7 @@
             position: fixed;
             top:0;
             left:0;
+            z-index: 9;
         }
         .head .h_item{
             float: left;
@@ -127,6 +128,7 @@
         .head_sub.h_fixed{
             position: fixed;
             left:0 ;
+            z-index:9;
         }
         .head_sub .h_box{
             display: none;
@@ -170,6 +172,9 @@
         .content_box .c_item .c_row{
             margin-top: 20px;
         }
+        .content_box .c_item .c_common-question{
+            text-align: left;
+        }
         .content_box .c_item .c_row.c_gray{
             background: #F3F5F6;
         }
@@ -177,6 +182,19 @@
             float: left;;
             width:50%;
             text-align: center;
+        }
+        .content_box .c_item .c_row .c_left.c_quarter{
+            width:25%;
+            padding: 1%;
+        }
+        .content_box .c_item .c_row .c_quarter .c_top{
+            width: 50%;
+        }
+        .content_box .c_item .c_row .c_quarter .c_center{
+            color: #000;
+            font-size: 18px;
+            font-weight:bold;
+            margin:20px 0;
         }
         .content_box .c_item .c_row .c_right{
             float: right;
@@ -383,13 +401,13 @@
             <a href="javascript:;" class="h_lk h_active">金融引擎</a>
         </div>
         <div class="h_item">
-            <a href="javascript:;" class="h_lk">爱车金融方案</a>
+            <a href="finance-scheme.html" class="h_lk">爱车金融方案</a>
         </div>
         <div class="h_item">
-            <a href="javascript:;" class="h_lk">保险服务</a>
+            <a href="insurance-service.html" class="h_lk">保险服务</a>
         </div>
         <div class="h_item">
-            <a href="javascript:;" class="h_lk">延保服务</a>
+            <a href="extend-warranty.html" class="h_lk">延保服务</a>
         </div>
     </div>
     <!--end head-->
@@ -403,57 +421,57 @@
                 <a href="javascript:;" class="h_lk">流程常见问题</a>
             </div>
         </div>
-        <div class="h_box">
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk h_active">猎豹CS9</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹CS10</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹CS10</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹Q6</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹飞腾</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹黑金刚</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹CS6</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹CT7</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹CT5</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">飞扬</a>
-            </div>
-        </div>
-        <div class="h_box">
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk h_active">保险服务介绍</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">车险套餐</a>
-            </div>
-        </div>
-        <div class="h_box">
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk h_active">延保服务介绍</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">延保产品</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">流程常见问题</a>
-            </div>
-        </div>
+        <!--<div class="h_box">-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk h_active">猎豹CS9</a>-->
+            <!--</div>-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk">猎豹CS10</a>-->
+            <!--</div>-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk">猎豹CS10</a>-->
+            <!--</div>-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk">猎豹Q6</a>-->
+            <!--</div>-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk">猎豹飞腾</a>-->
+            <!--</div>-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk">猎豹黑金刚</a>-->
+            <!--</div>-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk">猎豹CS6</a>-->
+            <!--</div>-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk">猎豹CT7</a>-->
+            <!--</div>-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk">猎豹CT5</a>-->
+            <!--</div>-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk">飞扬</a>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="h_box">-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk h_active">保险服务介绍</a>-->
+            <!--</div>-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk">车险套餐</a>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="h_box">-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk h_active">延保服务介绍</a>-->
+            <!--</div>-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk">延保产品</a>-->
+            <!--</div>-->
+            <!--<div class="h_item">-->
+                <!--<a href="javascript:;" class="h_lk">流程常见问题</a>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
     <!--end head_sub-->
     <!--start content_box-->
@@ -479,7 +497,7 @@
                                 猎豹CS9全面的购车方案邀您尽享价值与实力双重进级。即日起订购猎豹CS9可尊享多种优惠购车方案。低首付0利率购车、0月供半价提车、超低日供灵活还款、信用卡分期购车等方案助您轻松入主猎豹CS9座驾，尽享更多财务自由。捷足先登，达成所愿！
                             </div>
                             <div class="c_bottom">
-                                <a href="javascript:;" class="c_btn">查看详情</a>
+                                <a href="javascript:;" class="c_btn" data-index="0">查看详情</a>
                             </div>
                         </span>
                     </div>
@@ -495,7 +513,55 @@
                                 猎豹CS9全面的购车方案邀您尽享价值与实力双重进级。即日起订购猎豹CS9可尊享多种优惠购车方案。低首付0利率购车、0月供半价提车、超低日供灵活还款、信用卡分期购车等方案助您轻松入主猎豹CS9座驾，尽享更多财务自由。捷足先登，达成所愿！
                             </div>
                             <div class="c_bottom">
-                                <a href="javascript:;" class="c_btn">查看详情</a>
+                                <a href="javascript:;" class="c_btn" data-index="1">查看详情</a>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="c_row clearFix">
+                    <div class="c_left">
+                        <img src="../../assets/i/car/home/home-activity/1.jpg" alt="">
+                    </div>
+                    <div class="c_right">
+                        <span class="c_txt">
+                            <div class="c_top">多种优惠购车方案，助您捷足先登</div>
+                            <div class="c_center">
+                                猎豹CS9全面的购车方案邀您尽享价值与实力双重进级。即日起订购猎豹CS9可尊享多种优惠购车方案。低首付0利率购车、0月供半价提车、超低日供灵活还款、信用卡分期购车等方案助您轻松入主猎豹CS9座驾，尽享更多财务自由。捷足先登，达成所愿！
+                            </div>
+                            <div class="c_bottom">
+                                <a href="javascript:;" class="c_btn" data-index="1">查看详情</a>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="c_row clearFix">
+                    <div class="c_left">
+                        <img src="../../assets/i/car/home/home-activity/1.jpg" alt="">
+                    </div>
+                    <div class="c_right">
+                        <span class="c_txt">
+                            <div class="c_top">多种优惠购车方案，助您捷足先登</div>
+                            <div class="c_center">
+                                猎豹CS9全面的购车方案邀您尽享价值与实力双重进级。即日起订购猎豹CS9可尊享多种优惠购车方案。低首付0利率购车、0月供半价提车、超低日供灵活还款、信用卡分期购车等方案助您轻松入主猎豹CS9座驾，尽享更多财务自由。捷足先登，达成所愿！
+                            </div>
+                            <div class="c_bottom">
+                                <a href="javascript:;" class="c_btn" data-index="1">查看详情</a>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="c_row clearFix">
+                    <div class="c_left">
+                        <img src="../../assets/i/car/home/home-activity/1.jpg" alt="">
+                    </div>
+                    <div class="c_right">
+                        <span class="c_txt">
+                            <div class="c_top">多种优惠购车方案，助您捷足先登</div>
+                            <div class="c_center">
+                                猎豹CS9全面的购车方案邀您尽享价值与实力双重进级。即日起订购猎豹CS9可尊享多种优惠购车方案。低首付0利率购车、0月供半价提车、超低日供灵活还款、信用卡分期购车等方案助您轻松入主猎豹CS9座驾，尽享更多财务自由。捷足先登，达成所愿！
+                            </div>
+                            <div class="c_bottom">
+                                <a href="javascript:;" class="c_btn" data-index="1">查看详情</a>
                             </div>
                         </span>
                     </div>
@@ -549,7 +615,7 @@
                     height: 17px;
                     position: absolute;
                     top: -30px;
-                    left: -45px;
+                    right: -45px;
                     background: url("../../assets/i/car/about/finance-service/close.png");
                 }
             </style>
@@ -569,41 +635,144 @@
                     <a href="javascript:;" class="close_popup"></a>
                 </div>
             </div>
+            <div class="popup fin_popup">
+                <div class="title">
+                    猎豹CS9多种优惠购车方案，助您捷足先登1
+                </div>
+                <div class="content">
+                    <p>1.低首付0利率购车：首付20%起，享12-36期0利率或低利率，48-60期低利率，等额月供，购车轻松；</p>
+                    <p>2.0月供半价提车：首付50%，一年后结清50%尾款，欣享0月供、0利息；更有一次性付清、展期、置换新车三种灵活尾款处理方式选择；</p>
+                    <p>3.低日供灵活还款：首付50%起，期限36个月，尾款不高于30%，享超低日供；更有一次性付清、展期、置换新车三种灵活尾款处理方式选择；</p>
+                    <p>4.信用卡分期购车：首付20%起，享12-24期0利息0费率，36-60期0利息低费率，手续简单、方便快捷；</p>
+                    <p>5.2万元免息增值贷款：最高2万元、最长24期0利率增值贷款，可用于购买新车保险，精品附件、保养维修等费用（注：须与新车贷款同时申请）；</p>
+                    <p>以上金融产品优惠仅限选其一。</p>
+                    <p>更多详情，敬请垂询一汽-大众当地特许经销商。</p>
+                    <a href="javascript:;" class="close_popup"></a>
+                </div>
+            </div>
+            <div class="popup fin_popup">
+                <div class="title">
+                    猎豹CS9多种优惠购车方案，助您捷足先登2
+                </div>
+                <div class="content">
+                    <p>1.低首付0利率购车：首付20%起，享12-36期0利率或低利率，48-60期低利率，等额月供，购车轻松；</p>
+                    <p>2.0月供半价提车：首付50%，一年后结清50%尾款，欣享0月供、0利息；更有一次性付清、展期、置换新车三种灵活尾款处理方式选择；</p>
+                    <p>3.低日供灵活还款：首付50%起，期限36个月，尾款不高于30%，享超低日供；更有一次性付清、展期、置换新车三种灵活尾款处理方式选择；</p>
+                    <p>4.信用卡分期购车：首付20%起，享12-24期0利息0费率，36-60期0利息低费率，手续简单、方便快捷；</p>
+                    <p>5.2万元免息增值贷款：最高2万元、最长24期0利率增值贷款，可用于购买新车保险，精品附件、保养维修等费用（注：须与新车贷款同时申请）；</p>
+                    <p>以上金融产品优惠仅限选其一。</p>
+                    <p>更多详情，敬请垂询一汽-大众当地特许经销商。</p>
+                    <a href="javascript:;" class="close_popup"></a>
+                </div>
+            </div>
+            <div class="popup fin_popup">
+                <div class="title">
+                    猎豹CS9多种优惠购车方案，助您捷足先登3
+                </div>
+                <div class="content">
+                    <p>1.低首付0利率购车：首付20%起，享12-36期0利率或低利率，48-60期低利率，等额月供，购车轻松；</p>
+                    <p>2.0月供半价提车：首付50%，一年后结清50%尾款，欣享0月供、0利息；更有一次性付清、展期、置换新车三种灵活尾款处理方式选择；</p>
+                    <p>3.低日供灵活还款：首付50%起，期限36个月，尾款不高于30%，享超低日供；更有一次性付清、展期、置换新车三种灵活尾款处理方式选择；</p>
+                    <p>4.信用卡分期购车：首付20%起，享12-24期0利息0费率，36-60期0利息低费率，手续简单、方便快捷；</p>
+                    <p>5.2万元免息增值贷款：最高2万元、最长24期0利率增值贷款，可用于购买新车保险，精品附件、保养维修等费用（注：须与新车贷款同时申请）；</p>
+                    <p>以上金融产品优惠仅限选其一。</p>
+                    <p>更多详情，敬请垂询一汽-大众当地特许经销商。</p>
+                    <a href="javascript:;" class="close_popup"></a>
+                </div>
+            </div>
+            <div class="popup fin_popup">
+                <div class="title">
+                    猎豹CS9多种优惠购车方案，助您捷足先登4
+                </div>
+                <div class="content">
+                    <p>1.低首付0利率购车：首付20%起，享12-36期0利率或低利率，48-60期低利率，等额月供，购车轻松；</p>
+                    <p>2.0月供半价提车：首付50%，一年后结清50%尾款，欣享0月供、0利息；更有一次性付清、展期、置换新车三种灵活尾款处理方式选择；</p>
+                    <p>3.低日供灵活还款：首付50%起，期限36个月，尾款不高于30%，享超低日供；更有一次性付清、展期、置换新车三种灵活尾款处理方式选择；</p>
+                    <p>4.信用卡分期购车：首付20%起，享12-24期0利息0费率，36-60期0利息低费率，手续简单、方便快捷；</p>
+                    <p>5.2万元免息增值贷款：最高2万元、最长24期0利率增值贷款，可用于购买新车保险，精品附件、保养维修等费用（注：须与新车贷款同时申请）；</p>
+                    <p>以上金融产品优惠仅限选其一。</p>
+                    <p>更多详情，敬请垂询一汽-大众当地特许经销商。</p>
+                    <a href="javascript:;" class="close_popup"></a>
+                </div>
+            </div>
             <!--流程与常见问题-->
             <div class="c_item">
                 <div class="c_title">
                     流程与常见问题
                 </div>
                 <div class="c_title_sub">
-                    一汽-大众"金融引擎"是为满足精于理财的消费者的购车需求,为其精心打造的专业汽车金融平台。其中业务涵盖汽车贷 款、汽车保险、汽车租赁等,为消费者实现购车梦想提供精挑细选、量身定做、值得信赖的一站式服务。凭借高素质、专业化 的优秀团队和遍布全国的服务网点,一汽-大众"金融引擎"联手实力雄厚的金融合作伙伴,为消费者提供个性化的汽车金融购车 方案,助您轻松实现梦想,加速迈向成功!
+                    "金融引擎"是为满足精于理财的消费者的购车需求,为其精心打造的专业汽车金融平台。其中业务涵盖汽车贷 款、汽车保险、汽车租赁等,为消费者实现购车梦想提供精挑细选、量身定做、值得信赖的一站式服务。凭借高素质、专业化 的优秀团队和遍布全国的服务网点,"金融引擎"联手实力雄厚的金融合作伙伴,为消费者提供个性化的汽车金融购车 方案,助您轻松实现梦想,加速迈向成功!
                 </div>
                 <div class="c_row clearFix">
-                    <div class="c_left">
-                        <img src="../../assets/i/car/about/company-culture/1.jpg" alt="">
+                    <div class="c_left c_quarter">
+                        <img src="../../assets/i/car/about/finance-service/finance-engine/pen.png" alt="" class="c_top">
+                        <div class="c_center">填写申请表</div>
+                        <div class="c_bottom">您需要在选定您心仪的车 型后，填写申请表,并提供证明材料</div>
                     </div>
-                    <div class="c_right">
-                    <span class="c_txt">
-                        创新发展、追求卓越的经营理念<br/>
-                        艰苦奋斗、自力更生的创业激情<br/>
-                        令行禁止、雷厉风行的工作作风<br/>
-                        五湖四海、团结协作的集体主义精神<br/>
-                        英勇顽强、敢打硬仗的英雄主义气概<br/>
-                        诚信经营、产业报国的社会责任<br/>
-                    </span>
+                    <div class="c_left c_quarter">
+                        <img src="../../assets/i/car/about/finance-service/finance-engine/verify-info.png" alt="" class="c_top">
+                        <div class="c_center">核实信息</div>
+                        <div class="c_bottom">等待电话核实信息,如有 需要，金融机构会去您的宅所进行访谈并收集材料</div>
+                    </div>
+                    <div class="c_left c_quarter">
+                        <img src="../../assets/i/car/about/finance-service/finance-engine/contract.png" alt="" class="c_top">
+                        <div class="c_center">付款签署合同</div>
+                        <div class="c_bottom">缴付首付款和购置税，签署合同，协助办理抵押手续</div>
+                    </div>
+                    <div class="c_left c_quarter">
+                        <img src="../../assets/i/car/about/finance-service/finance-engine/repayment.png" alt="" class="c_top">
+                        <div class="c_center">按约还款</div>
+                        <div class="c_bottom">按约还款，轻松驾驭爱车，享受驾驭乐趣</div>
                     </div>
                 </div>
-                <div class="c_row clearFix">
-                    <div class="c_left">
-                        <img src="../../assets/i/car/about/company-culture/2.jpg" alt="">
-                    </div>
-                    <div class="c_right">
-                    <span class="c_txt">
-                        企业理念：创新发展、企业之魂。<br/>
-                        企业核心价值观：创新发展、追求卓越。<br/>
-                        企业精神：开拓、创新、求实、奉献。<br/>
-                        企业责任：产业报国，以振兴民族工业为己任；打造品牌，以回馈社会为目的。<br/>
-                    </span>
-                    </div>
+                <div class="c_row c_common-question">
+                   <h1>常见问题</h1>
+                    <section data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{  }'>
+                        <dl class="am-accordion-item am-active">
+                            <dt class="am-accordion-title">
+                                Q1:汽车信贷能给我带来什么好处？
+                            </dt>
+                            <dd class="am-accordion-bd am-collapse">
+                                <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                                <div class="am-accordion-content">
+                                    A:汽车信贷可以帮您节省现金支出、可以帮您提前实现车型的升级，同时您也可以利用车贷进行融资；
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="am-accordion-item">
+                            <dt class="am-accordion-title">
+                                Q2:贷款期间抵押车辆可以过户吗？
+                            </dt>
+                            <dd class="am-accordion-bd am-collapse ">
+                                <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                                <div class="am-accordion-content">
+                                    A:很抱歉，这是不可以的，只要是做了抵押登记的车辆必须还清贷款并办理解除抵押 登记手续后方可办理过户；
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="am-accordion-item">
+                            <dt class="am-accordion-title">
+                                Q3:车代还款方式有哪些？
+                            </dt>
+                            <dd class="am-accordion-bd am-collapse ">
+                                <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                                <div class="am-accordion-content">
+                                    A:还款方式主要有等本息还付、等本金还付以及弹性尾款这三种方式；
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="am-accordion-item">
+                            <dt class="am-accordion-title">
+                                Q4:投保交强险后，是否还有必要购买商业险？
+                            </dt>
+                            <dd class="am-accordion-bd am-collapse ">
+                                <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                                <div class="am-accordion-content">
+                                    A:交强险是国家规定的强制投保险种，仅能覆盖轻微事故的最基本赔偿，额外的赔付金额还需要客户或商业保险来承担。不论是新车投保还是续保车辆，只投保交强险都是不够的，我们建议您在投保交强险的基础上，还应根据您个人情况增选其他险种。
+                                </div>
+                            </dd>
+                        </dl>
+                    </section>
 
                 </div>
             </div>
@@ -697,14 +866,15 @@
     }
     $('.back_top .b_lk').click(function () {
         $(window).scrollTop(0);
+        verticalAlign();
     });
 
     $(window).scroll(function () {
         autoFixed();
     });
-    var fixedTop = $('.head').eq(0).offset().top;
     var h = $('.head').outerHeight();
     var pl = $('.head').css('padding-left');
+    var fixedTop = $('.head').offset().top;
     var pl_float = parseFloat(pl.substr(0,pl.length-2));
     function autoFixed() {
         var t = window.pageYOffset;
@@ -733,25 +903,25 @@
 
         }
     }
-    $('.head .h_item').click(function () {
-       var self = $(this)[0];
-       var index = 0;
-       $('.head .h_item').each(function (i) {
-           if(self == $(this)[0]){
-               index = i;
-               $(this).find('a').addClass('h_active');
-           }else{
-               $(this).find('a').removeClass('h_active');
-           }
-       })
-        $('.head_sub .h_box').each(function (j) {
-            if(index == j){
-                $(this).show();
-            }else{
-                $(this).hide()
-            }
-        })
-    });
+//    $('.head .h_item').click(function () {
+//       var self = $(this)[0];
+//       var index = 0;
+//       $('.head .h_item').each(function (i) {
+//           if(self == $(this)[0]){
+//               index = i;
+//               $(this).find('a').addClass('h_active');
+//           }else{
+//               $(this).find('a').removeClass('h_active');
+//           }
+//       })
+//        $('.head_sub .h_box').each(function (j) {
+//            if(index == j){
+//                $(this).show();
+//            }else{
+//                $(this).hide()
+//            }
+//        })
+//    });
     $('.head_sub .h_item').click(function () {
         var self = $(this)[0];
         var index = 0;
@@ -769,14 +939,15 @@
             }else{
                 $(this).hide()
             }
-        })
+        });
         verticalAlign();
-    })
-    $('.content_box .c_box .c_item .c_row .c_right .c_txt .c_bottom .c_btn').click(function () {
+    });
+    $('.content_box .c_row .c_right .c_bottom .c_btn').click(function () {
         var self = $(this)[0];
+        console.log("i:"+$(this).data('index'));
         var index = 0;
         $('.content_box .c_box .c_item .c_row .c_right .c_txt .c_bottom .c_btn').each(function (i) {
-            if(self = $(this)[0]){
+            if(self == $(this)[0]){
                 index = i
             }
         });
@@ -790,6 +961,10 @@
                 $(this).hide();
             }
         })
+    })
+    $('a.close_popup').click(function () {
+        $(this).parents('div.fin_popup').hide();
+        $('.black_mask').hide();
     })
 </script>
 </html>

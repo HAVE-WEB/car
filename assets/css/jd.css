@@ -52,3 +52,7 @@ svg:not(:root) {
     margin-bottom: 0;
     list-style: none;
 }
+
+.col-xs-12 {
+    width: 100%;
+}
