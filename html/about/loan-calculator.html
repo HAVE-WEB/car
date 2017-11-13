@@ -1176,12 +1176,32 @@
         }
         $("#car-style").trigger('chosen:updated');
     }
+//    $('.car_name').on('click',function () {
+//       alert("#car-model on click");
+//    });
+//    $('.car_name').on('dblclick',function () {
+//        alert("#car-model on dblclick");
+//    });
+//    $('.car-name').hover(
+//            function () {
+//                console.log('hover_on')
+//            },
+//            function () {
+//                console.log('hover_out')
+//            }
+//    )
+//    $('.car-name').on('hover',function () {
+//        console.log('hover_on')
+//    },function () {
+//
+//    });
     $(function(){
+        console.log("loan-calculator.html $(function(){})");
         $("#car-model").append("<option value=''>请选择车型</option>");
         for(var i=0;i<brandArray.length;i++){
             //意向 车型初始化
             $("#car-model").append("<option value='"+brandIdArray[i]+"'>"+brandArray[i]+"</option>");
-            $("#car-model").trigger('chosen:updated');//trigger???
+            $("#car-model").trigger('chosen:updated');
         }
         var b='';
         if(b!=''&&b!='null'){

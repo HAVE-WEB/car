@@ -742,7 +742,7 @@ body, html {
 	color: #414742
 }
 .select-box select {
-	background: url(../images/select-mob-bg-small.png) top right no-repeat #fff;
+	background: url(../../assets/i/car/about/finance-service/loca-calculator/select-bg-small.png) top right no-repeat #fff;
 	margin-bottom: 3px;
 	color: #999
 }
@@ -758,7 +758,7 @@ body, html {
 	right: 10px
 }
 .select-box .chosen-container-single .chosen-single div b {
-	background: url(../images/select-bg-small.png) top left no-repeat
+	background: url(../../assets/i/car/about/finance-service/loca-calculator/select-bg-small.png) top left no-repeat
 }
 .select-box .chosen-container-active.chosen-with-drop .chosen-single {
 	border: 1px solid #dee1e3;

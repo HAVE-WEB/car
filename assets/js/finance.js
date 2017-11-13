@@ -1,3 +1,4 @@
+console.log('finance.js start');
 var str =$("#brandlist_json").val();
 // console.log("str:"+str);
 var json = eval('(' +str+  ')');
@@ -13,10 +14,11 @@ for(var i=0;i<arry.length;i++){
 		brandIdArray.push(arry[i].vb_brandId);
 	}
 }
+console.log('finance.js parameter brandArray');
 //数字千分位转化方法
 function format (num) {
     return (num + '').replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,');
-}
+}/*函数的定义，并没有进入函数，只有调用的时候在回进入函数内部*/
 function contains(arr, obj) {  
     var i = arr.length;  
     while (i--) {  
@@ -27,7 +29,7 @@ function contains(arr, obj) {
     return false;  
 }
 (function(){
-	
+	console.log('finance.js start 匿名函数');
 	//贷款方案id
 	var loanSchemeId;
 	var vwBid = $("#bid").val();
@@ -530,79 +532,6 @@ function contains(arr, obj) {
 		selectWidth()
 	});
 
-
-	//事件绑定 期数
-	/*$('.timeline').on('click', 'ul li', function(event) {
-		event.preventDefault();
-		if($(this).hasClass('selected') || $(this).hasClass('no-click')) return;
-		//检测代码
-		if($(window).width()>640){
-			ga('send','event','pc/金融贷款计算器_主视觉','选择','贷款期限_201608090041');
-		}else{
-			ga('send','event','m/金融贷款计算器_主视觉','选择','贷款期限_201608090087');
-		}
-		$(this).addClass('selected').find('img').attr('src','../faw/images/financial/drag-selected.png').parent('li').siblings('.selected').removeClass('selected').find('img').attr('src','../faw/images/financial/drag.png');
-		if($('#car-model').val() != '' && $('#car-style').val() != '' && $('#finance-institution').val() != '' && $('#finance-products').val() != ''){
-			contentResult();
-		}
-	});*/
-	//事件绑定 首付比例
-	/*$('.payline').on('click', 'ul li', function(event) {
-		event.preventDefault();
-		if($(this).hasClass('selected') || $(this).hasClass('no-click')) return;
-		if($(window).width()>640){
-			ga('send','event','pc/金融贷款计算器_主视觉','选择','首付比例_201608090040');
-		}else{
-			ga('send','event','m/金融贷款计算器_主视觉','选择','首付比例_201608090086');
-		}
-		$(this).addClass('selected').find('img').attr('src','../faw/images/financial/drag-selected.png').parent('li').siblings('.selected').removeClass('selected').find('img').attr('src','../faw/images/financial/drag.png');
-		
-		if($('#car-model').val() != '' && $('#car-style').val() != '' && $('#finance-institution').val() != '' && $('#finance-products').val() != ''){
-			//重置 期数线
-			$('.timeline').find('.selected').removeClass('selected').find('img').attr('src','../faw/images/financial/drag.png');
-			$('.timeline').find('li').addClass('no-click');
-			//首付比例
-			var downPaymentRatio =Number($('.payline').find('.selected').children('p').text());
-			
-			var modelId = $('#car-style').val();
-			var productId = $('#finance-products').val();
-			var countT = 0 ;
-			//查询对应 对应首付比例的 期数
-			$.ajax({
-				type: "GET",
-				url: 'timeLineByPayLine.json',
-				async:true,
-				data: {"mid":modelId,"productId":productId,"downPaymentRatio":downPaymentRatio},
-				dataType: "json",
-				success: function(data){
-					var isobj = typeof(data) == "object" ;
-					// 非对象
-					if(!isobj) {
-						data = $.parseJSON(data);
-					}
-					//比较查询出的贷款期数是否存在
-					var timeline ="12,18,24,36,48,60";
-					for (var i = 0; i < data.length; i++) {
-						var timeValue = data[i].vls_loanTerm+"";
-						if(timeline.indexOf(timeValue) != -1){
-							var data2 = $('.timeline').find('p');
-							for(j = 0 ; j < data2.length ; j++){
-								if(timeValue == data2[j].innerHTML){
-									$('.timeline').find('li').eq(j).removeClass('no-click');
-									if(++countT == 1){
-										$('.timeline').find('li').eq(j).addClass('selected').find('img').attr('src','../faw/images/financial/drag-selected.png');
-									}
-								}
-							}
-						}
-					}
-				}
-			});
-			
-			contentResult();
-		}
-	});*/
-
 	$('.popup').on('click', 'a.popup-close', function(event) {
 		event.preventDefault();
 		$('#all-finance a.btn-apply').addClass('noClick');
@@ -1009,4 +938,4 @@ function contains(arr, obj) {
 	    }
 
 	});
-})()
+})();/*匿名函数立即调用*/

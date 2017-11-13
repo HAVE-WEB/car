@@ -12,7 +12,7 @@
 .irs-bar,
 .irs-bar-edge,
 .irs-slider {
-    background: url(../images/finance/sprite-skin-nice.png) repeat-x;
+    background: url(../../assets/i/car/about/finance-service/loca-calculator/sprite-skin-nice.png) repeat-x;
 }
 
 .irs {
@@ -100,7 +100,7 @@
     background: #99a4ac;
     width: 22px;
     height: 22px;
-    background: url(../images/finance/drag.png) no-repeat;
+    background: url(../../assets/i/car/about/finance-service/loca-calculator/drag.png) no-repeat;
     bottom: 12px;
     padding-top: 30px;
 }

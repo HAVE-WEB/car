@@ -26,7 +26,9 @@
 		}	
 	});
 	*/
-	$('.other_page').change(function(){
+	console.log('comcom.js start');
+	$('.other_page').change(function(){//只有class是other_page的元素对象，发生change事件的时候，才会执行change括号里的匿名函数
+		console.log('comcom.js $(\'.other_page\').change()');
 		var page_href = $(".other_page option:selected").attr('value');
 		if(page_href!=''){
 			window.location.href = page_href;
@@ -36,6 +38,7 @@
 
 	//导航中搜索框初始值切换
 	$('.searchformtext').each(function() {
+		console.log('comcom.js $(\'.searchformtext\').each()');
 		var default_value = this.value;
 		$(this).focus(function(){
 			if(this.value == default_value) {
@@ -50,6 +53,7 @@
 	});
 
 	function resz(){
+		console.log('comcom.js method.resz');
 	    //$(".top_link").css({"width":$(window).width()-96 +"px"});
 	    if($(window).width() > 768){
 	        //$("#main_nav_more").css({"left": "96px"});
@@ -102,7 +106,7 @@
 	resz();
 	$(window).resize(function(){
 	    resz();
-	})
+	});
 	
 	/* pc 端主导航点击更多 */
 	/* pc 端主导航点击更多 */
@@ -131,7 +135,9 @@
 
 	//if($(window).width() < 640){
 	    var menu_flag = true;
-	    $(".burger_menu").click(function(){
+	console.log("menu_flag");
+	    $(".burger_menu").click(function(){//发生点击事件的时候出发函数
+			console.log('common.js $(".burger_menu").click()')
 	        if(MenuMore.attr("data-count") == 1 && menu_flag == true) {
 	            MenuMore.stop().animate({left: "0"},500,function(){
 					menu_flag = false;
@@ -270,7 +276,8 @@ function onBlur(ob) {
 //提示浮层公用
 (function ($) {
     $.fn.extend({
-        "popup": function (options) {
+        "popup": function (options) {//定义的函数，只有调用了函数的时候才会进入匿名函数中去
+			console.log("common.js $.fn.extend({popup})")
             var opts = $.extend({}, defaluts, options);  
             $(this).show().find('.content-box').html(opts.content);
 			var $content = $(this).find('.popup-content');
@@ -293,11 +300,12 @@ function onBlur(ob) {
     var defaluts = {
         content: ''
     };
+	console.log('comom.js $.fn.extend() end')
 })(window.jQuery);
 
 //css3动画
 $.fn.extend({
-    animateCss: function (animationName, callback) {
+    animateCss: function (animationName, callback) {//定义了函数，只有调用了才会进入匿名函数的内部
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
         $(this).addClass('animated ' + animationName).one(animationEnd, function() {
             $(this).removeClass('animated ' + animationName);
@@ -316,6 +324,7 @@ $.fn.extend({
 var JPlaceHolder = {
     //检测
     _check : function(){
+		console.log('commom.js method check()')
         return 'placeholder' in document.createElement('input');
     },
     //初始化
@@ -347,6 +356,7 @@ var JPlaceHolder = {
 };
 //执行
 jQuery(function(){
+	console.log('common.js jQuery')
     JPlaceHolder.init();    
 });
 
