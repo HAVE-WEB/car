@@ -1,4 +1,4 @@
-console.log('finance.js start');
+// console.log('finance.js start');
 var str =$("#brandlist_json").val();
 // console.log("str:"+str);
 var json = eval('(' +str+  ')');
@@ -14,7 +14,7 @@ for(var i=0;i<arry.length;i++){
 		brandIdArray.push(arry[i].vb_brandId);
 	}
 }
-console.log('finance.js parameter brandArray');
+// console.log('finance.js parameter brandArray');
 //数字千分位转化方法
 function format (num) {
     return (num + '').replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,');
@@ -29,7 +29,7 @@ function contains(arr, obj) {
     return false;  
 }
 (function(){
-	console.log('finance.js start 匿名函数');
+	// console.log('finance.js start 匿名函数');
 	//贷款方案id
 	var loanSchemeId;
 	var vwBid = $("#bid").val();
@@ -67,33 +67,30 @@ function contains(arr, obj) {
 				if(!isobj) {
 					data = $.parseJSON(data);
 				}
-				var opts="";
-				data = [
-					{
-						cd_cid:'132131',
-						cd_cnname:'招商银行'
-					},
-                    {
-                        cd_cid:'132132',
-                        cd_cnname:'中国银行'
-                    },
-                    {
-                        cd_cid:'132133',
-                        cd_cnname:'建设银行'
-                    }
-				]
-				if(data.length == 0){
-					opts += '<option value="">选择金融机构</option>'
-				}else{
-					opts += '<option value="">选择金融机构</option>'
-					$.each(data,function(){
-						opts += '<option value="'+this.cd_cid +'">'+this.cd_cnname +'</option>'
-					});
-				}
-				$("#finance-institution").append(opts);
-				$("#finance-institution").trigger('chosen:updated');
+				// var opts="";
+				// if(data.length == 0){
+				// 	opts += '<option value="">选择金融机构</option>'
+				// }else{
+				// 	opts += '<option value="">选择金融机构</option>'
+				// 	$.each(data,function(){
+				// 		opts += '<option value="'+this.cd_cid +'">'+this.cd_cnname +'</option>'
+				// 	});
+				// }
+                // opts += '<option value="">选择金融机构</option>';
+                // opts += '<option value="111">工商银行</option>';
+                // opts += '<option value="112">农业银行</option>';
+                // opts += '<option value="113">中国银行</option>';
+				// $("#finance-institution").append(opts);
+				// $("#finance-institution").trigger('chosen:updated');
 			}
 		});
+        var opts="";
+        opts += '<option value="">选择金融机构</option>';
+        opts += '<option value="111">工商银行</option>';
+        opts += '<option value="112">农业银行</option>';
+        opts += '<option value="113">中国银行</option>';
+        $("#finance-institution").html(opts);
+        $("#finance-institution").trigger('chosen:updated');
 	}
 	//通过金融机构id查询加载金融产品
 	function finaProducts(pid){
@@ -125,7 +122,15 @@ function contains(arr, obj) {
 				$("#finance-products").trigger('chosen:updated');
 			}
 		});
+        var opts="";
+        opts += '<option value="">选择金融产品</option>';
+        opts += '<option value="132141">标准信贷</option>';
+        opts += '<option value="132142">老客户</option>';
+        opts += '<option value="132143">标准信贷 - 半台车</option>';
+        $("#finance-products").html(opts);
+        $("#finance-products").trigger('chosen:updated');
 	}
+
 	$('#finance-institution').on('change', function() {
 		//event.preventDefault();
 		var pid = $(this).find('option:checked').val();
@@ -138,11 +143,12 @@ function contains(arr, obj) {
 		finaProducts(pid);
 	    contentResult();
 	});
-	$('#car-model').on('change', function(event) {
+	$('#car-model').on('change', function(event) {/*元素id是car-model的元素，绑定change事件，事件对应的函数是*/
 		console.log("change");
 		event.preventDefault();
 		var bid = $(this).find('option:checked').val();
 		var carStyleBefore =  $("#car-style").find('option:checked').val();
+		console.log("bid:"+bid+",carStyleBefore:"+carStyleBefore);
 		if(bid ==''){
 			$("#car-style").empty();
 			$("#car-style").append("<option value=''>请选择车款</option>");
@@ -158,18 +164,24 @@ function contains(arr, obj) {
 		}
 	    
 	    var carStyleAfert =  $("#car-style").find('option:checked').val();
+
 	    //如果修改之前不为空 修改之后值为空则 清空金融产品
+		console.log("before:"+(carStyleBefore != ''));
+		console.log("after:"+(carStyleAfert == ''));
+        console.log('carStyelAfter:'+carStyleAfert+",b:"+(carStyleAfert == ''));
 		if(carStyleBefore != '' && carStyleAfert == ''){
+			console.log('enter'+$('#price').attr("placeholder"));
 			//清空车型图片报价
 			$('#price').val("");
 			$("#inter").hide();
 			$("#lastMonthy").hide();
 			$("#titlePrice").show();
-			$('#price').attr("placeholder",price).removeAttr('disabled');
-			$('#price').val('');
-			$('#price').val(price).focus().attr('disabled','disabled');
+            $('#price').attr("placeholder",'没有选择车款');
+			// $('#price').attr("placeholder",'没有选择车款').removeAttr('disabled');
+			// $('#price').val('');
+			// $('#price').val(price).focus().attr('disabled','disabled');
 
-    		var html='<div class="car-pic"><img src="../faw/images/finance/car-bg.png" alt=""><p>请选择一款车型进行计算</p></div>';
+    		var html='<div class="car-pic"><p>请选择一款车型进行计算</p></div>';
     		$('#finance .car-model').html(html)
     		/*//重置车款
 			$("#car-style").html('<option value="">车款</option>').trigger('chosen:updated');*/
@@ -184,6 +196,7 @@ function contains(arr, obj) {
 	    	}
 			noChangearr = [];
     		var slider1 = $payLine.data("ionRangeSlider");
+    		console.log('slider:'+slider1);
     		slider1.update({
                 from: 0
             });
@@ -209,13 +222,13 @@ function contains(arr, obj) {
 	$('#car-style').bind('change', function(event) {
 		event.preventDefault();
 		
-		var val = $(this).find('option:checked').val();
+		var val = $(this).find('option:checked').val();/*option标签的val值*/
 		//通过车型id查询全部车款
-
+		console.log('val:'+val);
 		
 		if(val == ''){
-			var html='<div class="car-pic"><img src="../faw/images/finance/car-bg.png" alt=""><p>请选择一款车型进行计算</p></div>';
-    		$('#finance .car-model').html(html)
+			var html='<div class="car-pic"><p>请选择一款车型进行计算</p></div>';
+    		$('#finance .car-model').html(html);
 			$("#finance-institution").empty();
 			$("#finance-institution").append('<option value="">选择金融机构</option>');
 			$("#finance-institution").trigger('chosen:updated');
@@ -226,15 +239,19 @@ function contains(arr, obj) {
 				if(val==arry[i].vm_modelId){
 					price = arry[i].vm_modelPrice;
 					name = arry[i].vm_modelName;
-	 				img = arry[i].vb_brandImg;
+	 				// img = arry[i].vb_brandImg;
 					break;
 				}
 			}
-				var pric = format(price);
-				$('#price').val(pric);
-				brand = $('#car-model option:checked').text() ;
- 		var html='<div class="car-pic"><img src="'+img+'" alt="" style="max-height:72px" ></div><div class="car-name">'+brand+name+'<p>官方指导价：￥'+pric+'</p></div>';
- 		$('#finance .car-model').html(html);
+			console.log("price:"+price);
+			var pric = format(price);
+			console.log('formatePrice:'+pric);
+			$('#price').val(pric);
+
+			var brand = $('#car-model option:checked').text() ;
+			console.log("brand:"+brand);
+			var html='<div class="car-name">'+brand+' '+name+'<p>官方指导价：￥'+pric+'</p></div>';
+			$('#finance .car-model').html(html);
 			
 			//加载金融机构下拉框
 			finaInst();
@@ -298,7 +315,7 @@ function contains(arr, obj) {
 	        		    	noChangearr.push(i);
 	        		    }
 	        		}
-	        		sliderEvent($payLine,noChangearr)
+	        		sliderEvent($payLine,noChangearr);
 	        		nn = Number(pN);
 	        		var slider1 = $payLine.data("ionRangeSlider");
 		    		slider1.update({
@@ -306,7 +323,7 @@ function contains(arr, obj) {
 		            });
 	           }
 	        });
-			timelineChange()
+			timelineChange();
 		}
 		var _this = $timeLine.prev('.irs-with-grid').find('.js-grid-text-0');
 		_this.trigger('click');
@@ -378,9 +395,10 @@ function contains(arr, obj) {
 			var $contentResult = $('.content-result');
 			//支付比例
 			var downPaymentRatio =Number($('#payline').val());
-			
+            downPaymentRatio = 50;
 			//贷款期数
 			var loanTerm =Number($('#timeline').val());
+            loanTerm = 24;
 			//首付金额
 			var first_payment = price*(downPaymentRatio/100);
 			//贷款金额
@@ -471,6 +489,7 @@ function contains(arr, obj) {
 	    	}
 			noChangearr = [];
     		var slider1 = $payLine.data("ionRangeSlider");
+    		console.log(slider1);
     		slider1.update({
                 from: 0
             });

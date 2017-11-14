@@ -67,9 +67,8 @@
             /*height: 80px;*/
         }
         .nav .n_ul .n_item .n_lk .n_logo{
-            width:67px;
-            height: 52px;
-            margin-top: 10px;
+            width:100%;
+            padding: 7px 0;
         }
         .nav .n_ul .n_item .n_lk .n_top .n_img{
             width: 35px;
@@ -95,22 +94,29 @@
             position: relative;
         }
         .search .s_center .s_form .s_content{
-            width: 90%;
+            width: 100%;
             height: 50px;
             border-radius: 38px;
             border: 2px solid #ccc;
-            padding: 0 80px 0 20px;
+            padding: 0 55px 0 25px;
             color: #666;
             font-size: 14px;
+            outline: none;
         }
         .search .s_center .s_form .s_submit{
             position: absolute;
-            top: 10px;
-            left: 86%;
+            width: 30px;
+            height: 30px;
+            top: 50%;
+            margin-top: -15px;
+            right: 25px;
         }
         .search .s_center .s_form .s_submit .s_img{
             width: 30px;
             height: 30px;
+        }
+        .search .box_fixed{
+            position: relative;
         }
         /*end search*/
         /*start result*/
@@ -166,95 +172,49 @@
     </style>
 </head>
 <body>
-<!--start nav-->
-<div class="nav">
-    <ul class="n_ul">
-        <li class="n_item">
-            <a href="../home.html" class="n_lk">
-                <img src="../../assets/i/car/home/home-nav/pc_logo.png" alt="" class="n_logo">
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="../left-nav/pandect.html" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">车型总览</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="../left-nav/find.html" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/get.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">众里寻车</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">二手车</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">品牌汽车</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/search.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">天猫旗舰店</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">易车旗舰店</span>
-                </div>
-            </a>
-        </li>
-        <li class="n_item">
-            <a href="" class="n_lk">
-                <div class="n_top">
-                    <img src="../../assets/i/car/home/home-nav/oldcar.png" alt="" class="n_img">
-                </div>
-                <div class="n_bottom">
-                    <span class="n_txt">腾讯商城旗舰店</span>
-                </div>
-            </a>
-        </li>
-    </ul>
-</div>
-<!--end nav-->
+
 <!--start content-->
 <div id="content">
+    <!--start nav-->
+    <div class="nav">
+        <ul class="n_ul">
+            <li class="n_item">
+                <a href="../home.html" class="n_lk">
+                    <img src="../../assets/i/car/home/home-nav/logo.png" alt="" class="n_logo">
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="../left-nav/pandect.html" class="n_lk">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">车型总览</span>
+                    </div>
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="../about/overview.html" class="n_lk">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">品牌汽车</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--end nav-->
     <!--start search-->
     <div class="search">
         <div class="s_center">
             <form action="" class="s_form">
-                <input type="text" class="s_content" placeholder="请输入关键字" >
-                <a href="" class="s_submit"><img src="../../assets/i/car/search/search.png" alt="" class="s_img"></a>
+                <div class="box_fixed">
+                    <input type="text" class="s_content" placeholder="请输入关键字" >
+                    <a href="" class="s_submit"><img src="../../assets/i/car/search/search.png" alt="" class="s_img"></a>
+                </div>
+               
             </form>
         </div>
     </div>

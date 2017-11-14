@@ -308,7 +308,7 @@
     <!--start advertise-->
     <div class="advertise">
         <div>
-            <img src="../../assets/i/car/car-detail/1.jpg" alt="" class="a_img">
+            <img src="../../assets/i/car/car-detail/1.jpg" alt="" class="a_img" onload="fixed_top()">
         </div>
         <!--start fast_aisle-->
         <!--<div class="fast_aisle">-->
@@ -1102,7 +1102,12 @@
     $(window).scroll(function () {
         autoFixed();
     });
-    var fixedTop = $('.head_sub').eq(0).offset().top;
+    var fixedTop = 0;
+    function fixed_top() {
+        console.log("advertise");
+        fixedTop = $('.head_sub').offset().top;
+    }
+
     function autoFixed() {
         var t = window.pageYOffset;
         var pl = $('.head').css('padding-left');

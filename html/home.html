@@ -555,7 +555,7 @@
                             </div>
                             <div class="p_bottom">
                                 <div class="p_type">
-                                    全新一代猎豹CS9(2.0T)豪华型
+                                    全新一代猎豹Q6(2.0T)豪华型
                                 </div>
                                 <a href="left-nav/car-detail.html" class="p_btn">了解更多</a>
                             </div>
@@ -711,7 +711,7 @@
         .fin_popup {
             position: fixed;
             background: #fff;
-            top: 10%;
+            top: 5%;
             width: 50%;
             margin: 0 auto;
             padding: 30px 4%;
@@ -768,7 +768,7 @@
 
         }
         .bottom .b_info .b_form .b_item .b_content .am-selected{
-            margin:10px 0 25px 0;
+            margin:10px 0 0 0;
             width:100%;
         }
         .bottom .b_info .b_form .b_item .b_content .b_1 .am-selected{
@@ -789,7 +789,7 @@
             width:100%;
             padding: .5em 1em;
             border:1px solid #E6E6E6;
-            margin:10px 0 20px 0;
+            margin:10px 0 0 0;
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
             border-radius: 5px;
@@ -842,6 +842,14 @@
             -moz-border-radius: 5px;
             border-radius: 5px;
         }
+        .bottom .error-info{
+            color: red;
+            font-size: 14px;
+        }
+        .bottom .b_item{
+            margin-bottom: 10px;
+        }
+
         /*end bottom*/
     </style>
     <div class="black_mask"></div>
@@ -850,18 +858,17 @@
             <div class="b_info">
             <div class="b_title">请准确填写以下信息,完成预约试驾</div>
             <div class="b_form">
-                <form action="">
+                <form action="" method="post" onsubmit="return toValid()">
                     <div class="b_item">
                         <div class="b_name">
                             <span class="b_asterisk">*</span><span class="b_txt">选择车型</span>
                         </div>
                         <div class="b_content">
-                            <select data-am-selected>
-                                <option value="a">CS6</option>
-                                <option value="b" selected>CT5</option>
+                            <select data-am-selected name="car-type">
+                                <option value="a">猎豹CS9</option>
+                                <option value="b">猎豹CS10</option>
                                 <option value="o">猎豹CT7</option>
-                                <option value="m">猎豹CS10</option>
-                                <option value="d">飞腾</option>
+                                <option value="m">猎豹Q6</option>
                             </select>
                         </div>
                     </div>
@@ -870,7 +877,7 @@
                             <span class="b_asterisk">*</span><span class="b_txt">姓名</span>
                         </div>
                         <div class="b_content">
-                            <input type="text" class="b_input" placeholder="姓名">
+                            <input type="text" class="b_input" placeholder="姓名" name="userName">
                         </div>
                     </div>
                     <div class="b_item">
@@ -878,7 +885,7 @@
                             <span class="b_asterisk">*</span><span class="b_txt">手机号码</span>
                         </div>
                         <div class="b_content">
-                            <input type="text" class="b_input" placeholder="手机号码">
+                            <input type="text" class="b_input" placeholder="手机号码" name="iphone">
                         </div>
                     </div>
                     <div class="b_must_write">
@@ -889,7 +896,7 @@
                         <!--<a href="" class="b_lk">同意隐私条款</a>-->
                     <!--</div>-->
                     <div class="b_submit">
-                        <a href="" class="b_btn">提交</a>
+                        <button type="submit" href="" class="b_btn">提交</button>
                     </div>
                 </form>
             </div>
@@ -899,18 +906,17 @@
             <div class="b_info">
                 <div class="b_title">请准确填写以下信息,完成保养维修</div>
                 <div class="b_form">
-                    <form action="action" method="post" id="maintain">
+                    <form action="" method="post" id="maintain" onsubmit="return toValid()">
                         <div class="b_item">
                             <div class="b_name">
                                 <span class="b_asterisk">*</span><span class="b_txt">选择车型</span>
                             </div>
                             <div class="b_content">
-                                <select data-am-selected>
-                                    <option value="a">CS6</option>
-                                    <option value="b" selected>CT5</option>
+                                <select data-am-selected name="car-type">
+                                    <option value="a">猎豹CS9</option>
+                                    <option value="b">猎豹CS10</option>
                                     <option value="o">猎豹CT7</option>
-                                    <option value="m">猎豹CS10</option>
-                                    <option value="d">飞腾</option>
+                                    <option value="m">猎豹Q6</option>
                                 </select>
                             </div>
                         </div>
@@ -920,7 +926,7 @@
                                 <span class="b_asterisk">*</span><span class="b_txt">姓名</span>
                             </div>
                             <div class="b_content">
-                                <input type="text" class="b_input"  placeholder="请输入姓名" name="userName" required>
+                                <input type="text" class="b_input"  placeholder="请输入姓名" name="userName">
                             </div>
                         </div>
                         <div class="b_item">
@@ -928,7 +934,7 @@
                                 <span class="b_asterisk">*</span><span class="b_txt">手机号码</span>
                             </div>
                             <div class="b_content">
-                                <input type="number" class="b_input" placeholder="手机号码" name="iphone" required pattern="^1[3|4|5|7|8][0-9]{9}$">
+                                <input type="number" class="b_input" placeholder="手机号码" name="iphone">
                             </div>
                         </div>
                         <div class="b_item">
@@ -999,5 +1005,116 @@
         $('.popup.fin_popup').children('div').eq(0).hide();
         $('.popup.fin_popup').children('div').eq(1).hide();
     })
+
+    //表单验证
+    function toValid(e) {
+        if(carType() && validName() && validIphone()){
+            alert('提交成功');
+            $('.fin_popup .close_popup').trigger('click');
+            e.preventDefault();
+            return true;
+        }else{
+            return false
+        }
+    }
+    //验证选择车型
+    function carType() {
+        var ct = $('.bottom:visible select[name="car-type"]');
+        if(ct){
+            var optionVal =  ct.val();
+            if(optionVal){
+                ct.parent().next().hide();
+                return true;
+            }else{
+                var msg = '请选择车型';
+                ct.parents('div.b_item').append('<div class="error-info">'+msg+'</div>');
+                return false
+            }
+        }else{
+            return true;
+        }
+    }
+    //验证姓名
+    function validName() {
+        var $userName = $('.bottom:visible input[name="userName"]');
+        if($userName){
+            var val_input = $userName.val();
+            if(val_input){
+                $userName.parent().next().hide();
+                return true;
+            }else{
+                var msg = '请输入姓名';
+                var $error = $userName.parents('div.b_item').find('.error-info');
+                if($error.length >= 1){
+                    $error.html(msg);
+                }else{
+                    $userName.parents('div.b_item').append('<div class="error-info">'+msg+'</div>');
+                }
+                $userName.focus();
+                return false
+            }
+        }else{
+            return true
+        }
+    }
+    //验证手机号码
+    function validIphone(){
+        var $iphone = $('.bottom:visible input[name="iphone"]');
+        if($iphone){
+            var val_input = $iphone.val();
+            console.log("valInput:"+val_input);
+            var flag = true;
+            var error_msg= '';
+            if($.trim(val_input) == ''){
+                flag = false;
+                error_msg = '请输入手机号码';
+            }
+            if(!flag){
+                var $error = $iphone.parents('div.b_item').find('.error-info');
+                if($error.length >= 1){
+                    $error.html(error_msg);
+                }else{
+                    $iphone.parents('div.b_item').append('<div class="error-info">'+error_msg+'</div>');
+                }
+                $iphone.focus();
+                return false
+            }else{
+                var mobile = /^1[3|5|7|8]\d{9}$/;
+               if(mobile.test(val_input)){//匹配成功
+                    flag = true;
+               }else{//匹配不成功
+                   flag  = false;
+                   error_msg = '手机号码格式不正确';
+               }
+               if(flag){
+                   $iphone.parent().next().hide();
+                   return true;
+               }else{
+                   var $error = $iphone.parents('div.b_item').find('.error-info');
+                   if($error.length >= 1){
+                       $error.html(error_msg);
+                   }else{
+                       $iphone.parents('div.b_item').append('<div class="error-info">'+error_msg+'</div>');
+                   }
+                   $iphone.focus();
+                   return false;
+               }
+            }
+
+
+//            else{
+//                var msg = '请输入手机号码';
+//                var $error = $iphone.parents('div.b_item').find('.error-info');
+//                if($error.length >= 1){
+//                    $error.html(msg);
+//                }else{
+//                    $iphone.parents('div.b_item').append('<div class="error-info">'+msg+'</div>');
+//                }
+//                return false
+//            }
+        }else{
+            return true
+        }
+    }
 </script>
 </html>
