@@ -308,7 +308,7 @@
     <!--start advertise-->
     <div class="advertise">
         <div>
-            <img src="../../assets/i/car/car-detail/1.jpg" alt="" class="a_img" onload="fixed_top()">
+            <img src="../../assets/i/car/car-detail/1.jpg" alt="" class="a_img">
         </div>
         <!--start fast_aisle-->
         <!--<div class="fast_aisle">-->
@@ -1062,6 +1062,7 @@
 <script>
     $(function () {
 //        resizeHeight();
+        fixedTop = $('.head_sub').eq(0).offset().top;
         verticalAlign();
         $('.head').after('<div class="space" style="display: none;height: '+$('.head_sub').outerHeight()+'px;"></div>')
     });
@@ -1103,11 +1104,6 @@
         autoFixed();
     });
     var fixedTop = 0;
-    function fixed_top() {
-        console.log("advertise");
-        fixedTop = $('.head_sub').offset().top;
-    }
-
     function autoFixed() {
         var t = window.pageYOffset;
         var pl = $('.head').css('padding-left');

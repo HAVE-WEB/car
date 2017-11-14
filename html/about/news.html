@@ -607,6 +607,7 @@
 <script>
     $(function () {
 //        resizeHeight();
+        fixedTop = $('.head_sub').eq(0).offset().top;
         verticalAlign();
         $('.head').after('<div class="space" style="display: none;height: '+$('.head_sub').outerHeight()+'px;"></div>')
     });
@@ -647,7 +648,7 @@
     $(window).scroll(function () {
         autoFixed();
     });
-    var fixedTop = $('.head_sub').eq(0).offset().top;
+    var fixedTop = 0;
     function autoFixed() {
         var t = window.pageYOffset;
         var pl = $('.head').css('padding-left');
