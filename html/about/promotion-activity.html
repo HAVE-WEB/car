@@ -553,12 +553,17 @@
 </body>
 <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
+<script type="text/javascript" src="../../assets/js/common.jd.js"></script>
 <script>
+    var fixedTop = 0;
     $(function () {
 //        resizeHeight();
-        fixedTop = $('.head_sub').eq(0).offset().top;
+
         verticalAlign();
         $('.head_sub').after('<div class="space" style="display: none;height: '+$('.head_sub').outerHeight()+'px;"></div>')
+    });
+    $.isImgLoad(function () {
+        fixedTop = $('.head_sub').eq(0).offset().top;
     });
     function resizeHeight() {
         var w_h = window.innerHeight;
@@ -599,7 +604,7 @@
     $(window).scroll(function () {
         autoFixed();
     });
-    var fixedTop = 0;
+
     var pl = $('.head_sub').css('padding-left');
     function autoFixed() {
         var t = window.pageYOffset;

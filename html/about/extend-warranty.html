@@ -367,7 +367,7 @@
     <!--start advertise-->
     <div class="advertise">
         <div>
-            <img src="../../assets/i/car/car-detail/1.jpg" alt="" class="a_img">
+            <img src="../../assets/i/car/car-detail/1.jpg" alt="" class="a_img" >
         </div>
         <!--start fast_aisle-->
         <!--<div class="fast_aisle">-->
@@ -900,17 +900,19 @@
 </body>
 <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
+<script type="text/javascript" src="../../assets/js/common.jd.js"></script>
 <script>
-    $(function () {
-//        resizeHeight();
-        fixedTop = $('.head').offset().top;
+    var fixedTop = 0;
+    $(function () {//jquery的ready只是dom的结构加载完毕，便视为加载完成(缺点是图片没有加载完毕，宽高为0，)
+                    //js的window.onload是指dom的生成和资源的加载，比如flash、图片完全加载出来后才执行onload，（缺点图片很大，组织其他js的正常执行）。
         verticalAlign();
         $('.advertise').after('<div class="space" style="display: none;height: '+($('.head_sub').outerHeight()+$('.head').outerHeight())+'px;"></div>')
     });
-    function resizeHeight() {
-        var w_h = window.innerHeight;
-        $('.advertise').height(w_h * 0.6);
-    }
+
+    // 判断图片加载状况，加载完成后回调
+    $.isImgLoad(function(){
+        fixedTop = $('.a_img').outerHeight();
+    });
     $(window).resize(function () {
 //        resizeHeight();
         verticalAlign();
@@ -947,7 +949,7 @@
     });
     var h = $('.head').outerHeight();
     var pl = $('.head').css('padding-left');
-    var fixedTop = 0;
+
     var pl_float = parseFloat(pl.substr(0,pl.length-2));
     function autoFixed() {
         var t = window.pageYOffset;

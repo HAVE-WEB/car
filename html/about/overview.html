@@ -1060,12 +1060,14 @@
 <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
 <script>
+    var fixedTop = 0;
     $(function () {
 //        resizeHeight();
         fixedTop = $('.head_sub').eq(0).offset().top;
         verticalAlign();
         $('.head').after('<div class="space" style="display: none;height: '+$('.head_sub').outerHeight()+'px;"></div>')
     });
+
     function resizeHeight() {
         var w_h = window.innerHeight;
         $('.advertise').height(w_h * 0.6);
@@ -1103,7 +1105,7 @@
     $(window).scroll(function () {
         autoFixed();
     });
-    var fixedTop = 0;
+
     function autoFixed() {
         var t = window.pageYOffset;
         var pl = $('.head').css('padding-left');

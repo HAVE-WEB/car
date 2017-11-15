@@ -1,0 +1,335 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    font-size: 1rem;
+    color: #ccc;
+    font-family:"VWHeadWeb-Bold",sans-serif;
+}
+html{
+    font-size:10px;
+}
+/*start nav*/
+.nav{
+    height:100%;
+    width: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-right:1px solid #DEE1E3;
+    background: #fff;
+    /*border:1px solid red;*/
+}
+.nav .n_ul{
+    list-style:none;
+    padding:0;
+}
+.nav .n_ul .n_item .n_lk{
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #DEE1E3;
+    padding:15px 0;
+    /*height: 80px;*/
+}
+.nav .n_ul .n_item .n_lk .n_logo{
+    width:100%;
+    padding: 7px 0;
+}
+.nav .n_ul .n_item .n_lk .n_top .n_img{
+    width: 35px;
+    height: 35px;
+}
+.nav .n_ul .n_item .n_lk .n_bottom{
+    margin-top: 8px;
+}
+.nav .n_ul .n_item .n_lk .n_bottom .n_txt{
+    color: #808890;
+}
+/*nav end*/
+/*start content*/
+#content{
+    margin-left: 100px;
+}
+/*content end*/
+/*start slider*/
+#slider{
+    /*height: 720px;*/
+    overflow: hidden;
+    position: relative;
+}
+/*end slider*/
+/*start fast_aisle*/
+#slider .fast_aisle{
+    position: absolute;
+    top: 6%;
+    right: 6%;
+}
+#slider .fast_aisle .f_item{
+    float: left;
+    margin-left: 30px;
+}
+#slider .fast_aisle .f_item .f_lk{
+    display: block;
+    text-align: center;
+    color: #d81e06;
+}
+#slider .fast_aisle .f_item .f_lk .f_img{
+    width: 24px;;
+    height: 24px;;
+}
+#slider .fast_aisle .f_item .f_lk .f_txt{
+    margin-top: 5px;
+}
+/*end fast_aisle*/
+/*start tools*/
+.tools{
+    /*padding-bottom: 30px;*/
+}
+.tools .t_title{
+    font-size: 4rem;
+    color: #000;
+    margin: 3% auto;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+}
+.tools .t_type{
+    padding-bottom:3%;
+}
+.tools .t_type .t_name{
+    text-align: center;
+    font-size: 2.6rem;
+    color: #000;
+    margin: 5% 0 2%;
+}
+.tools .t_type .t_item{
+    width:33.3%;
+    float: left;
+}
+.tools .t_type .t_item .t_lk{
+    display: block;
+    text-align: center;
+    margin:0 auto;
+    /*width: 50%;*/
+    line-height: 1;
+}
+.tools .t_type .t_item .t_lk .t_img{
+    width:50%;
+}
+.tools .t_type .t_item .t_lk .t_test .t_arrows{
+    width: 2rem;
+    height: 2rem;
+}
+.tools .t_type .t_item .t_lk .t_test .t_immediately{
+    font-size: 2rem;
+    margin-left: 1%;
+}
+/*end tools*/
+/*start compare*/
+.compare{
+    margin: 3% 0;
+    position: relative;
+}
+.compare .c_all .c_img{
+    width: 100%;
+}
+.compare .c_abs{
+    position: absolute;
+    left:5%;
+    top:50%;
+}
+.compare .c_type{
+    color: #ffffff;
+    font-size: 3.8rem;
+    margin-bottom: 15%;
+    line-height: 1;
+}
+.compare .c_btn{
+    background: #0099DA;
+    color: #ffffff;
+    /*padding: 15px 80px;*/
+    font-size: 1.8rem;
+    line-height:3;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    line-height: 3;
+    width: 150%;
+}
+.compare .c_btn:hover{
+    background: #0068AA;
+}
+/*end compare*/
+/*start activity*/
+.activity{
+    background: #F3F5F6;
+    /*padding: 50px 0;*/
+    padding:3% 0;
+}
+.activity .a_center{
+}
+.activity .a_item{
+    float: left;
+    width:33.3%;
+    padding:0 .5%;
+}
+.activity .a_item .a_top .a_lk .a_img{
+    width: 100%;
+}
+.activity .a_item .a_bottom .a_txt{
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 3%;
+    color: #000;
+    line-height: 1;
+    font-weight:bold;
+}
+/*end activity*/
+/*start brand*/
+.brand{
+    /*height:800px;*/
+
+    /*margin:100px 0;*/
+    position: relative;
+}
+.brand .b_img{
+    width:100%;
+}
+.brand .b_abs{
+    position: absolute;
+    left: 80px;
+    top:50%;
+}
+.brand .b_type{
+    color: #ffffff;
+    font-size: 38px;
+    margin-bottom: 30px;
+    line-height: 38px;
+}
+.brand .b_btn{
+    background: #0099DA;
+    color: #ffffff;
+    padding: 15px 80px;
+    font-size: 14px;
+    border-radius: 6px;
+    display: block;
+    text-align: center;
+}
+.brand .b_btn:hover{
+    background: #0068AA;
+}
+/*end brand*/
+/*start parameter*/
+.parameter{
+    background: #F3F5F6;
+}
+.parameter .p_title{
+    text-align:center;
+    font-size: 34px;
+    padding-bottom: 50px;
+    color: #000;
+}
+.parameter .p_slider .p_box_shadow{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.parameter .p_slider .p_item{
+    width: 33.3%;
+    float: left;
+    padding: 3% 0;
+    text-align: center;
+}
+.parameter .p_slider .p_item.p_left{
+    padding-right: .6%;
+}
+.parameter .p_slider .p_item.p_center{
+    padding-right:.3%;
+    padding-left:.3%;
+}
+.parameter .p_slider .p_item.p_right{
+    padding-left: .6%;
+}
+.parameter .p_slider .p_item .p_top .p_img{
+    width: 100%;
+}
+.parameter .p_slider .p_item .p_bottom .p_type{
+    font-size: 3rem;
+    color: #000;
+    padding: 5% 0 0;
+    /*font-weight: bold;*/
+    line-height: 1;
+}
+.parameter .p_slider .p_item .p_bottom .p_btn{
+    display: block;
+    width: 50%;
+    height:50px;
+    line-height: 50px;
+    color: #fff;
+    background: #0099DA;
+    margin:0 auto;
+    font-size:14px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/*end parameter*/
+/*start back_top*/
+.back_top{
+    background: #DEE1E3;
+}
+.back_top .b_lk{
+    display: block;
+    text-align: right;
+    /*height: 36px;*/
+    line-height: 3;
+    color: #2f3538;
+    padding:0 4%;
+    font-size: 1.6rem;
+}
+.back_top .b_lk .b_img{
+    width: 20px;
+    height: 20px;
+}
+/*end back_top*/
+/*start aisle*/
+.aisle{
+    padding: 3% 0;
+}
+.aisle .a_center .a_float{
+    float: left;
+    width:33.3%;
+}
+.aisle .a_center .a_ul{
+    list-style: none;
+    text-align: center;
+    letter-spacing: 2px;
+    margin:0;
+    padding:0;
+}
+.aisle .a_center .a_ul .a_item{
+    margin:5px 0;
+}
+.aisle .a_center .a_ul .a_item .a_lk{
+    color: #2f3538;
+    font-size: 1.6rem;
+
+}
+/*end aisle*/
+/*start footer*/
+.footer{
+    text-align: center;
+    font-size: 1.6rem;
+    line-height:3;
+}
+.footer .f_lk{
+    color: #2f3538;
+}
+.footer .f_img{
+    width: 16px;
+    height: 16px;
+}
+/*end footer*/

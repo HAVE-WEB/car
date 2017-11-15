@@ -835,12 +835,16 @@
 </body>
 <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
+<script type="text/javascript" src="../../assets/js/common.jd.js"></script>
 <script>
+    var fixedTop = 0;
     $(function () {
 //        resizeHeight();
-        fixedTop = $('.head').offset().top;
         verticalAlign();
         $('.advertise').after('<div class="space" style="display: none;height: '+($('.head_sub').outerHeight()+$('.head').outerHeight())+'px;"></div>')
+    });
+    $.isImgLoad(function(){
+        fixedTop = $('.a_img').outerHeight();
     });
     function resizeHeight() {
         var w_h = window.innerHeight;
@@ -881,7 +885,7 @@
     });
     var h = $('.head').outerHeight();
     var pl = $('.head').css('padding-left');
-    var fixedTop = 0;
+
     var pl_float = parseFloat(pl.substr(0,pl.length-2));
     function autoFixed() {
         var t = window.pageYOffset;
