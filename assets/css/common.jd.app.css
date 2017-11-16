@@ -15,10 +15,52 @@
     #content{
         margin:0;
     }
+    .mobile_nav{
+        display: block;
+    }
+    #slider{
+        padding-top: 50px;
+    }
     .nav{
         display: none;
     }
     .fast_aisle{
         display: none;
     }
+    .black_mask{
+        margin-left: 0;
+    }
+    .pc_model{
+        display: none;
+    }
+    .mobile_model{
+        display: block;
+    }
+    .parameter .p_slider .p_item{
+        width: 100%;
+    }
+    .activity .a_item{
+        width: 50%;
+        margin-bottom: 5%;
+    }
+    .fin_popup{
+        top: 0;
+        width: 100%;
+        padding:0;
+    }
+    .fin_popup .bottom .b_title{
+        line-height: 50px;
+    }
+    .fin_popup .close_popup{
+        position: static;
+        display: block;
+        margin: 0 auto;
+        background: url(../i/car/mobile/close.png) no-repeat center;
+        background-size: 40px;
+        border-radius: 50%;
+        border: 3px solid #0098DA;
+        width: 40px;
+        height: 40px;
+    }
+
 }
