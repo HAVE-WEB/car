@@ -2,10 +2,11 @@
     j.relativeCenter = function ($1,$2) {
         var h1 = $1.outerHeight();
         var h2 = $2.outerHeight();
-        $2.css({
-            'margin-top': (h1 - h2) / 2
-        })
-
+        if(h1 > h2){
+            $2.css({
+                'margin-top': (h1 - h2) / 2
+            })
+        }
     }
     j.resizeWindow = function ($1, $2) {
         j(window).resize(function () {

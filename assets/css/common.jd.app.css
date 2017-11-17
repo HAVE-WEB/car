@@ -12,6 +12,7 @@
 
 }
 @media only screen and (max-width: 767px) {
+    /*home start*/
     #content{
         margin:0;
     }
@@ -36,7 +37,7 @@
     .mobile_model{
         display: block;
     }
-    .parameter .p_slider .p_item{
+    .product .p_slider .p_item{
         width: 100%;
     }
     .activity .a_item{
@@ -46,7 +47,11 @@
     .fin_popup{
         top: 0;
         width: 100%;
-        padding:0;
+        /*padding:0;*/
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 2%;
+        font-size: 2rem;
     }
     .fin_popup .bottom .b_title{
         line-height: 50px;
@@ -62,5 +67,70 @@
         width: 40px;
         height: 40px;
     }
+    /*end home*/
+    /*start pandect*/
+    .head_pandect{
+        display: none;
+    }
+    .car_list .c_item {
+        width:100%;
+    }
+    .car_list .c_item.c_float {
+        padding:0;
+    }
+    /*end pandect*/
+    /*start car_detail*/
+    .head_detail{
+        display: none;
+    }
+    .fixed .method{
+        margin-top: 50px;
+    }
+    .trim .t_info .t_item {
+        width:50%;
+        margin-bottom: 5%;
+    }
+    .trim .t_info .t_item.t_center {
+        float: left;
+    }
+    /*end car_detail*/
+    /*start parameter*/
+    .head_parameter .h_init ,  .head_parameter .h_none{
+        margin-top: 50px;
+    }
+    /*end parameter*/
+    /*start promotion*/
+    .content_box .c_item .c_row .c_left , .content_box .c_item .c_row .c_right{
+        width: 100%;
+    }
+    .advertise{
+        padding-top: 50px;
+    }
+    .head_sub.h_fixed {
+        margin-top: 50px;
+    }
+    .head_sub .h_item , .head .h_item {
+        margin-left: 8%;
+    }
+    .content_box .c_item .c_row {
+        margin-top: 8%;
+    }
+    /*end promotion*/
+    /*start brand-activity*/
+    .brand_activity {
+        padding-top: 50px;
+    }
+    .brand_activity .a_item {
+        width:100%;
+    }
+    .brand_activity .a_item .a_lk {
+        display: block;
+    }
+    /*end brand-activity*/
+    /*start finance-engine*/
+    .content_box .c_item .c_row .c_left.c_quarter {
+        width: 50%;
+    }
+    /*end finance-engine*/
 
 }
