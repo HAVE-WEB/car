@@ -111,17 +111,20 @@ function autoFixed() {
 
 }
 //点击子头，切换tab和颜色
-$('.head_sub .h_item').click(function () {
+$('.head_sub .h_lk').click(function () {
     var self = $(this)[0];
     var index = 0;
-    $('.head_sub .h_item').each(function (i) {
+    $('.head_sub .h_lk').each(function (i) {
         if(self == $(this)[0]){
             index =i;
-            $(this).find('a.h_lk').css('color','#fff')
+            $(this).css('color','#fff')
         }else{
-            $(this).find('a.h_lk').css('color','#2f3538');
+            $(this).css('color','#2f3538');
         }
     });
+    if($(this).hasClass('h_return')){
+        return;
+    }
     $('.content_box .c_item').each(function (j) {
         if(index == j){
             $(this).addClass('c_active');
@@ -153,10 +156,6 @@ $('.content_box .c_item .c_title .c_list .c_lk').click(function () {
     });
     verticalAlign()
 });
-
-
-
-
 
 var t_img; // 定时器
 var isLoad = true; // 控制变量

@@ -466,7 +466,7 @@ html{
     top: 0;
     z-index: 20;
     display: none;
-    margin-left: 100px;
+    /*margin-left: 100px;*/
 }
 .popup {
     position: absolute;
@@ -490,12 +490,12 @@ html{
     /*height: 530px;*/
 
 }
-.fin_popup .title{
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 30px;
-    text-align: center;
-}
+/*.fin_popup .title{*/
+    /*font-weight: bold;*/
+    /*font-size: 18px;*/
+    /*margin-bottom: 30px;*/
+    /*text-align: center;*/
+/*}*/
 .fin_popup .content{
     height: 400px;
     font-size: 2rem;
@@ -504,12 +504,15 @@ html{
     line-height: 28px;;
 }
 a.close_popup {
-    width: 17px;
-    height: 17px;
-    background: url(../i/car/about/finance-service/close.png);
     position: absolute;
     top: 50%;
-    right: -45px;
+    right: 0;
+    background: url(../i/car/mobile/close.png) no-repeat center;
+    background-size: 40px;
+    border-radius: 50%;
+    border: 3px solid #0098DA;
+    width: 40px;
+    height: 40px;
 }
 /*start bottom*/
 .bottom{
@@ -811,11 +814,11 @@ a.close_popup {
 /*start method*/
 .method{
     background: #808890;
-    padding-left: 3%;
+    /*padding-left: 3%;*/
 }
 .method .m_item{
     float: left;
-    margin-right: 2%;
+    margin-left: 2%;
 }
 .method .m_item .m_lk{
     display: block;
@@ -1087,11 +1090,11 @@ a.close_popup {
 }
 .head_parameter .h_kind{
     background: #BDC3C6;
-    padding-left: 4%;
+    /*padding-left: 4%;*/
 }
 .head_parameter .h_kind .h_item{
     float: left;
-    margin-right:4%;
+    margin-left:4%;
 }
 .head_parameter .h_kind .h_item .h_lk{
     display: block;
@@ -1148,20 +1151,18 @@ a.close_popup {
     left:0 ;
     z-index: 1;
 }
-.head_sub .h_item{
-    float: left;
-    margin-left: 3%;
-}
-.head_sub .h_item .h_lk{
+.head_sub .h_lk{
     display: inline-block;
     font-size: 2rem;
     color: #2f3538;
-    padding: 25% 0;
+    padding: 1% 0;
+    float: left;
+    margin-left: 3%;
 }
-.head_sub .h_item .h_lk:hover{
+.head_sub .h_lk:hover{
     color: #ffffff;
 }
-.head_sub .h_item .h_lk.h_active{
+.head_sub .h_lk.h_active{
     color: #ffffff;
 }
 /*end head_sub*/
@@ -1210,6 +1211,9 @@ a.close_popup {
     width:50%;
     text-align: center;
 }
+.content_box .c_item .c_row .c_left.c_f_right{
+    float: right;
+}
 .content_box .c_item .c_row .c_left.c_quarter{
     width:25%;
     padding: 1%;
@@ -1239,6 +1243,11 @@ a.close_popup {
     float: right;
     width:50%;
     padding-left:2%;
+}
+.content_box .c_item .c_row .c_right.c_f_left{
+    float: left;
+    padding-left: 0;
+    padding-right: 2%;
 }
 .content_box .c_item .c_row .c_right .c_txt{
     display: block;
@@ -1342,20 +1351,18 @@ a.close_popup {
     background: #BDC3C6;
     /*padding-left: 5%;*/
 }
-.head .h_item{
-    float: left;
-    margin-left: 3%;
-}
-.head .h_item .h_lk{
+.head  .h_lk{
     display: inline-block;
     font-size: 2rem;
     color: #2f3538;
-    padding: 25% 0;
+    padding: 1% 0;
+    float: left;
+    margin-left: 3%;
 }
-.head .h_item .h_lk:hover{
+.head .h_lk:hover{
     color: #ffffff;
 }
-.head .h_item .h_lk.h_active{
+.head .h_lk.h_active{
     color: #ffffff;
 }
 /*end head*/
@@ -1376,3 +1383,89 @@ a.close_popup {
     margin-bottom:5%;
 }
 /*<----------------------------end service---------------------------->*/
+
+
+
+/*<----------------------------start search---------------------------->*/
+/*start search*/
+.search{
+    padding:3%;
+}
+.search .s_center .s_form{
+    position: relative;
+}
+.search .s_center .s_form .s_content{
+    width: 100%;
+    height: 50px;
+    border-radius: 38px;
+    border: 2px solid #ccc;
+    padding: 0 55px 0 25px;
+    color: #666;
+    font-size: 1.8rem;
+    outline: none;
+}
+.search .s_center .s_form .s_submit{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    margin-top: -15px;
+    right: 25px;
+}
+.search .s_center .s_form .s_submit .s_img{
+    width: 30px;
+    height: 30px;
+}
+.search .box_fixed{
+    position: relative;
+}
+/*end search*/
+/*start result*/
+.result{
+    padding: 15% 0;
+    background: #F1F5F6;
+}
+/*end result*/
+/*<----------------------------end search---------------------------->*/
+/*<----------------------------start finance-scheme---------------------------->*/
+.title{
+    font-weight:bold;
+    font-size: 18px;
+}
+.title .open_popup{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    background: url("../../assets/i/car/about/finance-service/finance-scheme/tanhao.png") no-repeat;
+    margin-left: 15px;
+}
+.title .choose{
+    /*border:1px solid red;*/
+    width: 26px;
+    height:26px;
+    display: inline-block;
+    float: right;
+    vertical-align: middle;
+    cursor: pointer;
+    background: url("../../assets/i/car/about/finance-service/finance-scheme/choose.png") no-repeat;
+}
+.title .choose.active{
+    background: url("../../assets/i/car/about/finance-service/finance-scheme/choose_active.png") no-repeat;
+}
+.link{
+    text-align: center;
+}
+.link a{
+    width: 20%;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    color: #fff;
+    margin:0 auto;
+    background: #0097DC;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+/*<----------------------------end finance-scheme---------------------------->*/

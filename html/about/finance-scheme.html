@@ -37,97 +37,67 @@
     <link rel="stylesheet" href="../../assets/css/common.css">
     <link rel="stylesheet" href="../../assets/css/common.jd.css">
     <link rel="stylesheet" href="../../assets/css/common.jd.app.css">
-
-
-    <style>
-
-        /*start content_box*/
-        .content_box{
-            padding: 20px 5%;
-            font-size: 16px;
-        }
-        .content_box .c_box.show , .content_box .c_box .c_item.show{
-            display: block;
-        }
-        .content_box .c_item{
-            /*display: none;*/
-            text-align: center;
-        }
-        .content_box .c_item .c_title{
-            font-size: 36px;
-            margin: 20px 0;
-        }
-        .content_box .c_item .c_title_sub{
-            margin-bottom: 40px;
-        }
-        .content_box .c_item .c_row{
-            margin-top: 20px;
-        }
-        .content_box .c_item .c_common-question{
-            text-align: left;
-        }
-        .content_box .c_item .c_row.c_gray{
-            background: #F3F5F6;
-        }
-        .content_box .c_item .c_row .c_left{
-            float: left;;
-            width:50%;
-            text-align: left;
-        }
-        .content_box .c_item .c_row .c_left.c_quarter{
-            width:25%;
-            padding: 3%;
-        }
-        .content_box .c_item .c_row .c_quarter .c_top{
-            width: 50%;
-        }
-        .content_box .c_item .c_row .c_quarter .c_center{
-            color: #000;
-            font-size: 18px;
-            font-weight:bold;
-            margin:20px 0;
-        }
-        .content_box .c_item .c_row .c_right{
-            float: right;
-            width:50%;
-            padding-left:5%;
-            text-align: left;
-        }
-        .content_box .c_item .c_row .c_right .c_txt{
-            display: block;
-        }
-        .content_box .c_item .c_row .c_right .c_txt .c_top{
-            font-weight:bold;
-
-        }
-        .content_box .c_item .c_row .c_right .c_txt .c_center{
-            margin: 1% 0;
-        }
-        .content_box .c_item .c_row .c_right .c_txt .c_bottom .c_btn{
-            display: block;
-            background: #0097DC;
-            color: #fff;
-            padding:1% 2%;
-            width:20%;
-            text-align: center;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            border-radius: 5px;;
-        }
-        .content_box .c_item .c_row  img{
-            width:100%;
-        }
-        .show{
-            display: block;
-        }
-        /*end content_box*/
-    </style>
 </head>
 <body>
 
 <!--start content-->
 <div id="content">
-
+    <!--手机端导航 开始-->
+    <div class="mobile_nav clearFix">
+        <div class="logo">
+            <a href="../home/home.html">
+                <img src="../../assets/i/car/public/logo.png" alt="" class="logo_img">
+            </a>
+        </div>
+        <div class="btn">
+            <img src="../../assets/i/car/mobile/list.png" alt="" class="btn_icon">
+        </div>
+    </div>
+    <div class="mobile_nav_list">
+        <ul class="n_ul">
+            <li class="n_item">
+                <a href="../left-nav/pandect.html" class="n_lk clearFix">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/preview.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">车型总览</span>
+                    </div>
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="../about/overview.html" class="n_lk clearFix">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/home/home-nav/brand.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">品牌汽车</span>
+                    </div>
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="javascript:;" class="n_lk clearFix" data-type="drive">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/mobile/test-drive.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">预约试驾</span>
+                    </div>
+                </a>
+            </li>
+            <li class="n_item">
+                <a href="../fast-aisle/search.html" class="n_lk clearFix">
+                    <div class="n_top">
+                        <img src="../../assets/i/car/mobile/search.png" alt="" class="n_img">
+                    </div>
+                    <div class="n_bottom">
+                        <span class="n_txt">搜索</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--手机端导航 结束-->
     <!--start nav-->
     <div class="nav">
         <ul class="n_ul">
@@ -168,109 +138,30 @@
     <!--end advertise-->
     <!--start head-->
     <div class="head clearFix">
-        <div class="h_item">
-            <a href="finance-engine.html" class="h_lk">金融引擎</a>
-        </div>
-        <div class="h_item">
-            <a href="javascript:;" class="h_lk h_active">爱车金融方案</a>
-        </div>
-        <div class="h_item">
-            <a href="insurance-service.html" class="h_lk">保险服务</a>
-        </div>
-        <div class="h_item">
-            <a href="extend-warranty.html" class="h_lk">延保服务</a>
-        </div>
+        <a href="finance-engine.html" class="h_lk">金融引擎</a>
+        <a href="javascript:;" class="h_lk h_active">爱车金融方案</a>
+        <a href="insurance-service.html" class="h_lk">保险服务</a>
+        <a href="extend-warranty.html" class="h_lk">延保服务</a>
     </div>
     <!--end head-->
     <!--start head_sub-->
     <div class="head_sub clearFix ">
-        <div class="h_box">
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk h_active">猎豹CS9</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹CS10</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹CS10</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹Q6</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹飞腾</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹黑金刚</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹CS6</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹CT7</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">猎豹CT5</a>
-            </div>
-            <div class="h_item">
-                <a href="javascript:;" class="h_lk">飞扬</a>
-            </div>
-        </div>
+        <a href="javascript:;" class="h_lk h_active h_return">猎豹CS9</a>
+        <a href="javascript:;" class="h_lk h_return">猎豹CS10</a>
+        <a href="javascript:;" class="h_lk h_return">猎豹Q6</a>
+        <a href="javascript:;" class="h_lk h_return">猎豹CT7</a>
     </div>
     <!--end head_sub-->
     <!--start content_box-->
     <div class="content_box">
         <div class="c_box show">
-            <div class="c_item">
+            <div class="c_item c_active">
                 <div class="c_title">
                     爱车金融方案
                 </div>
                 <div class="c_title_sub">
                     "金融引擎"是为满足精于理财的消费者的购车需求,为其精心打造的专业汽车金融平台。其中业务涵盖汽车贷 款、汽车保险、汽车租赁等,为消费者实现购车梦想提供精挑细选、量身定做、值得信赖的一站式服务。凭借高素质、专业化 的优秀团队和遍布全国的服务网点,"金融引擎"联手实力雄厚的金融合作伙伴,为消费者提供个性化的汽车金融购车 方案,助您轻松实现梦想,加速迈向成功!
                 </div>
-                <style>
-                    .title{
-                        font-weight:bold;
-                        font-size: 18px;
-                    }
-                    .title .open_popup{
-                        display: inline-block;
-                        width: 24px;
-                        height: 24px;
-                        vertical-align: middle;
-                        background: url("../../assets/i/car/about/finance-service/finance-scheme/tanhao.png") no-repeat;
-                        margin-left: 15px;
-                    }
-                    .title .choose{
-                        /*border:1px solid red;*/
-                        width: 26px;
-                        height:26px;
-                        display: inline-block;
-                        float: right;
-                        vertical-align: middle;
-                        cursor: pointer;
-                        background: url("../../assets/i/car/about/finance-service/finance-scheme/choose.png") no-repeat;
-                    }
-                    .title .choose.active{
-                        background: url("../../assets/i/car/about/finance-service/finance-scheme/choose_active.png") no-repeat;
-                    }
-                    .link{
-                        text-align: center;
-                    }
-                    .link a{
-                        width: 20%;
-                        height: 40px;
-                        line-height: 40px;
-                        display: block;
-                        color: #fff;
-                        margin:0 auto 40px;
-                        background: #0097DC;
-                        -webkit-border-radius: 5px;
-                        -moz-border-radius: 5px;
-                        border-radius: 5px;
-
-                    }
-                </style>
                 <div class="c_row clearFix" style="background: #F3F5F6;">
                     <div class="c_left c_quarter">
                         <div class="c_center title">
@@ -312,29 +203,6 @@
             </div>
 
         </div>
-        <!--<style>-->
-            <!--.main_bottom {-->
-                <!--padding: 60px 0;-->
-                <!--font-size: 16px;-->
-                <!--line-height: 35px;-->
-            <!--}-->
-            <!--.bottom_text {-->
-                <!--width: 650px;-->
-                <!--margin: 0 auto;-->
-            <!--}-->
-            <!--.bottom_text .text_con {-->
-                <!--margin-left: 30px;-->
-            <!--}-->
-            <!--.lt {-->
-                <!--float: left;-->
-            <!--}-->
-            <!--.bold_font {-->
-                <!--font-weight: bold;-->
-            <!--}-->
-            <!--.blue_font {-->
-                <!--color: #0599da;-->
-            <!--}-->
-        <!--</style>-->
         <div class="main_bottom">
             <div class="bottom_text">
                 <div class="lt img_con">
@@ -349,18 +217,69 @@
         </div>
     </div>
     <!--end content_box-->
+    <!--start back_top-->
+    <div class="back_top">
+        <a href="javascript:;" class="b_lk">
+            <span>返回顶部</span>
+            <img src="../../assets/i/car/public/back-top.png" alt="" class="b_img">
+        </a>
+    </div>
+    <!--end back_top-->
+    <!--start aisle-->
+    <div class="aisle pc_model">
+        <div class="a_center clearFix">
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="../about/news.html" class="a_lk">新闻动态</a></li>
+                    <li class="a_item"><a href="../about/brand-activity.html" class="a_lk">品牌活动</a></li>
+                    <li class="a_item"><a href="../about/finance-engine.html" class="a_lk">金融服务</a></li>
+                    <li class="a_item"><a href="../about/promotion-activity.html" class="a_lk">促销活动</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="../about/overview.html" class="a_lk">品牌汽车</a></li>
+                    <li class="a_item"><a href="../left-nav/pandect.html" class="a_lk">汽车总览</a></li>
+                    <li class="a_item"><a href="../about/loan-calculator.html" class="a_lk">金融计算器</a></li>
+                </ul>
+            </div>
+            <div class="a_float">
+                <ul class="a_ul">
+                    <li class="a_item"><a href="../fast-aisle/service.html" class="a_lk">在线客服</a></li>
+                    <li class="a_item"><a href="../fast-aisle/search.html" class="a_lk">搜索</a></li>
+                </ul>
+            </div>
 
+        </div>
+    </div>
+    <!--手机端快速入口 开始-->
+    <div class="entrance clearFix mobile_model">
+        <div class="txt">
+            快速入口
+        </div>
+        <img src="../../assets/i/car/mobile/bottom.png" alt="" class="icon">
+        <div class="item">
+            <ul>
+                <li><a href="../about/overview.html">品牌汽车</a></li>
+                <li><a href="../left-nav/pandect.html">汽车总览</a></li>
+                <li><a href="../about/loan-calculator.html">金融计算器</a></li>
+                <li><a href="../about/news.html">新闻动态</a></li>
+                <li><a href="../about/brand-activity.html">品牌活动</a></li>
+                <li><a href="../about/finance-engine.html">金融服务</a></li>
+                <li><a href="../about/promotion-activity.html">促销活动</a></li>
+                <li><a href="../fast-aisle/service.html">在线客服</a></li>
+                <li class="last_li"><a href="../fast-aisle/search.html">搜索</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--手机端快速入口 结束-->
+    <!--end aisle-->
+    <!--start footer-->
+    <div class="footer">
+        <a href="" class="f_lk">法律声明</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk">Copyright 2013 Leopaard All Rights Reserved</a><img src="../../assets/i/car/home/home-footer/line.png" alt="" class="f_img"><a href="" class="f_lk"> 湘ICP备13007785号</a>
+    </div>
+    <!--end footer-->
     <style>
-        .black_mask{
-            position: fixed;/*以浏览器定位，该元素的父元素就是浏览器*/
-            top:0;
-            left:0;
-            z-index: 20;
-            width:100%;
-            height: 150%;
-            display: none;
-            background: #262b2e;
-        }
         .popup{
             position: absolute;/*条件1：父元素。条件2：父元素不是static（父元素可能是relative相对定位元素，可能是fixed绝对定位元素，可能是absolute相对定位元素）*/
             top:0;
@@ -381,15 +300,6 @@
             height: 600px;
             padding: 50px 0;
         }
-        a.close_popup{
-            width: 17px;
-            height: 17px;
-            position: absolute;
-            top: -30px;
-            right: -45px;
-            background: url("../../assets/i/car/about/finance-service/close.png");
-        }
-
     </style>
     <div class="black_mask"></div>
     <div class="popup popup01">
@@ -401,8 +311,6 @@
             <a href="javascript:;" class="">缓冲信贷</a>
             <a href="javascript:;" class="">信用卡</a>
         </div>
-
-
         <!--标准信贷-->
         <div class="content_list">
             <div class="content" style="background: rgb(241, 245, 246);">
@@ -554,7 +462,6 @@
         </div>
         <a href="javascript:;" class="close_popup"></a>
     </div>
-
 </div>
 <!--end content-->
 
@@ -567,10 +474,10 @@
     $(function () {
 //        resizeHeight();
         verticalAlign();
-        $('.advertise').after('<div class="space" style="display: none;height: '+($('.head_sub').outerHeight()+$('.head').outerHeight())+'px;"></div>')
+        $('.head').after('<div class="space" style="display: none;height: '+($('.head_sub').outerHeight()+$('.head').outerHeight())+'px;"></div>')
     });
-    $.isImgLoad(function(){
-        fixedTop = $('.a_img').outerHeight();
+    isImgLoad(function(){
+        fixedTop = $('.head_sub').offset().top;
     });
     function resizeHeight() {
         var w_h = window.innerHeight;
@@ -581,117 +488,31 @@
         verticalAlign();
         autoFixed();
     });
-    function verticalAlign() {
-        $('.content_box .c_item .c_row .c_left').each(function (i) {
-            var $left = $(this)
-            $('.content_box .c_item .c_row .c_right').each(function (j) {
-                if(i == j){
-                    var l_h = $left.outerHeight();
-                    var r_h = $(this).find('.c_txt').height();
-                    if(r_h < l_h){
-                        $(this).css({
-                            'padding-top': (l_h - r_h) / 2
-                        })
-                    }else{
-                        $(this).css({
-                            'padding-top': 0
-                        })
-                    }
-                    return false
-                }
-            })
-        });
-    }
-    $('.back_top .b_lk').click(function () {
-        $(window).scrollTop(0);
-    });
-
     $(window).scroll(function () {
         autoFixed();
     });
-    var h = $('.head').outerHeight();
-    var pl = $('.head').css('padding-left');
 
-    var pl_float = parseFloat(pl.substr(0,pl.length-2));
-    function autoFixed() {
-        var t = window.pageYOffset;
-        console.log("t:"+t+",fixedTOp:"+fixedTop+",pl:"+pl_float)
-        if(t  >= fixedTop){
-            $('.space').show();
-            $('.head').addClass('h_fixed');
-            $('.head_sub').addClass('h_fixed');
-            $('.head').css({
-                'padding-left':pl_float+100,
-            });
-            $('.head_sub').css({
-                'padding-left':pl_float+100,
-                'top':h
-            });
-        }else{
-            $('.space').hide();
-            $('.head_sub').removeClass('h_fixed');
-            $('.head').removeClass('h_fixed');
-            $('.head_sub').css({
-                'padding-left':pl_float
-            });
-            $('.head').css({
-                'padding-left':pl_float
-            });
 
-        }
-    }
-    $('.head .h_item').click(function () {
-       var self = $(this)[0];
-       var index = 0;
-       $('.head .h_item').each(function (i) {
-           if(self == $(this)[0]){
-               index = i;
-               $(this).find('a').addClass('h_active');
-           }else{
-               $(this).find('a').removeClass('h_active');
-           }
-       })
-        $('.head_sub .h_box').each(function (j) {
-            if(index == j){
-                $(this).show();
-            }else{
-                $(this).hide()
-            }
-        })
-    });
-    $('.head_sub .h_item').click(function () {
-        var self = $(this)[0];
-        var index = 0;
-        $('.head_sub .h_item').each(function (i) {
-            if(self == $(this)[0]){
-                index =i;
-                $(this).find('a.h_lk').css('color','#fff')
-            }else{
-                $(this).find('a.h_lk').css('color','#2f3538');
-            }
-        });
-        verticalAlign();
-    });
-    $('.content_box .c_row .c_right .c_bottom .c_btn').click(function () {
-        var self = $(this)[0];
-        console.log("i:"+$(this).data('index'));
-        var index = 0;
-        $('.content_box .c_box .c_item .c_row .c_right .c_txt .c_bottom .c_btn').each(function (i) {
-            if(self == $(this)[0]){
-                index = i
-            }
-        });
-        $('.black_mask').show();
-        console.log("index:"+index);
-        $('.fin_popup').each(function (k) {
-            console.log("k:"+k);
-            if(index == k){
-                $(this).show();
-            }else{
-                $(this).hide();
-            }
-        })
-    })
+//    $('.content_box .c_row .c_right .c_bottom .c_btn').click(function () {
+//        var self = $(this)[0];
+//        console.log("i:"+$(this).data('index'));
+//        var index = 0;
+//        $('.content_box .c_box .c_item .c_row .c_right .c_txt .c_bottom .c_btn').each(function (i) {
+//            if(self == $(this)[0]){
+//                index = i
+//            }
+//        });
+//        $('.black_mask').show();
+//        console.log("index:"+index);
+//        $('.fin_popup').each(function (k) {
+//            console.log("k:"+k);
+//            if(index == k){
+//                $(this).show();
+//            }else{
+//                $(this).hide();
+//            }
+//        })
+//    })
     $('a.close_popup').click(function () {
         $(this).parents('div.fin_popup').hide();
         $('.black_mask').hide();

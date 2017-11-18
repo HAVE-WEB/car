@@ -83,6 +83,15 @@
     .head_detail{
         display: none;
     }
+    .method .m_item {
+        margin-left: 5%;
+    }
+    .appearance {
+        padding: 1%;
+    }
+    .appearance .a_info .a_item .a_right {
+        padding-left: 2%
+    }
     .fixed .method{
         margin-top: 50px;
     }
@@ -103,17 +112,24 @@
     .content_box .c_item .c_row .c_left , .content_box .c_item .c_row .c_right{
         width: 100%;
     }
+    .content_box .c_item .c_row .c_right{
+        padding-right:2%;
+    }
+    .content_box .c_item .c_row .c_right.c_f_left{
+        padding-left:2%;
+    }
     .advertise{
         padding-top: 50px;
     }
     .head_sub.h_fixed {
         margin-top: 50px;
     }
-    .head_sub .h_item , .head .h_item {
+    .head_sub .h_lk , .head .h_lk {
         margin-left: 8%;
+        padding:3% 0;
     }
     .content_box .c_item .c_row {
-        margin-top: 8%;
+        margin-top: 5%;
     }
     /*end promotion*/
     /*start brand-activity*/
@@ -132,5 +148,24 @@
         width: 50%;
     }
     /*end finance-engine*/
+    /*start finance-scheme*/
+    .link a {
+        width:40%;
+    }
+    /*end finance-scheme*/
+    /*start search*/
+    .search{
+        padding-top: calc(3% + 50px);
+    }
+    .result{
+        padding:50% 0;
+    }
+    /*end search*/
+    /*start service*/
+    .code{
+        padding-top: 50px;;
+    }
+    /*end service*/
+
 
 }
