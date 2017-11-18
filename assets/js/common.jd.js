@@ -1,5 +1,6 @@
 //手机端导航
 function showList() {
+    console.log("showList");
     $('.mobile_nav_list').animate(
         {left:0},
         500,
@@ -25,7 +26,7 @@ var fixedTop = 0;
 var pl = $('.entrance').css('padding-left');
 var head_sub_pl = $('.head_sub').css('padding-left');
 var content_pl = $('#content').css('margin-left');
-content_pl = parseFloat(content_pl.substr(0,content_pl.length-2));
+if(content_pl) content_pl = parseFloat(content_pl.substr(0,content_pl.length-2));
 console.log("pl:"+pl+",content_pl:"+content_pl);
 function showEnter() {
     $('.entrance .item').find('a').css('padding-left',pl);
