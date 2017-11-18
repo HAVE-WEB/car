@@ -186,6 +186,7 @@ html{
 .mobile_nav .btn .btn_icon{
     height: 20px;
     margin:15px 15px 0 0;
+    padding: 0;
 }
 /*end mobile_nav*/
 /*start mobile_nav_list*/
