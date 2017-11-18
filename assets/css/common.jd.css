@@ -119,6 +119,7 @@ html{
     display: none;
     border-bottom:none;
     margin-left: -1px;
+    z-index: 99;
 }
 .entrance .item ul{
     list-style: none;
@@ -186,7 +187,6 @@ html{
 .mobile_nav .btn .btn_icon{
     height: 20px;
     margin:15px 15px 0 0;
-    padding: 0;
 }
 /*end mobile_nav*/
 /*start mobile_nav_list*/
@@ -196,10 +196,11 @@ html{
     position: fixed;
     top: 50px;
     left: 100%;
-    z-index: 20;
+    z-index: 101;
     border-right:1px solid #DEE1E3;
     background: #fff;
     /*border:1px solid red;*/
+    overflow: auto;
 }
 .mobile_nav_list .n_ul{
     list-style:none;
@@ -476,6 +477,17 @@ html{
     z-index: 20;
     display: none;
     /*margin-left: 100px;*/
+}
+.popup{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    display: none;
 }
 .fin_popup {
     position: fixed;
@@ -1464,17 +1476,6 @@ a.close_popup {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-}
-.popup{
-    position: absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2000;
-    display: none;
 }
 .popup01 {
     position: fixed;

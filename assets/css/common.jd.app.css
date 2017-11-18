@@ -12,6 +12,10 @@
 
 }
 @media only screen and (max-width: 767px) {
+    .mobile_nav .btn {
+        padding:0;
+    }
+
     /*home start*/
     #content{
         margin:0;
@@ -159,6 +163,11 @@
         padding: 2% 0;
     }
     /*end finance-scheme*/
+    /*start loan-calculator*/
+    .container-fluid.mainbody{
+        margin-left:0;
+    }
+    /*end loan-calculator*/
     /*start search*/
     .search{
         padding-top: calc(3% + 50px);

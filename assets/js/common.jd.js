@@ -12,7 +12,7 @@ function showList() {
 }
 function hiddenList() {
     $('.mobile_nav_list').animate(
-        {left:screen.width},
+        {left:100+"%"},
         500,
         function () {
             $('.mobile_nav .btn .btn_icon').one('click',showList);
