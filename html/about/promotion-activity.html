@@ -297,21 +297,4 @@
 <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
 <script type="text/javascript" src="../../assets/js/common.jd.js"></script>
-<script>
-
-    $(function () {
-        verticalAlign();
-        $('.head_sub').after('<div class="space" style="display: none;height: '+$('.head_sub').outerHeight()+'px;"></div>')
-    });
-    isImgLoad(function () {
-        fixedTop = $('.head_sub').eq(0).offset().top;
-    });
-    $(window).resize(function () {
-        verticalAlign();
-        autoFixed();
-    });
-    $(window).scroll(function () {
-        autoFixed();
-    });
-</script>
 </html>

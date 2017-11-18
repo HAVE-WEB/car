@@ -24,10 +24,9 @@ $('.mobile_nav .btn .btn_icon').one('click',showList);
 //手机端点击快速入口
 var fixedTop = 0;
 var pl = $('.entrance').css('padding-left');
-var head_sub_pl = $('.head_sub').css('padding-left');
-var content_pl = $('#content').css('margin-left');
+var content_pl = 0;
 if(content_pl) content_pl = parseFloat(content_pl.substr(0,content_pl.length-2));
-console.log("pl:"+pl+",content_pl:"+content_pl);
+// console.log("pl:"+pl+",content_pl:"+content_pl);
 function showEnter() {
     $('.entrance .item').find('a').css('padding-left',pl);
     $('.entrance .item').show();
@@ -43,7 +42,7 @@ $('.entrance').one('click',showEnter);
 //返回顶部
 $('.back_top .b_lk').click(function () {
     $(window).scrollTop(0);
-})
+});
 //文字图片居中对齐
 function verticalAlign() {
     $('.content_box .c_item .c_row .c_left').each(function (i) {
@@ -75,21 +74,19 @@ function verticalAlign() {
 //自动定位
 function autoFixed() {
     var t = window.pageYOffset;
-    var pl_float = parseFloat(head_sub_pl.substr(0,head_sub_pl.length-2));
-    console.log("pl:"+pl+",ff:"+pl_float+",cL:"+content_pl+",sw:"+screen.width );
-    var h = $('.head_sub').outerHeight();
-    if(screen.width < 767){//手机端
+    console.log("screenA:"+$(window).width());
+    if($(window).width() < 767){//手机端
+
         if(t + 50 >= fixedTop){
             $('.space').show();
-            var h = $('.head_sub').outerHeight();
             $('.head_sub').addClass('h_fixed');
             $('.head_sub').css({
-                'padding-left':pl_float+content_pl
+                'padding-left':content_pl
             });
         }else{
             $('.head_sub').removeClass('h_fixed');
             $('.head_sub').css({
-                'padding-left':pl_float
+                'padding-left':0
             });
             $('.space').hide();
         }
@@ -99,12 +96,12 @@ function autoFixed() {
             var h = $('.head_sub').outerHeight();
             $('.head_sub').addClass('h_fixed');
             $('.head_sub').css({
-                'padding-left':pl_float+content_pl
+                'padding-left':content_pl
             });
         }else{
             $('.head_sub').removeClass('h_fixed');
             $('.head_sub').css({
-                'padding-left':pl_float
+                'padding-left':0
             });
             $('.space').hide();
         }
@@ -161,7 +158,7 @@ $('.content_box .c_item .c_title .c_list .c_lk').click(function () {
 var t_img; // 定时器
 var isLoad = true; // 控制变量
 // 判断图片加载的函数
-isImgLoad= function(callback){
+function isImgLoad(callback){
     // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
     // 查找所有封面图，迭代处理
     $('.a_img').each(function(){
@@ -183,34 +180,39 @@ isImgLoad= function(callback){
             isImgLoad(callback); // 递归扫描
         },100); // 我这里设置的是500毫秒就扫描一次，可以自己调整
     }
+};
+function head_sub_change() {
+    if($('.head_sub')){
+        var h = $('.head_sub').outerHeight();
+        if($('.space').length > 0){
+            $('.space').height(h);
+        }else{
+            $('.head_sub').before('<div class="space" style="display: none;height: '+h+'px;"></div>');
+        }
+    }
+    // console.log("$('.space').offset().top_11111:"+$('.space').offset().top);
+    content_pl = $('#content').css('margin-left');
 }
+$(window).scroll(function () {
+    autoFixed();
+    verticalAlign();
+});
+head_sub_change();
+isImgLoad(function(){
+    fixedTop = $('.head_sub').offset().top;//隐藏元素不进行任何计算
+    // console.log("aa111:"+fixedTop);
+});
+$(window).resize(function () {
+    head_sub_change();
+    isImgLoad(function(){
 
-// (function (jq) {
-//
-//     var t_img; // 定时器
-//     var isLoad = true; // 控制变量
-// // 判断图片加载的函数
-//     jq.isImgLoad= function(callback){
-//         // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
-//         // 查找所有封面图，迭代处理
-//         $('.a_img').each(function(){
-//             // 找到为0就将isLoad设为false，并退出each
-//             if(this.height === 0){
-//                 isLoad = false;
-//                 return false;
-//             }
-//         });
-//         // 为true，没有发现为0的。加载完毕
-//         if(isLoad){
-//             clearTimeout(t_img); // 清除定时器
-//             // 回调函数
-//             callback();
-//             // 为false，因为找到了没有加载完成的图，将调用定时器递归
-//         }else{
-//             isLoad = true;
-//             t_img = setTimeout(function(){
-//                 isImgLoad(callback); // 递归扫描
-//             },100); // 我这里设置的是500毫秒就扫描一次，可以自己调整
-//         }
-//     }
-// })(jQuery);
+        if($('.head_sub').hasClass('h_fixed')){
+            fixedTop = $('.space').offset().top;
+        }else{
+            fixedTop = $('.head_sub').offset().top;
+        }
+        console.log("aa222:"+fixedTop+",advertise"+$('.advertise').offset().top);
+    });
+    verticalAlign();
+    autoFixed();
+});

@@ -623,52 +623,6 @@
 <script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
 <script type="text/javascript" src="../../assets/js/common.jd.js"></script>
 <script>
-    var fixedTop = 0;
-    $(function () {
-        verticalAlign();
-        $('.head').after('<div class="space" style="display: none;height: '+($('.head_sub').outerHeight())+'px;"></div>')
-    });
-    isImgLoad(function(){
-        fixedTop = $('.head_sub').offset().top;
-    });
-    function resizeHeight() {
-        var w_h = window.innerHeight;
-        $('.advertise').height(w_h * 0.6);
-    }
-    $(window).resize(function () {
-//        resizeHeight();
-        verticalAlign();
-        autoFixed();
-    });
-    function verticalAlign() {
-        $('.content_box .c_item .c_row .c_left').each(function (i) {
-            var $left = $(this)
-            $('.content_box .c_item .c_row .c_right').each(function (j) {
-                if(i == j){
-                    var l_h = $left.outerHeight();
-                    var r_h = $(this).find('.c_txt').height();
-                    if(r_h < l_h){
-                        $(this).css({
-                            'padding-top': (l_h - r_h) / 2
-                        })
-                    }else{
-                        $(this).css({
-                            'padding-top': 0
-                        })
-                    }
-                    return false
-                }
-            })
-        });
-    }
-    $('.back_top .b_lk').click(function () {
-        $(window).scrollTop(0);
-        verticalAlign();
-    });
-
-    $(window).scroll(function () {
-        autoFixed();
-    });
     $('.content_box .c_row .c_right .c_bottom .c_btn').click(function () {
         var self = $(this)[0];
         console.log("i:"+$(this).data('index'));

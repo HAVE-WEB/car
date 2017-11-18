@@ -451,49 +451,6 @@
 <script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
 <script type="text/javascript" src="../../assets/js/common.jd.js"></script>
 <script>
-    var fixedTop = 0;
-    $(function () {
-//        resizeHeight();
-        verticalAlign();
-        $('.head').after('<div class="space" style="display: none;height: '+($('.head_sub').outerHeight()+$('.head').outerHeight())+'px;"></div>')
-    });
-    isImgLoad(function(){
-        fixedTop = $('.head_sub').offset().top;
-    });
-    function resizeHeight() {
-        var w_h = window.innerHeight;
-        $('.advertise').height(w_h * 0.6);
-    }
-    $(window).resize(function () {
-//        resizeHeight();
-        verticalAlign();
-        autoFixed();
-    });
-    $(window).scroll(function () {
-        autoFixed();
-    });
-
-
-//    $('.content_box .c_row .c_right .c_bottom .c_btn').click(function () {
-//        var self = $(this)[0];
-//        console.log("i:"+$(this).data('index'));
-//        var index = 0;
-//        $('.content_box .c_box .c_item .c_row .c_right .c_txt .c_bottom .c_btn').each(function (i) {
-//            if(self == $(this)[0]){
-//                index = i
-//            }
-//        });
-//        $('.black_mask').show();
-//        console.log("index:"+index);
-//        $('.fin_popup').each(function (k) {
-//            console.log("k:"+k);
-//            if(index == k){
-//                $(this).show();
-//            }else{
-//                $(this).hide();
-//            }
-//        })
-//    })
     $('a.close_popup').click(function () {
         $(this).parents('div.fin_popup').hide();
         $('.black_mask').hide();

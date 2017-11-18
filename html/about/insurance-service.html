@@ -590,32 +590,6 @@
 <script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
 <script type="text/javascript" src="../../assets/js/common.jd.js"></script>
 <script>
-    var fixedTop = 0;
-    $(function () {
-//        resizeHeight();
-        verticalAlign();
-        $('.head').after('<div class="space" style="display: none;height: '+($('.head_sub').outerHeight())+'px;"></div>')
-    });
-    function resizeHeight() {
-        var w_h = window.innerHeight;
-        $('.advertise').height(w_h * 0.6);
-    }
-    isImgLoad(function(){
-        fixedTop = $('.head_sub').offset().top;
-    });
-    $(window).resize(function () {
-//        resizeHeight();
-        verticalAlign();
-        autoFixed();
-    });
-    $(window).scroll(function () {
-        autoFixed();
-        verticalAlign();
-    });
-
-
-
-
     $('.content_box .c_row .c_right .c_bottom .c_btn').click(function () {
         var self = $(this)[0];
         console.log("i:"+$(this).data('index'));
