@@ -44,39 +44,96 @@ $('.back_top .b_lk').click(function () {
     $(window).scrollTop(0);
 });
 //文字图片居中对齐
+var hundred = false;
+var w_width = 0;
 function verticalAlign() {
-    $('.content_box .c_item .c_row .c_left').each(function (i) {
-        var $left = $(this)
-        $('.content_box .c_item .c_row .c_right').each(function (j) {
-            if(i == j){
-                var l_h = $left.outerHeight();
-                var r_h = $(this).find('.c_txt').height();
-                if(screen.width < 767){
-                    $(this).css({
-                        'padding-top': 0
-                    })
-                }else{
-                    if(r_h < l_h){
-                        $(this).css({
-                            'padding-top': (l_h - r_h) / 2
-                        })
-                    }else{
-                        $(this).css({
-                            'padding-top': 0
-                        })
+    // console.log("verticalAlign");
+    if($('.content_box .c_item .c_row .c_left')){
+        if(!hundred){
+            $('.content_box .c_item .c_row .c_left').each(function (i) {
+                var $left = $(this);
+                $('.content_box .c_item .c_row .c_right').each(function (j) {
+                    if(i == j){
+                        // console.log("j:"+j+",i:"+i);
+                        var l_h = $left.outerHeight();
+                        var r_h = $(this).find('.c_txt').height();
+                        // console.log('l_h:'+l_h+',r_h:'+r_h);
+                        // if($(window).width() < 767){
+                        //     $(this).css({
+                        //         'padding-top': 0
+                        //     })
+                        // }else{
+                        if(r_h < l_h){
+                            $left.outerWidth("50%");
+                            $(this).outerWidth("50%");
+                            $(this).css({
+                                'padding-top': (l_h - r_h) / 2
+                            })
+
+                        }else if(r_h == l_h && r_h == 0){
+
+                        } else{
+                            w_width = $(window).width();
+                            hundred = true;
+                        }
+                        // return false
                     }
+                });
+                if(hundred){
+                    return false;
                 }
-                return false
-            }
-        })
-    });
+            });
+        }
+        if(hundred){
+            vertical_hundred();
+        }
+    }
+    // console.log("W:"+w_width+",hundred:"+hundred);
+}
+function vertical_hundred() {
+    if($('.content_box .c_item .c_row .c_left')) {
+        $('.content_box .c_item .c_row .c_left').each(function (i) {
+            var $left = $(this)
+            $('.content_box .c_item .c_row .c_right').each(function (j) {
+                if (i == j) {
+                    $left.outerWidth("100%");
+                    $(this).outerWidth("100%");
+                    $(this).css({
+                        'padding-top': '1%',
+                        'padding-left':0
+                    });
+
+                    return false
+                }
+            })
+        });
+        hundred = true;
+    }
+}
+function vertical_fifty() {
+    if($('.content_box .c_item .c_row .c_left')) {
+        $('.content_box .c_item .c_row .c_left').each(function (i) {
+            var $left = $(this)
+            $('.content_box .c_item .c_row .c_right').each(function (j) {
+                if (i == j) {
+                    // console.log("j_fifty:"+j);
+                    $left.outerWidth("50%");
+                    $(this).outerWidth("50%");
+                    $(this).css({
+                        'padding-left':'2%'
+                    });
+                    return false
+                }
+            })
+        });
+        hundred =false;
+        // verticalAlign();
+    }
 }
 //自动定位
 function autoFixed() {
     var t = window.pageYOffset;
-    console.log("screenA:"+$(window).width());
     if($(window).width() < 767){//手机端
-
         if(t + 50 >= fixedTop){
             $('.space').show();
             $('.head_sub').addClass('h_fixed');
@@ -109,51 +166,56 @@ function autoFixed() {
 
 }
 //点击子头，切换tab和颜色
-$('.head_sub .h_lk').click(function () {
-    var self = $(this)[0];
-    var index = 0;
-    $('.head_sub .h_lk').each(function (i) {
-        if(self == $(this)[0]){
-            index =i;
-            $(this).css('color','#fff')
-        }else{
-            $(this).css('color','#2f3538');
-        }
+if(('.head_sub .h_lk')){
+    $('.head_sub .h_lk').click(function () {
+        var self = $(this)[0];
+        var index = 0;
+        $('.head_sub .h_lk').each(function (i) {
+            if(self == $(this)[0]){
+                index =i;
+                $(this).css('color','#fff')
+            }else{
+                $(this).css('color','#2f3538');
+            }
+        });
+        if($(this).hasClass('h_return')){
+            return;
+        };
+        $('.content_box .c_item').each(function (j) {
+            if(index == j){
+                $(this).addClass('c_active');
+            }else{
+                $(this).removeClass('c_active');
+            }
+        })
+        verticalAlign();
     });
-    if($(this).hasClass('h_return')){
-        return;
-    }
-    $('.content_box .c_item').each(function (j) {
-        if(index == j){
-            $(this).addClass('c_active');
-        }else{
-            $(this).removeClass('c_active');
-        }
-    })
-    verticalAlign();
-});
-$('.content_box .c_item .c_title .c_list .c_lk').click(function () {
+}
+if($('.content_box .c_item .c_title .c_list .c_lk')){
+    $('.content_box .c_item .c_title .c_list .c_lk').click(function () {
 
-    console.log("inner"+$('.content_box .c_item .c_title .c_list .c_lk').length);
-    var self = $(this)[0];
-    var index = 0;
-    $('.content_box .c_item:visible .c_title .c_list .c_lk').each(function (i) {
-        if(self == $(this)[0]){
-            index = i;
-            $(this).addClass('c_active');
-        }else{
-            $(this).removeClass('c_active');
-        }
+        console.log("inner"+$('.content_box .c_item .c_title .c_list .c_lk').length);
+        var self = $(this)[0];
+        var index = 0;
+        $('.content_box .c_item:visible .c_title .c_list .c_lk').each(function (i) {
+            if(self == $(this)[0]){
+                index = i;
+                $(this).addClass('c_active');
+            }else{
+                $(this).removeClass('c_active');
+            }
+        });
+        $('.content_box .c_item:visible .c_month').each(function (j) {
+            if(index == j){
+                $(this).addClass('c_show')
+            }else{
+                $(this).removeClass('c_show');
+            }
+        });
+        // verticalAlign()
     });
-    $('.content_box .c_item:visible .c_month').each(function (j) {
-        if(index == j){
-            $(this).addClass('c_show')
-        }else{
-            $(this).removeClass('c_show');
-        }
-    });
-    verticalAlign()
-});
+}
+
 
 var t_img; // 定时器
 var isLoad = true; // 控制变量
@@ -191,17 +253,19 @@ function head_sub_change() {
         }
     }
     // console.log("$('.space').offset().top_11111:"+$('.space').offset().top);
-    content_pl = $('#content').css('margin-left');
+    if($('#content')){
+        content_pl = $('#content').css('margin-left');
+    }
 }
 $(window).scroll(function () {
     autoFixed();
-    verticalAlign();
 });
 head_sub_change();
 isImgLoad(function(){
     fixedTop = $('.head_sub').offset().top;//隐藏元素不进行任何计算
     // console.log("aa111:"+fixedTop);
 });
+verticalAlign();
 $(window).resize(function () {
     head_sub_change();
     isImgLoad(function(){
@@ -211,8 +275,16 @@ $(window).resize(function () {
         }else{
             fixedTop = $('.head_sub').offset().top;
         }
-        console.log("aa222:"+fixedTop+",advertise"+$('.advertise').offset().top);
+        // console.log("aa222:"+fixedTop+",advertise"+$('.advertise').offset().top);
     });
-    verticalAlign();
+    console.log('hundred:'+hundred+",w:"+w_width+",window:"+$(window).width());
+    if($(window).width() >= w_width){
+        vertical_fifty();
+        verticalAlign();
+    }else{
+        vertical_hundred();
+        // verticalAlign();
+    }
+
     autoFixed();
 });

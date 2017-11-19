@@ -113,9 +113,9 @@
     }
     /*end parameter*/
     /*start promotion*/
-    .content_box .c_item .c_row .c_left , .content_box .c_item .c_row .c_right{
-        width: 100%;
-    }
+    /*.content_box .c_item .c_row .c_left , .content_box .c_item .c_row .c_right{*/
+        /*width: 100%;*/
+    /*}*/
     .content_box .c_item .c_row .c_right{
         padding-right:2%;
     }

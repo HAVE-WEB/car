@@ -981,9 +981,9 @@ body, html {
 }
 }
 .footer {
-	background: #fff;
-	height: auto;
-	padding-bottom: 100px
+	/*background: #fff;*/
+	/*height: auto;*/
+	/*padding-bottom: 100px*/
 }
 .footer_bar {
 	height: 36px;
