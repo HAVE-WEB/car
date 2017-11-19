@@ -181,7 +181,16 @@
         padding-top: 50px;;
     }
     /*end service*/
-
+    /*start loan-calculator*/
+    #finance .car-model {
+        font-size:2rem;
+    }
+    /*end loan-calculator*/
+    /*start finance-scheme*/
+    .popup .content_list{
+        font-size:2rem;
+    }
+    /*end finance-scheme*/
 
 
 }

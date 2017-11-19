@@ -135,11 +135,11 @@ function autoFixed() {
     var t = window.pageYOffset;
     if($(window).width() < 767){//手机端
         if(t + 50 >= fixedTop){
-            $('.space').show();
             $('.head_sub').addClass('h_fixed');
             $('.head_sub').css({
                 'padding-left':content_pl
             });
+            $('.space').show();
         }else{
             $('.head_sub').removeClass('h_fixed');
             $('.head_sub').css({
@@ -147,6 +147,8 @@ function autoFixed() {
             });
             $('.space').hide();
         }
+
+        // console.log("mobile_fixedTop:"+fixedTop+",t:"+(t+50))
     }else{//pc端或者平板电脑
         if(t >= fixedTop){
             $('.space').show();
@@ -285,6 +287,6 @@ $(window).resize(function () {
         vertical_hundred();
         // verticalAlign();
     }
-
     autoFixed();
+    console.log("window.resize");
 });
