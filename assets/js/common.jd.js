@@ -243,15 +243,9 @@ function isImgLoad(callback){
         },100); // 我这里设置的是500毫秒就扫描一次，可以自己调整
     }
 };
+//添加空div，平稳滚动
 function head_sub_change() {
-    if($('.head_sub')){
-        // var p = $('.head_sub').css('position');
-        // if(p == 'fixed'){
-        //     $('.head_sub .h_lk').css({
-        //         'margin-left': '8%',
-        //         'padding': '3% 0'
-        //     })
-        // }
+    if($('.head_sub').length){
         var h = $('.head_sub').height();
         if($('.space').length > 0){
             $('.space').height(h);
@@ -263,9 +257,29 @@ function head_sub_change() {
         content_pl = $('#content').css('margin-left');
     }
 }
+//判断设备类型的不同，显示不同尺寸的图片
+function suitable(){
+
+    if($(window).width() < 767){
+        var s = '';
+        $('img').each(function () {
+            s = $(this).attr('src');
+            console.log("b:"+s.indexOf('min'));
+            if(s.indexOf('min') > 0){
+                return;
+            }
+            if(s != ''){
+                console.log("s_b:"+s);
+                s = s.replace('car','min');
+                console.log('s_a:'+s);
+                $(this).attr('src',s);
+            }
+        })
+    }
+}
 $(window).scroll(function () {
     autoFixed();
-    if($('.head_sub')){
+    if($('.head_sub').length){
         if(!imgLoad){
             isImgLoad(function(){
                 fixedTop = $('.head_sub').offset().top;//隐藏元素不进行任何计算
@@ -274,10 +288,11 @@ $(window).scroll(function () {
         }
     }
 });
+suitable();
 head_sub_change();
 var imgLoad = false;
 isImgLoad(function(){
-    if($('.head_sub')){
+    if($('.head_sub').length){
         fixedTop = $('.head_sub').offset().top;//隐藏元素不进行任何计算
         imgLoad = true;
     }
@@ -285,15 +300,16 @@ isImgLoad(function(){
 });
 verticalAlign();
 $(window).resize(function () {
+    suitable();
     head_sub_change();
     isImgLoad(function(){
-
-        if($('.head_sub').hasClass('h_fixed')){
-            fixedTop = $('.space').offset().top;
-        }else{
-            fixedTop = $('.head_sub').offset().top;
+        if($('.head_sub').length){
+            if($('.head_sub').hasClass('h_fixed')){
+                fixedTop = $('.space').offset().top;
+            }else{
+                fixedTop = $('.head_sub').offset().top;
+            }
         }
-        // console.log("aa222:"+fixedTop+",advertise"+$('.advertise').offset().top);
     });
     console.log('hundred:'+hundred+",w:"+w_width+",window:"+$(window).width());
     if($(window).width() >= w_width){
@@ -305,4 +321,5 @@ $(window).resize(function () {
         vertical_hundred();
     }
     autoFixed();
+
 });
