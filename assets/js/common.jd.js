@@ -107,7 +107,6 @@ function vertical_hundred() {
                 }
             })
         });
-        hundred = true;
     }
 }
 function vertical_fifty() {
@@ -126,7 +125,6 @@ function vertical_fifty() {
                 }
             })
         });
-        hundred =false;
         // verticalAlign();
     }
 }
@@ -247,25 +245,43 @@ function isImgLoad(callback){
 };
 function head_sub_change() {
     if($('.head_sub')){
-        var h = $('.head_sub').outerHeight();
+        // var p = $('.head_sub').css('position');
+        // if(p == 'fixed'){
+        //     $('.head_sub .h_lk').css({
+        //         'margin-left': '8%',
+        //         'padding': '3% 0'
+        //     })
+        // }
+        var h = $('.head_sub').height();
         if($('.space').length > 0){
             $('.space').height(h);
         }else{
             $('.head_sub').before('<div class="space" style="display: none;height: '+h+'px;"></div>');
         }
     }
-    // console.log("$('.space').offset().top_11111:"+$('.space').offset().top);
     if($('#content')){
         content_pl = $('#content').css('margin-left');
     }
 }
 $(window).scroll(function () {
     autoFixed();
+    if($('.head_sub')){
+        if(!imgLoad){
+            isImgLoad(function(){
+                fixedTop = $('.head_sub').offset().top;//隐藏元素不进行任何计算
+                imgLoad = true;
+            });
+        }
+    }
 });
 head_sub_change();
+var imgLoad = false;
 isImgLoad(function(){
-    fixedTop = $('.head_sub').offset().top;//隐藏元素不进行任何计算
-    // console.log("aa111:"+fixedTop);
+    if($('.head_sub')){
+        fixedTop = $('.head_sub').offset().top;//隐藏元素不进行任何计算
+        imgLoad = true;
+    }
+
 });
 verticalAlign();
 $(window).resize(function () {
@@ -281,12 +297,12 @@ $(window).resize(function () {
     });
     console.log('hundred:'+hundred+",w:"+w_width+",window:"+$(window).width());
     if($(window).width() >= w_width){
+        hundred =false;
         vertical_fifty();
         verticalAlign();
     }else{
+        hundred =true;
         vertical_hundred();
-        // verticalAlign();
     }
     autoFixed();
-    console.log("window.resize");
 });

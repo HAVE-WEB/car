@@ -67,28 +67,32 @@ function contains(arr, obj) {
 				if(!isobj) {
 					data = $.parseJSON(data);
 				}
-				// var opts="";
-				// if(data.length == 0){
-				// 	opts += '<option value="">选择金融机构</option>'
-				// }else{
-				// 	opts += '<option value="">选择金融机构</option>'
-				// 	$.each(data,function(){
-				// 		opts += '<option value="'+this.cd_cid +'">'+this.cd_cnname +'</option>'
-				// 	});
-				// }
-                // opts += '<option value="">选择金融机构</option>';
-                // opts += '<option value="111">工商银行</option>';
-                // opts += '<option value="112">农业银行</option>';
-                // opts += '<option value="113">中国银行</option>';
-				// $("#finance-institution").append(opts);
-				// $("#finance-institution").trigger('chosen:updated');
+				var opts="";
+				if(data.length == 0){
+					opts += '<option value="">选择金融机构</option>'
+				}else{
+					opts += '<option value="">选择金融机构</option>'
+					$.each(data,function(){
+						opts += '<option value="'+this.cd_cid +'">'+this.cd_cnname +'</option>'
+					});
+				}
+                opts += '<option value="">选择金融机构</option>';
+                opts += '<option value="111">工商银行</option>';
+                opts += '<option value="112">农业银行</option>';
+                opts += '<option value="113">中国银行</option>';
+				$("#finance-institution").append(opts);
+				$("#finance-institution").trigger('chosen:updated');
 			}
 		});
         var opts="";
         opts += '<option value="">选择金融机构</option>';
-        opts += '<option value="111">工商银行</option>';
-        opts += '<option value="112">农业银行</option>';
+        opts += '<option value="111">南京银行</option>';
+        opts += '<option value="112">兴业银行</option>';
+        opts += '<option value="113">奇瑞金融</option>';
+        opts += '<option value="113">易鑫车贷</option>';
         opts += '<option value="113">中国银行</option>';
+        opts += '<option value="113">上海银行</option>';
+        opts += '<option value="113">备胎金融</option>';
         $("#finance-institution").html(opts);
         $("#finance-institution").trigger('chosen:updated');
 	}
@@ -544,7 +548,8 @@ function contains(arr, obj) {
 		if($(window).width()<640) {
 			$('.chosen-container ').css('width','98%')
 		}else{
-			$('.chosen-container ').css('width','48%')
+			$('.chosen-container ').css('width','48%');
+            $('.chosen-container ').eq(2).css('width','97%')
 		}
 	}
 	$(window).resize(function(event) {
@@ -868,11 +873,11 @@ function contains(arr, obj) {
 	$payLine.ionRangeSlider({
 	    hide_min_max: true,
 	    keyboard: true,
-	    min: 20,
-	    max: 80,
+	    min: 00,
+	    max: 60,
 	    postfix: "%",
 	    grid: true,
-	    values: [20, 30, 40, 50, 60, 70, 80],
+	    values: [00, 10, 20, 30, 40, 50, 60],
 	    onFinish:function(data){
 	    	var slider = $payLine.data("ionRangeSlider");
 	    	var n = data.from;
@@ -882,7 +887,6 @@ function contains(arr, obj) {
                 });
 	    		var _this = $payLine.prev('.irs-with-grid').find('.js-grid-text-'+n);
 	    		_this.trigger('click');
-	    		
 	    	}
 	    	if($('#car-model').val() != '' && $('#car-style').val() != '' && $('#finance-institution').val() != '' && $('#finance-products').val() != ''){
 	    		timelineChange();
@@ -916,11 +920,11 @@ function contains(arr, obj) {
 	$timeLine.ionRangeSlider({
 	    hide_min_max: true,
 	    keyboard: true,
-	    min: 12,
+	    min: 00,
 	    max: 60,
 	    postfix: "个月",
 	    grid: true,
-	    values: [12, 18, 24, 36, 48, 60],
+	    values: [0,12, 18, 24, 36, 48, 60],
 	    onFinish:function(data){
 	    	var slider = $timeLine.data("ionRangeSlider");
 	    	var n = data.from;

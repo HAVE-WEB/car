@@ -113,9 +113,6 @@
     }
     /*end parameter*/
     /*start promotion*/
-    /*.content_box .c_item .c_row .c_left , .content_box .c_item .c_row .c_right{*/
-        /*width: 100%;*/
-    /*}*/
     .content_box .c_item .c_row .c_right{
         padding-right:2%;
     }
@@ -135,6 +132,10 @@
     .content_box .c_item .c_row {
         margin-top: 5%;
     }
+    .content_box .c_item .c_row .c_left .c_fixed {
+        width: 40px;
+        height: 39px;
+    }
     /*end promotion*/
     /*start brand-activity*/
     .brand_activity {
@@ -146,6 +147,7 @@
     .brand_activity .a_item .a_lk {
         display: block;
     }
+
     /*end brand-activity*/
     /*start finance-engine*/
     .content_box .c_item .c_row .c_left.c_quarter {
