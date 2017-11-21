@@ -49,11 +49,12 @@
 
 #finance .content-change {
     width: 43%;
-    border-right: 1px solid #414743;
+    /*border-right: 1px solid #414743;*/
     position: relative;
-    margin-left: 7%;
-    padding-right: 3%;
-    float: left
+    /*margin-left: 7%;*/
+    /*padding-right: 3%;*/
+    /*float: left*/
+    margin:0 auto;
 }
 
 #finance .content-change .line {

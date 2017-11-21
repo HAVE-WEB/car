@@ -790,48 +790,52 @@
                     <h3>官方指导价</h3>
                     <input type="text" id="price" placeholder="不可手动输入" disabled="disabled" style="color: rgb(153, 153, 153);">
                 </div>
-                <div class="line mb50">
-                    <h3>首付比例</h3>
-                    <input type="text" id="payline" value="" name="payline" class="" readonly="" style="color: rgb(153, 153, 153);">
+                <div class="line mb40 input-box">
+                    <h3>最低首付</h3>
+                    <input type="text" id="down-payment" placeholder="不可手动输入" disabled="disabled" style="color: rgb(153, 153, 153);">
                 </div>
-                <div class="line">
+                <div class="line mb40 input-box">
                     <h3>贷款期限</h3>
-                    <input type="text" id="timeline" value="" name="timeline" class="" readonly="" style="color: rgb(153, 153, 153);">
+                    <input type="text" id="loan-length" placeholder="不可手动输入" disabled="disabled" style="color: rgb(153, 153, 153);">
+                </div>
+                <div class="line mb40 input-box">
+                    <h3>利息点数</h3>
+                    <input type="text" id="interest-points"  placeholder="不可手动输入" disabled="disabled" style="color: rgb(153, 153, 153);">
                 </div>
             </div>
-            <div class="content-result">
-                <h3>计算结果</h3>
-                <div class="line bg">
-                    <h4 id="titlePrice">总共支付</h4>
-                    <h4 id="lastMonthy" style="display: none;">最后一月支付</h4>
-                    <span class="showValue"></span>
-                </div>
-                <div class="line">
-                    <h4>首付金额</h4>
-                    <span class="showValue"></span>
-                </div>
-                <div class="line bg">
-                    <h4>贷款期限</h4>
-                    <span class="showValue"></span>
-                </div>
-                <div class="line">
-                    <h4>利息
-                        <span id="inter" style="font-size: 16px;display: none;">(初期一次性交付)</span></h4>
-                    <span class="showValue"></span>
-                </div>
-                <div class="line bg">
-                    <h4>月供金额</h4>
-                    <span class="showValue"></span>
-                </div>
-                <!--<a href="javascript:;" class="noClick" id="btn-apply">申请贷款</a>-->
-                <a href="javascript:;" class="noClick" id="btn-all-finance">提交金融方案</a>
-                <div class="note">
-                    注:以上数据仅供参考,实际支付金额以最终客户贷款合同为准,详情可咨询当地经销商。
-                </div>
-                <!--<div class="send-result">-->
-                    <!--<input type="tel" id="tel" maxlength="11" placeholder="将结果发送至手机"  style="color: rgb(153, 153, 153);"><a href="http://contact.faw-vw.com/finance/loan_calculator.htm?bid=16#" class="submit noClick" >发送</a>-->
+            <!--<div class="content-result">-->
+                <!--<h3>计算结果</h3>-->
+                <!--<div class="line bg">-->
+                    <!--<h4 id="titlePrice">总共支付</h4>-->
+                    <!--<h4 id="lastMonthy" style="display: none;">最后一月支付</h4>-->
+                    <!--<span class="showValue"></span>-->
                 <!--</div>-->
-            </div>
+                <!--<div class="line">-->
+                    <!--<h4>首付金额</h4>-->
+                    <!--<span class="showValue"></span>-->
+                <!--</div>-->
+                <!--<div class="line bg">-->
+                    <!--<h4>贷款期限</h4>-->
+                    <!--<span class="showValue"></span>-->
+                <!--</div>-->
+                <!--<div class="line">-->
+                    <!--<h4>利息-->
+                        <!--<span id="inter" style="font-size: 16px;display: none;">(初期一次性交付)</span></h4>-->
+                    <!--<span class="showValue"></span>-->
+                <!--</div>-->
+                <!--<div class="line bg">-->
+                    <!--<h4>月供金额</h4>-->
+                    <!--<span class="showValue"></span>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;<a href="javascript:;" class="noClick" id="btn-apply">申请贷款</a>&ndash;&gt;-->
+                <!--<a href="javascript:;" class="noClick" id="btn-all-finance">提交金融方案</a>-->
+                <!--<div class="note">-->
+                    <!--注:以上数据仅供参考,实际支付金额以最终客户贷款合同为准,详情可咨询当地经销商。-->
+                <!--</div>-->
+                <!--&lt;!&ndash;<div class="send-result">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<input type="tel" id="tel" maxlength="11" placeholder="将结果发送至手机"  style="color: rgb(153, 153, 153);"><a href="http://contact.faw-vw.com/finance/loan_calculator.htm?bid=16#" class="submit noClick" >发送</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
             <div class="popup" id="all-finance">
                 <div class="content">
                     <a href="javascript:;" class="popup-close"></a>
@@ -874,7 +878,7 @@
                     <ul class="a_ul">
                         <li class="a_item"><a href="../about/news.html" class="a_lk">新闻动态</a></li>
                         <li class="a_item"><a href="../about/brand-activity.html" class="a_lk">品牌活动</a></li>
-                        <li class="a_item"><a href="../about/finance-engine.html" class="a_lk">金融服务</a></li>
+                        <!--<li class="a_item"><a href="../about/finance-engine.html" class="a_lk">金融服务</a></li>-->
                         <li class="a_item"><a href="../about/promotion-activity.html" class="a_lk">促销活动</a></li>
                     </ul>
                 </div>
@@ -907,7 +911,7 @@
                     <li><a href="../about/loan-calculator.html">金融计算器</a></li>
                     <li><a href="../about/news.html">新闻动态</a></li>
                     <li><a href="../about/brand-activity.html">品牌活动</a></li>
-                    <li><a href="../about/finance-engine.html">金融服务</a></li>
+                    <!--<li><a href="../about/finance-engine.html">金融服务</a></li>-->
                     <li><a href="../about/promotion-activity.html">促销活动</a></li>
                     <li><a href="../fast-aisle/service.html">在线客服</a></li>
                     <li class="last_li"><a href="../fast-aisle/search.html">搜索</a></li>

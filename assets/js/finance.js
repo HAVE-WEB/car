@@ -86,13 +86,13 @@ function contains(arr, obj) {
 		});
         var opts="";
         opts += '<option value="">选择金融机构</option>';
-        opts += '<option value="111">南京银行</option>';
-        opts += '<option value="112">兴业银行</option>';
-        opts += '<option value="113">奇瑞金融</option>';
-        opts += '<option value="113">易鑫车贷</option>';
-        opts += '<option value="113">中国银行</option>';
-        opts += '<option value="113">上海银行</option>';
-        opts += '<option value="113">备胎金融</option>';
+        opts += '<option value="0">南京银行</option>';
+        opts += '<option value="1">兴业银行</option>';
+        opts += '<option value="2">奇瑞金融</option>';
+        opts += '<option value="3">易鑫车贷</option>';
+        opts += '<option value="4">中国银行</option>';
+        opts += '<option value="5">上海银行</option>';
+        opts += '<option value="6">备胎金融</option>';
         $("#finance-institution").html(opts);
         $("#finance-institution").trigger('chosen:updated');
 	}
@@ -138,14 +138,32 @@ function contains(arr, obj) {
 	$('#finance-institution').on('change', function() {
 		//event.preventDefault();
 		var pid = $(this).find('option:checked').val();
-		
-		if(pid=='132135'||pid=='132134'||pid=='132131'){
-			$("#btn-apply").text("资质预审");
-		}else{
-			$("#btn-apply").text("申请贷款");
+		console.log("pid:"+pid);
+		var down_arr =['0首付', '2成首付', '2成首付' ,'1成首付' ,'3成首付' ,'3成首付' ,'2成首付'];
+        var loan_arr =['0-60期', '36期', '12-48期' ,'18-36期' ,'24-36期' ,'36期' ,'24-36期'];
+        var interest_arr =['4.4厘', '4厘', '5.3厘' ,'5.93厘' ,'5厘' ,'5厘' ,'6.7厘'];
+		var down_payment = '';
+		var loan_length = '';
+		var interest_points = '';
+		for(var i = 0; i< 7 ;i++){
+			if(parseInt(pid) == i){
+                down_payment = down_arr[i];
+                loan_length = loan_arr[i];
+                interest_points = interest_arr[i];
+			}
 		}
-		finaProducts(pid);
-	    contentResult();
+		$('#down-payment').val(down_payment);
+        $('#loan-length').val(loan_length);
+        $('#interest-points').val(interest_points);
+
+
+        // if(pid=='132135'||pid=='132134'||pid=='132131'){
+			// $("#btn-apply").text("资质预审");
+        // }else{
+			// $("#btn-apply").text("申请贷款");
+        // }
+        // finaProducts(pid);
+	    // contentResult();
 	});
 	$('#car-model').on('change', function(event) {/*元素id是car-model的元素，绑定change事件，事件对应的函数是*/
 		console.log("change");
@@ -494,18 +512,18 @@ function contains(arr, obj) {
 			noChangearr = [];
     		var slider1 = $payLine.data("ionRangeSlider");
     		console.log(slider1);
-    		slider1.update({
-                from: 0
-            });
+            // slider1.update({
+            //     from: 0
+            // });
 			for (var i = 0; i < tNoChangearr.length; i++) {
 				$timeLine.prev('.irs-with-grid').find('.js-grid-text-'+tNoChangearr[i]).removeClass('noChange');
 				$timeLine.prev('.irs-with-grid').find('.js-grid-text-'+tNoChangearr[i]).find("span").remove();
 	    	}
 			tNoChangearr = [];
     		var slider2 = $timeLine.data("ionRangeSlider");
-    		slider2.update({
-                from: 0
-            });
+            // slider2.update({
+            //     from: 0
+            // });
 			//清空计算结果
 			var result =['','','','',''];
 			$('.content-result').find('.line').each(function(index, el) {

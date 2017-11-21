@@ -259,23 +259,56 @@ function head_sub_change() {
 }
 //判断设备类型的不同，显示不同尺寸的图片
 function suitable(){
-
+    var s = '';
     if($(window).width() < 767){
-        var s = '';
         $('img').each(function () {
             s = $(this).attr('src');
-            console.log("b:"+s.indexOf('min'));
-            if(s.indexOf('min') > 0){
+            if(s == undefined){
                 return;
             }
-            if(s != ''){
-                console.log("s_b:"+s);
-                s = s.replace('car','min');
-                console.log('s_a:'+s);
+            var i = s.lastIndexOf('i/');
+            if(i < 0){
+                console.log("目录检索有误");
+                return;
+            }
+            var s_sub = s.substr((i+2),3);
+            if(s_sub == ''){
+                console.log('查询子字符串有误');
+                return;
+            }
+            if(s_sub == 'min'){
+                return ;
+            }else{
+                s = s.replace(s_sub,'min');
+                $(this).attr('src',s);
+            }
+        })
+    }else{
+        $('img').each(function () {
+            s = $(this).attr('src');
+            // console.log("s:"+s);
+            if(s == undefined){
+                return;
+            }
+            var i = s.lastIndexOf('i/');
+            if(i < 0){
+                console.log("目录检索有误");
+                return;
+            }
+            var s_sub = s.substr((i+2),3);
+            if(s_sub == ''){
+                console.log('查询子字符串有误');
+                return;
+            }
+            if(s_sub == 'car'){
+                return ;
+            }else{
+                s = s.replace(s_sub,'car');
                 $(this).attr('src',s);
             }
         })
     }
+
 }
 $(window).scroll(function () {
     autoFixed();
@@ -288,7 +321,7 @@ $(window).scroll(function () {
         }
     }
 });
-suitable();
+// suitable();
 head_sub_change();
 var imgLoad = false;
 isImgLoad(function(){
@@ -299,8 +332,20 @@ isImgLoad(function(){
 
 });
 verticalAlign();
+//图片延时加载
+// $('img').lazyload({
+//     placeholder: '../../assets/i/placeholder-img/grey.gif',//用图片提前占位
+//     effect: 'fadeIn',//载入使用什么效果
+//     threshold: 10,//提前多少像素开始加载
+//     event: 'scroll',//事件触发时加载
+//     // container: $('#slider'),//对某个容器中的图片实现效果
+//     //container,值为某容器，lazyload默认是拉动浏览器的滚动条时生效，这个参数可以让你在
+//     failurelimit: 20,//
+//     skip_invisible:true
+// })
+
 $(window).resize(function () {
-    suitable();
+    // suitable();
     head_sub_change();
     isImgLoad(function(){
         if($('.head_sub').length){
@@ -311,7 +356,7 @@ $(window).resize(function () {
             }
         }
     });
-    console.log('hundred:'+hundred+",w:"+w_width+",window:"+$(window).width());
+    // console.log('hundred:'+hundred+",w:"+w_width+",window:"+$(window).width());
     if($(window).width() >= w_width){
         hundred =false;
         vertical_fifty();
