@@ -138,7 +138,7 @@ function contains(arr, obj) {
 	$('#finance-institution').on('change', function() {
 		//event.preventDefault();
 		var pid = $(this).find('option:checked').val();
-		console.log("pid:"+pid);
+		// console.log("pid:"+pid);
 		var down_arr =['0首付', '2成首付', '2成首付' ,'1成首付' ,'3成首付' ,'3成首付' ,'2成首付'];
         var loan_arr =['0-60期', '36期', '12-48期' ,'18-36期' ,'24-36期' ,'36期' ,'24-36期'];
         var interest_arr =['4.4厘', '4厘', '5.3厘' ,'5.93厘' ,'5厘' ,'5厘' ,'6.7厘'];
