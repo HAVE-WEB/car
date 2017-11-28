@@ -321,7 +321,7 @@ $(window).scroll(function () {
         }
     }
 });
-// suitable();
+suitable();
 head_sub_change();
 var imgLoad = false;
 isImgLoad(function(){
@@ -345,7 +345,7 @@ verticalAlign();
 // })
 
 $(window).resize(function () {
-    // suitable();
+    suitable();
     head_sub_change();
     isImgLoad(function(){
         if($('.head_sub').length){

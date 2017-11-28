@@ -96,44 +96,44 @@ function contains(arr, obj) {
         $("#finance-institution").html(opts);
         $("#finance-institution").trigger('chosen:updated');
 	}
-	//通过金融机构id查询加载金融产品
-	function finaProducts(pid){
-		var bid = $("#car-model").find('option:checked').val();
-		var mid = $("#car-style").find('option:checked').val();
-		$.ajax({
-			type: "GET",
-			url: 'finaProducts.json',
-			async:true,
-			data: {"pid":pid,"bid":bid,"mid":mid},
-			dataType: "json",
-			success: function(data){
-				$("#finance-products").empty();
-				var isobj = typeof(data) == "object" ;
-				// 非对象
-				if(!isobj) {
-					data = $.parseJSON(data);
-				}
-				var opts="";
-				if(data == null || data.length == 0){
-					opts += '<option value="">选择金融产品</option>'
-				}else{
-					opts += '<option value="">选择金融产品</option>'
-					$.each(data,function(){
-						opts += '<option value="'+this.cd_cid +'">'+this.cd_cnname +'</option>'
-					});
-				}
-				$("#finance-products").append(opts);
-				$("#finance-products").trigger('chosen:updated');
-			}
-		});
-        var opts="";
-        opts += '<option value="">选择金融产品</option>';
-        opts += '<option value="132141">标准信贷</option>';
-        opts += '<option value="132142">老客户</option>';
-        opts += '<option value="132143">标准信贷 - 半台车</option>';
-        $("#finance-products").html(opts);
-        $("#finance-products").trigger('chosen:updated');
-	}
+	// //通过金融机构id查询加载金融产品
+	// function finaProducts(pid){
+	// 	var bid = $("#car-model").find('option:checked').val();
+	// 	var mid = $("#car-style").find('option:checked').val();
+	// 	$.ajax({
+	// 		type: "GET",
+	// 		url: 'finaProducts.json',
+	// 		async:true,
+	// 		data: {"pid":pid,"bid":bid,"mid":mid},
+	// 		dataType: "json",
+	// 		success: function(data){
+	// 			$("#finance-products").empty();
+	// 			var isobj = typeof(data) == "object" ;
+	// 			// 非对象
+	// 			if(!isobj) {
+	// 				data = $.parseJSON(data);
+	// 			}
+	// 			var opts="";
+	// 			if(data == null || data.length == 0){
+	// 				opts += '<option value="">选择金融产品</option>'
+	// 			}else{
+	// 				opts += '<option value="">选择金融产品</option>'
+	// 				$.each(data,function(){
+	// 					opts += '<option value="'+this.cd_cid +'">'+this.cd_cnname +'</option>'
+	// 				});
+	// 			}
+	// 			$("#finance-products").append(opts);
+	// 			$("#finance-products").trigger('chosen:updated');
+	// 		}
+	// 	});
+     //    var opts="";
+     //    opts += '<option value="">选择金融产品</option>';
+     //    opts += '<option value="132141">标准信贷</option>';
+     //    opts += '<option value="132142">老客户</option>';
+     //    opts += '<option value="132143">标准信贷 - 半台车</option>';
+     //    $("#finance-products").html(opts);
+     //    $("#finance-products").trigger('chosen:updated');
+	// }
 
 	$('#finance-institution').on('change', function() {
 		//event.preventDefault();
@@ -291,11 +291,11 @@ function contains(arr, obj) {
 	});
 	
 	$('#finance-products').bind('change', function(event) {
-		
+
 		var modelId = $('#car-style').val();
 		var productId = $('#finance-products').val();
 		var countL=0;
-		
+
 		//查询对应金融产品的贷款方案 控制首付比例按钮能否点击
 		if(productId != ""){
 			noChangearr = [];
@@ -427,7 +427,7 @@ function contains(arr, obj) {
 			var loan_amount = price*(1-downPaymentRatio/100);
 			//月供
 			var monthly_payment =loan_amount/loanTerm;
-			
+
 			var modelId = $('#car-style').val();
 			var productId = $('#finance-products').val();
 			$("#audit_PlanloanAmount").val(first_payment);
@@ -504,7 +504,7 @@ function contains(arr, obj) {
 			$("#titlePrice").show();
 			$("#inter").hide();
 			//$('.selected').removeClass('selected').find('img').attr('src','../faw/images/financial/drag.png');
-			
+
 			for (var i = 0; i < noChangearr.length; i++) {
 				$payLine.prev('.irs-with-grid').find('.js-grid-text-'+noChangearr[i]).removeClass('noChange');
 				$payLine.prev('.irs-with-grid').find('.js-grid-text-'+noChangearr[i]).find("span").remove();
@@ -530,7 +530,7 @@ function contains(arr, obj) {
 				$(this).find('span.showValue').text(result[index]);
 			}).parents('.content-result').find('a').addClass('noClick')
 		}
-		
+
 
 	}
 
@@ -541,7 +541,7 @@ function contains(arr, obj) {
 		}else{
 			var html = '<option value=""></option>';
 		}
-		
+
 		var arr = [];
 		for (var i = 0; i < data.length; i++) {
 			if (data[i][a] == val || !val) {
@@ -843,13 +843,13 @@ function contains(arr, obj) {
 		event.preventDefault();
 		$(this).parents('.popup').hide()
 	});
-	
-	
+
+
 	function sliderEvent(obj,noChangearr){
-		
+
 		if(noChangearr){
 			var html;
-			
+
 			for (var i = 0; i < noChangearr.length; i++) {
 				if(noChangearr[i]==0){
 					html = '<span class="line-start">此选项不可选</span>'
@@ -859,9 +859,9 @@ function contains(arr, obj) {
 					html = '<span>此选项不可选</span>';
 				}
 	    		obj.prev('.irs-with-grid').find('.js-grid-text-'+noChangearr[i]).addClass('noChange').append(html);
-	    	}	
+	    	}
 		}
-		
+
 		obj.prev('.irs-with-grid').find('.irs-grid-text').on('click', function(event) {
     		event.preventDefault();
     		if($(this).hasClass('show')) return;
@@ -882,12 +882,12 @@ function contains(arr, obj) {
 	    			contentResult();
 	    		}
     		}
-    		
+
     	});
 	}
 
 	$payLine = $('#payline');
-	
+
 	$payLine.ionRangeSlider({
 	    hide_min_max: true,
 	    keyboard: true,
@@ -926,13 +926,13 @@ function contains(arr, obj) {
 			}
 	    },
 	    onStart:function(){
-	    	
+
 	    	sliderEvent($payLine,noChangearr);
-	    	
+
 	    }
 
 	});
-	
+
 
 	$timeLine = $("#timeline");
 	$timeLine.ionRangeSlider({
@@ -952,7 +952,7 @@ function contains(arr, obj) {
                 });
 	    		var _this = $timeLine.prev('.irs-with-grid').find('.js-grid-text-'+n);
 	    		_this.trigger('click');
-	    		
+
 	    	}
 	    	if($('#car-model').val() != '' && $('#car-style').val() != '' && $('#finance-institution').val() != '' && $('#finance-products').val() != ''){
 	    		contentResult();
@@ -973,9 +973,9 @@ function contains(arr, obj) {
 			}
 	    },
 	    onStart:function(){
-	    	
+
 	    	sliderEvent($timeLine,tNoChangearr);
-	    	
+
 	    }
 
 	});
