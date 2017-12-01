@@ -161,6 +161,7 @@ function autoFixed() {
                 'padding-left':0
             });
             $('.space').hide();
+            console.log("pp");
         }
     }
 
